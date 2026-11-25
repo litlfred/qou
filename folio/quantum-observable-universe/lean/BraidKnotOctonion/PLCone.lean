@@ -152,10 +152,6 @@ variable [DecidableEq E]
 noncomputable def coneComplex (K : SimplicialComplex ℝ E) (p : E) (hp : p ∉ K.space)
     (hray : RaysMeetOnce p K.space) : SimplicialComplex ℝ E where
   faces := K.faces ∪ {s | ∃ σ, (σ ∈ K.faces ∨ σ = ∅) ∧ s = insert p σ}
-  empty_notMem := by
-    rintro (h | ⟨σ, -, h⟩)
-    · exact K.empty_notMem h
-    · exact Finset.insert_ne_empty p σ h.symm
   indep := by
     rintro s (hs | ⟨σ, hσ, rfl⟩)
     · exact K.indep hs
@@ -168,27 +164,39 @@ noncomputable def coneComplex (K : SimplicialComplex ℝ E) (p : E) (hp : p ∉ 
         · exact K.indep hσ
         · exact affineIndependent_of_subsingleton ℝ _
       exact affineIndependent_insert hσi (notMem_affineSpan_of_rays hray hp hhull)
-  down_closed := by
-    rintro s t (hs | ⟨σ, hσ, rfl⟩) hts ht
-    · exact Or.inl (K.down_closed hs hts ht)
-    have hsub : ∀ x ∈ t, x ≠ p → x ∈ σ := fun x hx hne =>
-      (Finset.mem_insert.mp (hts hx)).resolve_left hne
-    by_cases hpt : p ∈ t
-    · refine Or.inr ⟨t.erase p, ?_, (Finset.insert_erase hpt).symm⟩
-      by_cases he : t.erase p = ∅
-      · exact Or.inr he
-      obtain ⟨x, hx⟩ := Finset.nonempty_iff_ne_empty.mpr he
-      rw [Finset.mem_erase] at hx
-      rcases hσ with hσ | rfl
-      · refine Or.inl (K.down_closed hσ (fun y hy => ?_) he)
-        rw [Finset.mem_erase] at hy
-        exact hsub y hy.2 hy.1
-      · exact absurd (hsub x hx.2 hx.1) (Finset.notMem_empty x)
-    · obtain ⟨x, hx⟩ := Finset.nonempty_iff_ne_empty.mpr ht
-      have hxp : x ≠ p := fun h => hpt (h ▸ hx)
-      rcases hσ with hσ | rfl
-      · exact Or.inl (K.down_closed hσ (fun y hy => hsub y hy fun (h : y = p) => hpt (h ▸ hy)) ht)
-      · exact absurd (hsub x hx hxp) (Finset.notMem_empty x)
+  isRelLowerSet_faces := by
+    have hne : (∅ : Finset E) ∉
+        (K.faces ∪ {s | ∃ σ, (σ ∈ K.faces ∨ σ = ∅) ∧ s = insert p σ}) := by
+      rintro (h | ⟨σ, -, h⟩)
+      · exact K.empty_notMem h
+      · exact Finset.insert_ne_empty p σ h.symm
+    have hdc : ∀ {s t : Finset E}, s ∈ (K.faces ∪ {s | ∃ σ, (σ ∈ K.faces ∨ σ = ∅) ∧ s = insert p σ}) →
+        t ⊆ s → t ≠ ∅ → t ∈ (K.faces ∪ {s | ∃ σ, (σ ∈ K.faces ∨ σ = ∅) ∧ s = insert p σ}) := by
+      rintro s t (hs | ⟨σ, hσ, rfl⟩) hts ht
+      · exact Or.inl (K.down_closed hs hts (Finset.nonempty_iff_ne_empty.mpr ht))
+      have hsub : ∀ x ∈ t, x ≠ p → x ∈ σ := fun x hx hne =>
+        (Finset.mem_insert.mp (hts hx)).resolve_left hne
+      by_cases hpt : p ∈ t
+      · refine Or.inr ⟨t.erase p, ?_, (Finset.insert_erase hpt).symm⟩
+        by_cases he : t.erase p = ∅
+        · exact Or.inr he
+        obtain ⟨x, hx⟩ := Finset.nonempty_iff_ne_empty.mpr he
+        rw [Finset.mem_erase] at hx
+        rcases hσ with hσ | rfl
+        · refine Or.inl (K.down_closed hσ (fun y hy => ?_)
+            (Finset.nonempty_iff_ne_empty.mpr he))
+          rw [Finset.mem_erase] at hy
+          exact hsub y hy.2 hy.1
+        · exact absurd (hsub x hx.2 hx.1) (Finset.notMem_empty x)
+      · obtain ⟨x, hx⟩ := Finset.nonempty_iff_ne_empty.mpr ht
+        have hxp : x ≠ p := fun h => hpt (h ▸ hx)
+        rcases hσ with hσ | rfl
+        · exact Or.inl (K.down_closed hσ (fun y hy => hsub y hy fun (h : y = p) => hpt (h ▸ hy))
+            (Finset.nonempty_iff_ne_empty.mpr ht))
+        · exact absurd (hsub x hx hxp) (Finset.notMem_empty x)
+    intro s hs
+    exact ⟨Finset.nonempty_iff_ne_empty.mpr (fun h => hne (h ▸ hs)),
+      fun t hts ht => hdc hs hts (Finset.nonempty_iff_ne_empty.mp ht)⟩
   inter_subset_convexHull := by
     -- a point of a face of `K` and of an apex face lies in the base of the apex face
     have hKA : ∀ {s τ : Finset E}, s ∈ K.faces → (τ ∈ K.faces ∨ τ = ∅) →

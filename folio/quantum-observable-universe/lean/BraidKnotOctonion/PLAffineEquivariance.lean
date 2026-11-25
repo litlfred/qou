@@ -66,12 +66,15 @@ theorem edge_map (i : Fin (P.n + 1)) : (P.map f).edge i = f '' P.edge i := by
   exact (image_segment ℝ f.toAffineMap _ _).symm
 
 theorem carrier_map : (P.map f).carrier = f '' P.carrier := by
-  simp only [carrier, edge_map, image_iUnion]
-  rfl
+  simp only [carrier, image_iUnion]
+  exact iUnion_congr fun i => edge_map f P i
 
+set_option backward.isDefEq.respectTransparency false in
 theorem isSimple_map (h : P.IsSimple) : (P.map f).IsSimple := by
   refine ⟨f.injective.comp h.1, fun i j hij => ?_⟩
-  rw [edge_map, edge_map, ← image_inter f.injective, h.2 i j hij]
+  rw [show (P.map f).edge i = f '' P.edge i from edge_map f P i,
+    show (P.map f).edge j = f '' P.edge j from edge_map f P j, ← image_inter f.injective,
+    h.2 i j hij]
   simp only [map_next, map_v]
   split_ifs <;> simp
 
@@ -105,8 +108,8 @@ def map : PolygonalLink F where
 lemma map_comp (i : Fin L.k) : (L.map f).comp i = (L.comp i).map f := rfl
 
 theorem carrier_map : (L.map f).carrier = f '' L.carrier := by
-  simp only [carrier, map_comp, Polygon.carrier_map, image_iUnion]
-  rfl
+  simp only [carrier, image_iUnion]
+  exact iUnion_congr fun i => Polygon.carrier_map f (L.comp i)
 
 end PolygonalLink
 
@@ -145,7 +148,8 @@ theorem DeltaEquiv.map (f : E ≃ᵃ[ℝ] F) {L L' : PolygonalLink E} (h : Delta
 
 lemma Polygon.map_symm_map (f : E ≃ᵃ[ℝ] F) (P : Polygon E) : (P.map f).map f.symm = P := by
   cases P
-  simp only [Polygon.map, Polygon.mk.injEq, heq_eq_eq, true_and]
+  simp only [Polygon.map]
+  congr 1
   funext i
   simp
 
