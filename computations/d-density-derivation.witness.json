@@ -1,8 +1,8 @@
 {
   "engine": "closed-form",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-25T01:36:32.070886+00:00",
-  "commitSha": "c8e2e7595621222cb3df9f87c3beac8f52f59fbc",
+  "computedAt": "2026-11-25T09:47:56.101837+00:00",
+  "commitSha": "556d778900c513d832937ae4623827f11c30636e",
   "assertions": [
     {
       "name": "ρ_F(D) from weight criterion matches paper (ρ_F = m_e)",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "d-density-derivation",
   "scriptFile": "d_density_derivation.py",
   "scriptHash": "0b42d03d1827",
-  "scriptCommitSha": "5bd4c4d51591604be4a3ea59ebc4bd69b05b7fa6",
+  "scriptCommitSha": "8d7d4a4c1c2f3d0a67fe98a0f949321186ffb4b0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
+    "cvxpy": "1.9.3",
     "pyhecke_native_build": "248f1a54d4f699f2"
   },
   "invocation": {
