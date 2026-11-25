@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T11:23:57Z
-updated_at: 2026-11-25T11:35:59Z
+updated_at: 2026-11-25T16:24:42Z
 parent: qou-s028
 ---
 
@@ -20,3 +20,6 @@ Stays open: the loci are scope-(a) negatives on the old letter; the deuteron on 
 ## 2026-11-25 locus (a) closed on the corpus premises; Lean verified
 BondScaleUniversality.lean: trace-only energy forces one scale (a·log x + b·log y = G(xy) => a=b). With route T (spectator audit §8-9) the common scale is k_BT = E0 (order zero). So on those premises an NN-specific scale is excluded; the locus is mu (the bond word). UniversalScaleMinimax.lean: minimax floor (r2-r1)/(r1+r2). Both lean-direct exit 0, standard axioms. Precision gates green. PR #9424.
 Still open (do not close; the deuteron on the ruled gg word is open in qou-brng): owner decision on order-zero vs tower E0 in binding_log_free_energy.py.
+
+## 2026-11-25 owner ruling 'A ruled tower' applied (commit f1c5d61db, PR #9424)
+binding_log_free_energy.py + probe_d_dressing_is_proton_net.py + probe_d_dressing_cross_a.py now use qbeta_e0.tower_summed_scaled (new). E0 4.185981 -> 4.227483 MeV (+0.9915%). Log-law binding: 2H 2.83316->2.86125 (+28.62%), 3H 6.6309->6.6967, 3He 4.8839->4.9323, 4He 8.6817->8.7677. Probe-d E0*h*net(p) ansatz 0.78365->0.79142 MeV (vs Kashiwara Q_beta 0.107%->1.10%); probe-d binding negative -75.22%->-74.98%. Baselined on_scale assertion unchanged (already false). Precision gates --changed: NEW 0. NOT switched (outside named scope): forced_link_normalisation_bond_counting, cyclic_triple_under_log_law, normalised_law_residual_shape, surface_exponent_is_dimension probes (own order-zero E0).
