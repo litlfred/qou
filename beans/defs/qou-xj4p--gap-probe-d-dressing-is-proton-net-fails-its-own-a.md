@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-25T10:49:09Z
+updated_at: 2026-11-25T10:57:57Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/probes/probe-d-dressing-is-proton-net.witness.json` was self-stale. Re-running the current producer `computations/probes/probe_d_dressing_is_proton_net.py` (exit 0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold producers that fail their own assertion). Main still carries the old passing witness.
@@ -45,3 +45,18 @@ PR #9416 (draft): https://github.com/litlfred/qou/pull/9416. Owner decision opti
 
 ## 2026-11-25T10:49:08Z — DONE. Owner ruling '1+2 together' (2026-11-25) implemented in PR #9417 (merged)
 Attribution merged in #9416: the unattributed ~7% is the Markov convention C -> D change (exact, path-dependent split). Probe: binding_candidate_subpercent assertion removed, binding recorded as NEGATIVE (-75.22% on the ruled inputs), exact Q(q) identities kept, witness refreshed, audit doc updated.
+
+
+## 2026-11-25 — source of the -75% (measured, no fit)
+
+The candidate is B = E0·net(p)·(tr_free − tr_atom), a RAW trace difference. The pipeline's own
+leading-order form (binding_single_pipeline_comparison.py:215) divides by tr_free:
+s = 1 − tr_atom/tr_free. The two agree only when tr_free ≈ 1.
+
+- Old inputs (conv C, grouped word): tr_free = 0.9835, so the raw Δtr 0.5952 ≈ s 0.6051. Result 2.2309 MeV, +0.29 %.
+- Current inputs (conv D, alternating word): tr_free = 0.2990, tr_atom = 0.1520. Raw Δtr 0.1470, but s = 0.4918 (1/tr_free = 3.344). Result 0.5512 MeV, −75.2 %.
+
+Same E0 (4.18598 MeV) and the same Δtr as binding-single-pipeline-comparison.witness.json, so traces agree across producers.
+On current inputs: E0·net(p)·s = 1.8434 (−17.1 %), E0·s = 2.0585 (−7.5 %), E0·ln(tf/ta) = 2.8332 (+27.4 %).
+So ~3.3× of the miss is the missing tr_free normalisation; the old 0.29 % depended on tr_free happening to be ≈ 1.
+Choosing among these by residual would be selection against the target; not done. Decision for owner.
