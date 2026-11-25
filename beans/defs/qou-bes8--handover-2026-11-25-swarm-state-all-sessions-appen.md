@@ -72,3 +72,16 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 
 
 - compute child (session_01EucfRmFaPKg5KbjjmxSBwx) update 16:5xZ: qou-63be done -> PR #9435 (mutant volume fix + Chmutov-Lando citation), ready.
+
+## Merge manager (session_01EucfRm2khmNLbMgiuTA6UZ) — 2026-11-25 16:30Z
+- Role: merge manager for litlfred/qou. Owner grant until 2026-11-25T22:00Z; owner-rulings rows from 2026-11-24 and 2026-11-25.
+- Process/task: verify each PR on its head (lean-direct sweep on the restored cache, #print axioms, probe re-runs, precision gates, jsonld --check), then merge, then rebuild and publish the PDF.
+- Done: 17 PRs merged. The list with main SHAs is in bean qou-au0d. Most recent is #9431 → 52f9f88dfcd.
+- In flight: #9424 (head f1c5d61dbbf5): verifying now.
+- Next:
+  - #9432 once cat-harness#1405 merges.
+  - PDF rebuild for #9430/#9431 once the coordinator's gh-pages publish is done.
+- Blockers:
+  - cat-harness#1405 is outside the grant.
+  - The merge API intermittently returns 500/502. Re-read main ~30 s after a 5xx before retrying.
+- Resume cold: read bean qou-au0d (queue + traps). Restore the cache with scripts/lean-cache-restore.sh. Shadow builds go under --shadow /home/user/lean-shadow (container-local). Run scripts/setup-folio-assistant.sh to match the pin before gen-block-jsonld --check.
