@@ -75,7 +75,7 @@ theorem tendsto_log_norm_sub_div_atTop {f g : ℕ → ℂ}
     simpa using h.norm
   have hlog : Tendsto (fun N : ℕ => Real.log ‖f N / g N‖) atTop (𝓝 0) := by
     have := (Real.continuousAt_log (one_ne_zero)).tendsto.comp hnorm
-    simpa using this
+    simpa [Function.comp_def] using this
   refine Tendsto.congr' ?_ (hlog.div_atTop tendsto_natCast_atTop_atTop)
   filter_upwards [hf, hg] with N hfN hgN
   rw [norm_div, Real.log_div (norm_ne_zero_iff.mpr hfN) (norm_ne_zero_iff.mpr hgN)]
