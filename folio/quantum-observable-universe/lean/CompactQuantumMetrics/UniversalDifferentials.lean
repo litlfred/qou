@@ -203,7 +203,7 @@ theorem map_one_of_leibniz (D : A →ₗ[R] M)
 /-- The induced map `Ω¹(A) → M`, `Σ xᵢ ⊗ yᵢ ↦ Σ xᵢ • D yᵢ`. -/
 def liftT (D : A →ₗ[R] M) : A ⊗[R] A →ₗ[R] M :=
   TensorProduct.lift
-    { toFun := fun x => DistribMulAction.toLinearMap R M x ∘ₗ D
+    { toFun := fun x => DistribSMul.toLinearMap R M x ∘ₗ D
       map_add' := fun x y => by ext; simp [add_smul]
       map_smul' := fun r x => by ext; simp [smul_assoc] }
 

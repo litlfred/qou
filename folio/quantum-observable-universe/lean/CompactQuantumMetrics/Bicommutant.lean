@@ -98,12 +98,11 @@ theorem centralizer_centralizer_eq [FiniteDimensional K V] (A : Subalgebra K (Mo
   let W : Submodule A (Fin (finrank K V) → V) := Submodule.span A {v}
   obtain ⟨C, hC⟩ := exists_isCompl W
   let π : (Fin (finrank K V) → V) →ₗ[A] (Fin (finrank K V) → V) :=
-    W.subtype ∘ₗ Submodule.linearProjOfIsCompl W C hC
+    W.subtype ∘ₗ Submodule.projectionOnto W C hC
   have hπv : π v = v := by
     have hv : v ∈ W := Submodule.subset_span rfl
     simp only [π, LinearMap.comp_apply]
-    rw [show v = ((⟨v, hv⟩ : W) : Fin (finrank K V) → V) from rfl,
-      Submodule.linearProjOfIsCompl_apply_left]
+    rw [Submodule.projectionOnto_apply_of_mem_left _ hv]
     rfl
   have hmem : diag f v ∈ W := by
     rw [← hπv, diag_comm A hf π v]
