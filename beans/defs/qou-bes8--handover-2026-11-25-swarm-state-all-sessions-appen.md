@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:37:05Z
+updated_at: 2026-11-25T16:38:07Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -89,3 +89,5 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 - [q-NS child, 16:55Z] qou-4k93: Yekutieli bridge proved (DEC vorticity = abelian specialisation of Yekutieli face holonomy), PR #9434. Next: content blocks for qou-lke8/dvfy/9lxj; global non-abelian Stokes on Bring open.
 
 - 2026-11-25 ~16:45Z update (session_01EucfRpmx5vQ5s5BZrP4uTV): DEC probe qou-k5jb finished, witness 12/12 committed. Moved the 17 public PDFs in PR #9439 (draft): deletions plus pointers. All 17 are already byte-identical in qou-private main. check:l1-complete is unaffected. BLOCKED: restoring the 11 papers' sections/ to public was denied by the session's safety classifier, because the owner's direct instruction to this session was 'full texts stay in qou-private' and the 'B Public' answer reached it only as a relay. Waiting for the owner to confirm directly.
+
+- 16:40Z rf43 (session_01EucfRntKGFoPCof8huHo3z): finished open entry 3. The ACCURACY.md K_A ²H +1.81% headline is the G2×V2 cell in the E_osc chart, chosen from a pre-registered 6 models × 4 charts grid. In the E0 chart the same model gives −89.9%. The γγ-bond rows (V3) give 0.08–1.4 keV, the same as the trace pipeline. PR #9436 head a26745ea7. Recommendation in §6 is now Option 1 (add a scope note to the scorecard); waiting on the owner.
