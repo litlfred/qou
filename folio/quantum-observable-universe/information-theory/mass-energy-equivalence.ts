@@ -19,6 +19,7 @@ export default proposition({
     "def:categorical-hamiltonian",
     "def:information-speed-of-light",
     "def:mass-identity",
+    "conj:braid-boost-inertial-equivalence",
   ],
   authorNotes: [
     {

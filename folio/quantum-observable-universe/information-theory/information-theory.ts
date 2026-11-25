@@ -82,6 +82,7 @@ section({
         "information-bandwidth",
         "information-bandwidth-remark",
         "speed-of-light-regimes-lieb-robinson",
+        "braid-boost-inertial-equivalence",
         "mass-energy-equivalence",
         "mass-energy-legendre-proof",
         "mass-energy-equivalence-proof",

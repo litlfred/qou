@@ -8,6 +8,7 @@ NOTHING is auto-injected here (measured) — read this yourself. Sibling files:
 
 - 2026-11-22: cache branch is now `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`; restored UGB oleans STALE (5/8 of HeckeCompletion cone) — `session-log.md`
 
+- 2026-11-24 TRAP: `559a7210bf5` moved ~all QOU modules to new paths/libs (Q3 restructure); the 2026-11-21 cache is layout-stale (3591/3908 never built). Build the file's cone into a `cp -al` shadow — recipe in `session-log.md` 2026-11-24
 - `verification-harness.md` — false greens, partial overlays, exit-139, cone triage, FQN guards
 - `authoring-traps-v4-24-0.md` — module moves, lexer tokens, the small-determinant recipe
 - `session-log.md` — per-session ledger (append there, not here; restructured 2026-09-03)
