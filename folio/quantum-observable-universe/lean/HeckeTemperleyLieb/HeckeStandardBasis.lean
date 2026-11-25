@@ -117,12 +117,14 @@ def permOf : (m : ℕ) → cosetIndex m → Perm (Fin (m + 1))
 theorem permOf_succ (m : ℕ) (p : cosetIndex (m + 1)) :
     permOf (m + 1) p = permIncl m (permOf m p.1) * descPerm m p.2.val := rfl
 
+set_option backward.isDefEq.respectTransparency false in
 /-- `w⁻¹(last)` reads off the top coset representative. -/
 theorem permOf_inv_last (m : ℕ) (b : cosetIndex m) (j : Fin (m + 2)) :
     (permOf (m + 1) (b, j))⁻¹ (Fin.last (m + 1)) = ⟨m + 1 - j.val, by omega⟩ := by
   rw [Perm.inv_eq_iff_eq, permOf_succ, Perm.mul_apply, descPerm_apply m j.val (by omega),
     permIncl_apply_last]
 
+set_option backward.isDefEq.respectTransparency false in
 theorem permOf_injective : ∀ m : ℕ, Function.Injective (permOf m)
   | 0 => fun _ _ _ => rfl
   | (m + 1) => by
@@ -271,7 +273,7 @@ theorem ninv_mul_adjT_of_lt {n : ℕ} (w : Perm (Fin (n + 1))) (i : Fin n)
     (h : w i.castSucc < w i.succ) : ninv (w * adjT i) = ninv w + 1 := by
   set a := i.castSucc
   set b := i.succ
-  have hab : a < b := Fin.castSucc_lt_succ i
+  have hab : a < b := Fin.castSucc_lt_succ (i := i)
   have hsa : adjT i a = b := swap_apply_left _ _
   have hsb : adjT i b = a := swap_apply_right _ _
   have hiff : ∀ p : Fin (n + 1) × Fin (n + 1),
@@ -315,7 +317,7 @@ theorem ninv_mul_adjT_of_lt {n : ℕ} (w : Perm (Fin (n + 1))) (i : Fin n)
 /-- `ninv (v s_i) ≤ ninv v + 1`. -/
 theorem ninv_mul_adjT_le {n : ℕ} (v : Perm (Fin (n + 1))) (i : Fin n) :
     ninv (v * adjT i) ≤ ninv v + 1 := by
-  rcases lt_or_gt_of_ne (v.injective.ne (Fin.castSucc_lt_succ i).ne) with h | h
+  rcases lt_or_gt_of_ne (v.injective.ne (Fin.castSucc_lt_succ (i := i)).ne) with h | h
   · exact (ninv_mul_adjT_of_lt v i h).le
   · have h' : (v * adjT i) i.castSucc < (v * adjT i) i.succ := by
       simpa [adjT, Perm.mul_apply, swap_apply_left, swap_apply_right] using h
