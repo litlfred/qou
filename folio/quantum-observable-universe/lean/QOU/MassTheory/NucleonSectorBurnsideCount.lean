@@ -1,5 +1,6 @@
 import QOU.BraidsAndKnots.NucleonWeightSpaceTraces
 import Mathlib.GroupTheory.Perm.Fin
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # The count 12 as an `S_3` fixed-point count on the nucleon sectors
