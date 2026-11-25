@@ -59,7 +59,9 @@ identity, read through `rightAdjointMate_comp_evaluation`. -/
 theorem rightDualIso_hom_evaluation {A B₁ B₂ : C}
     (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) :
     (((rightDualIso p₁ p₂).hom) ▷ A) ≫ ε_ A B₂ = ε_ A B₁ := by
-  simpa using (@rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A))
+  have h := @rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A)
+  rw [MonoidalCategory.whiskerLeft_id, Category.id_comp] at h
+  exact h
 
 /-- **The comparison of two right duals is unique.**  Any map commuting with the evaluations *is*
 `rightDualIso`.  Mathlib has `rightDualIso` and `rightDualIso_id` and nothing else about it, so
