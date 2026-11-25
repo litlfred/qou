@@ -42,7 +42,7 @@ LaTeX label: `app:surreals` (umbrella)
 
 namespace QOU.AppendixSurreals
 
-universe u
+universe u v
 
 
 /-- A **surreal-coefficient field** `K` is a linearly ordered field
@@ -74,7 +74,7 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
   ofReal_strictMono : StrictMono ofReal
   /-- A birthday function, constrained here only from above (see the class
       docstring; Conway's birthday needs the mixins in `BirthdayFaithful`). -/
-  birthday : K → Ordinal
+  birthday : K → Ordinal.{v}
   /-- The birthday of zero is zero. -/
   birthday_zero : birthday 0 = 0
   /-- The birthday of one is one. -/
@@ -109,7 +109,7 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
   birthday_avg_le : ∀ x y : K,
     birthday ((x + y) / 2) ≤ Ordinal.nadd (birthday x) (birthday y) + 1
   /-- Real numbers have birthday at most ω. -/
-  birthday_ofReal_le_omega : ∀ r : ℝ, birthday (ofReal r) ≤ Ordinal.omega0
+  birthday_ofReal_le_omega : ∀ r : ℝ, birthday (ofReal r) ≤ Ordinal.omega0.{v}
   /-- The first infinite surreal `ω` as an element of `K`.
 
       Conway's construction: `ω = {0, 1, 2, … | }`.  Its existence
@@ -121,7 +121,7 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
 
 /-- Coerce a real into the surreal field. -/
 instance (K : Type u) [SurrealField K] : Coe ℝ K :=
-  ⟨SurrealField.ofReal⟩
+  ⟨SurrealField.ofReal (K := K)⟩
 
 /-- Every `SurrealField K` is canonically an `Algebra ℝ K` via the
     `ofReal` ring homomorphism.  This unlocks Mathlib's
@@ -129,7 +129,7 @@ instance (K : Type u) [SurrealField K] : Coe ℝ K :=
     `Algebra`-flavored API for free. -/
 noncomputable instance SurrealField.toAlgebra (K : Type u) [SurrealField K] :
     Algebra ℝ K :=
-  RingHom.toAlgebra SurrealField.ofReal
+  RingHom.toAlgebra (SurrealField.ofReal (K := K))
 
 namespace SurrealField
 
@@ -142,14 +142,14 @@ def IsFinite (x : K) : Prop :=
 /-- A surreal `x` is **infinitesimal** if it is bounded by every
     positive real. -/
 def IsInfinitesimal (x : K) : Prop :=
-  ∀ ε : ℝ, 0 < ε → |x| < (ofReal ε : K)
+  ∀ ε : ℝ, 0 < ε → |x| < (ofReal (K := K) ε : K)
 
 /-- An infinitesimal is finite. -/
 theorem IsInfinitesimal.isFinite {x : K} (hx : IsInfinitesimal x) :
     IsFinite x := by
   refine ⟨1, ?_⟩
-  have h : |x| < ((ofReal (1 : ℝ) : K)) := hx 1 one_pos
-  have h2 : (ofReal (1 : ℝ) : K) = 1 := by simp [map_one]
+  have h : |x| < ((ofReal (K := K) (1 : ℝ) : K)) := hx 1 one_pos
+  have h2 : (ofReal (K := K) (1 : ℝ) : K) = 1 := by simp [map_one]
   rw [h2] at h
   exact_mod_cast h.le
 
@@ -162,7 +162,7 @@ theorem zero_isInfinitesimal : IsInfinitesimal (0 : K) := by
 
 /-- The image of `ofReal` commutes with `abs`. -/
 theorem ofReal_abs (r : ℝ) :
-    |(SurrealField.ofReal r : K)| = SurrealField.ofReal |r| := by
+    |(SurrealField.ofReal (K := K) r : K)| = SurrealField.ofReal (K := K) |r| := by
   rcases le_or_gt 0 r with hr | hr
   · rw [abs_of_nonneg hr, abs_of_nonneg]
     have h := (SurrealField.ofReal_strictMono (K := K)).monotone hr
@@ -173,7 +173,7 @@ theorem ofReal_abs (r : ℝ) :
 
 /-- A real is infinitesimal in `K` iff it is zero. -/
 theorem ofReal_isInfinitesimal_iff_eq_zero (r : ℝ) :
-    IsInfinitesimal (SurrealField.ofReal r : K) ↔ r = 0 := by
+    IsInfinitesimal (SurrealField.ofReal (K := K) r : K) ↔ r = 0 := by
   refine ⟨fun hinf => ?_, ?_⟩
   · -- Forward: contraposition, choose ε = |r|/2 to get contradiction
     by_contra hne
@@ -184,7 +184,7 @@ theorem ofReal_isInfinitesimal_iff_eq_zero (r : ℝ) :
     rw [ofReal_abs] at h
     -- h : ofReal |r| < ofReal (|r|/2)
     have hlt : |r| / 2 < |r| := by linarith
-    have hmono : SurrealField.ofReal (|r|/2) < (SurrealField.ofReal |r| : K) :=
+    have hmono : SurrealField.ofReal (K := K) (|r|/2) < (SurrealField.ofReal (K := K) |r| : K) :=
       SurrealField.ofReal_strictMono hlt
     linarith
   · rintro rfl
@@ -208,10 +208,10 @@ theorem IsInfinitesimal.add {x y : K}
   have hx' := hx (ε/2) hhalf
   have hy' := hy (ε/2) hhalf
   have hsum : |x + y| ≤ |x| + |y| := abs_add_le x y
-  have hlt : |x| + |y| < SurrealField.ofReal (ε/2) + SurrealField.ofReal (ε/2) := by
+  have hlt : |x| + |y| < SurrealField.ofReal (K := K) (ε/2) + SurrealField.ofReal (K := K) (ε/2) := by
     exact add_lt_add hx' hy'
-  have heq : SurrealField.ofReal (ε/2) + SurrealField.ofReal (ε/2)
-              = (SurrealField.ofReal ε : K) := by
+  have heq : SurrealField.ofReal (K := K) (ε/2) + SurrealField.ofReal (K := K) (ε/2)
+              = (SurrealField.ofReal (K := K) ε : K) := by
     rw [← map_add]; congr 1; ring
   rw [heq] at hlt
   exact lt_of_le_of_lt hsum hlt
@@ -257,32 +257,32 @@ theorem IsInfinitesimal.mul_finite {x y : K}
       have habs_eq : |y| = 0 := le_antisymm hy_abs this
       exact abs_eq_zero.mp habs_eq
     rw [hy_zero, mul_zero, abs_zero]
-    have hpos : (0 : K) < SurrealField.ofReal ε := by
+    have hpos : (0 : K) < SurrealField.ofReal (K := K) ε := by
       have := SurrealField.ofReal_strictMono (K := K) hε
       rwa [map_zero] at this
     exact hpos
   · -- n ≥ 1: use |x| < ofReal (ε / n) and |y| ≤ n.
     have hn_pos_real : (0 : ℝ) < n := by exact_mod_cast hn0
     have hdiv_pos : (0 : ℝ) < ε / n := div_pos hε hn_pos_real
-    have hxlt : |x| < SurrealField.ofReal (ε / n) := hx (ε / n) hdiv_pos
+    have hxlt : |x| < SurrealField.ofReal (K := K) (ε / n) := hx (ε / n) hdiv_pos
     -- |x * y| = |x| * |y| < ofReal(ε/n) * ofReal n = ofReal ε
     have habs_mul : |x * y| = |x| * |y| := abs_mul x y
     have hy_nonneg : (0 : K) ≤ |y| := abs_nonneg y
     have hx_nonneg : (0 : K) ≤ |x| := abs_nonneg x
-    have hofReal_nonneg : (0 : K) ≤ SurrealField.ofReal (ε / n) := by
+    have hofReal_nonneg : (0 : K) ≤ SurrealField.ofReal (K := K) (ε / n) := by
       have := (SurrealField.ofReal_strictMono (K := K)).monotone hdiv_pos.le
       rwa [map_zero] at this
     -- |y| ≤ (n : K) = ofReal n
-    have hyn : |y| ≤ SurrealField.ofReal (n : ℝ) := by
+    have hyn : |y| ≤ SurrealField.ofReal (K := K) (n : ℝ) := by
       have := hn
       -- hn : |y| ≤ (n : K); need same as ofReal (n : ℝ)
-      have heq : (n : K) = SurrealField.ofReal (n : ℝ) := by
-        rw [← map_natCast SurrealField.ofReal n]
+      have heq : (n : K) = SurrealField.ofReal (K := K) (n : ℝ) := by
+        rw [← map_natCast (SurrealField.ofReal (K := K)) n]
       rwa [heq] at this
-    have hlt : |x| * |y| ≤ SurrealField.ofReal (ε / n) * SurrealField.ofReal (n : ℝ) := by
+    have hlt : |x| * |y| ≤ SurrealField.ofReal (K := K) (ε / n) * SurrealField.ofReal (K := K) (n : ℝ) := by
       apply mul_le_mul hxlt.le hyn hy_nonneg hofReal_nonneg
-    have heq_mul : SurrealField.ofReal (ε / n) * SurrealField.ofReal (n : ℝ)
-                    = (SurrealField.ofReal ε : K) := by
+    have heq_mul : SurrealField.ofReal (K := K) (ε / n) * SurrealField.ofReal (K := K) (n : ℝ)
+                    = (SurrealField.ofReal (K := K) ε : K) := by
       rw [← map_mul]; congr 1; field_simp
     rw [heq_mul] at hlt
     -- Strict: |x * y| < ofReal ε.  We have |x * y| = |x| * |y| ≤ ofReal ε.
@@ -291,29 +291,29 @@ theorem IsInfinitesimal.mul_finite {x y : K}
     -- If |y| = 0 then |x|*|y| = 0 < ofReal ε.  Otherwise |y| > 0 and strict.
     rcases eq_or_lt_of_le hy_nonneg with hy0 | hy_pos
     · rw [habs_mul, ← hy0, mul_zero]
-      have hpos : (0 : K) < SurrealField.ofReal ε := by
+      have hpos : (0 : K) < SurrealField.ofReal (K := K) ε := by
         have := SurrealField.ofReal_strictMono (K := K) hε
         rwa [map_zero] at this
       exact hpos
     · rw [habs_mul]
       calc |x| * |y|
-          < SurrealField.ofReal (ε / n) * |y| := by
+          < SurrealField.ofReal (K := K) (ε / n) * |y| := by
             exact (mul_lt_mul_iff_of_pos_right hy_pos).mpr hxlt
-        _ ≤ SurrealField.ofReal (ε / n) * SurrealField.ofReal (n : ℝ) := by
+        _ ≤ SurrealField.ofReal (K := K) (ε / n) * SurrealField.ofReal (K := K) (n : ℝ) := by
             exact mul_le_mul_of_nonneg_left hyn hofReal_nonneg
-        _ = SurrealField.ofReal ε := heq_mul
+        _ = SurrealField.ofReal (K := K) ε := heq_mul
 
 /-- Uniqueness of the real part of a finite surreal: if two reals
     both differ from `x` by an infinitesimal, they are equal. -/
 theorem standardPart_unique {x : K} {r s : ℝ}
-    (hr : IsInfinitesimal (x - SurrealField.ofReal r))
-    (hs : IsInfinitesimal (x - SurrealField.ofReal s)) : r = s := by
+    (hr : IsInfinitesimal (x - SurrealField.ofReal (K := K) r))
+    (hs : IsInfinitesimal (x - SurrealField.ofReal (K := K) s)) : r = s := by
   -- (ofReal r - ofReal s) = (x - ofReal s) - (x - ofReal r) is inf.
   have hdiff : IsInfinitesimal
-      ((SurrealField.ofReal r : K) - SurrealField.ofReal s) := by
+      ((SurrealField.ofReal (K := K) r : K) - SurrealField.ofReal (K := K) s) := by
     have hrewrite :
-        (SurrealField.ofReal r : K) - SurrealField.ofReal s
-          = (x - SurrealField.ofReal s) - (x - SurrealField.ofReal r) := by
+        (SurrealField.ofReal (K := K) r : K) - SurrealField.ofReal (K := K) s
+          = (x - SurrealField.ofReal (K := K) s) - (x - SurrealField.ofReal (K := K) r) := by
       ring
     rw [hrewrite]
     have hadd := hs.add hr.neg
@@ -321,8 +321,8 @@ theorem standardPart_unique {x : K} {r s : ℝ}
     -- goal : IsInfinitesimal (x - ofReal s - (x - ofReal r))
     rw [sub_eq_add_neg]
     exact hadd
-  have heq : (SurrealField.ofReal r : K) - SurrealField.ofReal s
-              = SurrealField.ofReal (r - s) := by rw [map_sub]
+  have heq : (SurrealField.ofReal (K := K) r : K) - SurrealField.ofReal (K := K) s
+              = SurrealField.ofReal (K := K) (r - s) := by rw [map_sub]
   rw [heq] at hdiff
   have := (ofReal_isInfinitesimal_iff_eq_zero (K := K) (r - s)).mp hdiff
   linarith
@@ -333,7 +333,7 @@ theorem standardPart_unique {x : K} {r s : ℝ}
     uses Dedekind completeness of ℝ. -/
 -- Ref: [robinson1966] §3.2, [alling1987] Theorem 4.7.2
 theorem isFinite_has_standardPart {x : K} (hx : IsFinite x) :
-    ∃ r : ℝ, IsInfinitesimal (x - SurrealField.ofReal r) := by
+    ∃ r : ℝ, IsInfinitesimal (x - SurrealField.ofReal (K := K) r) := by
   obtain ⟨n, hn⟩ := hx
   -- |x| ≤ (n : K), so -(n : K) ≤ x ≤ (n : K).
   have hx_le : x ≤ (n : K) := le_trans (le_abs_self x) hn
@@ -342,12 +342,12 @@ theorem isFinite_has_standardPart {x : K} (hx : IsFinite x) :
     have hnn : -(n : K) ≤ -|x| := neg_le_neg hn
     linarith
   -- S := { q : ℝ | ofReal q ≤ x }
-  set S : Set ℝ := { q : ℝ | (SurrealField.ofReal q : K) ≤ x } with hS_def
+  set S : Set ℝ := { q : ℝ | (SurrealField.ofReal (K := K) q : K) ≤ x } with hS_def
   have hne : S.Nonempty := by
     refine ⟨-(n : ℝ), ?_⟩
-    change (SurrealField.ofReal (-(n : ℝ)) : K) ≤ x
+    change (SurrealField.ofReal (K := K) (-(n : ℝ)) : K) ≤ x
     rw [map_neg]
-    have : SurrealField.ofReal ((n : ℝ)) = ((n : K)) := by
+    have : SurrealField.ofReal (K := K) ((n : ℝ)) = ((n : K)) := by
       rw [map_natCast]
     rw [this]
     exact hneg_le_x
@@ -356,16 +356,16 @@ theorem isFinite_has_standardPart {x : K} (hx : IsFinite x) :
     intro q hq
     by_contra hgt
     push_neg at hgt
-    have h1 : (SurrealField.ofReal (n : ℝ) : K) < SurrealField.ofReal q :=
+    have h1 : (SurrealField.ofReal (K := K) (n : ℝ) : K) < SurrealField.ofReal (K := K) q :=
       SurrealField.ofReal_strictMono hgt
     rw [map_natCast] at h1
-    have : (SurrealField.ofReal q : K) > x := lt_of_le_of_lt hx_le h1
+    have : (SurrealField.ofReal (K := K) q : K) > x := lt_of_le_of_lt hx_le h1
     exact absurd hq (not_le.mpr this)
   set r := sSup S with hr_def
   refine ⟨r, ?_⟩
   intro ε hε
   -- Upper bound: r + ε > r = sup S, so ofReal (r + ε) ∉ S.
-  have hr_plus : x < SurrealField.ofReal (r + ε) := by
+  have hr_plus : x < SurrealField.ofReal (K := K) (r + ε) := by
     by_contra hle
     push_neg at hle
     have h_in_S : r + ε ∈ S := hle
@@ -374,17 +374,17 @@ theorem isFinite_has_standardPart {x : K} (hx : IsFinite x) :
   -- Lower bound: ∃ s ∈ S with r - ε < s.
   have hrε_lt_r : r - ε < r := by linarith
   obtain ⟨s, hs_in, hs_gt⟩ := exists_lt_of_lt_csSup hne hrε_lt_r
-  have hof_s_le : (SurrealField.ofReal s : K) ≤ x := hs_in
-  have hr_minus : (SurrealField.ofReal (r - ε) : K) < x := by
-    have hlt : (SurrealField.ofReal (r - ε) : K) < SurrealField.ofReal s :=
+  have hof_s_le : (SurrealField.ofReal (K := K) s : K) ≤ x := hs_in
+  have hr_minus : (SurrealField.ofReal (K := K) (r - ε) : K) < x := by
+    have hlt : (SurrealField.ofReal (K := K) (r - ε) : K) < SurrealField.ofReal (K := K) s :=
       SurrealField.ofReal_strictMono hs_gt
     linarith
   -- Combine: |x - ofReal r| < ofReal ε.
-  have hmap_add : (SurrealField.ofReal (r + ε) : K)
-                    = SurrealField.ofReal r + SurrealField.ofReal ε := by
+  have hmap_add : (SurrealField.ofReal (K := K) (r + ε) : K)
+                    = SurrealField.ofReal (K := K) r + SurrealField.ofReal (K := K) ε := by
     rw [map_add]
-  have hmap_sub : (SurrealField.ofReal (r - ε) : K)
-                    = SurrealField.ofReal r - SurrealField.ofReal ε := by
+  have hmap_sub : (SurrealField.ofReal (K := K) (r - ε) : K)
+                    = SurrealField.ofReal (K := K) r - SurrealField.ofReal (K := K) ε := by
     rw [map_sub]
   rw [hmap_add] at hr_plus
   rw [hmap_sub] at hr_minus
@@ -397,7 +397,7 @@ theorem isFinite_has_standardPart {x : K} (hx : IsFinite x) :
     The real is unique (= the standard part). -/
 -- Ref: [robinson1966] §3.2, [alling1987] Theorem 4.7.2
 theorem isFinite_decomposition {x : K} (hx : IsFinite x) :
-    ∃! r : ℝ, IsInfinitesimal (x - ofReal r) := by
+    ∃! r : ℝ, IsInfinitesimal (x - ofReal (K := K) r) := by
   obtain ⟨r, hr⟩ := isFinite_has_standardPart hx
   exact ⟨r, hr, fun s hs => standardPart_unique hs hr⟩
 
