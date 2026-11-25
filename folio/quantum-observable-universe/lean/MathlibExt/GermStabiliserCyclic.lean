@@ -189,7 +189,7 @@ theorem derivHom_injective (heff : ∀ g : G, A.act g =ᶠ[𝓝 0] id → g = 1)
 /-- **M1b.** A finite group acting effectively by strictly differentiable germs fixing a point,
 over a complete nontrivially normed field of characteristic zero, is cyclic. -/
 theorem isCyclic (heff : ∀ g : G, A.act g =ᶠ[𝓝 0] id → g = 1) : IsCyclic G :=
-  isCyclic_of_subgroup_isDomain A.derivHom (A.derivHom_injective heff)
+  isCyclic_of_injective_ringHom A.derivHom (A.derivHom_injective heff)
 
 end Linearizer
 
