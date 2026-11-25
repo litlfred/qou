@@ -200,20 +200,20 @@ theorem s₀_mul_w (k : Fin 6) : s₀ q qi * w q qi k ∈ S q qi := by
   have h := s₀_sq q qi
   fin_cases k
   · simpa [w] using w_mem q qi 1
-  · simp only [w]; simpa [h] using lin_mem q qi (q - qi) 1 0
+  · simp only [w]; simpa [w, h] using lin_mem q qi (q - qi) 1 0
   · simpa [w] using w_mem q qi 3
   · have e : s₀ q qi * (s₀ q qi * s₁ q qi) = (q - qi) • (s₀ q qi * s₁ q qi) + s₁ q qi := by
       rw [← mul_assoc, h, add_mul, smul_mul_assoc, one_mul]
-    simp only [w]; simpa [e] using lin_mem q qi (q - qi) 3 2
+    simp only [w]; simpa [w, e] using lin_mem q qi (q - qi) 3 2
   · have e : s₀ q qi * (s₁ q qi * s₀ q qi) = s₀ q qi * s₁ q qi * s₀ q qi := by
       rw [mul_assoc]
-    simp only [w]; simpa [e] using w_mem q qi 5
+    simp only [w]; simpa [w, e] using w_mem q qi 5
   · have e : s₀ q qi * (s₀ q qi * s₁ q qi * s₀ q qi)
         = (q - qi) • (s₀ q qi * s₁ q qi * s₀ q qi) + s₁ q qi * s₀ q qi := by
       rw [show s₀ q qi * (s₀ q qi * s₁ q qi * s₀ q qi)
           = (s₀ q qi * s₀ q qi) * (s₁ q qi * s₀ q qi) by noncomm_ring, h, add_mul,
         smul_mul_assoc, one_mul, ← mul_assoc]
-    simp only [w]; simpa [e] using lin_mem q qi (q - qi) 5 4
+    simp only [w]; simpa [w, e] using lin_mem q qi (q - qi) 5 4
 
 theorem s₁_mul_w (k : Fin 6) : s₁ q qi * w q qi k ∈ S q qi := by
   have h := s₁_sq q qi
@@ -221,19 +221,19 @@ theorem s₁_mul_w (k : Fin 6) : s₁ q qi * w q qi k ∈ S q qi := by
   fin_cases k
   · simpa [w] using w_mem q qi 2
   · simpa [w] using w_mem q qi 4
-  · simp only [w]; simpa [h] using lin_mem q qi (q - qi) 2 0
+  · simp only [w]; simpa [w, h] using lin_mem q qi (q - qi) 2 0
   · have e : s₁ q qi * (s₀ q qi * s₁ q qi) = s₀ q qi * s₁ q qi * s₀ q qi := by
       rw [hb, mul_assoc]
-    simp only [w]; simpa [e] using w_mem q qi 5
+    simp only [w]; simpa [w, e] using w_mem q qi 5
   · have e : s₁ q qi * (s₁ q qi * s₀ q qi) = (q - qi) • (s₁ q qi * s₀ q qi) + s₀ q qi := by
       rw [← mul_assoc, h, add_mul, smul_mul_assoc, one_mul]
-    simp only [w]; simpa [e] using lin_mem q qi (q - qi) 4 1
+    simp only [w]; simpa [w, e] using lin_mem q qi (q - qi) 4 1
   · have e : s₁ q qi * (s₀ q qi * s₁ q qi * s₀ q qi)
         = (q - qi) • (s₀ q qi * s₁ q qi * s₀ q qi) + s₀ q qi * s₁ q qi := by
       rw [hb, show s₁ q qi * (s₁ q qi * s₀ q qi * s₁ q qi)
           = (s₁ q qi * s₁ q qi) * (s₀ q qi * s₁ q qi) by noncomm_ring, h, add_mul,
         smul_mul_assoc, one_mul, ← mul_assoc, ← hb]
-    simp only [w]; simpa [e] using lin_mem q qi (q - qi) 5 3
+    simp only [w]; simpa [w, e] using lin_mem q qi (q - qi) 5 3
 
 theorem gen_mul_mem (i : {i : ℕ // i + 1 < 3}) (y : Hn 3 q qi) (hy : y ∈ S q qi) :
     RingQuot.mkAlgHom K (HeckeRelN 3 q qi) (FreeAlgebra.ι K i) * y ∈ S q qi := by
