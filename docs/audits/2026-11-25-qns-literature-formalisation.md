@@ -149,3 +149,38 @@ claim that no condition can. The literature's mechanism (a horizon or cutoff
 regularity that admits exactly one viscosity) has no QOU counterpart yet. The
 Habiro row is the sharpest: if the paper ever asks ν_q to live in the same
 integral ring as its other q-objects, the factor ½ has to go or be justified.
+
+## Addendum: abelian DEC Stokes vs Yekutieli's non-abelian Stokes (bean `qou-4k93`)
+
+Owner question, verbatim: *"is the discrete Stokes, discrete na-Stokes per
+yektieli? do we need to use that?"*
+
+**Answer: the DEC Stokes of #9434 is the abelian specialisation of Yekutieli's
+discrete multiplicative integral. For the velocity 1-form, the abelian form is
+all that is needed.** Lean: `QOU/FluidDynamics/DECYekutieliStokes.lean`,
+lean-direct exit 0 (with `MathlibExt/YekutieliIntegration` and
+`DECNavierStokes` built into a scratch olean dir; neither is in the restored
+cache). Axioms: `propext`, `Classical.choice`, `Quot.sound` only.
+
+- `faceHolonomy`: Yekutieli face holonomy, i.e. the path-ordered product
+  `MathlibExt.YekutieliIntegration.holonomy` along a face's oriented boundary
+  word. It works for any group G.
+- `faceHolonomy_abelian`, `faceHolonomy_eq_vort` (general → paper): for the
+  abelian connection U = ofAdd ∘ v, the face holonomy equals ofAdd((d₁v)_f).
+  Here d₁ is the signed incidence read off the same boundary words, so the
+  DEC vorticity `DEC.Complex2.vort` is the abelian case. Provenance runs both
+  ways: the DEC file cites Mohamed–Hirani–Samtaney, and this file cites
+  Yekutieli and proves the specialisation.
+- `faceHolonomy_perm_abelian`: only in the abelian case can a boundary word be
+  reordered or rebased freely.
+
+**Where q-NS would need the non-abelian form:** a connection-valued vorticity.
+Two cases: the SU_q(2) connection of the gauge-covariant diffusion
+(`q-ns-properties.md` item 2), or braid / Hecke-valued edge transports. In
+both, the curvature of a face is a group element defined up to conjugation,
+and the energy identities of #9434 no longer apply verbatim.
+
+**Not done:** the global non-abelian Stokes theorem on Bring. It would say
+that the ordered, conjugated product of the 24 face holonomies equals the
+product of commutators of the 8 generators. It needs a spanning tree and a face
+order of the Bring map in Lean.
