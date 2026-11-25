@@ -108,10 +108,11 @@ theorem coeffAt_sub (f h : QuantumTorus A) (e : ℤ) :
   simp only [coeffAt]
   have hneg : (-h).coeff (Multiplicative.ofAdd e)
       = -(h.coeff (Multiplicative.ofAdd e)) := by
-    have hz := coeff_add h (-h) (Multiplicative.ofAdd e)
-    rw [add_neg_cancel, coeff_zero] at hz
+    have hz := congrArg (fun F => F (Multiplicative.ofAdd e)) (coeff_add h (-h))
+    simp only [add_neg_cancel, coeff_zero, Finsupp.add_apply, Finsupp.coe_zero,
+      Pi.zero_apply] at hz
     linear_combination -hz
-  rw [sub_eq_add_neg, coeff_add, hneg, ← sub_eq_add_neg]
+  rw [sub_eq_add_neg, coeff_add, Finsupp.add_apply, hneg, ← sub_eq_add_neg]
 
 /-- **Top-coefficient cancellation (PROVED).**  One reduction step removes the
     `L^e` term: the `L^e` coefficient of `f - reductionQuotient·g` is `0`.
