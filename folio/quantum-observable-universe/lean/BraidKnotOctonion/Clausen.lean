@@ -102,7 +102,7 @@ theorem hasDerivAt_clausen {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
   have hmeas : StronglyMeasurableAtFilter
       (fun t => -Real.log (2 * Real.sin (t / 2))) (𝓝 θ) volume :=
     (ContinuousAt.stronglyMeasurableAtFilter (μ := volume) isOpen_Ioo hcontOn) θ ⟨h0, h2⟩
-  simpa only [clausen] using integral_hasDerivAt_right hint hmeas hg
+  exact integral_hasDerivAt_right hint hmeas hg
 
 /-- **`Cl_2` is continuous (Route-B support brick, sorry-free).** Weierstrass
     M-test: each term `θ ↦ sin((k+1)θ)/(k+1)²` is continuous and bounded by the
@@ -120,7 +120,7 @@ theorem continuous_Cl_2 : Continuous QOU.Archimedean.Cl_2 := by
       rw [Real.norm_eq_abs, abs_div, abs_of_pos (by positivity : (0 : ℝ) < ((k : ℝ) + 1) ^ 2)]
       gcongr
       exact abs_le.mpr ⟨Real.neg_one_le_sin _, Real.sin_le_one _⟩)
-  simpa only [QOU.Archimedean.Cl_2] using hcont
+  exact hcont
 
 /-- **Abel-regularisation of `Cl_2` (assembly brick, sorry-free).** As `x → 1⁻`,
     `∑ₙ (sin(nθ)/n²) xⁿ → Cl_2 θ` — Abel's limit theorem
@@ -140,7 +140,7 @@ theorem tendsto_Cl_2_reg (θ : ℝ) :
     · gcongr
       exact abs_le.mpr ⟨Real.neg_one_le_sin _, Real.sin_le_one _⟩
   have hCl : ∑' n : ℕ, Real.sin (n * θ) / (n : ℝ) ^ 2 = QOU.Archimedean.Cl_2 θ := by
-    rw [tsum_eq_zero_add hsum, QOU.Archimedean.Cl_2]
+    rw [hsum.tsum_eq_zero_add, QOU.Archimedean.Cl_2]
     simp
   rw [← hCl]
   exact Real.tendsto_tsum_powerSeries_nhdsWithin_lt hsum.hasSum.tendsto_sum_nat
@@ -868,7 +868,7 @@ theorem sum_log_sin_le_integral_Icc {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
       ≤ ∫ u in ((π : ℝ) / N)..(((k : ℝ) + 1) * (π / N)),
           Real.log (2 * Real.sin u) := by
   have h := sum_log_sin_le_integral hN hk hhalf
-  rwa [Nat.Ico_succ_right] at h
+  rwa [Finset.Ico_add_one_right_eq_Icc] at h
 
 /-- **Saddle brick E4e-i, lower (sorry-free).** The Kashaev-indexed rising-half
     lower bound: `∫_{π/N}^{kπ/N} + (π/N)·log(2sin(π/N)) ≤ (π/N)·Σ_{j∈Icc 1 k}` —
@@ -891,16 +891,16 @@ theorem integral_le_sum_log_sin_Icc {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
     rw [h1, Finset.sum_insert (by simp [Finset.mem_Icc])]
     congr 1
     · norm_num
-    · rw [← Nat.Ico_succ_right,
+    · rw [← Finset.Ico_add_one_right_eq_Icc,
         show Finset.Ico 2 (k + 1)
-          = Finset.map ⟨fun i => i + 1, fun a b h => by simpa using h⟩ (Finset.Ico 1 k) from ?_,
+          = Finset.map (addRightEmbedding 1) (Finset.Ico 1 k) from ?_,
         Finset.sum_map]
       · refine Finset.sum_congr rfl (fun i _ => ?_)
-        simp only [Function.Embedding.coeFn_mk]
+        simp only [addRightEmbedding_apply]
         push_cast
         ring_nf
       · ext x
-        simp only [Finset.mem_Ico, Finset.mem_map, Function.Embedding.coeFn_mk]
+        simp only [Finset.mem_Ico, Finset.mem_map, addRightEmbedding_apply]
         constructor
         · intro hx
           exact ⟨x - 1, by omega, by omega⟩
@@ -913,14 +913,14 @@ theorem integral_le_sum_log_sin_Icc {N k : ℕ} (hN : 1 ≤ N) (hk : 1 ≤ k)
     set `Icc (m+1) k` to right-endpoint form over `Ico m k`. -/
 theorem sum_Icc_succ_eq_sum_Ico (g : ℕ → ℝ) (m k : ℕ) :
     ∑ j ∈ Finset.Icc (m + 1) k, g j = ∑ i ∈ Finset.Ico m k, g (i + 1) := by
-  rw [← Nat.Ico_succ_right,
+  rw [← Finset.Ico_add_one_right_eq_Icc,
     show Finset.Ico (m + 1) (k + 1)
-      = Finset.map ⟨fun i => i + 1, fun a b h => by simpa using h⟩ (Finset.Ico m k)
+      = Finset.map (addRightEmbedding 1) (Finset.Ico m k)
       from ?_,
     Finset.sum_map]
   · rfl
   · ext x
-    simp only [Finset.mem_Ico, Finset.mem_map, Function.Embedding.coeFn_mk]
+    simp only [Finset.mem_Ico, Finset.mem_map, addRightEmbedding_apply]
     constructor
     · intro hx
       exact ⟨x - 1, by omega, by omega⟩
@@ -940,7 +940,7 @@ theorem sum_Ico_eq_add_sum_Icc_sub (g : ℕ → ℝ) {m k : ℕ} (hmk : m ≤ k)
       simp only [Finset.mem_Ico, Finset.mem_insert]
       omega
     have h2 : Finset.Icc (m + 1) k = insert k (Finset.Ico (m + 1) k) := by
-      rw [← Nat.Ico_succ_right, Nat.Ico_succ_right_eq_insert_Ico (by omega)]
+      rw [← Finset.Ico_add_one_right_eq_Icc, ← Finset.insert_Ico_right_eq_Ico_add_one (by omega)]
     rw [h1, Finset.sum_insert (by simp), h2, Finset.sum_insert (by simp)]
     ring
 
@@ -1314,7 +1314,7 @@ theorem abs_deviation_le {N k : ℕ} (hN : 4 ≤ N) (hk : 1 ≤ k) (hkN : k ≤ 
     have hstep := abs_deviation_succ (N := N) (k := m₀)
       (by omega : 1 ≤ m₀) (by omega : m₀ + 1 ≤ N - 1) hdev_m₀
     linarith [hstep]
-  rcases le_or_lt (k + 1) m₀ with hA | hA
+  rcases le_or_gt (k + 1) m₀ with hA | hA
   · -- rising range: E5c-1 directly
     have hhalf : ((k : ℝ) + 1) * (π / N) ≤ π / 2 := by
       have h := hhalf_of (k + 1) (by omega)
@@ -1348,8 +1348,8 @@ theorem abs_deviation_le {N k : ℕ} (hN : 4 ≤ N) (hk : 1 ≤ k) (hkN : k ≤ 
                 Real.log (2 * Real.sin ((j : ℝ) * (π / N))))
               + ∑ j ∈ Finset.Icc (m₀ + 1 + 1) k,
                   Real.log (2 * Real.sin ((j : ℝ) * (π / N))) := by
-          rw [← Nat.Ico_succ_right 1 k, ← Nat.Ico_succ_right 1 (m₀ + 1),
-            ← Nat.Ico_succ_right (m₀ + 1 + 1) k]
+          rw [← Finset.Ico_add_one_right_eq_Icc 1 k, ← Finset.Ico_add_one_right_eq_Icc 1 (m₀ + 1),
+            ← Finset.Ico_add_one_right_eq_Icc (m₀ + 1 + 1) k]
           exact (Finset.sum_Ico_consecutive _
             (by omega : 1 ≤ m₀ + 1 + 1) (by omega : m₀ + 1 + 1 ≤ k + 1)).symm
         rw [hsplit, mul_add]
