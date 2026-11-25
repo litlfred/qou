@@ -97,7 +97,7 @@ def map (f : E → F) (D : Code E) : Code F :=
   ⟨D.xs.map (Crossing.map f), D.js.map (Prod.map f (Prod.map f id))⟩
 
 @[simp] theorem map_id (D : Code E) : D.map id = D := by
-  cases D; simp [map]
+  cases D; simp [map, show Crossing.map (id : E → E) = id from funext Crossing.map_id]
 
 theorem map_map (f : E → F) (g : F → G) (D : Code E) :
     (D.map f).map g = D.map (g ∘ f) := by
