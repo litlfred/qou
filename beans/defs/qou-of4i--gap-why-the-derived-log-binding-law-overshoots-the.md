@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T11:23:57Z
-updated_at: 2026-11-25T16:24:42Z
+updated_at: 2026-11-25T16:25:41Z
 parent: qou-s028
 ---
 
@@ -23,3 +23,9 @@ Still open (do not close; the deuteron on the ruled gg word is open in qou-brng)
 
 ## 2026-11-25 owner ruling 'A ruled tower' applied (commit f1c5d61db, PR #9424)
 binding_log_free_energy.py + probe_d_dressing_is_proton_net.py + probe_d_dressing_cross_a.py now use qbeta_e0.tower_summed_scaled (new). E0 4.185981 -> 4.227483 MeV (+0.9915%). Log-law binding: 2H 2.83316->2.86125 (+28.62%), 3H 6.6309->6.6967, 3He 4.8839->4.9323, 4He 8.6817->8.7677. Probe-d E0*h*net(p) ansatz 0.78365->0.79142 MeV (vs Kashiwara Q_beta 0.107%->1.10%); probe-d binding negative -75.22%->-74.98%. Baselined on_scale assertion unchanged (already false). Precision gates --changed: NEW 0. NOT switched (outside named scope): forced_link_normalisation_bond_counting, cyclic_triple_under_log_law, normalised_law_residual_shape, surface_exponent_is_dimension probes (own order-zero E0).
+
+## RESUME STATE (session end, 2026-11-25T16:30Z)
+Branch claude/deuteron-overshoot-loci-2026-11-25, head f1c5d61dbbf57475899d185cd17a0fb3f8292e7c, pushed, tree clean. Draft PR #9424 (body current).
+Done: probe computations/probes/deuteron_overshoot_loci/ (RESULTS.md §0-5); Lean QOU/Nuclear/UniversalScaleMinimax.lean + BondScaleUniversality.lean (lean-direct exit 0, standard axioms); owner card 4 'A ruled tower' applied (f1c5d61db); precision gates NEW 0.
+Branch is 68 commits behind main: the merge manager should merge main before /prepare-merge. Possible conflict surface: binding-log-free-energy.witness.json and probe-d witnesses if main touched them.
+Open: (1) owner decision whether the four other log-law probes with their own order-zero E0 should switch (listed in RESULTS §5); (2) the deuteron on the gg-ruled word is unbound (mu_pn > 1), owned by qou-brng. Do NOT close this bean (Rule 13a: the deuteron derivation is open).
