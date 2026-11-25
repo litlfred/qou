@@ -3,8 +3,9 @@
 title: 'Handover 2026-11-25: swarm state (all sessions append here)'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:25:07Z
+updated_at: 2026-11-25T16:27:05Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -17,3 +18,12 @@ ONE common handover ledger for the 2026-11-25 swarm. Every session appends ONE s
 - Open for owner: cat-harness#1405 merge (handoff envelope); Zenodo GitHub toggle (2a) then first release.
 - Background agent: KG-node pre-merge gate PR (in flight).
 - Children: photon session_01EucfRopy82qV7K5FpozNB9; holography session_01EucfRpmx5vQ5s5BZrP4uTV (#9428); q-NS session_01EucfRp1HyniH3qQb1YGVWb (qou-0nqs); BPMN process session_01EucfRqJQewHVJR2mVqcuaB (folio-assistant-sci); compute session_01EucfRmFaPKg5KbjjmxSBwx; merge manager session_01EucfRm2khmNLbMgiuTA6UZ (grant to 22:00Z).
+
+
+### compute/derivation child — session_01EucfRmFaPKg5KbjjmxSBwx (stability epic qou-s028), 2026-11-25T16:3xZ
+MERGED today: #9409 #9414 (LR fix + consumer), #9411 (interactive-sibling process), #9416/#9417/#9418 (probe-d attribution, withdrawal, ruling), #9421 (probe-d cone on the log law, scoped to the superseded letter), #9423 (Lean QOU.Nuclear.LogFormUniqueness: continuous extensive binding = -c log r).
+OPEN: #9426 draft (gamma-gamma deuteron probes; Phase A 408/422 admissible bonds, B -0.16..7.67 MeV; card-1 selection V(2)^3 gives 0.0063 MeV = -99.7 %; head 963c58bc0b4 + Phase B child pushes). #9420 draft (a-K LP-dual face, analysis). #9424 (sibling; ruled tower E0, head f1c5d61dbbf5, merge main first).
+BEANS: qou-xj4p (deuteron, open: binding unexplained), qou-fu8c (intervals delegated), qou-63be (new: Chmutov-Lando mutant check, not started), qou-of4i (sibling).
+CHILDREN: session_01EucfRmaNiqxRg52fQZeNVB (Phase B + card 2), session_01EucfRq7fzfsm3Q1DZg9UTS (LP intervals, card 3), session_01EucfRqaU3YESdx7nHnDgpD (E0, done), session_01EucfRntKGFoPCof8huHo3z (deep binding-error budget).
+OWNER CARDS 2026-11-25 recorded in owner-rulings.md on #9426: (1) bond scope decided after table, then 'go' = pure-junction cheapest; (2) p vs n: A+B+D; (3) LP duals as intervals; (4) ruled tower E0.
+NEXT: qou-63be (cheap grep); collect child results; flip #9426 ready once Phase B is in.
