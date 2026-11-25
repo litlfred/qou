@@ -232,6 +232,7 @@ carry is the one this lemma is about. -/
 theorem eval_negTwist_one (E : TwistedEq V) (x : V → R) :
     E.negTwist.eval (1 : R) x = E.eval (1 : R) x := by
   simp [TwistedEq.eval, TwistedEq.negTwist]
+  rfl
 
 /-- **A `σ`-fixed point lies in both varieties.**  If every Ptolemy coordinate of `x` is
 fixed by `σ`, then `x` solves `P^c` and `P^{−c}` simultaneously.
