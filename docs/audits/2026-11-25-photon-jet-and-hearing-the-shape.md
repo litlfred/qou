@@ -537,3 +537,113 @@ products of at most k sliding photons (owner ruling 2026-11-22, generators σᵢ
 - **P16.** The bound identity Σ_{r=1}^{n−1} ⌈r/2⌉ = ⌊n²/4⌋ holds for every n ≥ 1.
 - **P17.** The discussion's "gap ⌊(n−1)/4⌋" between its two bounds is wrong at n = 4
   (bounds 3 and 4, gap 1, formula 0).
+
+### §12.1 Results
+
+`photon_stopping_depth_probe.py` → `photon-stopping-depth.witness.json`. Exact modular
+rank, two primes, a random q each. Full rank at L(n) is a certificate. Non-fullness at
+L(n) − 1 is probabilistic (Schwartz–Zippel), and the two runs agree.
+
+| n | ⌈N/2⌉ | ⌊n²/4⌋ | ranks of F_k | L(n) |
+|---|---|---|---|---|
+| 3 | 2 | 2 | 1, 4, 6 | 2 |
+| 4 | 3 | 4 | 1, 6, 15, 22, 24 | 4 |
+| 5 | 5 | 6 | 1, 8, 29, 64, 98, 116, 120 | **6** (P14 confirmed) |
+| 6 | 8 | 9 | 1, 10, 47, 139, 292, 469, 612, 690, 716, 720 | **9** (P15 confirmed) |
+
+P16 is proved in Lean (`PhotonStoppingDepth.sum_ceil_half`). P17 is confirmed, and the
+discussion's gap formula is wrong more often than at n = 4. The gap
+⌊n²/4⌋ − ⌈N/2⌉ equals **⌊n/4⌋** for n = 2…12, not ⌊(n−1)/4⌋; they differ whenever
+4 | n.
+
+**L(n) = ⌊n²/4⌋ at every measured n.** The staircase upper bound is attained, and the
+lower bound ⌈N/2⌉ is not attained for any n ≥ 4. Stated as a conjecture
+(`conj:photon-stopping-depth`). A proof would need a lower bound sharper than the Coxeter
+length bound, for example a filtration in which a vertex counts for exactly one
+"forward pair" and a backward pair s_{i+1}s_i costs two.
+
+### §12.2 Critique of part 1 (stopping depth): correct up to repairable slips
+
+1. **Lower bound: correct.** F₁ ⊆ C₂ because σᵢ = T_{sᵢ} and σᵢσᵢ₊₁⁻¹ =
+   T_{sᵢsᵢ₊₁} − h·T_{sᵢ}. C_aC_b ⊆ C_{a+b}, and T_{w₀} ∉ C_{N−1}. Lean proves the
+   implication abstractly (`photon_pow_le`, `depth_lower_bound`).
+2. **"C_a·C_b = C_{a+b}" is overstated.** Only ⊆ holds in general. Equality holds for
+   a + b ≤ N (split a reduced word). Harmless here.
+3. **Staircase upper bound: the argument as written is incomplete, and the bound is true.**
+   The discussion produces an element of F_k whose leading term is T_{w₀}. To conclude
+   F_k = H_n one needs, for **every** w, an element of F_k equal to T_w plus terms of
+   smaller Coxeter length (unitriangularity). Repair:
+   - every w has a reduced word that is a product of increasing runs of lengths r_j ≤ j,
+     for j = 1 … n−1 (the inverse of the decreasing-run normal form of w⁻¹);
+   - each run of length r is a product of ⌊r/2⌋ vertices and at most one σ, up to
+     shorter terms;
+   - so the cost is at most Σ_j ⌈j/2⌉ = ⌊n²/4⌋ (Lean: `sum_ceil_half`), and the n!
+     leading terms span.
+   Lean proves the Hecke-free parts. The Iwahori–Matsumoto facts are explicit, cited
+   hypotheses, since the corpus has a concrete model of H₃(q) only.
+4. **Numbers.** L(3) = 2 and L(4) = 4 are correct. The prediction L(5) ∈ {5, 6} is correct,
+   and the value is 6. The gap formula is wrong (above).
+
+No critical issue. Part 1 is incorporated: `prop:photon-filtration-depth-bounds` and
+`conj:photon-stopping-depth`.
+
+### §12.3 Critique of part 2 (triangulations, holography, q-Navier–Stokes): not incorporated
+
+Each claim below is either an analogy with no derivation in the corpus, or wrong.
+
+- **"A 2–2 flip is algebraically identical to the braid relation."** Wrong as stated. In
+  Turaev–Viro-type state sums, a 2–2 Pachner move is an associator / F-move (6j symbol).
+  The braid relation is a Yang–Baxter (R-matrix) identity. They are different moves.
+- **"Each triangle's dual vertex is the 3-strand arena H₃."** No construction in the corpus
+  assigns H₃(q) to a triangle. Analogy.
+- **"r = −ln|q| as the radial coordinate."** At the substrate q₀ ≈ 1.11 this is negative,
+  so it does not parametrise a radius in the stated direction.
+- **"k rings of triangles ↔ k photons."** No map is given. The photon depth is a property of
+  H_n(q), not of a tiling.
+- **"Cochain projection"** Π₁(ψ)(w) = tr(ψw). This is a definable linear functional. Calling
+  it velocity, circulation or vorticity is interpretation. "Coboundary around a triangle
+  evaluates V₀" is not derived.
+- **"S₅ forces a strictly positive spectral gap λ₁ > 0."** λ₁ > 0 holds on every compact
+  connected surface, whatever its symmetry, so S₅ plays no role.
+- **Navier–Stokes regularity.** A finite filtration depth, the quadratic Hecke relation and a
+  finite triangulation make a finite-dimensional system. They say nothing about blow-up of
+  the continuum equations, which is what the Millennium problem asks. Identifying
+  ℏ_q = 1 − q⁻¹ with viscosity is a naming, and matching it to physics would be a fit.
+  The corpus has its own q-NS chapter. Nothing here connects to it.
+- **Fluid/gravity correspondence.** The papers cited by the discussion
+  (Bhattacharyya–Hubeny–Minwalla–Rangamani 2008; Bredberg–Keeler–Lysov–Strominger 2011)
+  are real, but they rely on bulk Einstein equations that QOU does not have. Analogy.
+- **Correct:** the "inaudible kernel" is the commutator space [H_n, H_n]. Every trace
+  vanishes on it, and for split semisimple H_n the traces are exactly the functionals on
+  H_n/[H_n, H_n]. This is already in `conj:bring-isospectrality-question`, item 3.
+
+## §13 Test of the existing rules on the 8 factorisations (owner: "Test whether an existing rule already forces it")
+
+`borromean_factorisation_selection_probe.py` → `borromean-factorisation-selection.witness.json`
+(at q₀, 60 dps); Singular `singular/` for the symbolic check.
+
+| rule | corpus pair | extra real factorisations at q₀ | selects? |
+|---|---|---|---|
+| whole-product linking neutrality | passes | passes | **no**: every factorisation has the same product V³ |
+| reading-3 Frobenius positivity of each factor (χ₍₃₎, χ₍₂,₁₎ ≥ 0) | passes | passes | **no** |
+| term-wise linking neutrality (formal expansion in ℤ[B₃]) | passes | fails (non-neutral coefficients up to 0.016) | **yes** |
+| §7c base ring: weights in ℤ[q, q⁻¹] | passes | fails (the sextic is irreducible over ℚ(q), Galois group S₆) | **yes** |
+
+**Term-wise neutrality selects exactly the corpus pair, symbolically.** Singular over ℚ(h)
+gives the factorisation ideal plus the vanishing of the four non-neutral coefficients:
+σ₀ (φ₀ + ψ₀ + φ₀₁ψ₁, since Vσ₁ = σ₀ in B₃), σ₁ (φ₁ + ψ₁), σ₀V (φ₀ψ₀₁) and σ₁V (φ₁ψ₀₁).
+The result is exactly the corpus pair (vdim 2). Lean:
+`QOU.PhotonNeutralSelection.neutral_selects_corpus`. It holds in the model over any domain
+with h ≠ 0 and h² + 2 ≠ 0. The case ψ₀₁ = 0 is excluded by the certificate
+h³(h² + 2) = Σ cᵢ·Eᵢ, with cofactors from Singular.
+
+**What the family is.** The 6 extra factorisations are the roots of one sextic. Over ℚ(q)
+that sextic is irreducible, with Galois group the full S₆ at three rational
+specialisations. So no algebraic condition over ℚ(q) distinguishes any of the six, and they
+cannot be written with radicals. The corpus pair is the only factorisation whose weights
+lie in the base ring ℤ[q, q⁻¹] (qh = q² − 1, −q⁻¹h = q⁻² − 1). It is also the only one
+supported on linking-neutral braid elements.
+
+**Owner decision.** `QOU.PhotonU1NeutralCut` leaves open whether neutrality is imposed term
+by term or on the whole product braid. Under the term-wise reading, the Borromean weights
+are derived. Under the whole-product reading they are not.
