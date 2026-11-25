@@ -160,7 +160,7 @@ Results:
    z and h. Under convention D these fix q unless q⁴ = −1 (`audible_q`). Since F₂ = H₃, the
    one- and two-photon responses determine τ on all of H₃; in H₄ four photons suffice.
    This is the opposite of Kac: the observable layer is spectrally rigid.
-2. **States are not audible (literature + corpus).** Every response is a cyclic trace, so it
+2. 🛑 **CORRECTED (§14): this item was wrong as stated.** Only the zero-photon response τ(x) factors through the cocenter. The k-photon responses determine x modulo the radical of the trace form, which under convention D on H₃ is the sign line. Original text, kept as the record: **States are not audible (literature + corpus).** Every response is a cyclic trace, so it
    factors through the cocenter H/[H,H], whose rank is the number of partitions of n. Mutant
    knots (e.g. Conway and Kinoshita–Terasaka) have equal HOMFLY polynomial, which is the
    Ocneanu trace, so distinct closed braids are trace-isospectral. The corpus already
@@ -658,3 +658,84 @@ New Lean files, each checked with `lean -DautoImplicit=false -s 65536` (exit 0) 
   compiles in 7.5 s.
 - `PhotonStoppingDepth.lean`
 - `PhotonStoppingDepthThree.lean`
+
+## §14 Coordinator round: second discussion, §1, §3, §4, §5 and the inaudible-kernel row
+
+Relayed owner request: *"Review the discussion below for incorporation. Critical analysis.
+Lean prove and formalize all assertions."* A sibling takes §2 (holography, q-NS, DEC).
+Probes: `audibility_and_depth_exact_probe.py`, `bring_map_hodge_probe.py`. Exact
+arithmetic only (sympy over ℚ(q), `Fraction`).
+
+### §14.1 Notation (item 1)
+
+W_n and F_k follow the 2026-11-22 sliding-photon ruling: generators σᵢ (0 ≤ i ≤ n−2) and
+σᵢσᵢ₊₁⁻¹ (0 ≤ i ≤ n−3), with the larger letter inverted. This matches the discussion. The
+corpus had no "stopping depth" before this PR.
+
+### §14.2 Stopping depth (item 2)
+
+- **L(4) = 4, proved exactly for every q.** An annihilator of dimension 2, rational in q,
+  kills all 156 products of at most 3 generators, checked symbolically with 0 failures. So
+  F₃ ≠ H₄ identically. F₄ = H₄ at q = 7/5 in exact rationals, so F₄ = H₄ generically.
+- **L(5) = 6 at q = 7/5 and q = 11/3, exact rationals.** Ranks 1, 8, 29, 64, 98, 116, 120 at
+  both. F₆ = H₅ therefore holds generically. F₅ ≠ H₅ is shown at those two q values; the
+  generic statement is not proved (a symbolic annihilator in dimension 120 was not run).
+- The lower bound holds as an abstract Lean theorem over any algebra with a multiplicative
+  filtration (`PhotonStoppingDepth.photon_pow_le`, `depth_lower_bound`). Only ⊆ is claimed for
+  C_aC_b. Model check: L(3) = 2 (`PhotonStoppingDepthThree`). An H₄ Lean model was not built.
+- The staircase gaps (a) all w, (b) lower-order terms are closed in the
+  `prop:photon-filtration-depth-bounds` proof. Its runs are increasing, which is the
+  orientation V gives (s_i s_{i+1}). Lower-order terms are absorbed by unitriangularity
+  together with F_{k−1} ⊆ F_k.
+
+### §14.3 Cocenter and the inaudible kernel (item 3), with a correction of my own
+
+- **dim H_n/[H_n, H_n] = number of partitions of n** for split semisimple H_n(q). Citable:
+  Geck–Pfeiffer (`geckpfeiffer2000`, in the references), on trace functions and class
+  polynomials. Ciubotaru–He 1409.0902 treats the affine case and is not needed.
+- **🛑 Correction to §3.** I wrote that photon responses factor through the cocenter, so states
+  are not audible. That holds for the zero-photon response τ(x) only. Products of photons
+  span H_n, so the k-photon responses τ(γ⋯γ·x) determine x **modulo the radical of the trace
+  form**, not modulo [H, H]. This is Lean: `PhotonAudibility.responses_determine_mod_radical`.
+  - On H₃ the trace-form determinant is −(z−q)⁵(qz+1)⁵(z(q²+1) − q³)(q³z+qz+1)/q⁸ (exact).
+  - It vanishes at the two one-dimensional characters and at z_D.
+  - At z_D the radical is exactly the line of the sign idempotent Σ(−q⁻¹)^{ℓ(w)} T_w (Lean:
+    `sign_inaudible_D`).
+
+  **So under convention D a state is heard except for its alternating component.** Corrected
+  in `conj:bring-isospectrality-question` item 3. Contaminated elsewhere: only that block,
+  §3 item 2 (now marked), and my chat reports.
+- **Mutants.** "Mutants sit in [H_n, H_n]" is not established and is not claimed. HOMFLY, which
+  is the single Ocneanu trace of the closure, is mutation-invariant. Every character being
+  blind is a much stronger statement. Mutant braids are not conjugate in general, and some
+  coloured HOMFLY invariants distinguish mutants (Morton–Cromwell; Morton–Ryder, cited from
+  memory). Chmutov–Lando 0704.1313 is not in the library; the §2 sibling is asked to ingest
+  it. Scope (a): the corpus now says only that the zero-photon response is
+  mutation-blind on closures.
+
+### §14.4 TL to boundary Virasoro (item 4): does not apply at q₀, scope (a)
+
+δ = q + q⁻¹ and δ − 2 = (q−1)²/q > 0 for every real q > 0 with q ≠ 1 (Lean:
+`TLRegime.loop_weight_gt_two`). The Koo–Saleur / Grans-Samuelsson–Jacobsen–Saleur lattice
+Virasoro construction works with q on the unit circle, |δ| ≤ 2. At real q₀ the chain is in the
+gapped δ > 2 (Δ > 1) regime. The papers are cited from memory and are not in the library.
+Scope (a): this is about that limit only. Convention D's Temperley–Lieb quotient itself is
+unaffected.
+
+### §14.5 Bring combinatorics and spectrum (item 5)
+
+- The {5,4} regular map with darts S₅: S = (1 2 3 4), A = (0 1), S·A = (0 2 3 4 1).
+  - ⟨S, A⟩ = S₅.
+  - V = 30, E = 60, F = 24, χ = −6, genus 4.
+  - Gauss–Bonnet: π/20 per (2,4,5) triangle and 12π in total, so 240 triangles.
+  - All in Lean: `QOU.BringRegularMap`.
+- Exact boundary maps: ∂₁∂₂ = 0, rank ∂₁ = 29, rank ∂₂ = 23. **dim ker Δ₁ = 8 = 2g.** Every
+  harmonic 1-cochain is closed and co-closed, so it has zero discrete vorticity.
+- **"S₅ forces λ₁ > 0" is refuted as a causal claim.** λ₁ > 0 holds for any compact connected
+  surface, and on 0-cochains for any connected graph.
+- **"No ungapped zero mode for velocity 1-cochains" is refuted.** There are 8 zero modes. What
+  survives: they carry zero vorticity, so enstrophy, which is built from vorticity, has no zero
+  modes. Passed to the q-NS sibling.
+- HaPPY's {5,4} code lives on the same tiling class, of which Bring is a compact quotient. A
+  compact quotient has no asymptotic boundary, so this is a link, not a holographic code on
+  Bring.
