@@ -52,7 +52,7 @@ mp.mp.dps = 50
 Q, H, Z_D, DEFECT, TOL = ct.Q, ct.H, ct.Z_D, ct.DEFECT, ct.TOL
 M_E = mp.mpf(str(M_E_MEV))
 import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
-E0 = _qbeta_e0.order_zero_scaled(M_E, Q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
+E0 = _qbeta_e0.tower_summed_scaled(M_E, Q)  # ruled tower E_0 (owner ruling 2026-11-25, card B, qou-of4i)
 
 
 def species(Z: int, N: int):
@@ -76,7 +76,7 @@ def block_factors(word, i):
 
 def main() -> int:
     checks: list[tuple[str, bool]] = []
-    print(f"  q0 = {mp.nstr(Q, 20)}   E_0 = m_e/(q0(q0−1)) = {mp.nstr(E0, 12)} MeV   "
+    print(f"  q0 = {mp.nstr(Q, 20)}   E_0 = m_e/(q0(q0−1))/(1−ℏ_q²) = {mp.nstr(E0, 12)} MeV   "
           f"z²−hz−1 = {mp.nstr(DEFECT, 12)}")
     print("  law (#6611): B = E_0 · ln(tr_free / tr_atom)\n")
     shifts_by_key: dict[tuple, list] = {}

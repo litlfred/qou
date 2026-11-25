@@ -17,7 +17,7 @@ it on the normalised law, with the un-normalised law as a control.
 Note on qou-ib3g (#6668): its "per-nucleon coefficient at N = Z,
 E_0·0.698581 = 2.92425 MeV" is this eps exactly — the un-normalised pp/nn
 average -ln(z z')/2 = ln[2]_q equals the normalised weight identically — so its
-factor 3.0075 (peak B/A at A = 62 over eps) applies to the normalised law
+factor 3.0075 (peak B/A at A = 62 over eps, order-zero E_0; 2.978 on the ruled tower E_0, owner 2026-11-25) applies to the normalised law
 unchanged. Nothing here re-derives or re-measures it.
 
 WHAT IS MEASURED (2548 measured AME nuclides, #6611's selection and helpers):
@@ -63,7 +63,7 @@ Q, H, Z_D, TOL = ct.Q, ct.H, ct.Z_D, ct.TOL
 Z_INV = Z_D - H
 M_E = mp.mpf(str(M_E_MEV))
 import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
-E0 = _qbeta_e0.order_zero_scaled(M_E, Q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
+E0 = _qbeta_e0.tower_summed_scaled(M_E, Q)  # ruled tower E_0 (owner ruling 2026-11-25, card B, qou-of4i)
 EPS = E0 * mp.log((Q ** 2 + 1) / Q)
 ROOT = Path(__file__).resolve().parents[2]
 AME = ROOT / "qou-mass/src/qou_mass/data/ame2020.json"
@@ -171,7 +171,7 @@ def main() -> int:
     semf_ratio = {"surface": -SEMF["a_S"] / SEMF["a_V"], "Coulomb": -SEMF["a_C"] / SEMF["a_V"],
                   "asymmetry": -SEMF["a_A"] / SEMF["a_V"], "pairing": SEMF["a_P"] / SEMF["a_V"]}
     print(f"    R² = {mp.nstr(r2, 6)}   volume coefficient c_V = {mp.nstr(c0, 6)}  "
-          f"(→ B ≈ {mp.nstr(c0 * EPS, 5)} MeV per bond at saturation; #6668's peak-based factor is 3.0075)")
+          f"(→ B ≈ {mp.nstr(c0 * EPS, 5)} MeV per bond at saturation; #6668's peak-based factor was 3.0075 on order-zero E_0, 2.978 on the ruled tower E_0)")
     print(f"    {'term':<12}{'coef/c_V (data)':>18}{'SEMF a_i/a_V':>16}")
     ratio_ok = []
     for i, nm in enumerate(names[1:], start=1):
