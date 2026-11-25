@@ -1,0 +1,72 @@
+{
+ "q0Anchor": "independent",
+ "q0AnchorReason": "rational q; never reads q0",
+ "runs": [
+  {
+   "q0Anchor": "independent",
+   "q0AnchorReason": "rational q; never reads q0",
+   "q": "3/2",
+   "groebner_size": 21,
+   "finite_solution_set": true,
+   "variables_with_pure_leading_power": [
+    "p0",
+    "p01",
+    "p1",
+    "s0",
+    "s01",
+    "s1"
+   ],
+   "solutions": [
+    {
+     "p0": "0",
+     "p01": "-5/9",
+     "p1": "0",
+     "s0": "0",
+     "s01": "5/4",
+     "s1": "0"
+    },
+    {
+     "p0": "0",
+     "p01": "5/4",
+     "p1": "0",
+     "s0": "0",
+     "s01": "-5/9",
+     "s1": "0"
+    }
+   ]
+  },
+  {
+   "q0Anchor": "independent",
+   "q0AnchorReason": "rational q; never reads q0",
+   "q": "7/5",
+   "groebner_size": 21,
+   "finite_solution_set": true,
+   "variables_with_pure_leading_power": [
+    "p0",
+    "p01",
+    "p1",
+    "s0",
+    "s01",
+    "s1"
+   ],
+   "solutions": [
+    {
+     "p0": "0",
+     "p01": "-24/49",
+     "p1": "0",
+     "s0": "0",
+     "s01": "24/25",
+     "s1": "0"
+    },
+    {
+     "p0": "0",
+     "p01": "24/25",
+     "p1": "0",
+     "s0": "0",
+     "s01": "-24/49",
+     "s1": "0"
+    }
+   ]
+  }
+ ]
+}
