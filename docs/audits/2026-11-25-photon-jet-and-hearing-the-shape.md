@@ -522,3 +522,18 @@ linking-neutrality selection of V³ itself.
 Detector note: `sympy.solve` on a zero-dimensional Gröbner basis returned 2 of 8 points with
 no warning. The producer now records `vdim` (standard-monomial count) beside the returned
 solutions and a `sympy_solve_complete` flag (`false` here).
+
+## §12 Owner round: critique of the external "stopping depth / holography" discussion
+
+### §12.0 Pre-registered predictions (committed before computing)
+
+Write N = n(n−1)/2 and L(n) for the least k with F_k = H_n(q), where F_k is spanned by
+products of at most k sliding photons (owner ruling 2026-11-22, generators σᵢ, σᵢ₊₁,
+σᵢσᵢ₊₁⁻¹). The discussion claims ⌈N/2⌉ ≤ L(n) ≤ ⌊n²/4⌋.
+
+- **P14.** L(5) ∈ {5, 6}; I predict **6** (the staircase upper bound is attained, as at
+  n = 4).
+- **P15.** L(6) ∈ {8, 9}; I predict **9**.
+- **P16.** The bound identity Σ_{r=1}^{n−1} ⌈r/2⌉ = ⌊n²/4⌋ holds for every n ≥ 1.
+- **P17.** The discussion's "gap ⌊(n−1)/4⌋" between its two bounds is wrong at n = 4
+  (bounds 3 and 4, gap 1, formula 0).
