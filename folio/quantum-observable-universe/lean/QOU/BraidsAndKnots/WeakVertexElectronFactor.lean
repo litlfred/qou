@@ -47,7 +47,8 @@ theorem braid_rel : s0 * s1 * s0 = s1 * s0 * s1 := by
       (FreeGroup.of (1 : Fin 2) * FreeGroup.of (0 : Fin 2) * FreeGroup.of (1 : Fin 2))⁻¹ ∈
       braidRelators 2 := Or.inr ⟨0, by decide, rfl⟩
   have := PresentedGroup.mk_eq_mk_of_mul_inv_mem hmem
-  simpa only [map_mul] using this
+  simp only [map_mul] at this
+  exact this
 
 /-- The electron word `e⁻ = σ₀σ₁σ₀` (owner ruling 2026-11-21). -/
 def electron : BraidGroup 2 := s0 * s1 * s0
