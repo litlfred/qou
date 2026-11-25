@@ -160,7 +160,7 @@ theorem annihilatesConstants_iff (k : ℤ) (c : ℤ → R) :
   constructor
   · intro h; funext e
     by_cases he : e = -k
-    · subst he; simpa [shiftOp_monomial_zero_apply] using h
+    · subst he; simpa [shiftOp_monomial_zero_apply] using (show c (-k) = 0 from h)
     · exact shiftOp_monomial_zero_off k c e he
   · intro h
     simpa [AnnihilatesConstants, shiftOp_monomial_zero_apply] using congrFun h (-k)

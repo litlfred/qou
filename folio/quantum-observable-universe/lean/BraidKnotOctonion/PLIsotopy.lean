@@ -45,7 +45,7 @@ namespace IsPL
 
 lemma const (c : F) : IsPL (fun _ : E => c) := by
   have := affine (ContinuousAffineMap.const ℝ E c)
-  simpa using this
+  exact this
 
 lemma fst : IsPL (Prod.fst : E × F → E) := by
   have := affine (ContinuousLinearMap.fst ℝ E F).toContinuousAffineMap

@@ -173,7 +173,8 @@ theorem eventually_segment_inter_convexHull_subset {o w y z : X → E}
   -- step 4: eventually `‖w ξ - o ξ‖ < M`
   set M := ‖w x₀ - o x₀‖ + 1 with hM
   have ev4 : ∀ᶠ ξ in 𝓝 x₀, ‖w ξ - o ξ‖ < M :=
-    ((hw.sub ho).norm.continuousAt).eventually_lt continuousAt_const (by linarith)
+    ((hw.sub ho).norm.continuousAt).eventually_lt continuousAt_const
+      (by show ‖w x₀ - o x₀‖ < M; linarith)
   -- step 5: at `x₀`, `w - o` is not a bounded multiple of any `G l`
   set R := 2 * M / m₀ with hR
   let H : X → ℝ × ℝ → E := fun ξ p => (w ξ - o ξ) - p.1 • G ξ p.2
