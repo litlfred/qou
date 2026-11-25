@@ -280,7 +280,7 @@ theorem isUnit_two_of_triadGauge_i_j (g : TriadGauge (unitI : BringCone R) unitJ
   set q := g.e 1 with hq
   set q' := g.e.symm 1 with hq'
   have hn : IsUnit (Quaternion.normSq q) := by
-    refine isUnit_of_mul_eq_one _ (Quaternion.normSq q') ?_
+    refine IsUnit.of_mul_eq_one (Quaternion.normSq q') ?_
     rw [← map_mul, hqq', map_one]
   have hc := g.conj 1
   rw [e_eq, e_eq] at hc

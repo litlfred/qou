@@ -45,7 +45,7 @@ variable {M : Type*} [TopologicalSpace M] {G : Type*} [Group G] [MulAction G M]
   (φ : OpenPartialHomeomorph M ℂ) (p : M) (hp : p ∈ φ.source) (hφp : φ p = 0)
 
 /-- The coordinate expression of `g` in the chart `φ`. -/
-def coord (g : G) (z : ℂ) : ℂ := φ (g • φ.symm z)
+noncomputable def coord (g : G) (z : ℂ) : ℂ := φ (g • φ.symm z)
 
 include hp hφp in
 theorem symm_zero : φ.symm 0 = p := by rw [← hφp, φ.left_inv hp]
