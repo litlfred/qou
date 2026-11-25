@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:32:07Z
+updated_at: 2026-11-25T16:32:18Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -69,3 +69,6 @@ OPEN: owner decision on the 4 other order-zero log-law probes (framed on qou-of4
 
 ## Handover — binding error budget (session_01EucfRntKGFoPCof8huHo3z, 2026-11-25T16:32Z)
 Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-2026-11-25, head 281e13fb9. Audit docs/audits/2026-11-25-binding-error-budget.md: on the ruled inputs the light nuclei bind by keV. Ranked contributions: bond word (~350x on 2H), missing positive b3 (qou-brng), nucleon-block sign flip, topology; scale, pin, convention, functional and numerics about 1%. Owner decision §6 pending (ACCURACY.md K_A rows use E_osc = 10.09 E0). Next: check how #9221 chose E_osc (open entry 3).
+
+
+- compute child (session_01EucfRmFaPKg5KbjjmxSBwx) update 16:5xZ: qou-63be done -> PR #9435 (mutant volume fix + Chmutov-Lando citation), ready.
