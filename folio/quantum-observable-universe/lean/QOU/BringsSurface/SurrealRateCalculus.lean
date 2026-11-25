@@ -188,8 +188,8 @@ theorem surrealRateCalculus_hyperreal_satisfies_hypotheses :
       surrealRateCalculus_hyperreal.epsilon ^ (n + 1) < hyperrealRealHom lam := by
   have hu_pos : 0 < Hyperreal.epsilon := Hyperreal.epsilon_pos
   have hu_le1 : Hyperreal.epsilon ≤ 1 :=
-    le_of_lt (by simpa using Hyperreal.epsilon_lt_pos 1 zero_lt_one)
-  refine ⟨by simp [surrealRateCalculus_hyperreal]; positivity, ?_⟩
+    le_of_lt (by simpa using Hyperreal.epsilon_lt_of_pos (r := 1) zero_lt_one)
+  refine ⟨by change (0 : ℝ*) < Hyperreal.epsilon ^ 3; positivity, ?_⟩
   intro n lam hlam
   simp only [surrealRateCalculus_hyperreal, hyperrealRealHom, RingHom.coe_mk, MonoidHom.coe_mk,
     OneHom.coe_mk]
@@ -199,7 +199,7 @@ theorem surrealRateCalculus_hyperreal_satisfies_hypotheses :
     calc Hyperreal.epsilon ^ (3 * (n + 1))
         ≤ Hyperreal.epsilon ^ 1 := pow_le_pow_of_le_one (le_of_lt hu_pos) hu_le1 hge1
       _ = Hyperreal.epsilon := pow_one _
-  exact lt_of_le_of_lt hpow_le (Hyperreal.epsilon_lt_pos lam hlam)
+  exact lt_of_le_of_lt hpow_le (Hyperreal.epsilon_lt_of_pos hlam)
 
 /-- Direct instantiation of all four `surreal_rate_calculus_conditional` inequalities
     on the non-vacuous model `surrealRateCalculus_hyperreal`! -/
@@ -372,7 +372,7 @@ noncomputable def surrealRateAsymptoticCalculus_hyperreal :
   massGap_upper := by
     have hε_pos : 0 < Hyperreal.epsilon := Hyperreal.epsilon_pos
     have hε_lt_half : Hyperreal.epsilon < (1 / 2 : ℝ*) := by
-      simpa using Hyperreal.epsilon_lt_pos (1 / 2 : ℝ) (by norm_num)
+      simpa using Hyperreal.epsilon_lt_of_pos (r := (1 / 2 : ℝ)) (by norm_num)
     have hε3_pos : 0 < Hyperreal.epsilon ^ 3 := pow_pos hε_pos 3
     have hε4_le : Hyperreal.epsilon ^ 4 ≤ (1 / 2 : ℝ*) * Hyperreal.epsilon ^ 3 := by
       have hmul : Hyperreal.epsilon * Hyperreal.epsilon ^ 3 ≤
@@ -409,7 +409,7 @@ theorem surreal_rate_asymptotic_hyperreal_instantiated :
           surrealRateAsymptoticCalculus_hyperreal.roguePartCost (hyperrealRealHom δ)) := by
   letI := surrealRateAsymptoticCalculus_hyperreal
   exact surreal_rate_asymptotic_calculus hyperrealRealHom Hyperreal.epsilon_pos
-    (fun r hr => Hyperreal.epsilon_lt_pos r hr)
+    (fun r hr => Hyperreal.epsilon_lt_of_pos hr)
 
 /-- Archimedean `(F := ℝ)` classical-limit specialisation of `surrealRateCalculus_classicalLimit`
     (§7c `_real` pair). -/
