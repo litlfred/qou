@@ -2,6 +2,7 @@ import Mathlib.Analysis.Calculus.DifferentialForm.Basic
 import Mathlib.Analysis.Calculus.FDeriv.Analytic
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
+import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
 /-!
 # Differential forms on manifolds: pullback, naturality of `d`, chart compatibility
@@ -203,9 +204,10 @@ theorem extDeriv_pullback {r : WithTop ℕ∞} (hφ : ContDiffAt 𝕜 r φ x)
     extDeriv (pullback φ ω) x = pullback φ (extDeriv ω) x := by
   have h2r : (2 : WithTop ℕ∞) ≤ r := le_minSmoothness.trans hr
   have h1 : DifferentiableAt 𝕜 φ x :=
-    hφ.differentiableAt ((by norm_num : (1 : WithTop ℕ∞) ≤ 2).trans h2r)
+    hφ.differentiableAt
+      (zero_lt_one.trans_le ((by norm_num : (1 : WithTop ℕ∞) ≤ 2).trans h2r)).ne'
   have h2 : DifferentiableAt 𝕜 (fderiv 𝕜 φ) x :=
-    (hφ.fderiv_right (m := 1) (by simpa using h2r)).differentiableAt le_rfl
+    (hφ.fderiv_right (m := 1) (by rw [one_add_one_eq_two]; exact h2r)).differentiableAt one_ne_zero
   have hsym := hφ.isSymmSndFDerivAt hr
   ext v
   rw [extDeriv_apply (differentiableAt_pullback h1 h2 hω), pullback_apply,
@@ -271,7 +273,7 @@ theorem inChart_eq_pullback [IsManifold I 1 M] (ω : ManifoldForm I M F k) (x₀
       (by simp only [PartialEquiv.trans_source, PartialEquiv.symm_source, mem_inter_iff,
         mem_preimage]; exact ⟨hy₁, hy₀⟩)
     rw [ModelWithCorners.Boundaryless.range_eq_univ, contDiffWithinAt_univ] at h
-    exact h.differentiableAt le_rfl
+    exact h.differentiableAt one_ne_zero
   have hsymm : MDifferentiableAt 𝓘(𝕜, E) I (extChartAt I x₀).symm (τ y) := by
     have h := mdifferentiableWithinAt_extChartAt_symm hτy
     rwa [ModelWithCorners.Boundaryless.range_eq_univ, mdifferentiableWithinAt_univ] at h
@@ -279,6 +281,7 @@ theorem inChart_eq_pullback [IsManifold I 1 M] (ω : ManifoldForm I M F k) (x₀
       (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm (τ y)).comp (fderiv 𝕜 τ y) := by
     rw [hev.mfderiv_eq, mfderiv_comp y hsymm
       (mdifferentiableAt_iff_differentiableAt.2 hτd), mfderiv_eq_fderiv]
+    rfl
   have hpt : (extChartAt I x₁).symm y = (extChartAt I x₀).symm (τ y) := hev.self_of_nhds
   have hω : (ω ((extChartAt I x₁).symm y) : E [⋀^Fin k]→L[𝕜] F) =
       ω ((extChartAt I x₀).symm (τ y)) := by rw [hpt]
@@ -361,7 +364,16 @@ theorem fderiv_coordChange_comp_eq_id [IsManifold I 1 M] (x₀ : M) {y : E}
   have hτ : fderiv 𝕜 (extChartAt I x₀ ∘ (extChartAt I p).symm) (extChartAt I p p) =
       (mfderiv I 𝓘(𝕜, E) (extChartAt I x₀) p).comp
         (mfderiv 𝓘(𝕜, E) I (extChartAt I p).symm (extChartAt I p p)) := by
-    rw [← mfderiv_eq_fderiv, mfderiv_comp _ hg hf, hp']
+    have h := mfderiv_comp (extChartAt I p p) hg hf
+    rw [mfderiv_eq_fderiv] at h
+    ext v
+    have hv := DFunLike.congr_fun h v
+    have e : ∀ q, q = p → ∀ w : E,
+        mfderiv I 𝓘(𝕜, E) (extChartAt I x₀) q w = mfderiv I 𝓘(𝕜, E) (extChartAt I x₀) p w := by
+      rintro q rfl w; rfl
+    change _ = mfderiv I 𝓘(𝕜, E) (extChartAt I x₀) p
+      (mfderiv 𝓘(𝕜, E) I (extChartAt I p).symm (extChartAt I p p) v)
+    exact hv.trans (e _ hp' _)
   have hBC := mfderivWithin_extChartAt_symm_comp_mfderiv_extChartAt' (I := I) (x := p)
     (mem_extChartAt_source (I := I) p)
   have hAD := mfderiv_extChartAt_comp_mfderivWithin_extChartAt_symm (I := I) hy
@@ -404,7 +416,9 @@ theorem inChart_extDeriv {r : WithTop ℕ∞} [IsManifold I r M] (hr : minSmooth
   change _root_.extDeriv (ω.inChart p) (extChartAt I p p)
     (fun i ↦ mfderiv I 𝓘(𝕜, E) (extChartAt I p) p
       (mfderiv 𝓘(𝕜, E) I (extChartAt I x₀).symm y (w i))) = _
-  rw [key, pullback_apply, hτ]
+  rw [key]
+  erw [pullback_apply]
+  rw [hτ]
   congr 1
   funext i
   exact DFunLike.congr_fun hD (w i)
@@ -416,7 +430,7 @@ theorem inChart_extDeriv_eqOn {r s : WithTop ℕ∞} [IsManifold I r M]
     (hs : 1 ≤ s) (x₀ : M) :
     EqOn (ω.extDeriv.inChart x₀) (_root_.extDeriv (ω.inChart x₀)) (extChartAt I x₀).target :=
   fun _ hy ↦ inChart_extDeriv hr ω x₀ hy
-    (((hω x₀).differentiableOn hs).differentiableAt
+    (((hω x₀).differentiableOn (zero_lt_one.trans_le hs).ne').differentiableAt
       ((isOpen_extChartAt_target x₀).mem_nhds hy))
 
 /-- **`d ∘ d = 0` on a manifold.** On a boundaryless `C^r` manifold (`minSmoothness 𝕜 2 ≤ r`),
@@ -494,8 +508,8 @@ theorem extDeriv_add {s : WithTop ℕ∞} {ω₁ ω₂ : ManifoldForm I M F k}
     (ω₁ + ω₂).extDeriv = ω₁.extDeriv + ω₂.extDeriv := by
   funext x
   have hmem := (isOpen_extChartAt_target (I := I) x).mem_nhds (mem_extChartAt_target x)
-  exact extDeriv_add_apply (((h₁ x).differentiableOn hs).differentiableAt hmem)
-    (((h₂ x).differentiableOn hs).differentiableAt hmem)
+  exact extDeriv_add_apply (((h₁ x).differentiableOn (zero_lt_one.trans_le hs).ne').differentiableAt hmem)
+    (((h₂ x).differentiableOn (zero_lt_one.trans_le hs).ne').differentiableAt hmem)
 
 
 /-- **`d ∘ d = 0` on a manifold**, as an equality of manifold forms. -/
