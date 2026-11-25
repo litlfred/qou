@@ -45,7 +45,7 @@ survive, each contributing `1`. No field, no representation theory — pure grou
 combinatorics over generic `R`. -/
 theorem coeff_one_sq_sum_single_involution {G : Type*} [Group G] [DecidableEq G]
     (s : Finset G) (hs : ∀ g ∈ s, g * g = 1) :
-    ((∑ g ∈ s, single g (1 : R)) ^ 2) (1 : G) = (s.card : R) := by
+    ((∑ g ∈ s, single g (1 : R)) ^ 2).coeff (1 : G) = (s.card : R) := by
   have expand : (∑ g ∈ s, single g (1 : R)) ^ 2
       = ∑ g ∈ s, ∑ h ∈ s, single (g * h) (1 : R) := by
     rw [pow_two, Finset.sum_mul]
@@ -53,10 +53,11 @@ theorem coeff_one_sq_sum_single_involution {G : Type*} [Group G] [DecidableEq G]
     rw [Finset.mul_sum]
     refine Finset.sum_congr rfl (fun h _ => ?_)
     rw [MonoidAlgebra.single_mul_single, mul_one]
-  rw [expand, Finsupp.finset_sum_apply, Finset.card_eq_sum_ones, Nat.cast_sum]
+  rw [expand, MonoidAlgebra.coeff_sum, Finsupp.finset_sum_apply, Finset.card_eq_sum_ones,
+    Nat.cast_sum]
   refine Finset.sum_congr rfl (fun g hg => ?_)
-  rw [Finsupp.finset_sum_apply]
-  simp only [Finsupp.single_apply, mul_eq_one_iff_inv_eq]
+  rw [MonoidAlgebra.coeff_sum, Finsupp.finset_sum_apply]
+  simp only [MonoidAlgebra.coeff_single, Finsupp.single_apply, mul_eq_one_iff_inv_eq]
   rw [Finset.sum_ite_eq s g⁻¹]
   have hgi : g⁻¹ = g := inv_eq_of_mul_eq_one_right (hs g hg)
   rw [hgi, if_pos hg, Nat.cast_one]
@@ -66,7 +67,7 @@ family `f` of involutions indexed by a finite set `t`, the identity coefficient 
 `(Σ_{i∈t} f i)²` is `|t|`. Re-index the core lemma through `t.image f` (injective ⇒ card `|t|`). -/
 theorem coeff_one_sq_sum_single_involution_indexed {G ι : Type*} [Group G] [DecidableEq G]
     (t : Finset ι) (f : ι → G) (hf : Set.InjOn f t) (hfi : ∀ i ∈ t, f i * f i = 1) :
-    ((∑ i ∈ t, single (f i) (1 : R)) ^ 2) (1 : G) = (t.card : R) := by
+    ((∑ i ∈ t, single (f i) (1 : R)) ^ 2).coeff (1 : G) = (t.card : R) := by
   have hsum : (∑ i ∈ t, single (f i) (1 : R)) = ∑ g ∈ t.image f, single g (1 : R) := by
     rw [Finset.sum_image (fun x hx y hy h => hf hx hy h)]
   have hinv : ∀ g ∈ t.image f, g * g = 1 := by
@@ -81,7 +82,7 @@ theorem coeff_one_sq_sum_single_involution_indexed {G ι : Type*} [Group G] [Dec
 and each `(i k)` is an involution, so the indexed lemma applies. With `t = {i : i < k}` this is
 `coeff_1(X_k²) = #{i < k} = k`; summing over `k` gives `coeff_1(Σ_k X_k²) = \binom{n}{2}`. -/
 theorem jm_swap_sq_coeff_one {n : ℕ} (k : Fin n) (t : Finset (Fin n)) :
-    ((∑ i ∈ t, single (Equiv.swap i k) (1 : R)) ^ 2) (1 : Equiv.Perm (Fin n))
+    ((∑ i ∈ t, single (Equiv.swap i k) (1 : R)) ^ 2).coeff (1 : Equiv.Perm (Fin n))
       = (t.card : R) := by
   apply coeff_one_sq_sum_single_involution_indexed
   · intro i _ j _ h
@@ -99,11 +100,11 @@ group-algebra coefficient itself. The remaining bridge to `Σ_λ dim(λ)²·Σ_c
 standard regular-rep/Wedderburn step over **ℚ** (S_n rational), not ℂ. -/
 theorem centralC2_coeff_one (n : ℕ) :
     ((∑ k : Fin n, (∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val),
-        single (Equiv.swap i k) (1 : R)) ^ 2)) (1 : Equiv.Perm (Fin n)) = (n.choose 2 : R) := by
-  rw [Finsupp.finset_sum_apply]
+        single (Equiv.swap i k) (1 : R)) ^ 2)).coeff (1 : Equiv.Perm (Fin n)) = (n.choose 2 : R) := by
+  rw [MonoidAlgebra.coeff_sum, Finsupp.finset_sum_apply]
   have e1 : ∀ k : Fin n,
       ((∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val),
-          single (Equiv.swap i k) (1 : R)) ^ 2) (1 : Equiv.Perm (Fin n)) = (k.val : R) := by
+          single (Equiv.swap i k) (1 : R)) ^ 2).coeff (1 : Equiv.Perm (Fin n)) = (k.val : R) := by
     intro k
     rw [jm_swap_sq_coeff_one]
     congr 1
@@ -121,7 +122,7 @@ theorem centralC2_coeff_one (n : ℕ) :
 /-- Subtracting the binomial identity coefficient from the squared Jucys-Murphy sum yields zero. -/
 theorem centralC2_coeff_one_sub_eq_zero (n : ℕ) :
     ((∑ k : Fin n, (∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val),
-        single (Equiv.swap i k) (1 : R)) ^ 2)) (1 : Equiv.Perm (Fin n))
+        single (Equiv.swap i k) (1 : R)) ^ 2)).coeff (1 : Equiv.Perm (Fin n))
       - (n.choose 2 : R) = 0 := by
   rw [centralC2_coeff_one, sub_self]
 
