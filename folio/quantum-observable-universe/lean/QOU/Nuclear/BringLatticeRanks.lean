@@ -65,7 +65,7 @@ theorem finrank_dvd_of_isotypic
     have hli : LinearIndependent k
         (fun ix : (Σ _ : ι, Unit) => Finsupp.single ix.1 s) :=
       Finsupp.linearIndependent_single (fun _ (_ : Unit) => s)
-        (fun _ => linearIndependent_unique _ hs)
+        (fun _ => linearIndependent_unique_iff.mpr hs)
     haveI : Finite (Σ _ : ι, Unit) := hli.finite
     haveI : Finite ι := Finite.of_surjective (fun ix : (Σ _ : ι, Unit) => ix.1)
       (fun i => ⟨⟨i, ()⟩, rfl⟩)
