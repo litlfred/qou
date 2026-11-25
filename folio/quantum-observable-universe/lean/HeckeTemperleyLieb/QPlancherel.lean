@@ -282,7 +282,9 @@ theorem measure_total_mass_ne_one_of_badPartitionFunction :
       measure (R := ℚ) (Λ := Fin 1) lam 1 = 1 / 2 := by
   letI := unitQDimension
   letI := badPartitionFunction
-  simp [measure, unitQDimension, badPartitionFunction]
+  simp only [Fin.sum_univ_one, measure]
+  show (1 : ℚ) ^ 2 / 2 = 1 / 2
+  norm_num
 
 /-- Corollary in the form the gap is usually stated: total mass is **not** `1`. -/
 theorem exists_lawful_Z_with_total_mass_ne_one :
