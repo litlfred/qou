@@ -76,7 +76,7 @@ section Monoidal
 variable {C : Type*} [Category C] [MonoidalCategory C] (V : C)
 
 /-- `V^{⊗n}`, nested to the left: `V^{⊗0} = 𝟙`, `V^{⊗(n+1)} = V^{⊗n} ⊗ V`. -/
-def tpow : ℕ → C
+@[reducible] def tpow : ℕ → C
   | 0 => 𝟙_ C
   | n + 1 => tpow n ⊗ V
 
@@ -94,11 +94,11 @@ variable {V}
 
 theorem strand_last (f : V ⊗ V ⟶ V ⊗ V) (n : ℕ) :
     strand V f (n + 2) n = lastPair V f (tpow V n) := by
-  simp [strand]
+  simp [strand] <;> rfl
 
 theorem strand_of_ne (f : V ⊗ V ⟶ V ⊗ V) {n i : ℕ} (h : i ≠ n) :
     strand V f (n + 2) i = strand V f (n + 1) i ▷ V := by
-  simp [strand, h]
+  simp [strand, h] <;> rfl
 
 /-- The three-strand braid relation for `f` on `(V ⊗ V) ⊗ V`:
 `(f ⊗ 1)(1 ⊗ f)(f ⊗ 1) = (1 ⊗ f)(f ⊗ 1)(1 ⊗ f)`. -/
@@ -250,7 +250,6 @@ theorem strand_quad {f : V ⊗ V ⟶ V ⊗ V} {h : K} (hf : f ≫ f = h • f + 
     · rw [strand_of_ne f hin, ← comp_whiskerRight, strand_quad hf (n + 1) i (by omega),
         MonoidalPreadditive.add_whiskerRight, MonoidalLinear.smul_whiskerRight,
         MonoidalCategory.id_whiskerRight]
-      rfl
 
 end Linear
 
@@ -275,7 +274,7 @@ class BraidedMonodromy (T : MarkovTrace R A) (φ : R →+* K) (V : C) (f : V ⊗
   /-- The monodromy maps, one per strand count. -/
   exists_rep : ∃ ρ : ∀ n, End (tpow V n) →+* A,
     (∀ n (r : R) (x : End (tpow V n)), ρ n (φ r • x) = r • ρ n x) ∧
-    ∀ n i, i + 1 < n → ρ n (strand V f n i) = T.g i
+    ∀ n i, i + 1 < n → ρ n (End.of (strand V f n i)) = T.g i
 
 variable [MonoidalPreadditive C] [MonoidalLinear K C]
 
@@ -294,23 +293,31 @@ theorem heckeMonodromy_of_braided (T : MarkovTrace R A) (q : Rˣ) (φ : R →+* 
   refine ⟨fun i => ?_, fun i => ?_, fun i j hij => ?_, shadow_at_one⟩
   · -- Hecke quadratic: on `V^{⊗(i+2)}`
     have h := strand_quad hquad (i + 2) i (by omega)
-    have h' := congrArg (ρ (i + 2)) h
+    have hE : End.of (strand V f (i + 2) i) * End.of (strand V f (i + 2) i) =
+        (φ q - φ ↑q⁻¹) • End.of (strand V f (i + 2) i) + 1 := by
+      ext; simpa using h
+    have h' := congrArg (ρ (i + 2)) hE
     rw [← hρ (i + 2) i (by omega)]
-    rw [← End.mul_def] at h'
-    rw [← map_sub, map_mul, map_add, hsmul] at h'
-    have h1 : (ρ (i + 2)) (𝟙 (tpow V (i + 2))) = 1 := map_one (ρ (i + 2))
-    rw [h1] at h'
+    rw [← map_sub, map_mul, map_add, hsmul, map_one] at h'
     exact h'
   · -- braid relation: on `V^{⊗(i+3)}`
     have h := strand_braid f hYB (i + 3) i (by omega)
-    have h' := congrArg (ρ (i + 3)) h
-    simp only [← End.mul_def, map_mul] at h'
+    have hE : End.of (strand V f (i + 3) i) * End.of (strand V f (i + 3) (i + 1)) *
+          End.of (strand V f (i + 3) i) =
+        End.of (strand V f (i + 3) (i + 1)) * End.of (strand V f (i + 3) i) *
+          End.of (strand V f (i + 3) (i + 1)) := by
+      ext; simpa [Category.assoc] using h
+    have h' := congrArg (ρ (i + 3)) hE
+    simp only [map_mul] at h'
     rw [← hρ (i + 3) i (by omega), ← hρ (i + 3) (i + 1) (by omega)]
     exact h'
   · -- far commutation: on `V^{⊗(j+2)}`
     have h := strand_far f (j + 2) i j hij (by omega)
-    have h' := congrArg (ρ (j + 2)) h
-    simp only [← End.mul_def, map_mul] at h'
+    have hE : End.of (strand V f (j + 2) j) * End.of (strand V f (j + 2) i) =
+        End.of (strand V f (j + 2) i) * End.of (strand V f (j + 2) j) := by
+      ext; simpa using h
+    have h' := congrArg (ρ (j + 2)) hE
+    simp only [map_mul] at h'
     rw [← hρ (j + 2) i (by omega), ← hρ (j + 2) j (by omega)]
     exact h'.symm
 
