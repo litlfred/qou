@@ -8,7 +8,8 @@
  * set through textContent. The only innerHTML assignment takes the vendored
  * encoder's own <svg>, which is built from bits rather than from the string.
  *
- * Depends on vendor/qrcode.js and vendor/qrcode_UTF8.js being loaded first.
+ * The QR encoder (vendor/qrcode.js, qrcode_UTF8.js) is loaded on first use by
+ * navbar-row.js's `window.faEnsureQrcode`.
  * Cross-checked by scripts/tests/qr.test.ts, which decodes the encoder's
  * output with an independent reader.
  *
@@ -398,6 +399,7 @@
     var stored = null;
     try { stored = localStorage.getItem("fa-locale"); } catch (_e) { return false; }
     if (!stored) return false;
+    if (cameFromLocaleFallback()) return false;
     try {
       if (new URL(window.location.href).searchParams.get("lang")) return false;
     } catch (_e) { return false; }
@@ -405,7 +407,7 @@
     var available = localesAvailable(meta, meta.supportedLocales || UN_LOCALES);
     var target = rememberedLocale(currentLang, available);
     if (!target) return false;
-    var dest = localePath(deriveBasePath(window.location.pathname, currentLang), target);
+    var dest = translationHref(deriveBasePath(window.location.pathname, currentLang), target, window.location.pathname, currentLang);
     if (dest === window.location.pathname) return false;
     window.location.replace(dest + window.location.search + window.location.hash);
     return true;
@@ -421,6 +423,65 @@
   function deriveBasePath(path, currentLang) {
     if (currentLang === "en") return path;
     return path.replace(new RegExp("/" + currentLang + "/"), "/");
+  }
+
+  /**
+   * The page's own translations, as it declares them: every
+   * `<link rel="alternate" hreflang="xx" href="...">` in the document, keyed
+   * by locale, each resolved to a same-origin path. A page that says where
+   * its French version is has answered the question; the `/<locale>/`
+   * convention below is a guess about a layout it may not have.
+   *
+   * Owner, 2026-11-13: the who-iris home's tabs linked `/who-iris/fr/`, a
+   * 404, while the page's own alternates (and its own language links) named
+   * `who-iris/fr/index.html`, which is there. The tabs guessed; the page knew.
+   */
+  function declaredAlternates() {
+    var out = {};
+    var links = document.querySelectorAll('link[rel~="alternate"][hreflang]');
+    for (var i = 0; i < links.length; i++) {
+      var type = links[i].getAttribute("type");
+      if (type && type !== "text/html") continue;
+      var raw = links[i].getAttribute("href");
+      var lang = (links[i].getAttribute("hreflang") || "").toLowerCase();
+      if (!raw || !lang) continue;
+      try {
+        var u = new URL(raw, document.baseURI);
+        if (u.origin !== window.location.origin) continue;
+        var p = u.pathname + u.search;
+        if (!out[lang]) out[lang] = p;
+        var primary = lang.split("-")[0];
+        if (!out[primary]) out[primary] = p;
+      } catch (_e) { /* an href we cannot resolve declares nothing */ }
+    }
+    return out;
+  }
+
+  /**
+   * Where `locale`'s version of this page is: the page's declared alternate
+   * when it has one, else the `/<locale>/` sibling the translation pipeline
+   * writes. The publish link check (`build-instance-site.ts` `checkLinks`,
+   * via `scripts/lib/lang-tabs.ts` in cat-harness-tools) computes the same
+   * answer from the built HTML and refuses a publish where it is a 404.
+   */
+  function translationHref(basePath, locale, path, currentLang) {
+    var declared = declaredAlternates();
+    if (declared[locale]) return declared[locale];
+    // A translated page's sibling in another translation is its own path with
+    // the locale segment swapped, wherever that segment sits: `/r/fr/x/` (the
+    // whole site under a locale) as well as `/r/x/fr/a.html`. Rebuilding it from
+    // the English path put the segment before the file, a 404 for the first.
+    var seg = "/" + currentLang + "/";
+    if (currentLang !== "en" && locale !== "en" && path.indexOf(seg) !== -1) return path.replace(seg, "/" + locale + "/");
+    return localePath(basePath, locale);
+  }
+
+  /* The 404 page's English fallback (cat-harness-tools
+     `scripts/lib/locale-fallback-404.ts`) leaves the page it landed on here,
+     so a remembered language never sends the reader straight back to the
+     translation that was missing: that would be a loop. */
+  function cameFromLocaleFallback() {
+    try { return sessionStorage.getItem("fa-locale-fallback") === window.location.pathname; } catch (_e) { return false; }
   }
 
   /**
@@ -505,7 +566,7 @@
       // #ffffff on #3b82f6 at 3.67:1. The per-page bar was fixed first and
       // this one kept the literals, because the gate never opened this view.
       var tab = el(isAvailable ? "a" : "span", {
-        href: isAvailable ? safeHref(localePath(basePath, loc)) : undefined,
+        href: isAvailable ? safeHref(translationHref(basePath, loc, path, currentLang)) : undefined,
         // Says "unavailable" to a screen reader too, not only by its strike-through (Q-TRP-2).
         "aria-disabled": isAvailable ? undefined : "true",
         "data-locale": loc,
@@ -639,7 +700,7 @@
       var isRemembered = loc === remembered;
 
       var tab = el(isAvailable ? "a" : "span", {
-        href: isAvailable ? safeHref(localePath(basePath, loc)) : undefined,
+        href: isAvailable ? safeHref(translationHref(basePath, loc, path, currentLang)) : undefined,
         // Says "unavailable" to a screen reader too, not only by its strike-through (Q-TRP-2).
         "aria-disabled": isAvailable ? undefined : "true",
         title: isAvailable
@@ -2431,7 +2492,22 @@
     var views = {};
     var openTile = null;   // the tile to return focus to when Back is pressed
 
+    // The encoder is loaded the first time the tile opens (owner, 2026-11-14:
+    // "do lazy load content and libs"), by navbar-row.js's shared loader.
     function renderQr() {
+      if (typeof qrcode === "function") { drawQr(); return; }
+      qrCaption.textContent = "Loading the QR code\u2026";
+      var ensure = window.faEnsureQrcode;
+      if (typeof ensure !== "function") {
+        qrCaption.textContent = "The QR code could not be drawn: its encoder is not available on this page.";
+        return;
+      }
+      ensure(drawQr, function () {
+        qrCaption.textContent = "The QR code could not be drawn: its encoder did not load.";
+      });
+    }
+
+    function drawQr() {
       var url = window.location.href;
       var q = qrcode(0, "M");
       q.addData(url);
@@ -2593,12 +2669,10 @@
 
       views.language = buildLanguageBar();
 
-      if (typeof qrcode === "function") {
-        var qr = el("div", { class: "fa-qr-panel fa-tile-content", "data-open": "true" });
-        qr.appendChild(qrArt);
-        qr.appendChild(qrCaption);
-        views.qr = qr;
-      }
+      var qr = el("div", { class: "fa-qr-panel fa-tile-content", "data-open": "true" });
+      qr.appendChild(qrArt);
+      qr.appendChild(qrCaption);
+      views.qr = qr;
     }
 
     /* ── Navigation between the grid and a view ────────────────────────── */
@@ -2711,16 +2785,13 @@
       showView("settings", SETTINGS_NAMES.page, pageSettingsTile);
     };
     grid.appendChild(tileButton(GLOBE_GLYPH, "Language", "language"));
-    // The encoder is a separate vendor script. Without it the OTHER tiles must
-    // still work -- the old code returned early from the whole mount when it
-    // was missing, so a failed vendor request took the theme switch, the
-    // reading preferences and the language switch down with the QR code.
-    if (typeof qrcode === "function") {
-      grid.appendChild(tileButton(GLYPH, "QR code", "qr"));
-    } else {
-      console.warn("docs-ui: QR encoder not loaded (vendor/qrcode.js must be included " +
-                   "first); the other action tiles were mounted without it.");
-    }
+    // The encoder is a separate vendor script, loaded when the tile first
+    // opens (renderQr), so the tile is always offered. If it cannot load, the
+    // QR view says so; the OTHER tiles never depend on it -- the old code
+    // returned early from the whole mount when it was missing, so a failed
+    // vendor request took the theme switch, the reading preferences and the
+    // language switch down with the QR code.
+    grid.appendChild(tileButton(GLYPH, "QR code", "qr"));
 
     // A tile that DOES something rather than opening a sidebar view. The board
     // lives in the main display, so `showView` is the wrong machinery for it.
@@ -9200,7 +9271,7 @@
         return;
       }
       setOpen(false);
-      handle.focus();
+      focusFolioControl(handle);
     });
 
     /* HOW MANY ARE WAITING, on the handle — bean `c132`. On a phone a closed
@@ -9255,6 +9326,7 @@
     }
 
     layer.__faSetGlassOpen = setOpen;
+    bindFolioIcon();
     return layer;
   }
 
@@ -10830,8 +10902,15 @@
     if (isPlain) {
       var art0 = scope.querySelector("svg, img, object");
       var natural = intrinsicWidth(scope) ||
-        (art0 && art0.tagName.toLowerCase() === "img" ? art0.naturalWidth : 0) ||
-        (art0 ? parseFloat(art0.getAttribute("width") || "") || 0 : 0);
+        // An SVG <img> drawn at width="100%" has no intrinsic width, and the
+        // browser reports its 300px default as `naturalWidth`; with no
+        // width known the stylesheet falls back to the column instead.
+        (art0 && art0.tagName.toLowerCase() === "img" && !/\.svg($|[?#])/i.test(art0.getAttribute("src") || "")
+          ? art0.naturalWidth : 0) ||
+        // A `width` attribute is a natural size only in pixels: parseFloat
+        // reads width="100%" as 100, which would draw the figure at 100px.
+        (art0 && /^\s*[\d.]+\s*(px)?\s*$/i.test(art0.getAttribute("width") || "")
+          ? parseFloat(art0.getAttribute("width")) : 0);
       if (natural > 0) scope.style.setProperty("--fa-natural", natural + "px");
     } else {
       fitTextToBody(scope);
@@ -11222,7 +11301,11 @@
   }
 
   function mountFigures() {
-    document.querySelectorAll(".bpmn-figure").forEach(function (f) { mountFigure(f, false); });
+    queueLateDrawings();
+    document.querySelectorAll(".bpmn-figure").forEach(function (f) {
+      if (f.querySelector("[data-fa-inline-pending]")) return;
+      mountFigure(f, false);
+    });
 
     // Any other SVG in the body gets the same controls -- but only if it is a
     // FIGURE. The first version of this matched `.main-content svg`, which in
@@ -11258,6 +11341,10 @@
       (rasterOk ? ", .main-content img" : "");
 
     document.querySelectorAll(sel).forEach(function (node) {
+      // A drawing still waiting to be inlined is mounted once it is, by
+      // `inlineDiagrams` calling back here: wrapped now, the scan would see
+      // an <img> and size its controls for that.
+      if (node.hasAttribute("data-fa-inline-pending")) return;
       if (node.closest(".bpmn-figure") || node.closest(".fa-qr-host")) return;
       if (node.closest(".fa-figure-scope")) return;
       // An <svg> nested in another is part of that drawing, never its own figure.
@@ -11397,24 +11484,108 @@
     return svg;
   }
 
-  function inlineDiagrams(done) {
-    var imgs = [].slice.call(
-      document.querySelectorAll(
-        '.bpmn-figure img[src$=".svg"], .main-content img[src$=".svg"], ' +
-          '.main-content object[data$=".svg"], .main-content object[type="image/svg+xml"][data]',
-      ),
-    );
-    if (!imgs.length || typeof window.fetch !== "function" || typeof window.DOMParser !== "function") {
-      done();
+  // LAZY, AS THEY NEAR THE VIEWPORT (owner, 2026-11-14: "do lazy load content
+  // and libs"). Every drawing used to be fetched and parsed at load, wherever
+  // it sat, and the figure controls of the whole page waited for the slowest.
+  // Now `done` (mountFigures) runs at once for everything already drawable,
+  // each drawing is inlined when it comes within INLINE_MARGIN of the
+  // viewport, and its own controls are mounted when it is. A drawing still an
+  // <img> carries `data-fa-inline-pending`, which mountFigures skips.
+  //
+  // PRINT (owner, 2026-11-14: "Make sure printing loads all of the content
+  // before it renders the PDF"): an un-inlined drawing is still its own
+  // <img>, which prints; `beforeprint` turns any `loading="lazy"` image in
+  // the content eager and starts inlining every pending drawing, and
+  // `faInlineAllDiagrams()` returns a promise for a caller that can wait
+  // (a Print button would await it, then call window.print()).
+  var INLINE_MARGIN = "1000px 0px";
+  var INLINE_SEL =
+    '.bpmn-figure img[src$=".svg"], .main-content img[src$=".svg"], ' +
+    '.main-content object[data$=".svg"], .main-content object[type="image/svg+xml"][data]';
+  var inlineQueue = [];
+  var inlineIo = null;
+  function canInline() {
+    return typeof window.fetch === "function" && typeof window.DOMParser === "function";
+  }
+
+  /* Mark each drawing not yet seen as pending and inline it as it nears the
+     viewport. A drawing already tried (`faInlined`, which a failed fetch
+     keeps, so it stays the <img> it was) or already waiting is left alone. */
+  function queueInline(imgs) {
+    imgs = imgs.filter(function (img) {
+      return !img.faInlined && !img.hasAttribute("data-fa-inline-pending");
+    });
+    imgs.forEach(function (img) {
+      img.setAttribute("data-fa-inline-pending", "");
+      inlineQueue.push(img);
+    });
+    if (!imgs.length) return;
+    if (typeof window.IntersectionObserver !== "function") {
+      // No observer: the old behaviour, every drawing now.
+      imgs.forEach(inlineOne);
       return;
     }
-    var pending = imgs.length;
-    function settle() { if (--pending === 0) done(); }
+    if (!inlineIo) {
+      inlineIo = new window.IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          inlineIo.unobserve(e.target);
+          inlineOne(e.target);
+        });
+      }, { rootMargin: INLINE_MARGIN });
+    }
+    imgs.forEach(function (img) { inlineIo.observe(img); });
+  }
 
-    imgs.forEach(function (img) {
+  function inlineDiagrams(done) {
+    if (canInline()) queueInline([].slice.call(document.querySelectorAll(INLINE_SEL)));
+    done();
+  }
+
+  /* A DRAWING THAT ARRIVES AFTER LOAD is inlined too (owner, 2026-11-16, on
+     dth-hrh HRH-BP-01: "bad scale"). A whole-document page fills its blocks
+     from JSON as the reader scrolls, so its <img> drawings were never in the
+     load-time scan above: mountFigures wrapped each as a plain image, sized
+     it from `naturalWidth`, and a bpmn-js SVG (width="100%", no height) has
+     no intrinsic width, so the browser's 300px default became "100%" and the
+     labels came out a third of the body text. mountFigures calls this first,
+     so a late drawing is queued, skipped while pending, and text-fitted once
+     it is inlined. */
+  function queueLateDrawings() {
+    if (canInline()) queueInline([].slice.call(document.querySelectorAll(INLINE_SEL)));
+  }
+
+  /** Inline every drawing not yet inlined; resolves when all have settled. */
+  function inlineAll() {
+    return Promise.all(inlineQueue.map(inlineOne));
+  }
+  window.faInlineAllDiagrams = inlineAll;
+
+  window.addEventListener("beforeprint", function () {
+    [].forEach.call(document.querySelectorAll('.main-content img[loading="lazy"], .bpmn-figure img[loading="lazy"]'), function (img) {
+      img.loading = "eager";
+    });
+    inlineAll();
+  });
+
+  var remountPending = null;
+  function remountSoon() {
+    if (remountPending !== null) return;
+    remountPending = window.setTimeout(function () { remountPending = null; mountFigures(); }, 30);
+  }
+
+  /** Inline one drawing, once; the same promise however often it is asked. */
+  function inlineOne(img) {
+    if (img.faInlined) return img.faInlined;
+    if (!img.hasAttribute("data-fa-inline-pending")) return Promise.resolve();
+    function settle() {
+      img.removeAttribute("data-fa-inline-pending");
+      remountSoon();
+    }
+    img.faInlined = (function () {
       var isObject = img.tagName.toLowerCase() === "object";
       var src = img.getAttribute(isObject ? "data" : "src");
-      window
+      return window
         .fetch(src)
         .then(function (r) {
           if (!r.ok) throw new Error("HTTP " + r.status);
@@ -11457,7 +11628,8 @@
           console.warn("docs-ui: could not inline " + src + " (" + e.message + "); it stays a static image, so its links will not work.");
         })
         .then(settle, settle);
-    });
+    })();
+    return img.faInlined;
   }
 
   /* ── The navbar filters by the selected locale ───────────────────────── */
@@ -13172,6 +13344,56 @@
     }
   }
 
+  /* THE FOLIO IN THE ROW — owner, 2026-11-13: *"remove the folio purple tab
+   * at top instead add an icon to the controls for the folio."* The icon
+   * drives the EXISTING handle (one control over one state, `l4zi`): a click
+   * clicks it, and its name and pressed state follow the handle's, count and
+   * all. While the row carries it, `docs-ui.css` hides the handle; a page
+   * with no row keeps the tab, so the glass is never out of reach. */
+  var FOLIO_GLYPH =
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<rect x="4" y="6.5" width="12" height="14.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/>' +
+    '<path d="M8 6.5V4.5A1.5 1.5 0 0 1 9.5 3H18.5A1.5 1.5 0 0 1 20 4.5V16.5A1.5 1.5 0 0 1 18.5 18H16" ' +
+    'fill="none" stroke="currentColor" stroke-width="1.6"/>' +
+    '<path d="M7 11h6M7 14h6M7 17h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>' +
+    "</svg>";
+  function folioIcon() {
+    var b = el("button", {
+      type: "button", class: "fa-nav-icon fa-nav-folio", "aria-expanded": "false",
+      "aria-label": "Pull down your folio", title: "Pull down your folio", "data-fa-tip": "Pull down your folio"
+    });
+    b.innerHTML = FOLIO_GLYPH;
+    b.addEventListener("click", function () {
+      var h = document.querySelector(".fa-glass-handle");
+      if (h) h.click();
+      bindFolioIcon();
+    });
+    return b;
+  }
+  /** Mirror the handle's name and state onto the row's folio icon. Idempotent; called from both sides, whichever mounts last. */
+  function bindFolioIcon() {
+    var b = document.querySelector(".fa-nav-folio");
+    var h = document.querySelector(".fa-glass-handle");
+    if (!b || !h) return;
+    function sync() {
+      var name = h.getAttribute("aria-label") || "Pull down your folio";
+      b.setAttribute("aria-label", name);
+      b.setAttribute("data-fa-tip", name);
+      b.title = name;
+      b.setAttribute("aria-expanded", h.getAttribute("aria-expanded") === "true" ? "true" : "false");
+    }
+    sync();
+    if (b.__faFolioBound === h || typeof MutationObserver !== "function") return;
+    b.__faFolioBound = h;
+    new MutationObserver(sync).observe(h, { attributes: true, attributeFilter: ["aria-label", "aria-expanded"] });
+  }
+  /** Where focus goes back to when the glass closes: the handle, or the row's folio icon while the handle is hidden. */
+  function focusFolioControl(handle) {
+    var b = document.querySelector(".fa-nav-folio");
+    if (b && handle.getClientRects().length === 0) b.focus();
+    else handle.focus();
+  }
+
   function mountNavIconRow() {
     // THE ROW IS DRAWN BY `navbar-row.js` — beans `lhvt`, `9rq1`. That file is
     // the one drawing for every navbar: it also runs on the 2,709 railed pages
@@ -13213,6 +13435,7 @@
         });
         scheme.addEventListener("click", toggleScheme);
         host.appendChild(scheme);
+        host.appendChild(folioIcon());
         // A row mounted LATE (the path below) has a fish nobody wired yet.
         // Idempotent per button, so the synchronous path is unaffected.
         mountFshGutsNav();
@@ -13733,6 +13956,10 @@
     // Figures are mounted only after the inlining settles, so the scan sees the
     // real <svg> rather than the <img> it replaces and does not wrap both.
     inlineDiagrams(mountFigures);
+    // A diagram drawn LATER -- a Mermaid block rendered as it nears the
+    // viewport (`_includes/components/mermaid.html`) -- says so, and gets its
+    // controls then; the observer below stops watching after ten seconds.
+    document.addEventListener("fa:figures-changed", remountSoon);
 
     // Mermaid renders AFTER this runs, and nothing tells us when.
     //
@@ -13757,11 +13984,17 @@
       }, 50);
     });
     observer.observe(main, { childList: true, subtree: true });
-    // Mermaid is the only thing expected to add a figure after load, so stop
-    // watching once it has had its chance. An observer left on the document
-    // body for the life of the page fires on every future DOM change,
-    // including the ones mountFigures itself makes.
-    window.setTimeout(function () { observer.disconnect(); }, 10000);
+    // Stop watching once Mermaid has had its chance. An observer left on the
+    // document body for the life of the page fires on every future DOM
+    // change, including the ones mountFigures itself makes. A whole-document
+    // page that fills its blocks as the reader scrolls (`.fa-blk` without
+    // `data-filled`) adds figures for as long as any block is empty, so the
+    // observer stays until the last one is filled.
+    function stopWhenSettled() {
+      if (document.querySelector(".fa-blk:not([data-filled])")) window.setTimeout(stopWhenSettled, 10000);
+      else observer.disconnect();
+    }
+    window.setTimeout(stopWhenSettled, 10000);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
