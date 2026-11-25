@@ -647,3 +647,14 @@ supported on linking-neutral braid elements.
 **Owner decision.** `QOU.PhotonU1NeutralCut` leaves open whether neutrality is imposed term
 by term or on the whole product braid. Under the term-wise reading, the Borromean weights
 are derived. Under the whole-product reading they are not.
+
+### §13.1 Verification
+
+New Lean files, each checked with `lean -DautoImplicit=false -s 65536` (exit 0) and
+`#print axioms` (no `sorryAx`):
+
+- `PhotonNeutralSelection.lean` (`neutral_selects_corpus`). The first version hit a kernel
+  deterministic timeout. It now goes through explicit vector formulas for V and γ, and
+  compiles in 7.5 s.
+- `PhotonStoppingDepth.lean`
+- `PhotonStoppingDepthThree.lean`
