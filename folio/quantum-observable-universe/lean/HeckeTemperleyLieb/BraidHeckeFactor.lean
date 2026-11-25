@@ -45,7 +45,8 @@ theorem σ_braid_rel (i : Fin m) (h : (i : ℕ) + 1 < m) :
       (FreeGroup.of ⟨(i : ℕ) + 1, h⟩ * FreeGroup.of i * FreeGroup.of ⟨(i : ℕ) + 1, h⟩)⁻¹ ∈
       braidRelators m := Or.inr ⟨i, h, rfl⟩
   have := PresentedGroup.mk_eq_mk_of_mul_inv_mem hmem
-  simpa only [map_mul] using this
+  simp only [map_mul] at this
+  exact this
 
 /-- Far commutation `σ_i σ_j = σ_j σ_i` for `i + 2 ≤ j` in `BraidGroup m`. -/
 theorem σ_comm_rel (i j : Fin m) (h : (i : ℕ) + 2 ≤ (j : ℕ)) :
@@ -55,8 +56,8 @@ theorem σ_comm_rel (i j : Fin m) (h : (i : ℕ) + 2 ≤ (j : ℕ)) :
   have h1 := PresentedGroup.one_of_mem hmem
   simp only [map_mul, map_inv] at h1
   have h2 : (σ i * σ j) * (σ j * σ i)⁻¹ = 1 := by
-    rw [mul_inv_rev]
-    simpa only [σ, PresentedGroup.of, mul_assoc] using h1
+    rw [mul_inv_rev, mul_assoc]
+    exact h1
   exact mul_inv_eq_one.mp h2
 
 /-- **All Artin generators are conjugate.** `σ_{i+1} = w σ_i w⁻¹` with `w = σ_i σ_{i+1}`. -/
