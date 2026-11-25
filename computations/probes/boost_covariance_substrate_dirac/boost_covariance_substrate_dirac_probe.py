@@ -62,5 +62,7 @@ cond = sp.simplify(A + C / (q - 1) ** 2)
 print("covariance condition: B = 0 and", cond, "= 0")
 out = {"description": "qou-2k68 route 2b: traced square of substrateDirac at d+2=2",
        "A": str(A), "B": str(B), "C": str(C), "P5": P5,
-       "covariance_condition": ["B = 0", f"{cond} = 0"]}
+       "covariance_condition": ["B = 0", f"{cond} = 0"],
+       # symbolic in q throughout; no q0 enters (forbidden here, owner ruling 2026-08-02)
+       "q0Anchor": "independent"}
 Path(__file__).with_name("boost-covariance-substrate-dirac.witness.json").write_text(json.dumps(out, indent=2) + "\n")
