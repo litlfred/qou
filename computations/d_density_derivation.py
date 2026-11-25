@@ -75,7 +75,7 @@ def count_factor_types(word):
 
 
 def chi_sym_closed_form(n_sigma: int, n_sigma_inv: int, n_ud: int,
-                          q: float, H_A: float) -> float:
+                          q: mp.mpf, H_A: mp.mpf) -> mp.mpf:
     """χ_sym(β) = q^(n_σ − n_σ⁻¹) · ([2]_q/2)^n_ud.
 
     Ref: docs/chi-sym-alt-theorem.md §Individual closed forms.
@@ -85,7 +85,7 @@ def chi_sym_closed_form(n_sigma: int, n_sigma_inv: int, n_ud: int,
 
 
 def chi_alt_closed_form(n_sigma: int, n_sigma_inv: int, n_ud: int,
-                          q: float, H_A: float) -> float:
+                          q: mp.mpf, H_A: mp.mpf) -> mp.mpf:
     """χ_alt(β) = (−1)^#(β) · q^(n_σ⁻¹ − n_σ) · ([2]_q/2)^n_ud.
 
     Ref: docs/chi-sym-alt-theorem.md §Individual closed forms.
@@ -107,7 +107,7 @@ def main():
     w.set_content_block("conj:mass-volume-factorization")
     w.add_parameter("q_0", fmt(Q0))
     w.add_parameter("H_A", fmt(HA_MP))
-    w.add_parameter("m_e_MeV", float(M_E_MEV))
+    w.add_parameter("m_e_MeV", fmt(M_E_MEV))
     w.add_caveat(
         "The rule ρ_F(P) = m_e · n_chir(P) is a conjecture "
         "(conj:mass-volume-factorization). The criterion for 'alt ∈ Λ' "
@@ -139,7 +139,7 @@ def main():
     print(f"  Z = {Z}, N = {N}, A = {A}")
     print(f"  q_0 = {float(Q0):.10f}")
     print(f"  H_A = q_0 - 1/q_0 = {float(H_A_VAL):.10f}")
-    print(f"  [2]_q/2 = (q + 1/q)/2 = {(Q0 + 1/Q0)/2:.10f}")
+    print(f"  [2]_q/2 = (q + 1/q)/2 = {mp.nstr((Q0 + 1/Q0)/2, 11)}")
     print()
 
     print("Step 1. Count factor types in atom_braid_word_3A(1, 1):")
@@ -152,11 +152,11 @@ def main():
     print("Step 2. Closed-form characters "
            "(docs/chi-sym-alt-theorem.md):")
     print(f"  χ_sym(β_D) = q^{n_sigma - n_sigma_inv} · ([2]_q/2)^{n_ud}")
-    print(f"            = {chi_sym:+.6f}")
+    print(f"            = {mp.nstr(chi_sym, 7)}")
     print(f"  χ_alt(β_D) = (-1)^{word_len} · q^{n_sigma_inv - n_sigma} · ([2]_q/2)^{n_ud}")
-    print(f"            = {chi_alt:+.6f}")
-    print(f"  χ_s·χ_a    = -(1 + H_A²/4)^{n_ud} = {chi_product:+.6f}")
-    print(f"             (cross-check vs closed form {chi_product_closed:+.6f})")
+    print(f"            = {mp.nstr(chi_alt, 7)}")
+    print(f"  χ_s·χ_a    = -(1 + H_A²/4)^{n_ud} = {mp.nstr(chi_product, 7)}")
+    print(f"             (cross-check vs closed form {mp.nstr(chi_product_closed, 7)})")
     print()
 
     # Reading (I): character criterion
@@ -168,9 +168,9 @@ def main():
 
     print("Reading (I) — character criterion:")
     print(f"  alt ∈ Λ  iff  χ_alt(β_D) ≠ 0")
-    print(f"  χ_alt(β_D) = {chi_alt:+.6f}  →  {reading_I}")
+    print(f"  χ_alt(β_D) = {mp.nstr(chi_alt, 7)}  →  {reading_I}")
     print(f"  n_chir = {n_chir_I}")
-    print(f"  ρ_F = n_chir · m_e = {rho_F_I:.6f} MeV")
+    print(f"  ρ_F = n_chir · m_e = {mp.nstr(rho_F_I, 7)} MeV")
     print()
 
     # Reading (II): weight criterion.
@@ -184,7 +184,7 @@ def main():
     contrib_sym = w_sym_f * chi_sym
     contrib_alt = w_alt_f * chi_alt
     ratio_alt_over_sym = (abs(contrib_alt) / abs(contrib_sym)
-                           if abs(contrib_sym) > 1e-30 else float("inf"))
+                           if abs(contrib_sym) > mp.mpf("1e-30") else mp.inf)
     alt_saturated = ratio_alt_over_sym > 0.5
     reading_II = ("alt ∈ Λ (weights comparable)" if alt_saturated
                   else "alt ∉ Λ (weight suppressed vs sym)")
@@ -192,12 +192,12 @@ def main():
     rho_F_II = n_chir_II * M_E_MEV
 
     print("Reading (II) — Plancherel-weight criterion:")
-    print(f"  w_sym · χ_sym = {w_sym_f:.6f} · {chi_sym:+.6f} = {contrib_sym:+.6f}")
-    print(f"  w_alt · χ_alt = {w_alt_f:.6f} · {chi_alt:+.6f} = {contrib_alt:+.6f}")
-    print(f"  |alt / sym|   = {ratio_alt_over_sym:.4f}")
+    print(f"  w_sym · χ_sym = {mp.nstr(w_sym_f, 7)} · {mp.nstr(chi_sym, 7)} = {mp.nstr(contrib_sym, 7)}")
+    print(f"  w_alt · χ_alt = {mp.nstr(w_alt_f, 7)} · {mp.nstr(chi_alt, 7)} = {mp.nstr(contrib_alt, 7)}")
+    print(f"  |alt / sym|   = {mp.nstr(ratio_alt_over_sym, 5)}")
     print(f"  → {reading_II}")
     print(f"  n_chir = {n_chir_II}")
-    print(f"  ρ_F = n_chir · m_e = {rho_F_II:.6f} MeV")
+    print(f"  ρ_F = n_chir · m_e = {mp.nstr(rho_F_II, 7)} MeV")
     print()
 
     # Paper's claim
@@ -207,7 +207,7 @@ def main():
     print("    'Two-body links (e.g. 6_2 representing deuterium) have only")
     print("    mutual linking of two components; the alt block remains")
     print("    suppressed and ρ_F = m_e.'")
-    print(f"  → paper asserts n_chir = 1,  ρ_F = m_e = {paper_rho_F:.6f} MeV")
+    print(f"  → paper asserts n_chir = 1,  ρ_F = m_e = {mp.nstr(paper_rho_F, 7)} MeV")
     print()
 
     # Verdict
@@ -220,7 +220,7 @@ def main():
         print("  alt CONTRIBUTION is comparable in magnitude to sym — NOT")
         print("  'saturated' at O(1) relative weight with an extra factor.")
     if rho_F_I != paper_rho_F:
-        print(f"  Reading (I) disagrees with paper: gives ρ_F = {rho_F_I:.4f}.")
+        print(f"  Reading (I) disagrees with paper: gives ρ_F = {mp.nstr(rho_F_I, 5)}.")
         print("  χ_alt(β_D) ≠ 0, so by character non-vanishing the alt block")
         print("  IS populated.  Paper's 'alt suppressed' claim is not")
         print("  justifiable under reading (I).")
@@ -247,7 +247,7 @@ def main():
     w.add_data("reading_I_character", {
         "chi_alt_nonzero": bool(chi_alt_nonzero),
         "n_chir": n_chir_I,
-        "rho_F_MeV": float(rho_F_I),
+        "rho_F_MeV": fmt(rho_F_I),
         "verdict": reading_I,
     })
     w.add_data("reading_II_weight", {
@@ -258,7 +258,7 @@ def main():
         "ratio_alt_over_sym": fmt(ratio_alt_over_sym),
         "alt_saturated": bool(alt_saturated),
         "n_chir": n_chir_II,
-        "rho_F_MeV": float(rho_F_II),
+        "rho_F_MeV": fmt(rho_F_II),
         "verdict": reading_II,
     })
     w.add_data("paper_claim", {
@@ -268,9 +268,9 @@ def main():
     })
     w.add_assertion(
         "ρ_F(D) from weight criterion matches paper (ρ_F = m_e)",
-        computed=float(rho_F_II),
-        expected=float(paper_rho_F),
-        tolerance=1e-12,
+        computed=fmt(rho_F_II),
+        expected=fmt(paper_rho_F),
+        tolerance="1e-12",
         source="Plancherel-weighted χ contributions",
     )
     # Lean SDP-uniqueness cross-reference (post-#1537 wiring).
