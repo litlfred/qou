@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-proton-normaliser-kl-coordinate",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:proton-normaliser-kl-coordinate",
+  "kind": "conjecture",
+  "title": "The proton normaliser $q^{-3}$ as a derivative in an integral, bar-invariant coordinate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-f-bor-borromean-observable",
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "cites": [
+    "references/kazhdan-lusztig1979",
+    "references/geer-patureau-mirand-turaev-2009"
+  ],
+  "tags": [
+    "negative-result",
+    "proton",
+    "schur-element",
+    "kazhdan-lusztig",
+    "bar-involution",
+    "modified-trace"
+  ],
+  "text": "proton-normaliser-kl-coordinate.md",
+  "leanSource": "proton-normaliser-kl-coordinate.lean",
+  "provenance": "authored"
+}

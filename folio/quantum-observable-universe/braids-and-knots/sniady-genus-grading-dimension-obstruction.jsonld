@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-sniady-genus-grading-dimension-obstruction",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:sniady-genus-grading-dimension-obstruction",
+  "kind": "remark",
+  "title": "Genus grading of character observables and the non-polynomiality of hook dimensions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis",
+  "cites": [
+    "references/sniady2006asymptotics"
+  ],
+  "tags": [
+    "symmetric-group",
+    "plancherel-measure",
+    "free-cumulants",
+    "genus-expansion",
+    "young-diagrams"
+  ],
+  "text": "sniady-genus-grading-dimension-obstruction.md",
+  "provenance": "authored"
+}

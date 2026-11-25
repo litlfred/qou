@@ -23,6 +23,18 @@
     "library/arxiv-1010.4386v5/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A.\n\n**ON THE HOMOLOGY OF COMPLETION AND TORSION**\n\n*MARCO PORTA, LIRAN SHAUL AND AMNON YEKUTIELI*\n\n33 pp, 10 sections.\n\n**Abstract.** Let A be a commutative ring, and a a weakly proregular ideal in A. This includes the noetherian case: if A is noetherian then any ideal in it is weakly proregular; but there are other interesting examples. In this paper we prove the MGM equivalence, which is an equivalence between the category of cohomologically a-adically complete complexes and the category of cohomologically a-torsion complexes. These are triangulated subcategories of the derived category of A-modules. Our work extends earlier work by Alonso- Jeremias-Lipman, Schenzel and Dwyer-Greenlees.\n\n**Outline.** Front matter; 0 Introduction; 1 Preliminaries on Homological Algebra; 2 The Derived Completion and Torsion Functors; 3 Koszul Complexes and Weak Proregularity; 4 The Telescope Complex; 5 Permanence of Weak Proregularity; 6 MGM Equivalence; 7 Derived Localization; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

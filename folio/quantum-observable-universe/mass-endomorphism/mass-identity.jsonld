@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -26,7 +26,7 @@
     "categorical-trace",
     "frobenius-hopf"
   ],
-  "leanRef": "qou:QOU.Torsion.MassTraceIdentity.massIntegrand",
+  "leanRef": "qou:QOU.LiftingDescent.MassTraceIdentity.massIntegrand",
   "text": "mass-identity.md",
   "leanSource": "mass-identity.lean",
   "provenance": "authored"

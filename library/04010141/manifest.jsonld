@@ -25,6 +25,18 @@
     "library/04010141/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Cellular algebras and diagram algebras in representation theory — We discuss a circle of ideas for addressing problems in repre- sentation theory using the philosophy of cellular algebras, applied to\n\n**Cellular algebras and diagram algebras in representation theory**\n\n*Representation Theory of Algebraic Groups and Quantum Groups*\n\n33 pp, 12 sections.\n\n**Abstract.** We discuss a circle of ideas for addressing problems in repre- sentation theory using the philosophy of cellular algebras, applied to algebras described in terms of diagrams. Cellular algebras are of- ten generically semisimple, and have non-semisimple specialisations whose representation theory may be discussed by solving problems in linear algebra, which are formulated in the semisimple context, and are therefore tractable in some significant cases. This applies in particular to certain \"Temperley-Lieb\" quotients of Heeke algebras, both finite dimensional and affine, which may be described in terms of bases consisting of diagrams. This leads to the application of cellu- lar algebra theory to an analysis of their representation theory, with corresponding consequences for the relevant Heeke algebras.\n\n**Outline.** Front matter; Introduction; Cellular algebras and Temperley-Lieb algebras; Let Aa(n)+ be the set; Define the equivalence relation ~ on A a ( n) ; Interrelationships among various Heeke and Tem; 4.2 Some Heeke algebras; An-1·; HBn(q,Q) ~; TLBn(q,Q); Lifting representations from finite to infinit; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "04010141",

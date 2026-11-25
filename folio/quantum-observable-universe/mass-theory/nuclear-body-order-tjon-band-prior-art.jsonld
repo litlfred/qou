@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-nuclear-body-order-tjon-band-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:nuclear-body-order-tjon-band-prior-art",
+  "kind": "remark",
+  "title": "Prior art: in nuclear EFT the three-body term is not fixed by two-body data",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-binding-manybody-eq-jet-filtration",
+  "cites": [
+    "references/klein-fewbody"
+  ],
+  "tags": [
+    "body-order",
+    "three-body-force",
+    "tjon-line",
+    "nuclear-eft",
+    "prior-art",
+    "comparison"
+  ],
+  "text": "nuclear-body-order-tjon-band-prior-art.md",
+  "provenance": "authored"
+}

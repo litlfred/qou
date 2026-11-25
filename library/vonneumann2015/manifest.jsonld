@@ -83,6 +83,18 @@
     "library/vonneumann2015/sections/sec-068"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Von Neumann Algebras — 70 sections: Front matter; Hilbert Space; The Spectral Theorem\n\n**Von Neumann Algebras**\n\n*November 13, 2015*\n\n161 pp, 70 sections.\n\n**Outline.** Front matter; 2.1 Hilbert Space; 2.2 The Spectral Theorem; 2.3 Polar decomposition; 2.4 Tensor product of Hilbert Spaces.; 3.2 The bicommutant theorem.; 2 M is strongly closed.; 3.3 Examples.; 3.4 Elementary properties of von Neumann algeb; 4.1 Deﬁnition of type I factor.; 4.2 Classiﬁcation of all type I factors; 4.3 Tensor product of von Neumann algebras.; 4.4 Multiplicity and ﬁnite dimensional von Neu; 4.5 A digression on index.; 5.1 Some simple but telling results on linear ; 5.2 The theorem; 6.1 Order on projections; 6.2 The GNS construction\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1.2: If C is a closed convex subset of H and ξ is any vector in\n- Theorem 3.2.1: Let M be a self-adjoint subalgebra of B(H) containing 1,\n- Theorem 3.2.2: (von Neumann) Let M be a self-adjoint subalgebra of B(H)\n- Theorem 3.4.2: If {aα} is a net of self-adjoint operators with aα ≤aβ\n- Theorem 4.1.1: If M is a factor and p and q are non-zero projections in\n- Theorem 4.2.1: If M is a type I factor of a Hilbert space L, there are Hilbert",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "vonneumann2015",

@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -32,7 +32,7 @@
     "track-C-formalization",
     "1ppb-roadmap"
   ],
-  "leanRef": "qou:QOU.BraidKnot.q_beta_c3_hopf_three_fold_markov",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.q_beta_c3_hopf_three_fold_markov",
   "text": "q-beta-c3-hopf-three-fold-markov.md",
   "leanSource": "q-beta-c3-hopf-three-fold-markov.lean",
   "provenance": "authored"

@@ -34,6 +34,18 @@
     "library/arxiv-1409.0848v3/sections/sec-019"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential\n\n**FACTORIZATION HOMOLOGY OF STRATIFIED SPACES**\n\n*DAVID AYALA, JOHN FRANCIS, AND HIRO LEE TANAKA*\n\n52 pp, 21 sections.\n\n**Abstract.** This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential structures. Examples of such factorization homology theories include intersection homology, compactly supported stratiﬁed mapping spaces, and Hochschild homology with coeﬃcients. Our main theorem characterizes factorization homology theories by a generalization of the Eilenberg–Steenrod axioms; it can also be viewed as an analogue of the Baez–Dolan cobordism hypothesis formulated for the observables, rather than state spaces, of a topological quantum ﬁeld theory. Using these axioms, we extend the nonabelian Poincar´e duality of Salvatore and Lurie to the setting of stratiﬁed spaces – this is a nonabelian version of the Poincar´e duality given by intersection homology.\n\n**Outline.** Front matter; Introduction; 1 Recollections; 1.1 Stratified spaces; 2 Factorization; 2.1 Disk algebras; 2.2 Factorization homology; 2.3 Disks and finite subsets; 2.4 Localizing with respect to isotopy equival; 2.5 Pushforward; 2.6 Algebras over a closed interval; 2.7 Homology theories; 3 Homotopy invariant homology theories; 3.1 Classical homology theories; 3.2 1-point compactifications; 3.3 Compactly supported cohomology; 3.4 Non-abelian Poincaré duality; 4 Examples of factorization homology theories",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

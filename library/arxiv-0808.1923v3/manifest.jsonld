@@ -35,6 +35,18 @@
     "library/arxiv-0808.1923v3/sections/sec-020"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Connections on Non-Abelian Gerbes and their Holonomy — We introduce an axiomatic framework for the parallel transport of connections on gerbes.\n\n**Connections on Non-Abelian Gerbes and their Holonomy**\n\n*Urs Schreiber and Konrad Waldorf*\n\n57 pp, 22 sections.\n\n**Abstract.** We introduce an axiomatic framework for the parallel transport of connections on gerbes. It incorporates parallel transport along curves and along surfaces, and is formulated in terms of gluing axioms and smoothness conditions. The smoothness conditions are imposed with respect to a strict Lie 2-group, which plays the role of a band, or structure 2-group. Upon choosing certain examples of Lie 2-groups, our axiomatic framework reproduces in a systematical way several known concepts of gerbes with connection: non-abelian diﬀerential cocycles, Breen-Messing gerbes, abelian and non-abelian bundle gerbes. These relationships convey a well-deﬁned notion of surface holonomy from our axiomatic framework to each of these concrete models. Till now, holonomy was only known for abelian gerbes; our approach reproduces that known concept and extends it to non-abelian gerbes.\n\n**Outline.** Front matter; 1 Introduction; 2 Foundations of the Transport Functor Formali; 2.1 The Path 2-Groupoid of a Smooth Manifold; 2.2 Local Trivializations and Descent Data; 2.3 Smooth 2-Functors; 2.4 Transport Functors; 3 Transport 2-Functors; 3.1 Smooth Descent Data; 3.2 Transport 2-Functors; 3.3 Some Features of Transport 2-Functors; 3.4 Curvature 2-Functors; 4 Transport 2-Functors are Non-Abelian Gerbes; 4.1 Differential Non-Abelian Cohomology; 4.2 Abelian Bundle Gerbes with Connection; 4.3 Non-Abelian Bundle Gerbes with Connection; 4.4 2-Bundles with Connections; 5 Surface Holonomy",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

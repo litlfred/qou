@@ -48,6 +48,18 @@
     "library/arxiv-1604.02688v1/sections/sec-033"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary\n\n**THE 3D-INDEX AND NORMAL SURFACES**\n\n*STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN*\n\n57 pp, 35 sections.\n\n**Abstract.** Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series in q1/2 with integer coeﬃcients. Our goal is to explain how the 3D-index is a generating series of normal surfaces associated to the ideal triangulation. This shows a connection of the 3D-index with classical normal surface theory, and fulﬁlls a dream of constructing topological invariants of 3-manifolds using normal surfaces.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgements; 2 The tetrahedral index; 3 Notation and conventions for triangulated 3-; 3.1 Gluing equations; 3.2 Generalised angle structures; 4 The 3D-index of an ideal triangulation; 5 Dependence on the choice of triangulation; 6 Some Q-normal surface theory; 6.1 Construction of spun normal surfaces; 6.2 Geometric generators for Q-normal classes; 7 Combinatorics of ideal triangulations and in; 7.1 Geometric generators for integer Q-normal ; 8 The 3D-index via normal surfaces; 8.1 Convergence of the index sum; 8.2 Non 1-efficient ideal triangulations; 9 Invariance under 2-3 and 0-2 moves",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

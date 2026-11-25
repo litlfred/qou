@@ -18,6 +18,21 @@
     "library/moffatt1969-jfm-knottedness/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The degree of knottedness of tangled vortex lines (Moffatt, J. Fluid Mech. 35 (1969) 117–129) — helicity as a topological invariant counting linking of vortex lines\n\n**The degree of knottedness of tangled vortex lines** — H. K. Moffatt. J. Fluid Mech. 35, part 1 (1969) 117–129.\n\nIn an inviscid barotropic fluid the integral of u·ω over a region bounded by vortex surfaces (the helicity) is invariant. For a field confined to thin unknotted vortex filaments the invariant equals a sum over pairs of the linking numbers times the product of the circulations; a knotted filament is decomposed into linked unknotted ones, which gives a degree of knottedness. Sections treat solid boundaries, a consequence of the invariance, and the analogous magnetohydrodynamic invariant (magnetic helicity).\n\n**Why it may bear here.** Registered as `moffatt1969`; cited in `helicity-conservation` and the knotted-particles history. It is the original of helicity = mutual linking, the fluid analogue of reading an interaction off linking numbers of closed components (cf. `procrsoclondona92`, Moffatt–Ricca 1992, on self-linking and the Călugăreanu invariant). Scanned original with a text layer: subscripts read as commas (C₁ appears as `C,`).",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt4f9V7M6GLoG8XeAZz",
+        "date": "2026-11-22"
+      },
+      "drafted_at": "2026-11-22"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "moffatt1969-jfm-knottedness",

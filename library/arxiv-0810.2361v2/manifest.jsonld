@@ -37,6 +37,18 @@
     "library/arxiv-0810.2361v2/sections/sec-022"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "2-VECTOR SPACES AND GROUPOIDS — This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces.\n\n**2-VECTOR SPACES AND GROUPOIDS**\n\n*JEFFREY C. MORTON*\n\n44 pp, 24 sections.\n\n**Abstract.** This paper describes a relationship between essentially ﬁnite groupoids and 2-vector spaces. In particular, we show to construct 2-vector spaces of Vect-valued presheaves on such groupoids. We deﬁne 2-linear maps corre- sponding to functors between groupoids in both a covariant and contravariant way, which are ambidextrous adjoints. This is used to construct a representation— a weak functor—from Span(FinGpd) (the bicategory of essentially ﬁnite groupoids and spans of groupoids) into 2Vect. In this paper we prove this and give the construction in detail.\n\n**Outline.** Front matter; Abstract; 1 Introduction; 3 Kapranov-Voevodsky 2-Vector Spaces; 3.1 Definition; 3.2 Classification Theorems; 3.3 Example: Group 2-Algebra; 4 KV 2-Vector Spaces and Finite Groupoids; 4.1 Free 2-Vector Space on a Finite Groupoid; 4.2 The Ambidextrous Adjunction; 4.3 Units and Counits; 5 Spans of Groupoids; 5.1 2-Linear Maps from Spans of Groupoids; 5.2 and Composition; 6 Spans of Spans; 6.1 2-Morphisms from Spans of Spans; 6.2 Coordinate Description of 2-Morphisms; 7 Main Theorem",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

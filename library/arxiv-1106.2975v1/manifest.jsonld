@@ -20,6 +20,18 @@
     "library/arxiv-1106.2975v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z.\n\n**The Polyanalytic Ginibre Ensembles**\n\n*Antti Haimi and Håkan Hedenmalm*\n\n31 pp, 7 sections.\n\n**Abstract.** For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z. We supply Poln,q with the inner product structure of L2 \u0010 C, e−m|z|2dA \u0011 , where dA(z) = dxdy π , z = x + iy; the resulting Hilbert space is denoted by Polm,n,q. Here, it is assumed that m is a positive real. We let Km,n,q denote the reproducing kernel of Polm,n,q, and study the associated determinantal process, in the limit as m, n →+∞while n = m + O(1); the number q, the degree of polyanalyticity, is kept ﬁxed. We call these processes polyanalytic Ginibre ensembles, because they generalize the Ginibre ensemble – the eigenvalue process of random (normal) matrices with Gaussian weight. A possible interpretation is that we permit a few higher Landau levels.\n\n**Outline.** Front matter; 1 Introduction; 2 Polyanalytic Bargmann-Fock spaces; 3 Berezin density asymptotics for an exterior ; 4 Poly-Bargmann transforms; 5 Reproducing kernel and Berezin density asymp; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

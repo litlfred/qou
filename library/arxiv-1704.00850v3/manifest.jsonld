@@ -26,6 +26,18 @@
     "library/arxiv-1704.00850v3/sections/sec-011"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding\n\n**Estimating the spectral gap of a trace-class Markov operator**\n\n*Qian Qin, James P. Hobert and Kshitij Khare*\n\n34 pp, 13 sections.\n\n**Abstract.** The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding Markov operator. However, calculating (and even approximating) the spectral gaps of practical Monte Carlo Markov chains in statistics has proven to be an extremely difﬁcult and often insurmountable task, especially when these chains move on continuous state spaces. In this paper, a method for accurate estimation of the spectral gap is developed for general state space Markov chains whose operators are non-negative and trace-class. The method is based on the fact that the second largest eigenvalue (and hence the spectral gap) of such operators can be bounded above and below by simple functions of the power sums of the eigenvalues. These power sums often have nice integral representations.\n\n**Outline.** Front matter; 1 Introduction; 2 Markov operators; 3 Power sums of eigenvalues; 4 Data augmentation operators and an integral ; 5 Classical Monte Carlo; 6 Efficiency of the algorithm; 7 Examples; 7.1 Gaussian chain; 7.2 Bayesian probit regression; 7.3 Bayesian linear regression model with non-; A Proof of Theorem 2; B Proof of Proposition 9",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

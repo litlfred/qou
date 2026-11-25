@@ -40,6 +40,21 @@
     "library/turaev1988/sections/page-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Turaev, The Yang–Baxter equation and invariants of links (Invent. Math. 92, 527–553, 1988) — enhanced Yang–Baxter operators give link invariants via braid closure; the HOMFLY (P) and Kauffman (F) polynomials arise this way, with state models.\n\n**The Yang–Baxter equation and invariants of links** — V. G. Turaev. Inventiones mathematicae 92, 527–553 (1988).\n\n§2 recalls Yang–Baxter operators R on V⊗V (V free of rank m over a commutative ring K) and introduces enhanced YB-operators (EYB): a quadruple S = (R, μ, α, β) of a YB-operator R, an endomorphism μ of V and invertible scalars α, β satisfying the compatibility conditions needed for Markov invariance. §3 attaches to each EYB-operator S an isotopy invariant T_S of links, computed on a braid presentation as the trace of the braid's image composed with μ^{⊗n}, normalised by α and β so that it is invariant under both Markov moves; T_S is annihilated by the characteristic polynomial of R (Theorem 3.2.1). §4 studies special EYB-operators (from the R-matrices of the fundamental vector representations for the series A^(1), and B^(1), C^(1), D^(1), A^(2)) and shows the resulting invariants are equivalent to the two-variable polynomials P (HOMFLY) and F (Kauffman). §5 gives a state model for T_S under restrictions on S, and §6 a non-oriented version used to prove Theorem 4.3.4.\n\n**Why it may bear here.** The direct braid-closure route from an R-matrix to a link invariant, with no von Neumann or Hecke algebra in between (the paper says so). A companion to wenzl1988 in the same volume. No bib entry existed before this ingest.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt5hLUvnWio7T8h6yz9",
+        "date": "2026-11-15"
+      },
+      "drafted_at": "2026-11-15"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "turaev1988",

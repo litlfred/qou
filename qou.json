@@ -1,9 +1,12 @@
 {
   "_comment": "This repository's CatHarness instance DECLARATION. Renamed from `harness.json` on 2026-09-26: platform main composes both filenames from the instance's own name (`instanceDeclarationFilename(name) = <name>.json`, `instanceConfigFilename(name) = <name>.config.json` in cat-harness/schemas/cat-harness.ts), and `findDeclarationFile` accepts a file ONLY when its filename stem equals its own `name` field. Stem `harness` against name `qou` failed that test -- the platform's own words for the state are 'the rename-half-done case check:instance-config already reports'. Stem `qou` now agrees. Paired with `qou.config.json` (what this instance IS); this file is WHERE its tree is.",
   "name": "qou",
+  "title": "Quantum Observable Universe",
   "description": "Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories",
   "repository": "litlfred/qou",
   "canonicalUrl": "https://litlfred.github.io/qou",
+  "iriBase": "https://litlfred.github.io/qou/",
+  "version": "0.1.0",
   "_needs_comment": "Added 2026-10-04 (bean qou-n4r9, story S1): the stack this paper folio is built on. Names only; the fetchable edge (git + ref) is authored in qou.config.json `dependencies.folioAssistant`, because a name carries no URL or version. `dependents` was removed from every directory entry: the platform retired the key on 2026-09-30 (inheritance is automatic).",
   "needs": [
     "folio-assistant-sci"
@@ -43,7 +46,18 @@
         "code",
         "computation-witness"
       ],
-      "_graphTypologies_comment": "`code` for the Python computations, and `computation-witness` for the witnesses they write (platform kind added in folio-assistant#2129, story TOOLS T1/T2, beans qou-qb6t and qou-4r5m). One directory, two graph kinds: a directory is a place to look, and the witnesses are told apart by their `.witness.json` suffix. `bun run witness:conformance` reports which witnesses meet the producer contract; it never edits one. Addressable as {{ qou.computations.<witness>.<json path> }} (#7490)."
+      "_graphTypologies_comment": "`code` for the Python computations, and `computation-witness` for the witnesses they write (platform kind added in folio-assistant#2129, story TOOLS T1/T2, beans qou-qb6t and qou-4r5m). One directory, two graph kinds: a directory is a place to look, and the witnesses are told apart by their `.witness.json` suffix. `bun run witness:conformance` reports which witnesses meet the producer contract; it never edits one. Addressable as {{ qou.computations.<witness>.<json path> }} (#7490).",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "accuracy/index.html",
+            "title": "Accuracy",
+            "writer": [
+              "scripts/generate-accuracy-scorecard.py"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "tools",
@@ -72,7 +86,18 @@
         "branch": "cat/cat-harness/qa-reports",
         "keyedBy": "commit"
       },
-      "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). Today it holds the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/, written by scripts/compute-qa.py (TOOLS T7, bean qou-4dj1) and published by .github/workflows/compute-qa.yml. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu."
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "qa/index.html",
+            "title": "QA",
+            "writer": [
+              "cat-harness-tools/scripts/qa-page-standalone.ts"
+            ]
+          }
+        ]
+      },
+      "description": "What a QA process produced about this folio, published to the qa-reports branch keyed by commit and never committed (owner ruling 2026-10-04, decision 11: QA results go to the cat-harness qa-reports store). It holds what the writers declared under `qa.writers` produce (owner decision 2026-11-24, the integrated QA page): the compute-QA verdicts, one qou-compute-qa/v1 file per gate under compute-qa/ (scripts/compute-qa.py, TOOLS T7, bean qou-4dj1), the Lean vacuity/axiom audit under lean/, and the rendered-paper record under rendering/. Published by .github/workflows/compute-qa.yml (a caller of the platform's layer-qa-publish.yml) and, after a merge, by scripts/qa-publish-local.sh. The directory is gitignored except for a .gitkeep, so it is present in every checkout and a reader never mistakes an absent directory for a clean run. Story S3, bean qou-4rhu."
     },
     {
       "id": "attestations",
@@ -182,7 +207,44 @@
         "beans"
       ],
       "description": "The bean work-plan (beans/beans.json + beans/defs/, the layout the `beans` CLI reads through .beans.yml). Kept on its own branch, `cat/cat-harness/beans`, not on main (owner, 2026-10-10, re-confirmed 2026-11-15; issue #7642). The session-start hook installs the platform if it is absent and mounts it at `beans/` (`state:mount`); there is no read-only fallback (owner, 2026-11-15). An edit is pushed back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push --id beans`, a splice with `expect` that never forces, so a bean edit is no longer a commit in a PR.",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "beans/index.html",
+            "title": "Work plan",
+            "writer": [
+              "cat-harness-tools/scripts/beans-board.ts"
+            ]
+          }
+        ]
+      },
       "_comment": "Same shape as the platform's own beans declaration (`scope: repository`, which dependents do not inherit, so qou declares its own) and as qou's fsh-guts entry above. The branch name is the owner's choice over the documented folio convention `cat/qou/beans`; the declaration names it explicitly, so no tool needs to compose it."
+    },
+    {
+      "id": "lean-docs",
+      "path": "lean/",
+      "scope": "repository",
+      "source": {
+        "kind": "branch",
+        "branch": "cat/folio-assistant-sci/lean-docs",
+        "keyedBy": "tip"
+      },
+      "graphTypologies": [
+        "lean"
+      ],
+      "description": "The rendered Lean library: the Lean knowledge-graph viewer (one thin page plus data/ shards loaded on demand) made by folio-assistant-sci's lean-kg-publish from doc-gen4's declaration data, kept on its own branch and mounted here by state:mount, never committed to main (skill lean-html-docs). scripts/build-site.sh copies the mount to _site/lean/, the route the `lean` entry below declares as its visualiser, so a site build needs no Lean toolchain.",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "lean/index.html",
+            "title": "Lean (by package)",
+            "writer": [
+              "scripts/site-step.sh"
+            ]
+          }
+        ],
+        "_visualiser_comment": "The Lean store: the combined render of all three packages (cat/folio-assistant-sci/lean-docs, mounted at lean/), which the per-package sub-KGs (lean, lean-ugb, lean-fred2005) are cut from. The site does not publish the combined render; /lean/ is a page listing the three sub-KGs, written by scripts/site-step.sh lean."
+      }
     },
     {
       "id": "lean",
@@ -190,20 +252,109 @@
       "graphTypologies": [
         "lean"
       ],
-      "description": "The qou Lake package (library QOU). Its doc-gen4 render is the folio's Lean visualiser, built at publish by folio-assistant-sci (skill lean-html-docs, process lean-docs-publish) and never committed.",
+      "description": "Lean sub-KG of the qou Lake package (libraries QOU, QOUBlocks and the chapter libraries in its lakefile). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/qou/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
       "coverage": {
         "visualiser": [
           {
-            "ref": "_site/lean/index.html",
-            "title": "Lean",
+            "ref": "lean/qou/index.html",
+            "title": "Lean: QOU",
             "writer": [
-              "folio-assistant/folio-assistant-sci/adapters/paper/lean/lean-docs-build.sh",
-              "folio-assistant/folio-assistant-sci/adapters/paper/lean/lean-render.ts"
+              "scripts/site-step.sh"
             ]
           }
-        ]
+        ],
+        "_visualiser_comment": "Built at publish by `scripts/site-step.sh` (never committed): folio-assistant-sci lean-kg-publish --from-kg cuts this package's sub-KG out of the mounted Lean store (lean-docs, cat/folio-assistant-sci/lean-docs) with --modules the roots of its lakefile and --sibling the other packages' roots, at route lean/qou/, so no Lean is built for the site. It is staged before the document pages (site:document passes it as --lean-docs-index, so each block's ∀ links into its own paper's sub-KG) and moved into the site by site:lean. Ruling \"2 verso\" later adds the Verso render at verso/qou/."
+      }
+    },
+    {
+      "id": "lean-ugb",
+      "path": "folio/unital-groebner-bases/lean/",
+      "graphTypologies": [
+        "lean"
+      ],
+      "description": "Lean sub-KG of the ugb Lake package (libraries UGB and UGBBlocks). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/ugb/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "lean/ugb/index.html",
+            "title": "Lean: UGB",
+            "writer": [
+              "scripts/site-step.sh"
+            ]
+          }
+        ],
+        "_visualiser_comment": "Built at publish by `scripts/site-step.sh` (never committed): folio-assistant-sci lean-kg-publish --from-kg cuts this package's sub-KG out of the mounted Lean store (lean-docs, cat/folio-assistant-sci/lean-docs) with --modules the roots of its lakefile and --sibling the other packages' roots, at route lean/ugb/, so no Lean is built for the site. It is staged before the document pages (site:document passes it as --lean-docs-index, so each block's ∀ links into its own paper's sub-KG) and moved into the site by site:lean. Ruling \"2 verso\" later adds the Verso render at verso/ugb/."
+      }
+    },
+    {
+      "id": "lean-fred2005",
+      "path": "folio/fred2005-formal-groups/lean/",
+      "graphTypologies": [
+        "lean"
+      ],
+      "description": "Lean sub-KG of the fred2005 Lake package (libraries Fred2005 and Fred2005Blocks; it requires qou, so its imports of QOU are cross-subgraph links). Owner ruling 2026-11-24, \"separate qou, UGB and Fred2005 into own lean sub-KGs\": one graph per Lake package, each with its own visualiser route lean/fred2005/ (folio-assistant-sci typology `lean`: one graph per declared package path).",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "lean/fred2005/index.html",
+            "title": "Lean: Fred2005",
+            "writer": [
+              "scripts/site-step.sh"
+            ]
+          }
+        ],
+        "_visualiser_comment": "Built at publish by `scripts/site-step.sh` (never committed): folio-assistant-sci lean-kg-publish --from-kg cuts this package's sub-KG out of the mounted Lean store (lean-docs, cat/folio-assistant-sci/lean-docs) with --modules the roots of its lakefile and --sibling the other packages' roots, at route lean/fred2005/, so no Lean is built for the site. It is staged before the document pages (site:document passes it as --lean-docs-index, so each block's ∀ links into its own paper's sub-KG) and moved into the site by site:lean. Ruling \"2 verso\" later adds the Verso render at verso/fred2005/."
       }
     }
   ],
+  "qa": {
+    "writers": [
+      {
+        "id": "accuracy-scorecard",
+        "axis": "domain",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" accuracy",
+        "writes": [
+          "compute-qa/accuracy-scorecard.json"
+        ],
+        "title": "Accuracy against measurement",
+        "because": "ACCURACY.md set against CODATA, PDG and AME2020: the comparison boundary where the model's physical claims are made."
+      },
+      {
+        "id": "compute-qa",
+        "axis": "compute",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" compute",
+        "writes": [
+          "compute-qa/**"
+        ],
+        "title": "Compute gates"
+      },
+      {
+        "id": "lean-vacuity-axiom-audit",
+        "axis": "lean",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" lean",
+        "writes": [
+          "lean/**"
+        ],
+        "title": "Lean vacuity and axiom audit"
+      },
+      {
+        "id": "paper-render-qa",
+        "axis": "rendering",
+        "run": "bash \"${INSTANCE:-.}/scripts/qa-writer.sh\" rendering",
+        "writes": [
+          "rendering/**"
+        ],
+        "title": "Rendered paper"
+      }
+    ],
+    "axes": [
+      "rendering",
+      "lean",
+      "compute",
+      "domain",
+      "kg"
+    ]
+  },
+  "_qa_comment": "The integrated QA page (cat-harness-tools scripts/qa-page.ts, schemas/sdlc/qa-axis.ts) draws one section per axis from what the writers above publish to the qa-reports branch. Each `run` is executed from the index checkout by layer-qa-publish.yml (INSTANCE=qou, QA_HOME=qou/test/results) and from qou's root by scripts/qa-publish-local.sh; scripts/qa-writer.sh resolves both. Owner decision 2026-11-24 (\"4y\").",
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."
 }

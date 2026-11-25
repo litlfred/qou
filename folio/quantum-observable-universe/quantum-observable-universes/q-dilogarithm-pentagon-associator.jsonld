@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
@@ -21,7 +21,10 @@
   ],
   "interprets": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
   "cites": [
-    "references/faddeev_kashaev1994"
+    "references/faddeev_kashaev1994",
+    "references/faddeev-kashaev-volkov2000",
+    "references/baseilhac-benedetti-fibred",
+    "references/terashima-yamazaki2013"
   ],
   "tags": [
     "dilogarithm",

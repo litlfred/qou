@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -30,7 +30,7 @@
     "markov-trace",
     "flavour"
   ],
-  "leanRef": "qou:QOU.Mass.PhotonTraceLemmas.trace_flip_reverse",
+  "leanRef": "qou:QOU.MassTheory.PhotonTraceLemmas.trace_flip_reverse",
   "text": "trace-flavour-no-go.md",
   "provenance": "authored"
 }

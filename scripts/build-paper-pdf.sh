@@ -36,7 +36,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-FA="$ROOT/folio-assistant"
+. "$ROOT/scripts/lib/platform-root.sh"
+# The root-mounted layers (index.lock.json) when present, else the folio-assistant/ link.
+FA=$(qou_platform_root "$ROOT") || FA="$ROOT/folio-assistant"
 TEMPLATE="$FA/folio-assistant-sci/adapters/paper/latex/paper-preamble.tex"
 LAYOUT="$ROOT/folio/$PAPER/latex/layout.tex"
 [ -f "$TEMPLATE" ] || { echo "missing $TEMPLATE — run scripts/setup-folio-assistant.sh" >&2; exit 2; }

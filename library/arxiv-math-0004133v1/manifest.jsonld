@@ -20,6 +20,18 @@
     "library/arxiv-math-0004133v1/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "From Finite Sets to Feynman Diagrams — ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms.\n\n**From Finite Sets to Feynman Diagrams**\n\n*John C. Baez and James Dolan*\n\n30 pp, 7 sections.\n\n**Abstract.** ‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasis on categoriﬁcation can simplify and unify mathematics. We begin with elementary arithmetic, where the category of ﬁnite sets serves as a categoriﬁed version of the set of natural numbers, with disjoint union and Cartesian product playing the role of addition and multiplication. We sketch how categorifying the integers leads naturally to the inﬁ- nite loop space Ω∞S∞, and how categorifying the positive rationals leads naturally to a notion of the ‘homotopy cardinality’ of a tame space. Then we show how categorifying formal power series leads to Joyal’s esp`eces des structures, or ‘structure types’. We also describe a useful generalization of structure types called ‘stuﬀtypes’.\n\n**Outline.** Front matter; 1 Introduction; 2 Equality and Isomorphism; 3 Natural Numbers and Finite Sets; 4 Power Series and Structure Types; 5 Feynman Diagrams and Stuff Operators; Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

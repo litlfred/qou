@@ -35,6 +35,18 @@
     "library/arxiv-2312.00624v1/sections/sec-020"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the\n\n**On the structure of wave functions in complex Chern–Simons theory**\n\n*Marcos Mariño and Claudia Rella*\n\n43 pp, 22 sections.\n\n**Abstract.** We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve.\n\n**Outline.** Front matter; Introduction; Complex Chern–Simons theory and the A-polynomi; Classical and quantum A-polynomials; The case of SL(2,C) gauge group; The structure of the wave function; General conjectures; Cancellation of singularities; The wave function in the rational case, I; The wave function in the rational case, II; Solving a second-order q-difference equation; Solving a third-order q-difference equation; Examples; The figure-eight knot; The three-twist knot; The wave function from the state integral; Evaluation at rational points; Factorization and two special subcases",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

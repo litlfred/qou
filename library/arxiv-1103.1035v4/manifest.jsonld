@@ -24,6 +24,18 @@
     "library/arxiv-1103.1035v4/sections/sec-009"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS — Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0.\n\n**MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS**\n\n*AMNON YEKUTIELI*\n\n31 pp, 11 sections.\n\n**Abstract.** Consider a pronilpotent DG (differential graded) Lie algebra over a ﬁeld of characteristic 0. In the ﬁrst part of the paper we introduce the reduced Deligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi- isomorphism between two such algebras induces an equivalence between the corresponding reduced Deligne groupoids. This extends the famous result of Goldman-Millson (attributed to Deligne) to the unbounded pronilpotent case. In the second part of the paper we consider the Deligne 2-groupoid. We show it exists under more relaxed assumptions than known before (the DG Lie algebra is either nilpotent or of quasi quantum type). We prove that a DG Lie quasi- isomorphism between such DG Lie algebras induces a weak equivalence between the corresponding Deligne 2-groupoids.\n\n**Outline.** Front matter; 0 Introduction; 1 Some Facts about DG Lie Algebras; 2 The Reduced Deligne Groupoid; 3 DG Lie Quasi-isomorphisms – Nilpotent Algebr; 4 DG Lie Quasi-isomorphisms – Pronilpotent Alg; 5 Some Facts on 2-Groupoids; 6 The Deligne 2-Groupoid; 7 L Morphisms and Coalgebras; 8 L Quasi-isomorphisms between Pronilpotent Al; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

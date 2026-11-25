@@ -115,7 +115,7 @@ $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 The monograph's primary substrate anchor is the proton-pinned $q_0 = 1.109978582751381\ldots$ (from $m_{\mathfrak{p}}/m_e$); the legacy element rows below were evaluated at the muon-pinned $q_0^{(\mu)} = 1.109978595642739\ldots$ (16 dps) and inject empirical CODATA nucleon masses and AME2020 $B/A$ values into the constituent-sum mass formula above:
 $\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
 $\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10453$,
-$m_{\mathfrak{p}} \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$,
+$m_{\mathfrak{p}} \approx {{ folio-assistant-sci.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$,
 $m_{\mathfrak{n}} \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$,
 $m_e \approx 0.51100$ MeV.
 

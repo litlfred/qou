@@ -25,6 +25,18 @@
     "library/arxiv-1112.0030v2/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Homological Algebra of Knots and BPS States — It is known that knot homologies admit a physical description as spaces of open BPS states. We study operators and algebras acting on these spaces.\n\n**Homological Algebra of Knots and BPS States**\n\n*Sergei Gukov and Marko Stoˇsić*\n\n46 pp, 12 sections.\n\n**Abstract.** It is known that knot homologies admit a physical description as spaces of open BPS states. We study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existence of “colored diﬀerentials” that relate homological invariants of knots colored by diﬀerent representations. Based on this structure, we formulate a list of properties of the colored HOMFLY homology that categoriﬁes the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we ﬁnd a remarkable “mirror symmetry” between these triply-graded theories.\n\n**Outline.** Front matter; 1 Setting the stage; 2 Algebra of BPS states and its representation; 3 B-model and matrix factorizations; 4 Colored HOMFLY homology; 5 Mirror symmetry for knots; 6 Unreduced colored HOMFLY homology; Appendix A. Notations; Appendix B. Kauffman and S2 homologies of the ; Appendix C. H3 homology of the figure-eight kn; Appendix D. Computation of the unreduced homol; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

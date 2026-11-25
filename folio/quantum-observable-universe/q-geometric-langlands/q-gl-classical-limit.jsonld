@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -24,7 +24,7 @@
     "geometric-langlands",
     "classical-limit"
   ],
-  "leanRef": "qou:QOU.QGeometricLanglands.q_gl_classical_limit",
+  "leanRef": "qou:QOU.InformationTheory.q_gl_classical_limit",
   "text": "q-gl-classical-limit.md",
   "provenance": "authored"
 }

@@ -72,7 +72,7 @@ authoritative** — the corpus is.
    `FRESH` / `STALE` / `UNHASHED` against the live `.md` SHA-256 prefix.
 
 ## STABLE — the library: read [`library-and-staleness-traps.md`](library-and-staleness-traps.md)
-Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`),
+Three tiers (`INDEX.md` -> the `narrative` of `library/<doc-id>/manifest.jsonld` (`scripts/summarize-library.py --show <id>`; was `library/<doc-id>/summary.json` until 2026-11-24) -> `sections/`) plus the fourth (`ocr/`),
 with counts and commands. The traps below stay here — they are what gets skipped.
 
 ## TRAP — for some docs `sections/` is BOILERPLATE; the text is in `ocr/`

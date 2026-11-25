@@ -30,6 +30,18 @@
     "library/arxiv-math-0408078v2/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A basis for the full Homfly skein of the annulus — A basis, denoted {Qλ,µ}, for the full Homﬂy skein of the annulus C was introduced in [18], where λ and µ are partitions of integers n and p into k\n\n**A basis for the full Homfly skein of the annulus**\n\n*RICHARD J. HADJI 1 and HUGH R. MORTON*\n\n27 pp, 17 sections.\n\n**Abstract.** A basis, denoted {Qλ,µ}, for the full Homﬂy skein of the annulus C was introduced in [18], where λ and µ are partitions of integers n and p into k and k∗parts respectively. The basis consists of eigenvectors of the two meridian maps on C; these maps are the linear endomorphisms of C induced by the insertion of a meridian loop with either orientation around a diagram in the annulus. In this paper we give an explicit expression for each Qλ,µ as the determinant of a (k∗+ k) × (k∗+ k) matrix whose entries are simple elements hn, h∗ n in the skein C. In the case p = 0 (µ = φ) the deter- minant gives the Jacobi-Trudy formula for the Schur function sλ of N variables as a polynomial in the complete symmetric functions hn of the variables, [12].\n\n**Outline.** Front matter; The skein models; The plane; The Hecke algebras and extended variants; The annulus; The annulus with two boundary points; Skein involutions; Some basic elements in the annulus; The meridian maps of the skein C; Relations between C and A; Matrix-based calculations; Notation; Calculations; Eigenvectors of the meridian maps; Construction of Q,; Properties of the basis elements Q,; (1,1)-tangle invariants\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.1: Let w be any index vector. Then Aw = det \u0012 h∗ ⊣ h ⊣ \u0013 w ∈C satisﬁes ¯ϕ(Aw) = cwAw, and hence also ϕ(Aw) = cwAw, for some cw ∈Λ.\n- Theorem 3.4: The element Qλ,µ ∈C deﬁned above is an eigenvector of the meridian map ϕ, with eigenvalue sλ,µ.\n- Theorem 3.5: The basis elements Qλ,µ of C have the property that the prod- uct of any two is an integer linear combination of basis elements with non- negative coeﬃcients.\n- Corollary 1.3: We can write sn−1[n]hn = hn−1gn, where hn = an/ϕs(an) is the true idempotent.\n- Corollary 2.2: For each j ≥1 we have det\n- Corollary 2.5: We have k∗+k−1 X j=1 s2j det \u0012 L ⊣ l ⊣ \u0013 + det \u0012 R ⊣ r ⊣ \u0013 = k+k∗ X j=1 s2j−2 det",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-math-0408078v2",

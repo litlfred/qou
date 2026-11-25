@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-molecular-assembly-projector-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:molecular-assembly-projector-remark",
+  "kind": "remark",
+  "title": "The assembly projector as a q-Young symmetriser",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector",
+    "papers/quantum-observable-universe/blocks/ex-benzene-symmetric-projector"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "molecular-assembly-projector-remark.md",
+  "provenance": "authored"
+}

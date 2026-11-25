@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -27,7 +27,7 @@
     "amphichiral",
     "structural-exclusion"
   ],
-  "leanRef": "qou:QOU.QBeta.FiveTwoDTSpectrumSplit.symmetric_scalar_blind_to_chirality",
+  "leanRef": "qou:QOU.Nuclear.FiveTwoDTSpectrumSplit.symmetric_scalar_blind_to_chirality",
   "text": "fivetwo-dt-spectrum-split.md",
   "provenance": "authored"
 }

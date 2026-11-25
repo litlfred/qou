@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -15,7 +15,7 @@
   "kind": "proposition",
   "title": "Uniqueness of the inertial mass identity",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-mass-identity-exists",
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
     "papers/quantum-observable-universe/blocks/prop-frobenius-pairing-unique"
   ],
   "proofs": [

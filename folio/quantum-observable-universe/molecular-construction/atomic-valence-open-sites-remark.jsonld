@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-atomic-valence-open-sites-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:atomic-valence-open-sites-remark",
+  "kind": "remark",
+  "title": "Valences of H, C, N, O and lone-pair assignment",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-atomic-valence-open-sites"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-atomic-valence-open-sites",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "atomic-valence-open-sites-remark.md",
+  "provenance": "authored"
+}

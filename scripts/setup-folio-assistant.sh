@@ -43,6 +43,27 @@
 
 set -uo pipefail
 
+# --- qou as a platform layer (owner ruling 2026-11-24) --------------------
+# index.config.json + index.lock.json mount the platform layers at the repository
+# root (`bash .github/mount-from-lock.sh`, or any `bun run cat ...`). When they
+# are mounted, `folio-assistant/` is made a directory of links to THEM
+# (scripts/lib/platform-root.sh, qou_platform_shim) and no clone is made: one
+# platform, the one index.lock.json pins. A clone beside the root mounts would
+# be a second platform, and the registry's checkout scan makes the two collide.
+# Set FOLIO_ASSISTANT_CLONE=1 to clone anyway (the legacy route, pinned by
+# .folio-assistant-pin).
+_QOU_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [ "${FOLIO_ASSISTANT_CLONE:-0}" != 1 ] && [ -f "$_QOU_ROOT/index.lock.json" ]; then
+  . "$_QOU_ROOT/scripts/lib/platform-root.sh"
+  if [ ! -f "$_QOU_ROOT/cat-harness-tools/package.json" ]; then
+    echo "setup-folio-assistant: mounting the platform layers from index.lock.json" >&2
+    bash "$_QOU_ROOT/.github/mount-from-lock.sh" --root "$_QOU_ROOT" || { echo "setup-folio-assistant: mount-from-lock failed" >&2; exit 1; }
+  fi
+  [ -d "$_QOU_ROOT/node_modules" ] || (cd "$_QOU_ROOT" && bun install) || exit 1
+  qou_platform_shim "$_QOU_ROOT"
+  exit 0
+fi
+
 REPO_URL="${FOLIO_ASSISTANT_REPO:-https://github.com/litlfred/folio-assistant.git}"
 
 # --- resolve the platform ref (PINNED by default) ------------------------

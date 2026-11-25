@@ -338,7 +338,7 @@ occurrences and concludes the topic is covered.
 
 | Term | Standard QCD meaning | What it means in this corpus |
 |------|----------------------|------------------------------|
-| **saturation** | small-$x$ gluon recombination; the saturation scale $Q_s(x)$ | three unrelated things: the *genus* saturation of $T_{2,9}$; **nuclear saturation**, meaning the $B/A$ plateau ([`QOU.Mass.CoordinationSaturation`](../lean/QOU/Mass/CoordinationSaturation.lean)); and "scales saturate" in the cosmological limits |
+| **saturation** | small-$x$ gluon recombination; the saturation scale $Q_s(x)$ | three unrelated things: the *genus* saturation of $T_{2,9}$; **nuclear saturation**, meaning the $B/A$ plateau ([`QOU.Mass.CoordinationSaturation`](../lean/QOU/MassTheory/CoordinationSaturation.lean)); and "scales saturate" in the cosmological limits |
 | **shadowing** | nuclear shadowing; Gribov inelastic screening | **LP-dual shadow prices** $y_0^{\star}, y^{\star}$ — the binding-energy duals of [Knot operator selection as linear program with LP duality](../mass-theory/operator-selection-lp.md). Also "archimedean shadow" and the $a_1$ "parity shadow" |
 | **diffraction** | Pomeron exchange; diffractive dissociation | **optical** diffraction — Fraunhofer, Airy, the double-slit chapter |
 | **S-matrix** | the scattering matrix | the **modular** $S$-matrix of a modular tensor category — the Reshetikhin–Turaev / Chern–Simons vacuum row and total quantum dimension $D = \sum_i d_i^2$ |

@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -23,7 +23,7 @@
     "fermionic",
     "factorization"
   ],
-  "leanRef": "qou:QOU.ParticleInteractions.SpectatorNormalization",
+  "leanRef": "qou:QOU.Confinement.SpectatorNormalization",
   "text": "spectator-normalization.md",
   "leanSource": "spectator-normalization.lean",
   "provenance": "authored"

@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -29,7 +29,7 @@
     "kummer",
     "law-of-sines"
   ],
-  "leanRef": "qou:QOU.Knot.IdealTet.norm_eq_sin_div_sin",
+  "leanRef": "qou:BraidKnotOctonion.IdealTetLawOfSines.norm_eq_sin_div_sin",
   "text": "ideal-tetrahedron-law-of-sines.md",
   "provenance": "authored"
 }
