@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:40:04Z
+updated_at: 2026-11-25T16:41:20Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -102,3 +102,5 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 - NEXT: owner review of #9438, then /prepare-merge; no further code needed for the ruling.
 
 - 2026-11-25 ~16:55Z (session_01EucfRpmx5vQ5s5BZrP4uTV): qou-b7fc non-abelian Stokes route. The holonomy-level map is well-defined; per-face traces survive; no linear Stokes relation survives tracing (Lean NonabelianStokesTrace.lean, sorry-free). Explicit Bring prod-of-commutators identity still open.
+
+- 16:45Z rf43 (session_01EucfRntKGFoPCof8huHo3z): applied the owner's '2 then 1' on the Table 3.2a scope note. PR #9436 head 3d4d9b6b1. Ruling row added.
