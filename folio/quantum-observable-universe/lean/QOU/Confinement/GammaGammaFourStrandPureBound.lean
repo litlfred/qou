@@ -691,8 +691,8 @@ theorem norm_le_of_rows {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (r : ℝ) (hr
   have : (Finset.univ.sup fun i => ∑ j, ‖A i j‖₊) ≤ (⟨r, hr⟩ : NNReal) := by
     refine Finset.sup_le fun i _ => ?_
     refine NNReal.coe_le_coe.mp ?_
-    push_cast
-    simpa [Real.norm_eq_abs] using (h i).trans_eq (rfl : r = ((⟨r, hr⟩ : NNReal) : ℝ))
+    simp only [NNReal.coe_sum, coe_nnnorm, Real.norm_eq_abs]
+    exact h i
   exact_mod_cast this
 
 theorem abs_entry_le_norm {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (i j : Fin n) :
