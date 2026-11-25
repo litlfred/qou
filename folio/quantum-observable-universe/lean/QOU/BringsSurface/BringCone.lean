@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Quaternion
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Tetraplectic geometry of the Bring cone — the Reeb quaternionic twist
