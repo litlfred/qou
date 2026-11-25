@@ -1,0 +1,15 @@
+LIB "primdec.lib";
+ring r = (0,h),(p0,p1,p2,s0,s1,s2),dp;
+ideal I =
+ h^4 + h^2*p2*s2 - h*p0*s2 - h*p2*s0 + p0*s0 + p1*s1,
+ h^5 + h^3*p2*s2 + h^3 - h^2*p0*s2 - h^2*p2*s0 + h*p0*s0 - h*p2 - h*s2 + p0 + p2*s1 + s0,
+ -h^3 + h*p1*s1 - h*p2*s2 + p0*s2 + p1 + s1,
+ -h^4 - h^2*p2*s2 - h^2 + h*p0*s2 + p0*s1 + p2 + s2,
+ h^2 - h*p1*s2 + p1*s0 + p2*s2,
+ p1*s2 + p2*s0;
+option(redSB);
+list L = minAssGTZ(I);
+ideal C2 = std(L[2]);
+ring rl = (0,h),(p0,p1,p2,s0,s1,s2),lp;
+ideal C2l = fglm(r, C2);
+int i; for (i=1;i<=size(C2l);i++){ "G",i; C2l[i]; }

@@ -1,0 +1,63 @@
+{
+ "description": "photon jet / hearing-the-shape exact probe, H_3(q), convention D",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "symbolic in q over Q(q) or at rational q; never reads the substrate q0",
+ "exact": true,
+ "results": {
+  "P2_eps_trivial_gamma": "phi0*q + phi01 + phi1*q + 1",
+  "P2_eps_sign_gamma": "-phi0/q + phi01 - phi1/q + 1",
+  "P1_hecke_torsion_identity_holds": true,
+  "P1_rank_I": 5,
+  "P1_rank_I2_over_Qq": 5,
+  "P3_trM_gamma_generic_z": "(phi0*q*z - phi01*q**2*z + phi01*q*z**2 + phi01*z + phi1*q*z + q)/q",
+  "P3_trM_gamma_D": "(phi0*q**5 + phi0*q**3 + phi01*q**2 + phi1*q**5 + phi1*q**3 + q**4 + 2*q**2 + 1)/(q**2 + 1)**2",
+  "P4_gram_generic_z": {
+   "s0,s0": "(q**2*z + q - z)/q",
+   "s0,s1": "z**2",
+   "s0,V": "(-q**2 + q*z + 1)*(q**2*z + q - z)/q**2",
+   "s1,s0": "z**2",
+   "s1,s1": "(q**2*z + q - z)/q",
+   "s1,V": "z",
+   "V,s0": "(-q**2 + q*z + 1)*(q**2*z + q - z)/q**2",
+   "V,s1": "z",
+   "V,V": "-(-q**6*z + q**5*z**2 - q**5 + 4*q**4*z - 3*q**3*z**2 + 2*q**3 - 4*q**2*z + q*z**2 - q + z)/q**3"
+  },
+  "P4_G(s0,V)-G(s1,V)_generic_z": "(-q + z)*(q - 1)*(q + 1)*(q*z + 1)/q**2",
+  "P4_G(s0,V)-G(s1,V)_D": "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(q*(q**2 + 1)**2)",
+  "P4_trM_gamma_gamma_D_minus_flip": "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(phi0*psi01 + phi01*psi0 - phi01*psi1 - phi1*psi01)/(q*(q**2 + 1)**2)",
+  "P5_rank_F": [
+   1,
+   4,
+   6
+  ],
+  "P5_F1_plus_Lminus_eminus_rank": 6,
+  "P5_L+_in_F1": true,
+  "P5_commutator_s0s1_notin_F1": true,
+  "P5_rank_F1_plus_sym": 6,
+  "P5_W_closed_under_commutator": false,
+  "P6_tl_s0_squared_scalar": "(q**2 + 1)**2/(4*q**2)",
+  "P6_tl_s0_nilpotent": false,
+  "P6_tl_V_squared_scalar": "(q**2 - q - 1)*(q**2 - q + 1)*(q**2 + q - 1)*(q**2 + q + 1)/(4*q**4)",
+  "P6_sl2_trace_gram": {
+   "s0,s0": "(q**2 + 1)**2/(2*q**2)",
+   "s0,s1": "-(q**4 + 1)/(2*q**2)",
+   "s0,V": "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(2*q**3)",
+   "s1,s0": "-(q**4 + 1)/(2*q**2)",
+   "s1,s1": "(q**2 + 1)**2/(2*q**2)",
+   "s1,V": "(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(2*q**3)",
+   "V,s0": "-(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(2*q**3)",
+   "V,s1": "(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)/(2*q**3)",
+   "V,V": "(q**2 - q - 1)*(q**2 - q + 1)*(q**2 + q - 1)*(q**2 + q + 1)/(2*q**4)"
+  },
+  "P6_sl2_gram_det": "-(q**2 - q + 1)**2*(q**2 + q + 1)**2/(2*q**4)",
+  "P6_V_trace_det": [
+   "-(q**4 - q**2 + 1)/q**2",
+   "1"
+  ],
+  "P7_h_preimages": [
+   "(-1/q,)",
+   "(q,)"
+  ],
+  "P7_zD_at_minus_qinv_minus_zD": "-(q**4 + 1)/(q*(q**2 + 1))"
+ }
+}
