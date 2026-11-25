@@ -169,7 +169,7 @@ theorem eventually_le_norm {a : ℕ → ℂ} {σ : ℝ} (ha : ∀ n, a n ≠ 0) 
   have : M' ≤ ‖a n‖ := by
     by_contra h
     push_neg at h
-    have := Real.rpow_lt_rpow_of_exponent_neg hpos h (by linarith : -σ < 0)
+    have := Real.rpow_lt_rpow_of_neg hpos h (by linarith : -σ < 0)
     linarith
   exact le_trans (le_max_left _ _) this
 
@@ -270,7 +270,7 @@ theorem norm_canonicalProduct_le {a : ℕ → ℂ} (p : ℕ) {σ : ℝ}
   calc ‖∏ i ∈ Finset.range N, weierstrassFactor p (z / a i)‖
       = ∏ i ∈ Finset.range N, ‖weierstrassFactor p (z / a i)‖ := norm_prod _ _
     _ ≤ ∏ i ∈ Finset.range N, Real.exp (K * ‖z / a i‖ ^ σ) :=
-        Finset.prod_le_prod (fun i _ => norm_nonneg _)
+        Finset.prod_le_prod₀ (fun i _ => norm_nonneg _)
           (fun i _ => norm_weierstrassFactor_le_exp_rpow p hσ0 hpσ hσp _)
     _ = Real.exp (∑ i ∈ Finset.range N, K * ‖z / a i‖ ^ σ) := (Real.exp_sum _ _).symm
     _ ≤ Real.exp (K * (∑' n, ‖a n‖ ^ (-σ)) * ‖z‖ ^ σ) := by

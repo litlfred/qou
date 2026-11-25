@@ -179,7 +179,7 @@ theorem conj_s2sq_V3B_diag_one (q : R) (hq : q ≠ 0) :
 
 /-- `A₁Inv` is a two-sided inverse of `A₁`. -/
 theorem A₁Inv_mul_A₁ (q : R) (hq : q ≠ 0) : A₁Inv q * A₁ q = 1 :=
-  Matrix.mul_eq_one_comm.mp (A₁_mul_A₁Inv q hq)
+  mul_eq_one_comm.mp (A₁_mul_A₁Inv q hq)
 
 /-- The class sum (the trace) IS invariant under the same conjugation. -/
 theorem trace_conj_s1sq_V3A (q : R) (hq : q ≠ 0) :

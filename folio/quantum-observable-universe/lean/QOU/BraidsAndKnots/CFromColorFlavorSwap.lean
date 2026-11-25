@@ -68,6 +68,7 @@ theorem NucleonColorContent.conj_involutive (F : NucleonColorContent) :
     F.conj.conj = F := by
   obtain ⟨f₁, f₂, f₃⟩ := F
   simp [NucleonColorContent.conj, QuarkFlavor.conj_involutive]
+  rfl
 
 /-- Conjugation commutes with reading off the flavor at a sheet. -/
 theorem NucleonColorContent.flavorAt_conj (F : NucleonColorContent)
