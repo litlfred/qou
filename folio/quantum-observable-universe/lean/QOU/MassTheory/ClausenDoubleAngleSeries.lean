@@ -75,7 +75,7 @@ theorem Cl_2_double_angle (θ : ℝ) :
   have hgs : Summable g := by
     refine summable_bounded_div_sq (fun k => (1 - (-1) ^ k) / 2 * Real.sin (((k : ℝ) + 1) * θ))
       (fun k => ?_) |>.mul_left 2 |>.congr (fun k => ?_)
-    · dsimp only
+    · try dsimp only
       have hs := abs_le.mpr ⟨Real.neg_one_le_sin (((k : ℝ) + 1) * θ), Real.sin_le_one (((k : ℝ) + 1) * θ)⟩
       rcases neg_one_pow_eq_or ℝ k with h | h <;> rw [h]
       · norm_num

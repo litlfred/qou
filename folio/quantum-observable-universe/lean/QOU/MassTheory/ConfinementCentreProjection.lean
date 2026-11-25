@@ -100,7 +100,8 @@ theorem not_int_factors_through_centre_unconstrained :
   intro h
   obtain ⟨μ, hμ⟩ := @h ℤ _ ℤ _ _ zeroCentreInstance
   have h1 := LinearMap.congr_fun hμ 1
-  simp [zeroCentreInstance] at h1
+  change (1 : ℤ) = μ 0 at h1
+  simp at h1
 
 /-- **Repaired form of the removed axiom.** If the trace is invariant under
     the centre projection, `intA (π_Z a) = intA a`, then it factors through
