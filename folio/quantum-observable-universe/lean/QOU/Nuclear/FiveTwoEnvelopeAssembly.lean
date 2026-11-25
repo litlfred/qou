@@ -142,7 +142,9 @@ theorem envelope_integrate {S : ℝ → ℝ} {b c : ℝ}
       intro φ hφ hne
       have hsq : HasDerivWithinAt (fun s : ℝ => s ^ 2) (2 * φ) (Ici φ) φ := by
         simpa using ((hasDerivAt_pow 2 φ).hasDerivWithinAt (s := Ici φ))
-      simpa using (hderiv φ hφ hne).sub hsq)
+      have h := (hderiv φ hφ hne).sub hsq
+      rw [sub_self] at h
+      exact h)
   intro φ hφ
   have := key φ hφ
   linarith [this]

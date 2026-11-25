@@ -70,7 +70,6 @@ def OrderTwoMatch (κA : ℝ) (c : ℂ) : Prop :=
 theorem bridge_sq_mul {κA : ℝ} {c : ℂ} (h : OrderTwoMatch κA c) :
     (κA : ℂ) * c ^ 2 = -(Complex.I * ((2 * Real.pi * kappa1 : ℝ) : ℂ)) := by
   have h' := congrArg (fun z => Complex.I * z) h
-  simp only at h'
   rw [show Complex.I * (Complex.I * (κA : ℂ) * c ^ 2)
         = Complex.I * Complex.I * ((κA : ℂ) * c ^ 2) by ring,
       Complex.I_mul_I, neg_one_mul] at h'
