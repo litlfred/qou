@@ -74,7 +74,7 @@ def symbolic_identities() -> dict:
     net_p = 1 - h / 2
     net_n = 1 - 3 * h / 2 + h ** 2 / 2
     import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
-    E0 = _qbeta_e0.order_zero_scaled(1, q)                       # per m_e
+    E0 = _qbeta_e0.tower_summed_scaled(1, q)                     # per m_e, ruled tower (2026-11-25)
     delta_net = sp.simplify(net_n - net_p)
     return {
         "delta_net_eq_neg_h_net_p":
@@ -97,7 +97,7 @@ def numerical_chain(q: mp.mpf) -> dict:
     B_AME = mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION))
     h = q - 1 / q
     import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
-    E0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
+    E0 = _qbeta_e0.tower_summed_scaled(m_e, q)  # ruled tower E_0 (owner ruling 2026-11-25, qou-of4i)
     net_p = 1 - h / 2
     net_n = 1 - 3 * h / 2 + h ** 2 / 2
     delta_net = net_n - net_p

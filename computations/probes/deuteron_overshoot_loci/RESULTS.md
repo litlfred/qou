@@ -103,3 +103,25 @@ And an energy map that is not a function of the trace alone is not covered.
 
 Verification: `lean -DautoImplicit=false -s 65536` exits 0 on both files. Axioms on all seven theorems are
 `propext, Classical.choice, Quot.sound`; no `sorryAx`.
+
+## 5. Owner ruling 2026-11-25: the log binding law uses the ruled tower E₀
+
+Relayed by the parent session: *"A ruled tower"*. `binding_log_free_energy.py`, `probe_d_dressing_is_proton_net.py`
+and `probe_d_dressing_cross_a.py` now take `qbeta_e0.tower_summed_scaled` (new, the type-preserving twin of
+`tower_summed`). E₀ 4.185981 → 4.227483 MeV, +0.9915 %. Re-run, environment matched:
+
+| nucleus | B_log before | after | ratio to AME |
+|---|---|---|---|
+| ²H | 2.83316 | 2.86125 | 1.2862 |
+| ³H | 6.63095 | 6.69669 | 0.7895 |
+| ³He | 4.88387 | 4.93229 | 0.6391 |
+| ⁴He | 8.68166 | 8.76773 | 0.3099 |
+
+`logfree_binding_on_scale_all_atoms` was already false (⁴He below 0.4×) and is in the failed-assertion baseline. Its
+state did not change. The probe-d `E₀·h·net(p)` ansatz moves 0.78365 → 0.79142 MeV, relative to the Kashiwara Q_β
+0.107 % → 1.10 %, because it shares this E₀. The probe-d binding negative moves −75.22 % → −74.98 %.
+
+Not switched, because they are outside the ruling's named scope: four other log-law probes compute their own order-zero E₀
+(`forced_link_normalisation_bond_counting_probe`, `cyclic_triple_under_log_law_probe`,
+`normalised_law_residual_shape_probe`, `surface_exponent_is_dimension_probe`). They import only `M_E_MEV` from the
+producer, so they are not downstream of its witness.
