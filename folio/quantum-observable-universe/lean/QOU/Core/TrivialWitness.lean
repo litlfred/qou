@@ -102,15 +102,7 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
 noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
   C := ModuleCat R
   frobHopf := unitFrobHopf (ModuleCat R)
-  -- The forgetful functor, written out: `QuantumUniverse.fibreFunctor` lands in
-  -- `QOU.CategoricalFoundations`' own `Category (Type w)` instance (morphisms are
-  -- plain functions), which is no longer defeq to Mathlib's `types`, so
-  -- `forget (ModuleCat R)` cannot be used directly.
-  fibreFunctor :=
-    { obj := fun M => M
-      map := fun f => fun x => f.hom x
-      map_id := fun _ => rfl
-      map_comp := fun _ _ => rfl }
+  fibreFunctor := forget (ModuleCat R)
   frobenius_symmetric := by
     intro f
     obtain ⟨g, rfl⟩ : ∃ g : 𝟙_ (ModuleCat R) ⟶ 𝟙_ (ModuleCat R), g = f := ⟨f, rfl⟩
