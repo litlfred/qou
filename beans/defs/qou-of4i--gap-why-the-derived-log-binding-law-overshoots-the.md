@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T11:23:57Z
-updated_at: 2026-11-25T11:30:30Z
+updated_at: 2026-11-25T11:35:59Z
 parent: qou-s028
 ---
 
@@ -16,3 +16,7 @@ Owner ruling 2026-11-25 ('3y sibling'), relayed by parent session. Derivation on
 - (a) Live producer uses order-zero E0 4.18598, not the ruled tower form 4.22748 (+28.62% with it). Lean UniversalScaleMinimax: one universal scale cannot do better than (r2-r1)/(r1+r2); floors 23.93% (2H-3H), 61.17% (2H-4He). E0 as the NN scale is NOT derived (qou-91w7, qou-y3bm).
 - (b) (1/2 - delta/4) is asserted. Derived alternatives overshoot more: 1/[2]_q +31.45%, T=0 mu- = 1/[2]_q^2 +162.9%. Only bare sigma undershoots (-7.82%).
 Stays open: the loci are scope-(a) negatives on the old letter; the deuteron on the ruled word is open (qou-brng). Owner decision pending: align binding_log_free_energy.py to qbeta_e0.canonical()?
+
+## 2026-11-25 locus (a) closed on the corpus premises; Lean verified
+BondScaleUniversality.lean: trace-only energy forces one scale (a·log x + b·log y = G(xy) => a=b). With route T (spectator audit §8-9) the common scale is k_BT = E0 (order zero). So on those premises an NN-specific scale is excluded; the locus is mu (the bond word). UniversalScaleMinimax.lean: minimax floor (r2-r1)/(r1+r2). Both lean-direct exit 0, standard axioms. Precision gates green. PR #9424.
+Still open (do not close; the deuteron on the ruled gg word is open in qou-brng): owner decision on order-zero vs tower E0 in binding_log_free_energy.py.
