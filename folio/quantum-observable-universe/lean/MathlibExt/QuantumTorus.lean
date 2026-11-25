@@ -174,10 +174,10 @@ set_option linter.unusedSectionVars false in
 theorem support_single_of_ne {n : Ldeg} {a : A} (ha : a ≠ 0) :
     (single n a : QuantumTorus A).support = {n} := by
   ext x
-  rw [mem_support_iff, Finset.mem_singleton, coeff_single, Pi.single_apply]
+  rw [mem_support_iff, Finset.mem_singleton, coeff_single, Finsupp.single_apply]
   by_cases hx : x = n
   · simp [hx, ha]
-  · simp [hx]
+  · simp [hx, Ne.symm hx]
 
 /-! ### B2 — ℤ-monomial basis, product law, and L-degree normal form
 
@@ -206,8 +206,8 @@ theorem monomial_mul_monomial (m n : ℤ) (a b : A) :
 @[simp] theorem coeff_monomial (n : ℤ) (a : A) (x : ℤ) :
     (monomial n a : QuantumTorus A).coeff (Multiplicative.ofAdd x)
       = if x = n then a else 0 := by
-  rw [monomial, coeff_single, Pi.single_apply]
-  simp only [EmbeddingLike.apply_eq_iff_eq]
+  rw [monomial, coeff_single, Finsupp.single_apply]
+  simp only [EmbeddingLike.apply_eq_iff_eq, eq_comm]
 
 /-- The set of `ℤ`-exponents (L-degrees) appearing in `f`. -/
 def expSupport (f : QuantumTorus A) : Finset ℤ := f.support.image Multiplicative.toAdd
