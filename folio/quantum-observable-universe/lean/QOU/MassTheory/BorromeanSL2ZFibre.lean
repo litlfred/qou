@@ -186,6 +186,14 @@ def toWord (u : List Bool) : Word := u.map fun x => if x then a else b'
 theorem eval_cons (c : Crossing) (w : Word) : eval (c :: w) = evalLetter c * eval w := by
   simp [eval]
 
+/-- `SpecialLinearGroup.coe_inv` stated on an anonymous-constructor element, so that `simp` can
+use it after unfolding a definition into `⟨A, h⟩` (Lean v4.35 port). -/
+private theorem coe_inv_mk' {n : Type*} [DecidableEq n] [Fintype n] {R : Type*} [CommRing R]
+    (A : Matrix n n R) (h : A.det = 1) :
+    (((⟨A, h⟩ : Matrix.SpecialLinearGroup n R)⁻¹ : Matrix.SpecialLinearGroup n R) :
+      Matrix n n R) = A.adjugate :=
+  Matrix.SpecialLinearGroup.coe_inv _
+
 /-- `burauNeg` sends a positive word to its `R/L` product. -/
 theorem burauNeg_toWord (u : List Bool) :
     ((burauNeg (eval (toWord u)) : Matrix.SpecialLinearGroup (Fin 2) ℤ) :
@@ -197,7 +205,8 @@ theorem burauNeg_toWord (u : List Bool) :
     cases x
     · simp only [toWord, List.map_cons, Bool.false_eq_true, if_false] at ih ⊢
       rw [eval_cons, map_mul, Matrix.SpecialLinearGroup.coe_mul, ih]
-      simp only [evalLetter, Bool.false_eq_true, if_false, one_ne_zero, map_inv, burauNeg_σ]
+      simp only [evalLetter, Bool.false_eq_true, if_false, one_ne_zero, map_inv, burauNeg_σ,
+        Matrix.SpecialLinearGroup.coe_inv]
       ext i j; fin_cases i <;> fin_cases j <;>
         simp [burauGen, posMat, Matrix.SpecialLinearGroup.coe_inv, Matrix.adjugate_fin_two,
           Matrix.mul_apply, Fin.sum_univ_two]
@@ -302,7 +311,7 @@ theorem heckeMat_I (c : Crossing) (hc : c ∈ letters) :
   rcases hc with rfl | rfl | rfl | rfl <;>
     (ext i j; fin_cases i <;> fin_cases j <;>
       simp [heckeMat, burauC, evalLetter, sign, burauNeg_σ, burauGen,
-        Matrix.SpecialLinearGroup.coe_inv, Matrix.adjugate_fin_two])
+        Matrix.SpecialLinearGroup.coe_inv, coe_inv_mk', Matrix.adjugate_fin_two])
 
 theorem rep21_I (w : Word) (hw : InB3Letters w) :
     rep21 I w = I ^ writhe w • burauC (eval w) := by
@@ -368,7 +377,7 @@ theorem burauNeg_toWord_eq_posProd (u : List Bool) :
       rw [eval_cons, map_mul, ih, QOU.MathlibExt.SL2Z.posProd_cons_false]
       congr 1
       simp only [evalLetter, Bool.false_eq_true, if_false, one_ne_zero, map_inv, burauNeg_σ]
-      ext i j; fin_cases i <;> fin_cases j <;>
+      ext i j; rw [Matrix.SpecialLinearGroup.coe_inv]; fin_cases i <;> fin_cases j <;>
         simp [burauGen, QOU.MathlibExt.SL2Z.L, Matrix.SpecialLinearGroup.coe_inv,
           Matrix.adjugate_fin_two]
     · simp only [toWord, List.map_cons, if_true] at ih ⊢
