@@ -151,6 +151,8 @@ and this would change what a reader of the paper's Accuracy dashboard takes as t
 - **Option 3 — Leave it.** *Means:* the dashboard keeps showing few-percent binding. *Risks:* a referee
   compares it with the trace pipeline and finds a factor 350 between them.
 
+**Answered 2026-11-25:** owner *"2 then 1"*. Option 2 done (§3); Option 1 applied: scope note under Table 3.2a in `scripts/templates/accuracy-scorecard.md.tmpl`, ACCURACY.md regenerated, ruling recorded in `owner-rulings.md`.
+
 **Default (no answer):** nothing changes; this audit records the discrepancy.
 **Recommendation (judgement):** Option 1. Option 2's check is done (§3): the headline is one cell
 chosen from 24, and the γγ-bond rows of the same model give keV. The note should say both.
