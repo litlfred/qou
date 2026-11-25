@@ -45,7 +45,10 @@ theorem aeval_sub_eq_zero_of_commute {ι : Type*} [Fintype ι] (a : ι → K) (x
     · rw [Set.mem_singleton_iff.1 hv]; exact hxy.eq
     · rw [Set.mem_singleton_iff.1 hu]; exact hxy.eq.symm
     · rw [Set.mem_singleton_iff.1 hu, Set.mem_singleton_iff.1 hv]
-  letI : CommRing (Algebra.adjoin K s) := Algebra.adjoinCommRingOfComm K hs
+  haveI hcomm : IsMulCommutative (Algebra.adjoin K s) :=
+    Algebra.isMulCommutative_adjoin K (fun u hu v hv _ => hs u hu v hv)
+  letI : CommRing (Algebra.adjoin K s) :=
+    { (Algebra.adjoin K s).toRing with mul_comm := fun a b => hcomm.is_comm.comm a b }
   let X' : Algebra.adjoin K s := ⟨x, Algebra.subset_adjoin (by simp [s])⟩
   let Y' : Algebra.adjoin K s := ⟨y, Algebra.subset_adjoin (by simp [s])⟩
   set p : K[X] := ∏ i, (X - C (a i))
