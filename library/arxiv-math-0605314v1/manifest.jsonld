@@ -85,6 +85,18 @@
     "library/arxiv-math-0605314v1/sections/sec-070"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres — We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring\n\n**A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres**\n\n*KAZUO HABIRO*\n\n66 pp, 72 sections.\n\n**Abstract.** We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at each root of unity ζ gives the the SU(2) Witten-Reshetikhin- Turaev invariant τζ(M) of M at ζ. Thus JM uniﬁes all the SU(2) Witten- Reshetikhin-Turaev invariants of M. As a consequence, τζ(M) is an algebraic integer. Moreover, it follows that τζ(M) as a function on ζ behaves like an “analytic function” deﬁned on the set of roots of unity. That is, the τζ(M) for all roots of unity are determined by a “Taylor expansion” at any root of unity, and also by the values at inﬁnitely many roots of unity of prime power orders. In particular, τζ(M) for all roots of unity are determined by the Ohtsuki series, which can be regarded as the Taylor expansion at q = 1.\n\n**Outline.** Front matter; 1 Introduction; 1.1 The WRT invariant for integral homology sp; 1.2 The ring $\\Zqh$ of analytic functions on t; 1.3 A unified WRT invariant $J_M$ with values ; 1.4 Organization of the paper; 2 The algebra $U_h(sl_2)$ and its subalgebras; 2.2 The quantized enveloping algebra $U_h$; 2.3 The subalgebras $\\Uq$ and $\\Uqv$ of $U_h$; 2.4 Adjoint action; 2.5 Filtrations and completions; 2.6 The Hopf algebra structure for $\\tUq$; 3 Braided Hopf algebra structure for $\\tUqv$; 3.2 Braided Hopf algebra structure for $U_h$; 4 Universal $sl_2$ invariant of bottom tangles; 4.3 Universal $sl_2$-invariant of algebraicall; 4.4 Universal $sl_2$ invariant of bottom knots; 5 Colored Jones polynomials",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",

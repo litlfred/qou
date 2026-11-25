@@ -42,6 +42,18 @@
     "library/arxiv-math-0601458v1/sections/sec-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide.\n\n**CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS**\n\n*JEFFREY MORTON*\n\n68 pp, 29 sections.\n\n**Abstract.** Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide. Finding a bijective proof of a seemingly obscure identity can reveal unsuspected signiﬁ- cance to it. Finding a combinatorial model for some mathematical entity is a particular instance of the process called “categoriﬁcation”. Examples include the interpretation of N as the Burnside rig of the category of ﬁnite sets with product and coproduct, and the interpretation of N[x] as the category of com- binatorial species. This has interesting applications to quantum mechanics, and in particular the quantum harmonic oscillator, via Joyal’s “species”, a new generalization called “stuﬀtypes”, and operators between these, which can be represented as rudimentary Feynman diagrams for the oscillator.\n\n**Outline.** Front matter; 1 Introduction; 2 Structure Types; 2.1 Categorification of N and N [[z]]; 3 Structure Types and the Harmonic Oscillator; 3.1 The Quantum Harmonic Oscillator; 3.2 Structure Types and the Weyl Algebra; 4 Stuff Types; 4.1 Groupoids; 4.2 Stuff Types as a Generalization of Structu; 4.3 Stuff Types As Power Series; 4.4 Forgetful Functors: Properties, Structure,; 5 Stuff Types And Quantum Mechanics; 5.1 Inner Product of Stuff Types; 5.2 Stuff Operators; 5.3 Feynman Diagrams and Stuff Operators; 6 M-Stuff Types And Quantum Mechanics; 6.1 M-Stuff Types",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",

@@ -44,6 +44,18 @@
     "library/arxiv-0812.2426v1/sections/sec-029"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld\n\n**CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS**\n\n*ALAIN BRUGUIÈRES AND ALEXIS VIRELIZIER*\n\n19 pp, 31 sections.\n\n**Abstract.** A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld and the dimension of C is invertible. We generalize this result to the case where k is an arbitrary commutative ring, without restriction on the dimension of the category. Moreover we construct the analogue of the Reshetikhin-Turaev invariant associated to Z(C) and give an algorithm for computing this invari- ant in terms of certain explicit morphisms in the category C.\n\n**Outline.** Front matter; Introduction; 1 Conventions and notations; 1.1 Autonomous categories; 1.2 Sovereign categories; 1.3 Braided categories; 1.4 Ribbon categories; 1.5 Coends; 1.6 Coends of autonomous categories; 1.7 Dimension of sovereign categories; 1.8 Fusion categories; 2 Quantum invariants and Hopf diagrams; 2.1 Constructing quantum invariants; 2.2 Kirby elements and quantum invariants; 2.3 Hopf diagrams; 3 Hopf monads; 3.2 Modules over a monad; 3.3 The philosophy",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

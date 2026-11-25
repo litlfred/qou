@@ -30,7 +30,7 @@ Evaluation at $q_0 = {{ qou.computations.q-pinning-50-digit.derived_50_digit.q |
 | $q\cdot[9]_q\cdot[10]_q$ | ${{ qou.computations.alpha-em-form-ladder.data.ladder.muon.tree | precision: 12 }}\ldots$ |
 | $2/(3\pi) = 2g/(4\pi(g-1))$ | ${{ qou.computations.alpha-em-form-ladder.data.ladder.muon.zero_mode | precision: 9 }}\ldots$ |
 | Sum | ${{ qou.computations.alpha-em-form-ladder.data.ladder.muon.additive | precision: 12 }}\ldots$ |
-| CODATA-2022 $1/\alpha$ | ${{ qou.library.codata-2022.inverse-fine-structure-constant }}(21)$ |
+| CODATA-2022 $1/\alpha$ | ${{ folio-assistant-sci.library.codata-2022.inverse-fine-structure-constant }}(21)$ |
 | **Residual** (relative) | ${{ qou.computations.probes.retired_q0_refresh_to_live_muon_pin_probe.data.prop_em-coupling-bring-zero-mode.3.refreshed_at_muon_pin | precision: 2 | scientific }}$ |
 
 The second additive term $\alpha/(4\pi) \approx {{ qou.computations.alpha-em-no-pi-correction-probe.data.correction_alpha_over_4pi | precision: 3 | scientific }}$ brings the relative residual to $+{{ qou.computations.probes.retired_q0_refresh_to_live_muon_pin_probe.data.prop_em-coupling-bring-zero-mode.5.refreshed_at_muon_pin | precision: 2 | scientific }}$. This approaches the CODATA standard deviation $\sigma_\alpha \approx 1.5 \times 10^{-10}$.

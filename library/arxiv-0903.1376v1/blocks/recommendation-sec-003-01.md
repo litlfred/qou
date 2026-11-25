@@ -1,0 +1,1 @@
+Therefore when forming the product of two (or more) framed braids, we shall ﬁrstly join the bottom of the ribbons in the ﬁrst braid to the tops of the ribbons in the second braid, and so on (in the case of braided belts, we must eliminate the intervening nodes ﬁrst, while retaining the nodes at the “top” of the ﬁrst belt in the product, and the “bottom” of the last belt).

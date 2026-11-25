@@ -32,6 +32,18 @@
     "library/arxiv-2608.25107v1/sections/sec-018"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples — 19 sections: ADoNIS: A Differentiable generatOr; Introduction; Differentiable programming in part\n\n**ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples**\n\n*César Jesús-Valls1, ∗*\n\n22 pp, 19 sections.\n\n**Outline.** ADoNIS: A Differentiable generatOr of Neutrino; Introduction; Differentiable programming in particle physics; A Differentiable Neutrino Event Generator; Differentiability by reweighting; Nuclear ground-state reweighting; Hard-scattering amplitudes; Intranuclear cascade; Channel normalisations; Differentiable events and observables; Gradients and higher-order derivatives; Validation; Gradient information; Parameter Inference and Uncertainty Quantifica; Computational cost; Unfolding; Conclusions; Acknowledgments",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

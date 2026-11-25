@@ -31,6 +31,18 @@
     "library/arxiv-2208.13448v2/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large\n\n**ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS**\n\n*THOMAS DREYFUS AND MARINA POULET*\n\n37 pp, 18 sections.\n\n**Abstract.** In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large class of diﬀerenc e operators including the shift operator (Case S), the q-diﬀerence operator (Case Q), the Mahler operator (Case M) a nd the elliptic case (Case E). We show that the general problem c an be reduced to several ancillary problems. We prove criteria to detect the irreduc ible and imprimitive Galois groups. Finally, we give a suﬃcient condition of diﬀerentia l transcendence of solutions of order three diﬀerence equations. We also compute the diﬀe rence Galois group of an equation suggested by Wadim Zudilin.\n\n**Outline.** 1 Introduction; 2.1 Galois groups; Notations and conventions; 2 Difference algebra; 2.3 From theory to practice; 3 Galois groups of difference systems; 3.1 The reducible case; 3.2 The imprimitive case; 3.3 The primitive case; 4 Galois groups of equations of order one and ; 4.2 Galois groups of diagonal systems; 5 Galois groups of equations of order two; 6.1 Reducible case; 6 Galois groups of equations of order three; 6.2 Imprimitive case; 6.4 Summary; 7 Application to the differential transcendenc; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

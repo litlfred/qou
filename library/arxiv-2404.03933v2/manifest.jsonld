@@ -30,6 +30,18 @@
     "library/arxiv-2404.03933v2/sections/sec-015"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums\n\n**TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2)**\n\n*ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV*\n\n44 pp, 17 sections.\n\n**Abstract.** We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums of tilting modules. We derive a combinatorial formula for multiplicity of tilting modules in the N-th tensor power of two dimensional irreducible representations, interpret it in terms of lattice paths and find its asymptotic behavior when N →∞. We also describe the limit of character and Plancherel measures when N →∞. We consider both Uq(sl2) with divided powers and the small quantum sl2.\n\n**Outline.** Front matter; 1 Introduction; 2 Algebra Uq(sl2) and its representations; 3 Decomposition of tensor powers of T(1) over ; 4 Restriction from Uq(sl2) to uq(sl2); 5 Recursive formulae for Uq(sl2) and uq(sl2) t; 6 Multiplicities and lattice paths; 7 Integral formula for multiplicities; 8 Probabilistic measures on the tensor product; 9 The asymptotic of the character and Plancher; 10 The asymptotic of probability measures for ; Appendix A. Gaussian binomial coefficients; Appendix B. Proof of Theorem 6.3; Appendix C. Proof of Theorems 9.1, 9.2, 9.3; Appendix D. Proof of Theorem 9.4; Appendix E. Proof of Theorems 9.5 and 9.6; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

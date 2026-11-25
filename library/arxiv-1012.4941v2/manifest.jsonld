@@ -25,6 +25,18 @@
     "library/arxiv-1012.4941v2/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS — This paper deals with exploiting symmetry for solving linear and integer programming problems.\n\n**ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS**\n\n*RICHARD BÖDI, KATRIN HERR, AND MICHAEL JOSWIG*\n\n21 pp, 12 sections.\n\n**Abstract.** This paper deals with exploiting symmetry for solving linear and integer programming problems. Basic properties of linear representations of ﬁnite groups can be used to reduce symmetric linear programming to solving linear programs of lower dimension. Combining this approach with knowledge of the geometry of feasible inte- ger solutions yields an algorithm for solving highly symmetric integer linear programs which only takes time which is linear in the number of constraints and quadratic in the dimension.\n\n**Outline.** Front matter; 1 Introduction; 2 Automorphisms of Linear Programs; 3 Symmetries of Integer Linear Programs; 4 Layers of Integer Points; 5 Searching Integer Layers Efficiently; 6 Finding All Symmetries; 7 Hypertruncated Cubes; 8.1 Hypertruncated Cubes; 8 Computational Results; 8.2 Wild Input; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

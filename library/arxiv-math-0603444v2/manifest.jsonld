@@ -18,6 +18,18 @@
     "library/arxiv-math-0603444v2/sections/sec-003"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by\n\n**QUASIHOMOGENEITY OF ISOLATED HYPERSURFACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY**\n\n*MICHEL GRANGER AND MATHIAS SCHULZE*\n\n5 pp, 5 sections.\n\n**Abstract.** We characterize quasihomogeneity of isolated hypersurface singu- larities by the injectivity of the map induced by the ﬁrst diﬀerential of the logarithmic diﬀerential complex in the top local cohomology supported in the singular point. 1. Formulation of the result We consider the germ of an isolated hypersurface singularity D ⊆(Cn, 0). Let O = OCn,0 be the ring of germs of holomorphic functions on Cn at the origin with maximal ideal m and f ∈m2 a reduced deﬁning equation of D. For notational simplicity, we shall write Cn instead of (Cn, 0). In terms of coordinates x1, . . . , xn on Cn, O = C{x1, . . . , xn} is the ring of convergent power series and m = ⟨x1, . . . , xn⟩. We abbreviate by fi = ∂f ∂xi , i = 1, . . . , n, the partial derivatives of f.\n\n**Outline.** Front matter; 1 Formulation of the result; 2 Relation to the logarithmic comparison theor; 3 Proof of the theorem; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",

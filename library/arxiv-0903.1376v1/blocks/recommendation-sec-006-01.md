@@ -1,0 +1,1 @@
+We should note that the usual ambiguity then arises, as to how we uniquely deﬁne a product of these links (which would be equivalent to interacting two particles with each other), since the links may be deformed by Reidemeister moves, leading to diﬀerent possible products (depending on the point at which 19 the links are joined to each other).

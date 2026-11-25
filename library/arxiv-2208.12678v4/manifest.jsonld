@@ -23,6 +23,18 @@
     "library/arxiv-2208.12678v4/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest.\n\n**STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY**\n\n*MAX LIPTON AND GOKUL G. NAIR*\n\n14 pp, 10 sections.\n\n**Abstract.** Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M¨obius Energy introduced by O’Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M¨obius-Plateau problem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M¨obius-Plateau variations of helicoidal strips, which are classified as “screw-like” or “ribbon-like” based on the signs of the radii of the boundary helices.\n\n**Outline.** Front matter; 1 Introduction; 3 Energy Minimization; 2 Problem Formulation; 3.2 Equicontinuity at the Boundary; 3.3 Convergence in the Interior; 4 Necessary Conditions of Möbius-Plateau Criti; 5 Acknowledgements; Appendix A. Estimating the negative contributi; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

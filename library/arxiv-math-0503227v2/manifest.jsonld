@@ -19,6 +19,18 @@
     "library/arxiv-math-0503227v2/sections/sec-004"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios — Bolthausen used a variation of Stein’s method to give an inductive proof\n\n**An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios**\n\n*By Jason Fulman*\n\n14 pp, 6 sections.\n\n**Abstract.** Bolthausen used a variation of Stein’s method to give an inductive proof of the Berry-Esseen theorem for sums of independent, iden- tically distributed random variables. We modify this technique to prove a Berry-Esseen theorem for character ratios of a random representation of the symmetric group on transpositions. An analogous result is proved for Jack measure on partitions.\n\n**Outline.** Front matter; 1 Introduction; 2 Central limit theorem for Plancherel measure; 3 Central limit theorem for Jack measure; 4 Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",

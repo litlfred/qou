@@ -32,6 +32,18 @@
     "library/arxiv-1002.0126v1/sections/sec-017"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "AN INTRODUCTION TO THE VOLUME CONJECTURE — This is an introduction to the Volume Conjecture and its gener- alizations for nonexperts.\n\n**AN INTRODUCTION TO THE VOLUME CONJECTURE**\n\n*HITOSHI MURAKAMI*\n\n39 pp, 19 sections.\n\n**Abstract.** This is an introduction to the Volume Conjecture and its gener- alizations for nonexperts. The Volume Conjecture states that a certain limit of the colored Jones polynomial of a knot would give the volume of its complement. If we deform the parameter of the colored Jones polynomial we also conjecture that it would also give the volume and the Chern–Simons invariant of a three-manifold obtained by Dehn surgery determined by the parameter. I start with a deﬁnition of the colored Jones polynomial and include ele- mentary examples and short description of elementary hyperbolic geometry.\n\n**Outline.** Front matter; 1 Introduction; 2 Link invariant from a Yang–Baxter operator; 2.1 Braid presentation of a link; 2.2 Yang–Baxter operator; 2.3 Invariant; 2.4 Quantum (g,V) invariant; 2.5 Example of calculation; 3 Volume conjecture; 3.1 Statement of the Volume Conjecture; 3.2 Proof of the Volume Conjecture for the fig; 3.3 Knots and links for which the Volume Conje; 4 Supporting evidence for the Volume Conjectur; 4.1 Approximation of the colored Jones polynom; 4.2 Geometric interpretation of the limit; 5 Generalizations of the Volume Conjecture; 5.1 Complexification; 5.2 Deformation of the parameter",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

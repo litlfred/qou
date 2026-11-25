@@ -47,6 +47,18 @@
     "library/arxiv-1511.05628v1/sections/sec-032"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that\n\n**QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n41 pp, 34 sections.\n\n**Abstract.** The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Quantum modular forms; 1.2 Zagier's Quantum Modularity Conjecture; 2 The definition of ,; 2.1 Ideal triangulations and Neumann-Zagier da; 2.2 The 1-loop invariant at level k; 2.3 The n-loop invariants at level k for n 2; 2.4 Feynman diagrams for the n-loop invariant; 2.5 The 2-loop invariant in detail; 2.6 The 3-loop invariant; 2.7 Matching with the numerical asymptotics of; 2.8 Topological invariance; 3 Proofs; 3.1 Proof of Theorem 2.6; 3.2 Some identities of the cyclic dilogarithm; 3.3 Proof of Theorem 2.2; 4 Complex Chern-Simons theory",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

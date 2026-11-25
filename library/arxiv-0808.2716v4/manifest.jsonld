@@ -43,6 +43,18 @@
     "library/arxiv-0808.2716v4/sections/sec-028"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements.\n\n**CUSP AREAS OF FAREY MANIFOLDS**\n\n*AND APPLICATIONS TO KNOT THEORY*\n\n44 pp, 30 sections.\n\n**Abstract.** This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements. The input for these estimates is purely combinatorial data coming from the Farey tesselation of the hyperbolic plane. The bounds on cusp area lead to explicit bounds on the volume of Dehn ﬁllings of these manifolds, for example sharp bounds on volumes of hyperbolic closed 3–braids in terms of the Schreier normal form of the associated braid word. Finally, these results are applied to derive relations between the Jones polynomial and the volume of hyperbolic knots, and to disprove a related conjecture. Dedicated to the memory of Xiao-Song Lin\n\n**Outline.** Front matter; 1 Introduction; 1.1 Cusp shapes and areas; 1.2 Cusp area and link diagrams; 1.3 Applications to hyperbolic Dehn filling; 1.4 Volume and Jones polynomial invariants; 1.5 Organization; 1.6 Acknowledgements; 2 The canonical triangulation of a Farey manif; 2.1 The Ford domain and its dual; 2.2 Once–punctured torus bundles; 2.3 4–punctured sphere bundles; 2.4 Two-bridge links; 3 Geometric estimates for Ford domains; 3.1 Estimates for triangulated hyperbolic 3–ma; 3.2 Parameterization by radii of Ford domain f; 3.3 Horosphere estimate; 3.4 The length of a meridian",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

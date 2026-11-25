@@ -29,6 +29,18 @@
     "library/arxiv-0908.4305v3/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Higher Dimensional Algebra VII: Groupoidiﬁcation — Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of\n\n**Higher Dimensional Algebra VII: Groupoidiﬁcation**\n\n*John C. Baez, Alexander E. Hoffnung, and Christopher D. Walker*\n\n67 pp, 16 sections.\n\n**Abstract.** Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of groupoids. We introduce this idea with a detailed exposition of ‘de- groupoidiﬁcation’: a systematic process that turns groupoids and spans into vector spaces and linear operators. Then we present three appli- cations of groupoidiﬁcation. The ﬁrst is to Feynman diagrams. The Hilbert space for the quantum harmonic oscillator arises naturally from degroupoidifying the groupoid of ﬁnite sets and bijections. This allows for a purely combinatorial interpretation of creation and annihilation oper- ators, their commutation relations, ﬁeld operators, their normal-ordered powers, and ﬁnally Feynman diagrams. The second application is to Hecke algebras.\n\n**Outline.** Front matter; 1 Introduction; 2 Degroupoidification; 3 Homology versus Cohomology; 4 Groupoidification; 4.1 Feynman Diagrams; 4.2 Hecke Algebras; 4.3 Hall Algebras; 5 Degroupoidifying a Tame Span; 5.1 Tame Spans Give Operators; 5.2 An Explicit Formula; 6 Properties of Degroupoidification; 6.1 Scalar Multiplication; 6.2 Functoriality of Degroupoidification; 6.3 Inner Products and Adjoints; A Review of Groupoids",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

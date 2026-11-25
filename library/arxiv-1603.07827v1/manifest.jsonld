@@ -26,6 +26,21 @@
     "library/arxiv-1603.07827v1/sections/sec-011"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braiding with Majorana fermions (Kauffman–Lomonaco, Proc. SPIE 9873 (2016), arXiv:1603.07827) — Clifford Braiding Theorem; SU(2) representations of B₃ from quaternions; Fibonacci model\n\n**Braiding With Majorana Fermions** — Louis H. Kauffman, Samuel J. Lomonaco Jr. arXiv:1603.07827 [cond-mat.str-el]; Proc. SPIE 9873, 98730E (2016).\n\nIntroduction relating topology, quantum computing and fermions. The Clifford Braiding Theorem: for Clifford generators c₁,…,cₙ (cᵢ² = 1, anticommuting), τₖ = (1 + c₍ₖ₊₁₎cₖ)/√2 satisfy the braid relations and represent the (circular) Artin braid group; Majorana operators thus give braiding. Then SU(2) representations of B₃ from pairs of unit quaternions, with the Majorana case and the Fibonacci representation (dense in SU(2)) as examples, and universal gates.\n\n**Why it may bear here.** Registered as `kauffman-lomonaco-2016`; the history block cites it for the theorem Gresnigt uses. Analogy only, not a corpus claim: τₖ satisfies τ² − √2τ + 1 = 0, a single quadratic relation, so it is a Hecke-type braiding at one specialised value (eigenvalue ratio i), whereas this corpus works in H_n(q) at generic q. The inferred section titles include three formula fragments (sec-004 to sec-006).",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt4f9V7M6GLoG8XeAZz",
+        "date": "2026-11-22"
+      },
+      "drafted_at": "2026-11-22"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-1603.07827v1",

@@ -22,6 +22,18 @@
     "library/arxiv-math-0408210v3/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B.\n\n**A simple algebraic proof of the algebraic index theorem**\n\n*PoNing Chen and Vasiliy Dolgushev1*\n\n17 pp, 9 sections.\n\n**Abstract.** In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit formula for the trace density map from the quantum algebra of functions on an arbitrary symplectic manifold M to the top degree cohomology of M. They also evaluated this map on the trivial element of K-theory of the algebra of quantum functions. In our paper we evaluate the map on an arbitrary element of K-theory, and show that the result is expressed in terms of the ˆA-genus of M, the Deligne-Fedosov class of the quantum algebra, and the Chern character of the principal symbol of the element. For a smooth (real) symplectic manifold (without a boundary), this result implies the Fedosov-Nest-Tsygan algebraic index theorem.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 The Feigin-Felder-Shoikhet cocycles; 2.2 The Chern-Weil homomorphism; 2.3 Fedosov deformation quantization with twis; 2.4 The Feigin-Felder-Shoikhet trace density m; 3 The local version of the algebraic index the; 4 Concluding remarks.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
