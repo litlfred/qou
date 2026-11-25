@@ -1,11 +1,11 @@
 ---
 # qou-ndpn
 title: 'Long #9395 producers that timed out at 1800 s: delta_lambda_fr_identity_phase5c, lr_fusion_self_conj_test'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T21:01:22Z
-updated_at: 2026-11-25T01:49:48Z
+updated_at: 2026-11-25T10:04:00Z
 parent: qou-s028
 ---
 
@@ -18,3 +18,11 @@ lr_fusion_self_conj_test: NOT re-run. n=20 LR self-fusion took 60.7 s, and n=28 
 
 ## 2026-11-25
 delta_lambda_fr_identity_phase5c refreshed under mpmath 1.4.1 + clarabel (1233 s, 2/2 pass), committed in #9404 (bef562673db). lr_fusion_self_conj_test is still not run (expected hours at n=28).
+
+
+## 2026-11-25T10:03:57Z — lr_fusion_self_conj_test DONE (PR #9409, merged)
+I did not brute-force re-run it. I checked the committed witness against lrcalc (exact LR) instead, and it was WRONG: max c 11/274/387/85077/38400599 against exact 2/6/1/60/1064. Two defects:
+- the row condition checked the unfilled LEFT neighbour, so it was never enforced;
+- lr_decomposition truncated to 200 candidates.
+Both are fixed, and the result is identical to lrcalc term for term. Re-run: n = 28 in 125 s. The retired conjecture's verdict is unchanged. Caveat: there are ties at n = 12 (one tied nu is self-conjugate).
+Both long producers of this bean are now refreshed (delta_lambda_fr_identity_phase5c in #9404).
