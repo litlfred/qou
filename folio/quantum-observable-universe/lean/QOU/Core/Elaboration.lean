@@ -35,7 +35,7 @@ open QOU
 
 namespace QOU.Elaboration
 
-universe u v
+universe u v w₁ w₂ w₃
 
 /-! ## §1  TQFT Context -/
 
@@ -100,7 +100,7 @@ structure GeneralisedLeviConditions (M : Type*) where
     sp.field p > 1
   /-- QOU vanishing: adjoint and state sections vanish.  Modelled as
       the existence of a CQuantumObservableUniverse structure on `M`. -/
-  qou_vanishing : Nonempty (CQuantumObservableUniverse)
+  qou_vanishing : Nonempty (CQuantumObservableUniverse.{w₁, w₂, w₃})
 
 /-! ## §4  Examples -/
 
