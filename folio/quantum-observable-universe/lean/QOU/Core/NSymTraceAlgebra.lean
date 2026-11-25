@@ -1,6 +1,7 @@
 import QOU.Core.HiggsVacuumResidual
 import Mathlib.CategoryTheory.Preadditive.Biproducts
 import Mathlib.Tactic.Ring
+import Mathlib.Algebra.Module.Torsion.Field
 
 /-!
 # QOU.QuantumObservableUniverses.NSymTraceAlgebra — what `tr_F(e_sym^EW · e_H)` can be
