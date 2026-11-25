@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Powerset
+import Mathlib.Algebra.BigOperators.Group.Finset.Powerset
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Group.Subgroup.Lattice
 import Mathlib.Tactic.Abel
@@ -138,7 +139,7 @@ theorem phi_q_tower_algebraic_stratification_of_pentagon
     intro i hi
     simp [hg, Finset.powersetCard_eq_empty.mpr hi]
   have hsplit : ∑ S ∈ U.powerset, f S = ∑ i ∈ Finset.range (U.card + 1), g i := by
-    rw [Finset.powerset_card_disjiUnion, Finset.sum_disjiUnion]
+    exact Finset.sum_powerset U f
   have h1 : ∑ i ∈ Finset.range (U.card + 1), g i = ∑ i ∈ Finset.range (U.card + 4), g i := by
     refine Finset.sum_subset (fun x hx => by simp only [Finset.mem_range] at hx ⊢; omega) fun i hi hni => ?_
     simp only [Finset.mem_range] at hi hni
