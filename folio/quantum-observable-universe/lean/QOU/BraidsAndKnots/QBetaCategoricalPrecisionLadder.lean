@@ -338,7 +338,7 @@ theorem precision_ladder_N5_canonical_compat (q m_e : ℝ) (_hq : 0 < q) :
   -- under (i+2). With the canonical c_k values substituted, this
   -- reduces to the explicit bundle via `ring`.
   simp [Finset.prod_range_succ, Finset.prod_range_zero,
-        qBetaPrecisionLadderCoeffsCanonical]
+        qBetaPrecisionLadderCoeffsCanonical, QBetaPrecisionLadderCoefficients.c_k_at_q]
   ring
 
 /-! **Open conjecture (N≥4): inductive categorical closure of `c_k`.**
