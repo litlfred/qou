@@ -53,7 +53,7 @@ theorem hecke_inverse_eq (σ s : A) (h : R)
     s = σ - algebraMap R A h := by
   have h1 : (σ * σ - h • σ) * s = σ - algebraMap R A h := by
     rw [sub_mul, mul_assoc, hinv, mul_one, smul_mul_assoc, hinv, Algebra.smul_def, mul_one]
-  have h2 : σ * σ - h • σ = 1 := by rw [hquad]; abel
+  have h2 : σ * σ - h • σ = 1 := by rw [hquad, add_sub_cancel_left]
   rw [h2, one_mul] at h1
   exact h1
 
