@@ -739,3 +739,7 @@ unaffected.
 - HaPPY's {5,4} code lives on the same tiling class, of which Bring is a compact quotient. A
   compact quotient has no asymptotic boundary, so this is a link, not a holographic code on
   Bring.
+
+## 15. Owner ruling on the neutrality reading (2026-11-25)
+
+Owner, verbatim: *"Term-by-term, same scope as now"*. Linking neutrality is imposed on each term of the formal expansion in the group algebra of B₃, with the scope of the 2026-11-21 ruling (the γγ nucleon word and the gluon vertex). By §13 this derives the Borromean photon weights qh and −q⁻¹h and excludes the degree-6 family. The selection of β_Bor is unchanged. The expansion of γ(φ)γ(ψ) has nine non-neutral braid elements, not the four stated in §13; `neutral_selects_corpus` uses four of them, so its conclusion holds under the full reading. Anti-fit flag, recorded in the ruling row: the reading was chosen after the result was known, and `QEDHigherOrderCovariance` §P applies the colouring to the whole braid.

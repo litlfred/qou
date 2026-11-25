@@ -15,9 +15,12 @@ Results (all by `decide`, core Lean only, no `sorry`):
   premise that the twist argument needs, obtained here from neutrality rather than
   from a choice of letters.
 
-Scope. This is a statement about braid words and their closures. It does not decide
-whether neutrality should be imposed term by term or on the whole product braid;
-`QEDHigherOrderCovariance` §P applies the colouring to the braid, not term by term.
+Scope. This is a statement about braid words and their closures. Whether neutrality is
+imposed term by term or on the whole product braid is settled by owner ruling, not here:
+term by term, with the scope of the 2026-11-21 ruling (owner 2026-11-25,
+`docs/coordination/owner-rulings.md`). `QEDHigherOrderCovariance` §P applies the colouring
+to the whole braid; under that reading the factorisations of `V³` are not separated
+(`QOU.PhotonNeutralSelection`).
 Probe: `computations/probes/gg_photon_cut/u1_neutral_cut_probe.py`. Bean `qou-99qc`.
 -/
 
