@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-08-14T18:45:19Z
+updated_at: 2026-11-25T11:06:49Z
 ---
 
 ## The finding
@@ -88,3 +88,6 @@ Cross-refs: `qou-w8zz` (the Gram quotient — same repair, do them together or a
 least share the quotient construction), `qou-ng7j` (the detector is blind to
 non-`y_λ` convention-C quantities, which is why this file was never on the
 work list under its own name).
+
+## 2026-11-25 exact dual face (PR https://github.com/litlfred/qou/pull/9420)
+Pre-registered (076ab8fb4ff), then solved the a-K LP in exact rationals and min/maxed each coordinate over the optimal face. Rows with c=y*chi=0 (= y=0, all l>=3): u in [0,+inf), NOT identified; c!=0 rows u=1 exactly; y0=0, w=0, opt=0. Holds on p,n,d,t,3He; so the x1e-4 move is a solver picking another point. Also unidentified: active_set/n_active, chirality_dual_sum (5 atoms), self_conjugate_dual_sum (d,t,3He), x_star on zero rows when >=2. Exception 4He: chi cache has 1e-73..1e-149 residue not exact 0, so exact LP identifies all (y0=1.45e-149, u=1-y0/|c|) and published 4He u=6.3288 lies outside; exact-zero arm restores the structure. Why 4He did not move in the refresh is not explained. Owner decision framed in RESULTS.md (1 intervals [rec] / 2 canonical min-norm u=0 / 3 re-pose on support / 4 no-op default). Producer unchanged.
