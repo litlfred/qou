@@ -34,6 +34,18 @@
     "library/arxiv-2502.06229v5/sections/sec-019"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by\n\n**Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups**\n\n*CLAUDIA PINZARI*\n\n35 pp, 21 sections.\n\n**Abstract.** This paper establishes connections between a problem posed by Doplicher and Roberts in the 1990s regarding construction of quantum gauge groups associated to the category of localized endomorphisms of conformal nets, and a problem by Huang con- cerning a direct proof of the Finkelberg equivalence theorem. We also unify the treatment of high dimensional algebraic QFT with the low dimensional case, resuming the study of Mack-Schomerus quantum symmetries, for which we previously proved a simplifying Hopf algebra property and studied the unitary structure of our global quantum gauge groups AW (g, q) of the WZW model. This program leads us to a solution of Huang’s problem in the setting of vertex operator algebras.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Historical Background: Conformal Field The; 1.3 Inspiration from Algebraic Quantum Field T; 1.4 Quantum symmetries and primary field recon; 1.5 Our Approach to the two Problems: Quantum ; 1.6 Main theorem; 2 Unitary coboundary weak Hopf algebras AW(g, ; 3 The main result; 4 The general plan of our proof; 5 Outline of the construction of a weak quasi-; 6 Main tools to prove (a): How to make Rep(A(V; 7 A central method in the quantum group and VO; 8 Main tools to prove (b), (c): Analogies and ; 9 Differences between the original Drinfeld-Ko; 10 Main tools to prove (d): cohomological redu; 11 The role of braid group duality for the gen; 12 More remarks from the viewpoint of Dopliche",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-2502.06229v5",

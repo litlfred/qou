@@ -1,0 +1,30 @@
+{
+ "q0Anchor": "independent",
+ "q0AnchorReason": "finite combinatorics; never reads q0",
+ "S": [
+  0,
+  2,
+  3,
+  4,
+  1
+ ],
+ "A": [
+  1,
+  0,
+  2,
+  3,
+  4
+ ],
+ "V": 30,
+ "E": 60,
+ "F": 24,
+ "chi": -6,
+ "d1_d2_zero": true,
+ "rank_d1": 29,
+ "rank_d2": 23,
+ "dim_ker_Delta1": 8,
+ "b1_from_ranks": 8,
+ "harmonic_have_zero_vorticity": true,
+ "harmonic_are_coclosed": true,
+ "nonzero_eigen_gap_note": "kernel = harmonic 1-cochains; every other eigenvalue of Delta_1 is > 0"
+}

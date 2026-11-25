@@ -22,6 +22,18 @@
     "library/arxiv-2105.07724v2/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "SL2 tilting modules in the mixed case — Using the non-semisimple Temperley–Lieb calculus, we study the additive and monoidal structure of the category of tilting modules for SL2 in the mixed case.\n\n**SL2 tilting modules in the mixed case**\n\n*LOUISE SUTTON, DANIEL TUBBENHAUER, PAUL WEDRICH, AND JIERUZHU*\n\n54 pp, 9 sections.\n\n**Abstract.** Using the non-semisimple Temperley–Lieb calculus, we study the additive and monoidal structure of the category of tilting modules for SL2 in the mixed case. This simultane- ously generalizes the semisimple situation, the case of the complex quantum group at a root of unity, and the algebraic group case in positive characteristic. We describe character formulas and give a presentation of the category of tilting modules as an additive category via a quiver with relations. Turning to the monoidal structure, we describe fusion rules and obtain an explicit recursive description of the appropriate analog of Jones–Wenzl projectors.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Additive structure; 4 Monoidal structure; Appendix A. Fusion rules for eves; Appendix B. Applications; Appendix C. Some additional comments and detai; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-2105.07724v2",

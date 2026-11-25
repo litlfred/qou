@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,7 +13,7 @@
   ],
   "label": "conj:baryon-product-from-alt",
   "kind": "conjecture",
-  "title": "The baryon integrand $\\prod_k dc_k/dz$ is the $\\mathrm{Alt}^3$-isotype of the color-tube Jacobian",
+  "title": "The baryon integrand is the $\\mathrm{Alt}^3$ Vandermonde of the color-sheet velocities",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation"
   ],
@@ -32,7 +32,7 @@
     "categorical",
     "archimedean-universe"
   ],
-  "leanRef": "qou:QOU.Archimedean.baryonProductFromAlt",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.baryonProductFromAlt",
   "text": "baryon-product-from-alt.md",
   "leanSource": "baryon-product-from-alt.lean",
   "provenance": "authored"

@@ -29,6 +29,18 @@
     "library/arxiv-2306.13098v2/sections/sec-014"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the\n\n**Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions**\n\n*Niels G. Gresnigt1⋆, Liam Gourlay1 and Abhinav Varma1*\n\n18 pp, 16 sections.\n\n**Abstract.** An algebraic representation of three generations of fermions with SU(3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations.\n\n**Outline.** Front matter; Introduction; Normed division algebras; One generation of electrocolor states from CO; The Cayley-Dickson construction and the algebr; Octonion subalgebras inside the sedenions; The left multiplication algebra of CS; Automorphisms of sedenions; Three generations of color states from CS; Why not sedenions?; One generation of electrocolor states from CS; Generating two additional generations from S3 ; SU(3)C color symmetries of three generations; Linear dependence of minimal ideal states; Outlook; Discussion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

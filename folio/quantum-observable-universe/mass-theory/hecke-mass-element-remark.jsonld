@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-mass-element-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hecke-mass-element-remark",
+  "kind": "remark",
+  "title": "Hecke-valuedness and descent splitting of the Hecke mass element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-mass-element",
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-hecke-mass-element",
+  "text": "hecke-mass-element-remark.md",
+  "provenance": "authored"
+}

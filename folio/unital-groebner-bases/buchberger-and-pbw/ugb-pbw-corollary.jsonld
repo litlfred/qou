@@ -1,13 +1,14 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/unital-groebner-bases/blocks/cor-ugb-pbw",
   "@type": [
-    "folio-assistant-core:Corollary",
+    "folio-assistant-sci:Corollary",
     "doco:Section"
   ],
   "label": "cor:ugb-pbw",
@@ -16,6 +17,9 @@
   "uses": [
     "papers/unital-groebner-bases/blocks/thm-ugb-main",
     "papers/unital-groebner-bases/blocks/thm-ugb-buchberger"
+  ],
+  "cites": [
+    "references/bokutchen2015pbw"
   ],
   "tags": [
     "groebner-basis",

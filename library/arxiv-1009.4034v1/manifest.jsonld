@@ -21,6 +21,18 @@
     "library/arxiv-1009.4034v1/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young diagrams under the\n\n**KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2**\n\n*PIERRE-LOÏC MÉLIOT*\n\n23 pp, 8 sections.\n\n**Abstract.** In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young diagrams under the Plancherel measure extends to the case of Schur-Weyl measures, which are the probability measures on partitions associated to the representations of the symmetric groups Sn on tensor products of vector spaces V ⊗n (see [Bia01]). The proof is inspired by the one given in [IO02] for the Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagrams; we shall also use Śniady’s theory of cumulants of observables (cf. [Ś06]).\n\n**Outline.** Front matter; 1 Schur-Weyl measures of parameter =1/2; 2 Observables of diagrams; 3 Some computations around the limit shapes c; 4 Gaussian concentration of measures on partit; 5 Moments of the deviations and Chebyshev poly; 6 An extension of Kerov's central limit theore; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

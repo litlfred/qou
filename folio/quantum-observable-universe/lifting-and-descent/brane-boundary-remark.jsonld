@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brane-boundary-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brane-boundary-remark",
+  "kind": "remark",
+  "title": "Archimedean locus of the brane boundary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brane-boundary",
+    "papers/quantum-observable-universe/blocks/lem-descent"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brane-boundary",
+  "text": "brane-boundary-remark.md",
+  "provenance": "authored"
+}

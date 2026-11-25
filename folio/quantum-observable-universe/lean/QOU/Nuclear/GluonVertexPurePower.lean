@@ -43,10 +43,9 @@ Because `det V = 1`, the traces `s_k = tr(Vᵏ)` obey the Chebyshev recursion
   `computations/probes/gluon_pure_power/gluon_pure_power_probe.py` does it.
 * Reading 3 is the owner's choice of criterion among three. Readings 1 and 2
   are parked, and this file says nothing about them.
-* U(1) neutrality is imposed here on the vertex itself. Whether it should be
-  imposed on each factor or only on the whole product word is the scope
-  question recorded in `PhotonU1NeutralCut`. Under a whole-word reading the
-  `H₂` result above does not apply to a factor.
+* U(1) neutrality is imposed here on the vertex itself. Owner ruling 2026-11-25
+  imposes it term by term, with the scope of the 2026-11-21 ruling, which
+  includes the gluon vertex, so the `H₂` result applies to each factor.
 
 ## Base ring
 

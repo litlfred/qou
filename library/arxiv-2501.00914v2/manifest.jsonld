@@ -39,6 +39,18 @@
     "library/arxiv-2501.00914v2/sections/sec-024"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries.\n\n**L-spaces and knot traces**\n\n*JOHN A. BALDWIN AND STEVEN SIVEK*\n\n37 pp, 26 sections.\n\n**Abstract.** There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the 0-trace detects every L-space knot. Our proof combines tools in Heegaard Floer homology with results about surface homeomorphisms and their dynamics. We also consider nonzero traces, proving for instance that each positive torus knot is determined by its n-trace for any n ≤0, whereas no non-positive integer is known to be a characterizing slope for any positive torus knot besides the right-handed trefoil.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Nonzero traces; 1.2 Questions; 1.3 Conventions; 1.4 Organization; 1.5 Acknowledgements; 2 Zero-surgeries on ffpf knots; 2.1 Surface homeomorphisms and fibered knots; 2.2 Fixed points and ffpf knots; 2.3 Zero-surgeries on ffpf knots; 3 Traces and large surgeries; 3.1 Topological preliminaries; 3.2 The span of the relative invariants of the; 3.3 The mod 2 grading; 3.4 Zero-traces of L-space knots; 4 Traces and rational surgeries; 5 Negative traces and positive torus knots",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

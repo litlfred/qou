@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -15,7 +15,8 @@
   "kind": "proposition",
   "title": "Cyclotomic expansion of the cleared mass trace",
   "cites": [
-    "references/habiro2004",
+    "references/habiro2004cyclotomic",
+    "references/habiro2008",
     "references/jones1987"
   ],
   "tags": [
@@ -25,7 +26,7 @@
     "root-of-unity",
     "mass"
   ],
-  "leanRef": "qou:QOU.BraidKnot.HabiroCompletion",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.HabiroCompletion",
   "text": "full-pole-structure-mass-trace.md",
   "leanSource": "full-pole-structure-mass-trace.lean",
   "provenance": "authored"

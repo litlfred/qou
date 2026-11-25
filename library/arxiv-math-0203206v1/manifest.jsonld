@@ -31,6 +31,18 @@
     "library/arxiv-math-0203206v1/sections/sec-016"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein\n\n**arXiv:math/0203206v1 [math.QA] 20 Mar 2002**\n\n*M. Müger, J. E. Roberts and L. Tuset*\n\n43 pp, 18 sections.\n\n**Abstract.** We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction problem. We show that every concrete semisimple tensor ∗-category with conjugates is equivalent to the category of ﬁnite dimensional non-degenerate ∗- representations of a discrete algebraic quantum group. Working in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L. Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks to the semisimplicity of our categories and the emphasis on representations rather than corepresentations, our proof is more direct and conceptual than previous reconstructions.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Tensor Categories; 2.2 Algebraic Quantum Groups; 2.3 Discrete and Compact Case; 2.4 Examples; 3 Representation Theory; 3.1 The Universal Corepresentation; 3.2 Representations vs. Corepresentations as T; 3.3 Conjugates for Representations and Corepre; 4 Cocommutative Algebraic Quantum Groups vs. C; 5 From Concrete Tensor Categories to Discrete ; 5.1 Natural Transformations of $*$-Preserving ; 5.2 Concrete Tensor $*$-Categories and Discret; 5.3 Conjugates and Antipodes: Discrete Quantum; 5.4 The Non-$*$ Case; 6 Concrete Braided and Symmetric Categories",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

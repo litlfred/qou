@@ -1,0 +1,29 @@
+{
+ "q0Anchor": "independent",
+ "q0AnchorReason": "symbolic in q over Q(q); never reads the substrate q0",
+ "P8_rank_1_V_V2": 3,
+ "P8_V3_coeffs": {
+  "c0": "1",
+  "c1": "(q - 1)**2*(q + 1)**2/q**2",
+  "c2": "-(q - 1)**2*(q + 1)**2/q**2"
+ },
+ "P8_factorisations": [
+  {
+   "a": "(q - 1)*(q + 1)",
+   "b": "-(q - 1)*(q + 1)/q**2"
+  },
+  {
+   "a": "-(q - 1)*(q + 1)/q**2",
+   "b": "(q - 1)*(q + 1)"
+  }
+ ],
+ "P8_V3_eq_gamma_qh_gamma_mqinvh": true,
+ "P8_V_min_poly": "(x - 1)*(q**4*x + q**2*x**2 - q**2*x + q**2 + x)/q**2",
+ "P10_rank_WW_to_gr2": 2,
+ "P10_dim_R": 7,
+ "P10_rank_I3": 27,
+ "P10_dim_degree3_of_quadratic_algebra": 0,
+ "P10b_dim_R_cap_tauR": 5,
+ "P10b_dim_R_cap_Sym2": 4,
+ "P10b_dim_R_cap_Alt2": 1
+}

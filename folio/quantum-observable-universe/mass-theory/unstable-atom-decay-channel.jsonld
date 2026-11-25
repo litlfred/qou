@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,9 +13,10 @@
   ],
   "label": "prop:unstable-atom-decay-channel",
   "kind": "proposition",
-  "title": "Unstable atom has a uniquely-determined decay channel",
+  "title": "Uniqueness of the decay channel off the boundary variety",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-unstable-atom"
+    "papers/quantum-observable-universe/blocks/def-unstable-atom",
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price"
   ],
   "tags": [
     "decay",
@@ -23,7 +24,7 @@
     "ilp",
     "phase-boundary"
   ],
-  "leanRef": "qou:QOU.BraidKnot.UnstableAtom.decay_channel",
+  "leanRef": "qou:BraidKnotOctonion.UnstableAtom.decay_channel",
   "text": "unstable-atom-decay-channel.md",
   "leanSource": "unstable-atom-decay-channel.lean",
   "provenance": "authored"

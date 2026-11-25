@@ -1,0 +1,1 @@
+In diagrams of braided belts we shall henceforth include a box on the boundary of the belt at the bottom end, to represent the presence of a larger network to which the braided belt is attached, as shown in Fig.

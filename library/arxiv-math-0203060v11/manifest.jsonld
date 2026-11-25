@@ -71,6 +71,18 @@
     "library/arxiv-math-0203060v11/sections/sec-056"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in\n\n**ON FUSION CATEGORIES**\n\n*PAVEL ETINGOF, DMITRI NIKSHYCH, AND VIKTOR OSTRIK*\n\n50 pp, 58 sections.\n\n**Abstract.** Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in characteristic zero. We show that the global dimen- sion of a fusion category is always positive, and that the S-matrix of any (not necessarily hermitian) modular category is unitary. We also show that the cate- gory of module functors between two module categories over a fusion category is semisimple, and that fusion categories and tensor functors between them are undeformable (generalized Ocneanu rigidity). In particular the number of such categories (functors) realizing a given fusion datum is ﬁnite. Finally, we develop the theory of Frobenius-Perron dimensions in an arbitrary fusion cat- egory. At the end of the paper we generalize some of these results to positive characteristic.\n\n**Outline.** Front matter; 1 Introduction; 2 Results on squared norms, global dimensions,; 2.1 Squared norms and global dimensions; 2.2 Results on pivotal, spherical, and modular; 2.3 Module categories, the dual category, the ; 2.4 Multi-fusion categories; 2.5 Results on weak Hopf algebras; 2.6 Vanishing of the Yetter cohomology; 2.7 Ocneanu rigidity; 3.1 Proof of Theorem 2.3; 3 Fusion categories over C; 3.2 Proof of Proposition 2.9; 3.3 Proof of Proposition 2.12 and properties o; 4 Weak Hopf algebras and their integrals; 4.1 Definition of a weak Hopf algebra; 4.2 Integrals; 4.3 Proof of Theorem 2.6",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

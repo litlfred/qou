@@ -28,6 +28,18 @@
     "library/arxiv-1108.0687v3/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures — Let {X1, . . .\n\n**Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures**\n\n*Robin Pemantle1, 2 and Yuval Peres3*\n\n23 pp, 15 sections.\n\n**Abstract.** Let {X1, . . . , Xn} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz function. Under a negative dependence hypothesis known as the strong Rayleigh con- dition, we show that f−Ef satisﬁes a concentration inequality. The class of strong Rayleigh measures includes determinantal measures, weighted uniform matroids and exclusion measures; some familiar examples from these classes are generalized negative binomials and spanning tree measures. For instance, any Lipschitz-1 function of the edges of a uniform spanning tree on vertex set V (e.g., the number of leaves) satisﬁes the Gaussian concentration inequality P(f −Ef ≥a) ≤exp \u0012 −a2 8 |V | \u0013 . We also prove a continuous version for concentration of Lipschitz functionals of a determinantal point process.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Classical concentration inequalities; 1.2 Generalizations; 2 Strong Rayleigh property, stochastic coverin; 3 Results; 4 Proofs; 4.1 The classical proofs; 4.2 Proof of Theorems ?? and ??; 4.3 Proof of Theorem ??; 5 Applications; 5.1 Matroids; 5.2 Exclusion measures; 5.3 Determinantal measures on a finite Boolean; 6 Determinantal point processes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

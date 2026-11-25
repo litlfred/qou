@@ -42,6 +42,18 @@
     "library/arxiv-2108.03616v2/sections/sec-027"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance measures associated with linear spaces.\n\n**Circuit imbalance measures and linear programming ∗**\n\n*Farbod Ekbatani, Bento Natura, and László A. Végh*\n\n44 pp, 29 sections.\n\n**Abstract.** We study properties and applications of various circuit imbalance measures associated with linear spaces. These measures describe possible ratios between nonzero entries of support-minimal nonzero vectors of the space. The fractional circuit imbalance measure turns out to be a crucial parameter in the context of linear programming, and two integer variants can be used to describe integrality properties of associated polyhedra. We give an overview of the properties of these measures, and survey classical and recent applications, in particular, for linear programming algorithms with running time dependence on the constraint matrix only, and for circuit augmentation algorithms. We also present new bounds on the diameter and circuit diameter of polyhedra in terms of the fractional circuit imbalance measure.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Properties of the imbalance measures; 3.1 Bounds on subdeterminants; 3.2 Fractional integrality characterization; 3.3 Self-duality; 3.4 Matrix representations; 3.5 The triangle inequality; 4 Connections to other condition numbers; 4.1 The condition number chi bar and the lifti; 4.2 The condition number and bounds on diamete; 5 Optimizing circuit imbalances; 5.1 Perfect balancing: *W=1; 6 Hoffman proximity theorems; 7 Linear programming with dependence on the co; 7.1 A black box algorithm; 7.2 Layered least squares interior point metho",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

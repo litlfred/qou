@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-colour-braid-commuting-singlet",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:colour-braid-commuting-singlet",
+  "kind": "proposition",
+  "title": "A linear map commuting with the colour braiding keeps the singlet line",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-colour-singlet-flavour-generator",
+    "papers/quantum-observable-universe/blocks/prop-colour-relabel-singlet"
+  ],
+  "tags": [
+    "colour",
+    "quantum-group",
+    "braid-group"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.ColourRelabel.braid_commuting_fixes_singlet",
+  "text": "colour-braid-commuting-singlet.md",
+  "provenance": "authored"
+}

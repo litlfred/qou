@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brings-coordinate-ring-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brings-coordinate-ring-remark",
+  "kind": "remark",
+  "title": "Genus, $S_5$-symmetry and the Reeb spectrum of Bring's curve",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-coordinate-ring"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brings-coordinate-ring",
+  "tags": [
+    "brings-curve",
+    "coordinate-ring",
+    "genus-4",
+    "S5-symmetry"
+  ],
+  "text": "brings-coordinate-ring-remark.md",
+  "provenance": "authored"
+}

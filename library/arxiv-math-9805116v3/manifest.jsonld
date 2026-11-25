@@ -27,6 +27,18 @@
     "library/arxiv-math-9805116v3/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Weak Hopf Algebras I: Integral Theory and C*-structure — We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras.\n\n**Weak Hopf Algebras I: Integral Theory and C*-structure**\n\n*I. Integral Theory and C∗-structure*\n\n40 pp, 14 sections.\n\n**Abstract.** We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras. We follow an axiomatic approach keeping as close as possible to the ”classical” theory of Hopf algebras. The emphasis is put on the new structure related to the presence of canonical subalgebras AL and AR in any weak Hopf algebra A that play the role of non-commutative numbers in many respects. A theory of integrals is developed in which we show how the algebraic properties of A, such as the Frobenius property, or semisimplicity, or innerness of the square of the antipode, are related to the existence of non-degenerate, normalized, or Haar integrals.\n\n**Outline.** Front matter; 1.1 The axioms; 1.2 Weak bialgebras; 1.3 Weak Hopf algebras; 1.4 The \"trivial\" representation; 1.5 Integrals in weak Hopf algebras; 1.6 Weak Hopf modules; 1.7 Restrictions on the algebraic structure; 1.8 Non-degenerate integrals; 1.9 2-sided non-degenerate integrals; 1.10 Haar integrals; 1.11 First consequences of the $C^*$-structure; 1.12 The Haar measure and selfduality; 1.13 The canonical grouplike element",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {

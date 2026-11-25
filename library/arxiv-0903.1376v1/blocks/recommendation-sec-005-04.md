@@ -1,0 +1,1 @@
+In the interests of notational clarity, we shall therefore write ρi to denote the twists and permutations induced on an initially trivial 3-belt by performing a trinion ﬂip to cross strand i over strand i + 1.

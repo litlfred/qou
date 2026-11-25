@@ -24,15 +24,24 @@ ROOT=$(git -C "$(dirname "$0")/.." rev-parse --show-toplevel) || exit 0
 cd "$ROOT" || exit 0
 
 if command -v bun >/dev/null 2>&1; then
-  if [ ! -d folio-assistant/cat-harness-tools/scripts ]; then
+  # qou is a platform layer (owner ruling 2026-11-24): index.lock.json mounts the
+  # platform at the repository root, and that is the route used when it is on
+  # disk. The folio-assistant/ link is the compatibility path, kept for a
+  # checkout that has it and no root mounts (scripts/lib/platform-root.sh).
+  STATE=""
+  if [ -f cat-harness-tools/scripts/state-mount.ts ] && [ -d node_modules ]; then
+    STATE=cat-harness-tools/scripts/state-mount.ts
+    . scripts/lib/platform-root.sh && qou_platform_shim "$ROOT"
+  elif [ ! -d folio-assistant/cat-harness-tools/scripts ]; then
     # Light install (about 20 s, 165 MB), not the full setup (1.7 GB, which
     # timed out or filled the disk in two sessions on 2026-11-15).
     echo "mount-fsh-guts: platform absent; running mount-platform-lite.sh"
     timeout 600 ./scripts/mount-platform-lite.sh >"${TMPDIR:-/tmp}/qou-mount-platform-lite.log" 2>&1 \
       || echo "mount-fsh-guts: light platform install failed (log: ${TMPDIR:-/tmp}/qou-mount-platform-lite.log)" >&2
   fi
-  if [ -d folio-assistant/cat-harness-tools/scripts ]; then
-    bun folio-assistant/cat-harness-tools/scripts/state-mount.ts
+  [ -z "$STATE" ] && [ -d folio-assistant/cat-harness-tools/scripts ] && STATE=folio-assistant/cat-harness-tools/scripts/state-mount.ts
+  if [ -n "$STATE" ]; then
+    bun "$STATE"
     # state:mount exits non-zero for graphs it does not mount (lake-cache is
     # handed to its own Tool), so judge by what is on disk, not by the status.
   fi
@@ -56,6 +65,6 @@ readonly_copy cat/cat-harness/fsh-guts fsh-guts
 if [ -z "$(ls -A beans/defs 2>/dev/null)" ]; then
   echo "mount-fsh-guts: beans/ is NOT mounted (platform setup or state:mount failed)." >&2
   echo "mount-fsh-guts: the bean work-plan is UNAVAILABLE in this session; an empty \`beans list\` must not be believed." >&2
-  echo "mount-fsh-guts: fix: ./scripts/mount-platform-lite.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts" >&2
+  echo "mount-fsh-guts: fix: bash .github/mount-from-lock.sh && bun install && bun cat-harness-tools/scripts/state-mount.ts (or, on the compatibility path: ./scripts/mount-platform-lite.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts)" >&2
 fi
 exit 0

@@ -54,6 +54,18 @@
     "library/arxiv-2101.10016v16/sections/sec-039"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem — We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular\n\n**Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem**\n\n*Sergio Ciamprone, Marco Valerio Giannone, Claudia Pinzari*\n\n261 pp, 41 sections.\n\n**Abstract.** We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular tensor category structure on the module category of the affine vertex operator algebra Vgk, equivalent to the quantum group fusion category C(g, q, ℓ), within the Doplicher–Roberts quantum group duality program for the Wess– Zumino–Witten model. The construction reaches positive integer levels that Finkelberg’s argument does not cover, namely E6 and E7 at k = 1 and E8 at k = 2, and it treats simply\u0002laced and non-simply-laced types uniformly, whereas the Kazhdan–Lusztig construction was carried out for the simply-laced case. We establish that a weak quasi-fibre structure on a functor preserving a coboundary symmetry in the sense of Drinfeld extends a symmetric functor under permutation sym\u0002metry.\n\n**Outline.** Front matter; 1 Introduction; 2 Main results; 3 Outline of the paper; 4 Preliminaries on tensor categories and their; 5 Rigidity, weak tensor functors, braided symm; 6 Weak quasi-Hopf algebras; 7 Tannaka-Krein duality and integral weak dime; 8 Two abstract uniqueness results of braided t; 9 Weak Hopf algebras; 10 Quasitriangular and ribbon structures; 11 Ω-involution and C*-structure; 12 The categories Reph(A) and Rep+(A); 13 Unitary braided symmetry and involutive Tan; 14 Unitarizability of representations and rigi; 15 Turning C*-categories into tensor C*-catego; 16 Positive weak dimension and amenability; 17 Constructing integral wdf; solution to Gali\n\n**Extracted claims (proposals, not verified).**\n- Theorem 29.1: In the specific case of a symmetric tensor C\n- Theorem 16.8: ). Thus, extracting coisometric fusion projections via polar decomposition\n- Theorem 6.1: to more general objects, by replacing strict symmetric monoidal C*-categories\n- Theorem 2.1: Under the same assumptions as in Finkelberg’s theorem 21.1, O˜\n- Theorem 2.2: Let C1 and C2 be tensor equivalent C\n- Theorem 2.1: is, in other words, a strong motivation to refine our Tannakian methods",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-2101.10016v16",

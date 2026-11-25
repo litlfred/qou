@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -27,7 +27,7 @@
     "markov-trace",
     "non-degenerate"
   ],
-  "leanRef": "qou:QOU.Archimedean.frobeniusDual",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.frobeniusDual",
   "text": "frobenius-dual-h3.md",
   "leanSource": "frobenius-dual-h3.lean",
   "provenance": "authored"

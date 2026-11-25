@@ -22,6 +22,18 @@
     "library/arxiv-0911.4494v2/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn.\n\n**The geometry of Markov traces**\n\n*Ben Webster*\n\n14 pp, 9 sections.\n\n**Abstract.** We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn. This construction makes sense for all simple algebraic groups, so we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of other types. We give a geometric expansion of this trace in terms of the irreducible characters of the Hecke algebra, and conclude that it agrees with a trace deﬁned independently by Gomi. Based on our proof, we also prove that certain simple perverse sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently, that the Hochschild homology of any Soergel bimodule is free, as the authors had previously conjectured. This construction is closely tied to knot homology.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgments; 2 Hecke algebras; 3 Hecke algebras and geometry; 4 A categorified trace; 5 Character sheaves and character expansions; 6 Character sheaves and Molien series; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

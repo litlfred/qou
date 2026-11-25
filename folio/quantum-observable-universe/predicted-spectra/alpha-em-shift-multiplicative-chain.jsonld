@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,7 +13,11 @@
   ],
   "label": "prop:alpha-em-shift-multiplicative-chain",
   "kind": "proposition",
-  "title": "Multiplicative-chain form: $\\alpha_{EM}^{-1} = q \\cdot [\\alpha_{\\mathrm{shift}}(T_{2,9})]_q \\cdot [\\alpha_{\\mathrm{shift}}(T_{3,5})]_q$",
+  "title": "Multiplicative-chain index identity: $[\\alpha_{\\mathrm{shift}}(T_{2,9})]_q [\\alpha_{\\mathrm{shift}}(T_{3,5})]_q = [9]_q [10]_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-alpha-shift-torus-knot",
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-projection"
+  ],
   "tags": [
     "alpha-em",
     "multiplicative-chain",
@@ -24,7 +28,7 @@
     "delta-q",
     "categorical-composition"
   ],
-  "leanRef": "qou:QOU.Archimedean.AlphaEmShiftChain.alpha_em_shift_chain",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.AlphaEmShiftChain.alpha_em_shift_chain",
   "text": "alpha-em-shift-multiplicative-chain.md",
   "leanSource": "alpha-em-shift-multiplicative-chain.lean",
   "provenance": "authored"

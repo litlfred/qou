@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
@@ -13,7 +13,7 @@
   ],
   "label": "rem:hecke-blitvic-pair-partition-mechanism",
   "kind": "remark",
-  "title": "Pair-partition mechanism behind the Blitvić hypothesis",
+  "title": "Why the Markov-trace moments are not a pair-partition sum",
   "interprets": "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis",
   "tags": [
     "hecke",

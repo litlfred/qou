@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -15,6 +15,7 @@
   "kind": "conjecture",
   "title": "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate",
   "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lepton-meson-torus-knot-dictionary",
     "papers/quantum-observable-universe/blocks/thm-ew-triplet-charge-spin-from-involution",
     "papers/quantum-observable-universe/blocks/prop-weak-spectral-completeness",
     "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
@@ -33,7 +34,7 @@
     "n-sym",
     "open-problem"
   ],
-  "leanRef": "qou:QOU.QuantumObservableUniverses.GActionOnSubstrate",
+  "leanRef": "qou:QOU.Core.GActionOnSubstrate",
   "text": "g-action-on-substrate.md",
   "provenance": "authored"
 }

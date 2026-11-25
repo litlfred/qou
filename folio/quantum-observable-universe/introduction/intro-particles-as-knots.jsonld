@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
@@ -14,11 +14,6 @@
   "label": "prose:intro-particles-as-knots",
   "kind": "prose",
   "cites": [
-    "references/doplicher-haag-roberts1971",
-    "references/doplicher-roberts1989",
-    "references/fredenhagen-rehren-schroer1989",
-    "references/frohlich-gabbiani1990",
-    "references/coecke-pavlovic-vicary2013",
     "references/helmholtz1858",
     "references/thomson1867vortexatoms",
     "references/maxwell1873treatise2",
@@ -31,8 +26,13 @@
     "references/bilsonthompson2007",
     "references/bilson-thompson-hackett-kauffman2009",
     "references/avrin-2012",
+    "references/doplicher-haag-roberts1971",
+    "references/doplicher-roberts1989",
+    "references/fredenhagen-rehren-schroer1989",
+    "references/frohlich-gabbiani1990",
     "references/abramsky-coecke2004",
-    "references/selinger2007"
+    "references/selinger2007",
+    "references/coecke-pavlovic-vicary2013"
   ],
   "text": "intro-particles-as-knots.md",
   "provenance": "authored"

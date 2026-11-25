@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -27,7 +27,10 @@
     "references/murakami-y2022",
     "references/gukov-stosic2012",
     "references/kucharski-reineke-stosic-sulkowski2017",
-    "references/singh-physrevd108106023"
+    "references/singh-physrevd108106023",
+    "references/garoufalidis-kashaev2015",
+    "references/garoufalidis-zagier2023",
+    "references/mario2023"
   ],
   "tags": [
     "tier:famous",
@@ -40,7 +43,7 @@
     "axiom-class",
     "open-problem"
   ],
-  "leanRef": "qou:QOU.QBeta.StokesDTBPSBridge",
+  "leanRef": "qou:QOU.Nuclear.StokesDTBPSBridge",
   "text": "stokes-dt-bps-bridge.md",
   "provenance": "authored"
 }

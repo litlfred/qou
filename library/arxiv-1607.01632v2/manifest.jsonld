@@ -27,6 +27,21 @@
     "library/arxiv-1607.01632v2/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Charge specific baryon mass relations with deformed SU_q(3) flavor symmetry (Gresnigt, arXiv:1607.01632) — q-deformed octet/decuplet mass formulas with q fitted at a root of unity\n\n**Charge specific baryon mass relations with deformed SU_q(3) flavor symmetry** — Niels G. Gresnigt. arXiv:1607.01632v2 [hep-ph].\n\nTakes the quantum group U_q(su(3)) as a baryon flavour symmetry and adds zeroth-order electromagnetic contributions, giving charge-specific q-deformed octet and decuplet mass formulas (errors quoted 0.02 % and 0.08 %, against the Gell-Mann–Okubo formulas), an octet–decuplet relation (1.2 %), and a formula for the Cabibbo angle, taken as π/14, in terms of q and the spin-parity of the baryons. The deformation parameter is a root of unity selected to match the measured masses.\n\n**Why it may bear here.** Not cited yet. Background for `gresnigt2017`, whose §(i) reviews this programme. A contrast, not a precedent: q here is a flavour parameter chosen by fit, which this repository's anti-fit rule excludes, and it does not enter any braiding.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt4f9V7M6GLoG8XeAZz",
+        "date": "2026-11-22"
+      },
+      "drafted_at": "2026-11-22"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-1607.01632v2",

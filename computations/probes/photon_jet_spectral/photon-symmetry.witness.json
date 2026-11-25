@@ -1,0 +1,51 @@
+{
+ "q0Anchor": "independent",
+ "q0AnchorReason": "symbolic in q; never reads q0",
+ "P11": {
+  "theta": {
+   "preserves_F1": false,
+   "preserves_W": false
+  },
+  "rho": {
+   "preserves_F1": false,
+   "preserves_W": false
+  },
+  "beta": {
+   "preserves_F1": true,
+   "preserves_W": false
+  },
+  "theta.rho": {
+   "preserves_F1": true,
+   "preserves_W": true
+  },
+  "theta.beta": {
+   "preserves_F1": false,
+   "preserves_W": false
+  },
+  "rho.beta": {
+   "preserves_F1": false,
+   "preserves_W": false
+  },
+  "theta.rho.beta": {
+   "preserves_F1": true,
+   "preserves_W": false
+  }
+ },
+ "P12_dim_normaliser_F1": 3,
+ "P12_normaliser_is_central": true,
+ "P13_det_G": "q**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2*(q**3 - q - 1)*(q**3 - q + 1)/(q**2 + 1)**6",
+ "P13_G(v,v)": "q**6*(q**4 - 2)/((q**2 + 1)**2*(q**3 - q - 1)*(q**3 - q + 1))",
+ "P13_det_G_on_complement": "q**2*(q**4 - 2)*(q**2 - q + 1)**2*(q**2 + q + 1)**2/(q**2 + 1)**6",
+ "P13_sign_det_complement_q=111/100": -1,
+ "P13_sign_det_complement_q=3/2": 1,
+ "P13b_dim_lie_O(G)_stab(l)": 1,
+ "P13b_J_preserves_cubic_trace": false,
+ "P13b_theta_rho_on_colour_weights": [
+  "1",
+  "(phi01*q**2 - phi01 + phi1*q)/q",
+  "-(-phi0*q + phi01*q**2 - phi01)/q",
+  "phi01"
+ ],
+ "P13b_theta_W_equals_mirror": true,
+ "P13b_W_equals_mirror": false
+}

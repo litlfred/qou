@@ -28,6 +28,18 @@
     "library/arxiv-1404.0331v1/sections/sec-013"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS — The AJ conjecture, formulated by Garoufalidis, relates the A-polynomial and the colored Jones polynomial of a knot in the 3-sphere.\n\n**THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS**\n\n*ANH T. TRAN*\n\n9 pp, 15 sections.\n\n**Abstract.** The AJ conjecture, formulated by Garoufalidis, relates the A-polynomial and the colored Jones polynomial of a knot in the 3-sphere. It has been conﬁrmed for all torus knots, some classes of two-bridge knots and pretzel knots, and most cabled knots over torus knots. The strong AJ conjecture, formulated by Sikora, relates the A-ideal and the colored Jones polynomial of a knot. It was conﬁrmed for all torus knots. In this paper we conﬁrm the strong AJ conjecture for most cabled knots over torus knots. 0. Introduction 0.1. The colored Jones polynomial. For a knot K in S3 and a positive integer n, let JK(n) ∈Z[t±1] denote the n-colored Jones polynomial of K with zero-framing. The polynomial JK(n) is the quantum link invariant, as deﬁned by Reshetikhin and Turaev [RT], associated to the Lie algebra sl2(C), with the color n standing for the irreducible sl2(C)-module Vn of dimension n.\n\n**Outline.** Front matter; 0.1 The colored Jones polynomial; 0 Introduction; 0.2 The recurrence ideal and recurrence polyno; 0.3 The AJ conjecture; 0.4 Main result; 0.5 Plan of the paper; 0.6 Acknowledgment; 1 The Colored Jones polynomial of cabled knots; 2 On the strong AJ conjecture; 3 Case s>2 is odd and q>2; 4 Case s>2 is odd and q=2; 5 Case s>2 is even; 6 Case s=2; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

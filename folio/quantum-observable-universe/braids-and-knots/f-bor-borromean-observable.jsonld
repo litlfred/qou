@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -27,10 +27,12 @@
     "categorical-observable",
     "wedderburn",
     "content-shift",
+    "schur-element",
+    "asserted-normaliser",
     "lean-proved-building-blocks",
     "h-expansion-rational"
   ],
-  "leanRef": "qou:QOU.FBorBorromeanObservable",
+  "leanRef": "qou:QOU.BraidsAndKnots.F_Bor",
   "text": "f-bor-borromean-observable.md",
   "leanSource": "f-bor-borromean-observable.lean",
   "provenance": "authored"

@@ -45,6 +45,18 @@
     "library/arxiv-2205.06874v2/sections/sec-030"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects.\n\n**State sum models with defects based on spherical fusion categories**\n\n*Catherine Meusburger*\n\n68 pp, 32 sections.\n\n**Abstract.** We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects. Surface defects are oriented embedded 2d PL submanifolds and are labeled with bimodule categories over spherical fusion categories with bimodule traces. Line and point defects form directed graphs on these surfaces and labeled with bimodule functors and bimodule natural transformations. The state sum is based on generalised 6j symbols that encode the coherence isomorphisms of the defect data. We prove the triangulation independence of the state sum and show that it can be computed in terms of polygon diagrams that satisfy the cutting and gluing identities for polygon presentations of oriented surfaces. By computing state sums with defect surfaces, we show that they detect the genus of a defect surface and are sensitive to its embedding.\n\n**Outline.** Front matter; Categorical data; Spherical fusion categories; (Bi)module categories, functors and natural tr; Finite semisimple (bi)module categories over p; Bimodule categories with bimodule traces; Diagrammatic calculus; Diagrams for spherical fusion categories; Diagrams for (bi)module categories, functors a; Diagrams for 2-categories; Diagrams for pivotal 2-categories; Mixed diagrams; Polygon diagrams; Action on category diagrams; Bordered diagrams; Polygon diagrams; Gluing polygon diagrams; Projections and inclusions for simple objects",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
