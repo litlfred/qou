@@ -115,19 +115,19 @@ def numerical_chain(q: mp.mpf) -> dict:
         "abs_delta_net": mp.nstr(abs_delta, 20),
         "h_times_net_p": mp.nstr(h * net_p, 20),
         "abs_delta_eq_h_net_p_reldiff":
-            float(abs((abs_delta - h * net_p) / (h * net_p))),
+            mp.nstr(abs((abs_delta - h * net_p) / (h * net_p)), 20),
         "Qbeta_ansatz_MeV": mp.nstr(Qb_ansatz, 18),
         "Qbeta_kashiwara_MeV": mp.nstr(Qb_kashiwara, 18),
         "Qbeta_ansatz_vs_kashiwara_rel":
-            float((Qb_ansatz - Qb_kashiwara) / Qb_kashiwara),
+            mp.nstr((Qb_ansatz - Qb_kashiwara) / Qb_kashiwara, 20),
         "Delta_tr": mp.nstr(dtr, 20),
         "B_cand_E0_netp_dtr_MeV": mp.nstr(B_cand, 18),
-        "B_cand_err_vs_AME_pct": float((B_cand / B_AME - 1) * 100),
+        "B_cand_err_vs_AME_pct": mp.nstr((B_cand / B_AME - 1) * 100, 20),
         "B_via_kashiwara_qbeta_MeV": mp.nstr(B_via_qbeta, 18),
-        "B_via_qbeta_err_vs_AME_pct": float((B_via_qbeta / B_AME - 1) * 100),
+        "B_via_qbeta_err_vs_AME_pct": mp.nstr((B_via_qbeta / B_AME - 1) * 100, 20),
         "consistency_cand_vs_ansatz_route_rel":
-            float(abs((B_cand - abs_delta * E0 * dtr / h)
-                      / (abs_delta * E0 * dtr / h))),
+            mp.nstr(abs((B_cand - abs_delta * E0 * dtr / h)
+                        / (abs_delta * E0 * dtr / h)), 20),
     }
 
 
@@ -147,14 +147,14 @@ def main() -> int:
     print("\n[numerical @ 50 dps, q₀]")
     print(f"  net(p) = 1 − h/2 = {nc['net_p'][:14]}   |Δ(net)| = "
           f"{nc['abs_delta_net'][:14]}   h·net(p) = {nc['h_times_net_p'][:14]}")
-    print(f"  |Δ(net)| = h·net(p) reldiff = {nc['abs_delta_eq_h_net_p_reldiff']:.2e}")
+    print(f"  |Δ(net)| = h·net(p) reldiff = {nc['abs_delta_eq_h_net_p_reldiff']}")
     print(f"  Q_β(ansatz=E₀·h·net_p) = {nc['Qbeta_ansatz_MeV'][:12]}  "
           f"vs Kashiwara {nc['Qbeta_kashiwara_MeV'][:12]}  "
-          f"(rel {nc['Qbeta_ansatz_vs_kashiwara_rel']:+.3e})")
+          f"(rel {nc['Qbeta_ansatz_vs_kashiwara_rel']})")
     print(f"  B_D = E₀·net(p)·Δtr = {nc['B_cand_E0_netp_dtr_MeV'][:12]} MeV  "
-          f"err {nc['B_cand_err_vs_AME_pct']:+.3f}%")
+          f"err {nc['B_cand_err_vs_AME_pct'][:8]}%")
     print(f"  B_D via Kashiwara Q_β·Δtr/h = {nc['B_via_kashiwara_qbeta_MeV'][:12]} "
-          f"MeV  err {nc['B_via_qbeta_err_vs_AME_pct']:+.3f}%")
+          f"MeV  err {nc['B_via_qbeta_err_vs_AME_pct'][:8]}%")
 
     wb = (WitnessBuilder("probe-d-dressing-is-proton-net",
                          engine="mpmath+sympy")
@@ -165,25 +165,33 @@ def main() -> int:
               "|Δ(net)| = h·net(p); Q_β = E₀·h·net(p); hence "
               "B_D = E₀·net(p)·Δtr = Q_β·Δtr/h. Ties the binding "
               "dressing to the β-decay (bar-odd) sector via the single "
-              "factor h. Structural identification; magnitude match "
-              "(+0.12%) observation-tier, conditional on borromean-"
-              "quark, NOT wired.")
+              "factor h. The exact identities are the probe's content. "
+              "The binding magnitude B_D vs AME is recorded as a NEGATIVE "
+              "(owner ruling 2026-11-25, bean qou-xj4p): the 2026-07-04 "
+              "+0.29% hit came only from the superseded grouped word under "
+              "the excised Markov convention C (attribution: "
+              "probes/probe_d_dressing_is_proton_net/attribution/); on the "
+              "ruled inputs B_D misses AME by about -75%. NOT wired.")
           .set_audit_only(
               "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md")
           .add_parameter("q0", Q_50_DIGIT_STR)
           .add_parameter("compute_dps", DPS)
           .add_data("symbolic", si)
-          .add_data("numerical", nc))
+          .add_data("numerical", nc)
+          .add_data("binding_candidate_status", {
+              "verdict": "negative",
+              "B_cand_err_vs_AME_pct": nc["B_cand_err_vs_AME_pct"],
+              "ruling": "owner 2026-11-25 (qou-xj4p): keep the exact identities; "
+                        "record the binding match as a negative; the sub-percent "
+                        "assertion is removed",
+              "attribution": "probes/probe_d_dressing_is_proton_net/attribution/RESULTS.md",
+          }))
     wb.add_assertion(
         "abs_delta_net_eq_h_net_p",
-        computed=nc["abs_delta_eq_h_net_p_reldiff"], expected=0.0,
-        tolerance=1e-45,
+        computed=nc["abs_delta_eq_h_net_p_reldiff"], expected="0",
+        tolerance="1e-45",
         source="|Δ(net)| = h·net(p) — exact ℚ(q), the identity tying the "
                "binding dressing to Q_β")
-    wb.add_assertion(
-        "binding_candidate_subpercent",
-        computed=abs(nc["B_cand_err_vs_AME_pct"]) < 1.0, expected=True,
-        source="B_D = E₀·net(p)·Δtr vs AME2020")
     wb.save()
     print("\nwitness → probe-d-dressing-is-proton-net.witness.json (audit-only)")
     return 0
