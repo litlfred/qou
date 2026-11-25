@@ -37,7 +37,7 @@ theorem sign_wordPerm {n : ℕ} (w : List (Letter n)) :
   | nil => simp [wordPerm]
   | cons l w ih =>
     obtain ⟨i, b⟩ := l
-    have hne : i.castSucc ≠ i.succ := Fin.castSucc_lt_succ i |>.ne
+    have hne : i.castSucc ≠ i.succ := (Fin.castSucc_lt_succ (i := i)).ne
     simp only [wordPerm, List.map_cons, List.prod_cons, map_mul] at ih ⊢
     rw [ih, perm, Perm.sign_swap hne, List.length_cons, pow_succ]
     exact mul_comm _ _
