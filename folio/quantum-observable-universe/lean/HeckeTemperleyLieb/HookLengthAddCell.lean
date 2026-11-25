@@ -81,7 +81,6 @@ theorem rowLen_of_isAddableCell {ν : YoungDiagram} {s : ℕ × ℕ} (hs : IsAdd
   · have : s.2 = 0 := hz
     omega
   · have := YoungDiagram.mem_iff_lt_rowLen.mp hmem
-    simp only at this
     omega
 
 /-- An addable cell sits exactly at the bottom of its column. -/
@@ -95,7 +94,6 @@ theorem colLen_of_isAddableCell {ν : YoungDiagram} {s : ℕ × ℕ} (hs : IsAdd
   · have : s.1 = 0 := hz
     omega
   · have := YoungDiagram.mem_iff_lt_colLen.mp hmem
-    simp only at this
     omega
 
 /-- **Hook lengths under `addCell`.**  A cell of `ν` gains exactly one on its hook when the new
