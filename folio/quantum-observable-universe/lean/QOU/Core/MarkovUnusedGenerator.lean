@@ -136,7 +136,7 @@ For a monotone word `l` (strictly increasing letters) that does not use `g`,
 This is the single equation `qou-g8i1` left open, and it is derived here from
 the Markov axioms — no extra hypothesis. -/
 theorem tr_wordProd_mul_sigma :
-    ∀ l : List ℕ, l.Sorted (· < ·) → ∀ g : ℕ, g ∉ l →
+    ∀ l : List ℕ, l.Pairwise (· < ·) → ∀ g : ℕ, g ∉ l →
       T.tr (wordProd T l * T.σ g) = T.z * T.tr (wordProd T l) := by
   intro l
   induction l using List.reverseRecOn with
@@ -148,7 +148,7 @@ theorem tr_wordProd_mul_sigma :
     intro hsorted g hg
     -- decompose the sortedness and the non-membership
     have hpair := List.pairwise_append.mp hsorted
-    have hl_sorted : l.Sorted (· < ·) := hpair.1
+    have hl_sorted : l.Pairwise (· < ·) := hpair.1
     have hlm : ∀ a ∈ l, a < m := by
       intro a ha
       exact hpair.2.2 a ha m (by simp)
@@ -199,7 +199,7 @@ theorem tr_wordProd_mul_sigma :
 Combining the derived `σ_g` case with the linearity reduction of
 `QOU.MathlibExt.MarkovBondLinear`: each bond letter `σ_g + d • 1` at an unused
 generator contributes exactly `z + d`. -/
-theorem tr_wordProd_mul_bond (l : List ℕ) (hl : l.Sorted (· < ·)) (g : ℕ)
+theorem tr_wordProd_mul_bond (l : List ℕ) (hl : l.Pairwise (· < ·)) (g : ℕ)
     (hg : g ∉ l) (d : R) :
     T.tr (wordProd T l * (T.σ g + d • (1 : A)))
       = (T.z + d) * T.tr (wordProd T l) := by
@@ -255,7 +255,7 @@ noncomputable def bondRuleOfTower {R : Type*} [Field R] {A : Type*} [Ring A]
   tr := T.tr
   mul := (· * ·)
   sigmaPlus := fun g d => T.σ g + d • (1 : A)
-  Unused := fun g x => ∃ l : List ℕ, l.Sorted (· < ·) ∧ x = wordProd T l ∧ g ∉ l
+  Unused := fun g x => ∃ l : List ℕ, l.Pairwise (· < ·) ∧ x = wordProd T l ∧ g ∉ l
   tr_mul_sigmaPlus := by
     rintro x g d ⟨l, hl, rfl, hg⟩
     rw [← hz]
