@@ -1,0 +1,262 @@
+{
+  "$schema": "kg-qa/v1",
+  "subject": {
+    "kind": "process",
+    "id": "Process_WitnessRefresh",
+    "path": "processes/content/witness-refresh.bpmn"
+  },
+  "source_hash": "sha256:2dd85b5740bff3d21e749e2a6be3d0e31895488836fc372ee6f6a56eb1cfebd3",
+  "criteria": {
+    "raci-role-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "raci-single-accountable": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "raci-accountable-not-consulted": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "convention-ref-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "skill-ref-resolves": {
+      "result": "pass",
+      "findings": []
+    },
+    "skill-servable": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-skill-has-tool": {
+      "result": "n/a",
+      "findings": []
+    },
+    "decision-ref-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "role-ref-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "activity-in-lane": {
+      "result": "pass",
+      "findings": []
+    },
+    "lane-binds-role": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "variable-performer-declared-alone": {
+      "result": "n/a",
+      "findings": []
+    },
+    "role-carries-activity-skill": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "lane-role-legacy-binding": {
+      "result": "n/a",
+      "findings": []
+    },
+    "task-skill-outside-lane-role": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "activity-names-skill": {
+      "result": "fail",
+      "findings": [
+        {
+          "where": "Task_Plan",
+          "detail": "\"List stale producers (pipeline dry run)\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        },
+        {
+          "where": "Task_Parity",
+          "detail": "\"Classify each: does a re-run reproduce it?\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        },
+        {
+          "where": "Task_Approve",
+          "detail": "\"Approve which producers to re-run\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        },
+        {
+          "where": "Task_Run",
+          "detail": "\"Re-run the approved producers\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        },
+        {
+          "where": "Task_Gates",
+          "detail": "\"Precision gates; keep audit output out\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        },
+        {
+          "where": "Task_Commit",
+          "detail": "\"Commit the refreshed witnesses\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        }
+      ]
+    },
+    "activity-fulfilment-kind": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "call-activity-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "process-diagram-published": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no docs layer is declared, so no page could be searched."
+        }
+      ]
+    },
+    "activity-documented": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-calls-skill-process": {
+      "result": "pass",
+      "findings": []
+    },
+    "gateway-documented": {
+      "result": "pass",
+      "findings": []
+    },
+    "gateway-branches-named": {
+      "result": "pass",
+      "findings": []
+    },
+    "node-reachable": {
+      "result": "pass",
+      "findings": []
+    },
+    "node-has-exit": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-implicit-split": {
+      "result": "pass",
+      "findings": []
+    },
+    "gateway-mixed": {
+      "result": "pass",
+      "findings": []
+    },
+    "process-size": {
+      "result": "pass",
+      "findings": []
+    },
+    "process-decompose": {
+      "result": "pass",
+      "findings": []
+    },
+    "process-single-start": {
+      "result": "pass",
+      "findings": []
+    },
+    "decision-label-question": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-label-verb-first": {
+      "result": "fail",
+      "findings": [
+        {
+          "where": "Task_Gates",
+          "detail": "\"Precision gates; keep audit output out\" starts with \"precision\", which reads as a noun or gerund. Start with an imperative verb, then its object (verb-object)."
+        }
+      ]
+    },
+    "edge-rectilinear": {
+      "result": "pass",
+      "findings": []
+    },
+    "edge-crossing": {
+      "result": "pass",
+      "findings": []
+    },
+    "edge-through-node": {
+      "result": "pass",
+      "findings": []
+    },
+    "diagram-too-wide": {
+      "result": "pass",
+      "findings": []
+    },
+    "diagram-too-tall": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-overlap": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-on-edge": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-on-shape": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-on-lane-line": {
+      "result": "pass",
+      "findings": []
+    },
+    "shape-overlap": {
+      "result": "pass",
+      "findings": []
+    },
+    "lane-order": {
+      "result": "pass",
+      "findings": []
+    },
+    "prose-reviewed-since-code-changed": {
+      "result": "n/a",
+      "findings": []
+    },
+    "prose-claims-resolve": {
+      "result": "n/a",
+      "findings": []
+    }
+  },
+  "totals": {
+    "pass": 26,
+    "fail": 2,
+    "n/a": 10,
+    "unknown": 7
+  }
+}

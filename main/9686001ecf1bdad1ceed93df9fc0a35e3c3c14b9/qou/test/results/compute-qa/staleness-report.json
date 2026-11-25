@@ -1,0 +1,18 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "staleness-report",
+  "node": "Task_Staleness",
+  "title": "Witness staleness (warn-mode)",
+  "verdict": "warn",
+  "reason": "gate exited 1 (warn: reported, not failed)",
+  "mode": "warn",
+  "exit_codes": [
+    1
+  ],
+  "seconds": 5.7,
+  "output_sha256": "1821d013980d5e2456fd8df89a04205d32f9cf34aa877af2cabcaa2e0a4b988c",
+  "output_head": "Checked 3832 witnesses.\n  upstream edges:   278 declare upstream_witness_hashes (7.3% adoption); 472 drift records.\n  self-staleness:   823 self-stale (scriptHash != current producer); 655 unverifiable/unresolved.\n  transitive:       17 additionally stale via upstream propagation (recorded edges only).\n\nUpstream drift detail:\n  - a-K-via-lp-dual-hecke-basis.witness.json \u2192 q-pinning-50-digit.witness.json: sha256_mismatch\n      recorded: 8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837\n      current:  2614db24633cfa8e1ffddb85b06245a7618947f3a79c5237a6cc02dba823d247\n  - a3-mirror-residual-reconciliation.witness.json \u2192 per-bond-growth-a3.witness.json: sha256_mismatch\n      recorded: 6e187a84f13fef26687538acfd613c021151560dd31cddd64ece2e604107c884\n      current:  3257b8f42010d4b560cf33ce3a0e8c723abd1b712bd899f1dd50fb484244f427\n  - alpha-k-jones-markov-h12.witness.json \u2192 q-pinning-50-digit.witness.json: sha256_mismatch\n      recorded: 29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f\n      current:  2614db24633cfa8e1ffddb85b06245a7618947f3a79c5237a6cc02dba823d247\n  - atomic-mass-via-rho-k.witness.json \u2192 atomic-tr-m-mpfr-50dps-proton.witness.json: sha256_mismatch\n      recorded: c74ec58d263e01428a868dd1e155ae89b96d9eeb7cf92bfd4b7b94ab46f30440\n      current:  8998562d7fc2a6ca75130798c75627819fc11a17d1e8b5cfbf160df63190d764\n  - braid-encoding-audit.witness.json \u2192 option-b-proton-mass-full-chain.witness.json: sha256_mismatch\n      recorded: 0ff461995c2c963f7436a071acf706f1df0359897bc94ba4ebae09722555e769",
+  "counts": {
+    "warn": 1
+  }
+}

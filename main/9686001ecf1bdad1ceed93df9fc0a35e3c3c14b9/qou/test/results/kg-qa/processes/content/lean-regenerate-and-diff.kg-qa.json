@@ -1,0 +1,241 @@
+{
+  "$schema": "kg-qa/v1",
+  "subject": {
+    "kind": "process",
+    "id": "Process_LeanRegenerateAndDiff",
+    "path": "processes/content/lean-regenerate-and-diff.bpmn"
+  },
+  "source_hash": "sha256:5d5740b2f48c19185a4870e9d1de2678161895e601d8a67fcce7fdfdd029ecdc",
+  "criteria": {
+    "raci-role-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "raci-single-accountable": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "raci-accountable-not-consulted": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "convention-ref-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "skill-ref-resolves": {
+      "result": "pass",
+      "findings": []
+    },
+    "skill-servable": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-skill-has-tool": {
+      "result": "n/a",
+      "findings": []
+    },
+    "decision-ref-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "role-ref-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "activity-in-lane": {
+      "result": "pass",
+      "findings": []
+    },
+    "lane-binds-role": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "variable-performer-declared-alone": {
+      "result": "n/a",
+      "findings": []
+    },
+    "role-carries-activity-skill": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "lane-role-legacy-binding": {
+      "result": "n/a",
+      "findings": []
+    },
+    "task-skill-outside-lane-role": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "activity-names-skill": {
+      "result": "fail",
+      "findings": [
+        {
+          "where": "Task_Check",
+          "detail": "\"Regenerate in memory and diff\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        },
+        {
+          "where": "Task_Decide",
+          "detail": "\"Decide: regenerate the Lean, or fix the generator?\" names no skill. Give it <bootstrap.processes:skill ref=\"…\"/>, or, if none could exist, declare <cat-harness.processes:no-skill reason=\"…\"/> saying why."
+        }
+      ]
+    },
+    "activity-fulfilment-kind": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no role graph declared at scenarios/roles.json, so this instance holds no role DEFINITIONS. Role references are still resolved — see `role-ref-resolves` — against the 62 role(s) reachable through this instance's `needs`; what cannot be judged here is what those roles CARRY, which needs the definition rather than the name."
+        }
+      ]
+    },
+    "call-activity-resolves": {
+      "result": "n/a",
+      "findings": []
+    },
+    "process-diagram-published": {
+      "result": "unknown",
+      "findings": [
+        {
+          "where": "—",
+          "detail": "no docs layer is declared, so no page could be searched."
+        }
+      ]
+    },
+    "activity-documented": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-calls-skill-process": {
+      "result": "pass",
+      "findings": []
+    },
+    "gateway-documented": {
+      "result": "pass",
+      "findings": []
+    },
+    "gateway-branches-named": {
+      "result": "pass",
+      "findings": []
+    },
+    "node-reachable": {
+      "result": "pass",
+      "findings": []
+    },
+    "node-has-exit": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-implicit-split": {
+      "result": "pass",
+      "findings": []
+    },
+    "gateway-mixed": {
+      "result": "pass",
+      "findings": []
+    },
+    "process-size": {
+      "result": "pass",
+      "findings": []
+    },
+    "process-decompose": {
+      "result": "pass",
+      "findings": []
+    },
+    "process-single-start": {
+      "result": "pass",
+      "findings": []
+    },
+    "decision-label-question": {
+      "result": "pass",
+      "findings": []
+    },
+    "activity-label-verb-first": {
+      "result": "pass",
+      "findings": []
+    },
+    "edge-rectilinear": {
+      "result": "pass",
+      "findings": []
+    },
+    "edge-crossing": {
+      "result": "pass",
+      "findings": []
+    },
+    "edge-through-node": {
+      "result": "pass",
+      "findings": []
+    },
+    "diagram-too-wide": {
+      "result": "pass",
+      "findings": []
+    },
+    "diagram-too-tall": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-overlap": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-on-edge": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-on-shape": {
+      "result": "pass",
+      "findings": []
+    },
+    "label-on-lane-line": {
+      "result": "pass",
+      "findings": []
+    },
+    "shape-overlap": {
+      "result": "pass",
+      "findings": []
+    },
+    "lane-order": {
+      "result": "pass",
+      "findings": []
+    },
+    "prose-reviewed-since-code-changed": {
+      "result": "n/a",
+      "findings": []
+    },
+    "prose-claims-resolve": {
+      "result": "n/a",
+      "findings": []
+    }
+  },
+  "totals": {
+    "pass": 27,
+    "fail": 1,
+    "n/a": 10,
+    "unknown": 7
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "probe-float64-survey",
+  "node": "Task_Probe",
+  "title": "probe-float64 survey (informational)",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "advisory",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 23.4,
+  "output_sha256": "88d90f1112f8f7cdd63abfbe5d33a9f3c67da53bc22ae0c264632859c52690d2",
+  "output_head": "\ncomputations/_b0vf_chi_branch_decomp.py\n  computations/_b0vf_chi_branch_decomp.py:60  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n  computations/_b0vf_chi_branch_decomp.py:61  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n\ncomputations/_exact_trace_engine.py\n  computations/_exact_trace_engine.py:24  [float64-module]  from math import ...\n\ncomputations/_exact_trace_runs/a5.py\n  computations/_exact_trace_runs/a5.py:10  [float64-module]  from math import ...\n  computations/_exact_trace_runs/a5.py:37  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n  computations/_exact_trace_runs/a5.py:54  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n  computations/_exact_trace_runs/a5.py:55  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf\n  computations/_exact_trace_runs/a5.py:56  [float-call]  float(...) -- use int(nint(x)) to pull an integer out of an mpf",
+  "counts": {
+    "pass": 1
+  }
+}

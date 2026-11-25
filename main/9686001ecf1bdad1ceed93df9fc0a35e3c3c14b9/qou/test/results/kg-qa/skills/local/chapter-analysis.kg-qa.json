@@ -1,0 +1,50 @@
+{
+  "$schema": "kg-qa/v1",
+  "subject": {
+    "kind": "skill",
+    "id": "chapter-analysis",
+    "path": "skills/local/chapter-analysis.md"
+  },
+  "source_hash": "ee253169b43f",
+  "criteria": {
+    "skill-is-a-stub": {
+      "result": "pass",
+      "findings": []
+    },
+    "skill-is-brief": {
+      "result": "pass",
+      "findings": []
+    },
+    "skill-not-a-document": {
+      "result": "pass",
+      "findings": []
+    },
+    "skill-no-repeated-heading": {
+      "result": "pass",
+      "findings": []
+    },
+    "prose-reviewed-since-code-changed": {
+      "result": "pass",
+      "findings": []
+    },
+    "prose-claims-resolve": {
+      "result": "fail",
+      "findings": [
+        {
+          "where": "entry_count in glossary.json",
+          "detail": "location: glossary.json declares no `entry_count`"
+        }
+      ]
+    },
+    "skill-voice-review-current": {
+      "result": "n/a",
+      "findings": []
+    }
+  },
+  "totals": {
+    "pass": 5,
+    "fail": 1,
+    "n/a": 1,
+    "unknown": 0
+  }
+}

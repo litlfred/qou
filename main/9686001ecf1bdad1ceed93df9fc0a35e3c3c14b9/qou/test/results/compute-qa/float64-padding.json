@@ -1,0 +1,19 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "float64-padding",
+  "node": "Task_Precision",
+  "title": "float64-padding ratchet",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 4.7,
+  "output_sha256": "a4b8131b5736a45f101773ba517f44ec836bb69fddd7e3e228c5bcecb307041b",
+  "output_head": "SELF-TEST PASSED \u2014 14 cases: float64-padded values detected, genuine 50-dps values and honest zero-padding not flagged.\n==========================================================================\nFLOAT64-PADDING AUDIT \u2014 fake precision in committed witnesses\n==========================================================================\n  padded occurrences : 0\n  distinct values    : 0\n  files              : 0  (0 live)\n  quoted-evidence  : 4 witness(es) NOT scanned \u2014 they cite numbers found elsewhere rather than computing them\n      computations/audits/hardcoded-literal-audit.witness.json\n      computations/no-free-parameter-certificate.witness.json\n      computations/q0-value-drift-audit.witness.json\n      computations/witness-float64-padding-audit.witness.json\n  baseline           : 13\n  NEW (not baselined): 0",
+  "counts": {
+    "pass": 1
+  }
+}

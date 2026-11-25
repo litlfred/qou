@@ -1,0 +1,18 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "pyhecke-tests",
+  "node": "Task_LpDual",
+  "title": "Unit tests \u2014 provenance, the rescue, and every backend site",
+  "verdict": "fail",
+  "reason": "gate exited 1",
+  "mode": "strict",
+  "exit_codes": [
+    1
+  ],
+  "seconds": 8.8,
+  "output_sha256": "75e060eced36244e6f7cd93fcdae5376cc71e5b3b4475adbef467d1a66c2d8ba",
+  "output_head": ".............................F.s..........sssssss....................... [ 24%]\n......................................................FFFFF......sssss.. [ 48%]\n........................................................................ [ 73%]\n........................................................................ [ 97%]\n.......                                                                  [100%]\n=================================== FAILURES ===================================\n_______ test_pyhecke_gram_atom_per_generator_volumes_matches_hecke_core ________\n\n    def test_pyhecke_gram_atom_per_generator_volumes_matches_hecke_core():\n        import hecke_core  # type: ignore[import-not-found]\n        py = hecke_core.atom_per_generator_volumes(6, 6)\n        ds = pyhecke_gram.atom_per_generator_volumes(6, 6)\n        assert len(py) == len(ds)\n        max_diff = max(",
+  "counts": {
+    "fail": 1
+  }
+}

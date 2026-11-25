@@ -1,0 +1,18 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "authors-note-coverage",
+  "node": "Task_Staleness",
+  "title": "Author-note Lean-coverage drift gate",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 6.3,
+  "output_sha256": "6bfa31752594d8f472e42b16185c13752b7437ed5f61ffaaf40092285eb2a8d9",
+  "output_head": "author-note Lean-coverage stats are current.",
+  "counts": {
+    "pass": 1
+  }
+}

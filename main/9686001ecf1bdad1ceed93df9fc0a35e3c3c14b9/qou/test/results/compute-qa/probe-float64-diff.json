@@ -1,0 +1,14 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "probe-float64-diff",
+  "node": "Task_Probe",
+  "verdict": "pass",
+  "reason": "no changed .py files",
+  "mode": "strict",
+  "seconds": 0.0,
+  "output_sha256": "",
+  "output_head": "",
+  "counts": {
+    "pass": 1
+  }
+}

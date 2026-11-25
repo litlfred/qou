@@ -1,0 +1,19 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "import-time-dps",
+  "node": "Task_Precision",
+  "title": "import-time dps ratchet",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 7.9,
+  "output_sha256": "e9b04481b3d456c4dffde2070cf20edaf871783eb292acaf8bf430c31d29c118",
+  "output_head": "SELF-TEST PASSED \u2014 12 cases: lossy literals detected, exactly-representable ones not flagged.\nmodule-scope mpf built before precision is raised: 17  [witness-emitting scripts]\n   proven lossy (literal arg): 0\n   position-risky (expr arg, not statically provable): 17\nfiles affected: 10\n\n  computations/probes/one_loop_cusp_normalisation_tension_probe.py  (3)\n      L152: mpf(<expr>)  [expr]\n      L153: mpf(<expr>)  [expr]\n      L154: mpf(<expr>)  [expr]\n  computations/substrate/q_parameter.py  (3)\n      L249: mpf(<expr>)  [expr]\n      L282: mpf(<expr>)  [expr]\n      L277: mpf(<expr>)  [expr]\n  computations/probes/chirality_weighted_3body_cluster_probe.py  (2)\n      L47: mpf(<expr>)  [expr]",
+  "counts": {
+    "pass": 1
+  }
+}
