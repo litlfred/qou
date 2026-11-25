@@ -144,8 +144,8 @@ theorem spechtSubmodule_eq_span_of_rat {k : Type} [Field k] [CharZero k]
     -- push the `ℚ`-relation along `ℚ →+* k`; both sides are polytabloids again
     have h := mem_span_map (Rat.castHom k) (fun i => polytabloid (k := ℚ) (w i))
       (polytabloid (k := ℚ) t) (hQ t)
-    rw [mapRing_polytabloid] at h
-    simpa only [mapRing_polytabloid] using h
+    simp only [mapRing_polytabloid] at h
+    exact h
 
 /-- Every element of `SpechtSubmodule μ` over a characteristic-zero field `k` lies in the `k`-span of a polytabloid subfamily that spans over `ℚ`. -/
 theorem mem_span_of_rat_spechtSubmodule {k : Type} [Field k] [CharZero k]

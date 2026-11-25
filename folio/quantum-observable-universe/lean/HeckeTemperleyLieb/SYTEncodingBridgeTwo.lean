@@ -177,7 +177,7 @@ theorem toMathlibSYT_injective :
     · have h : shift T i j = shift T' i j := by
         have := congrArg
           (fun S : QOU.Mathlib.StandardYoungTableau μ => S.entry i j) hTT'
-        simpa [toMathlibSYT, QOU.Mathlib.StandardYoungTableau.entry] using this
+        exact this
       rw [shift_of_mem T hc, shift_of_mem T' hc] at h
       omega
     · rw [T.zero_off i j hc, T'.zero_off i j hc]

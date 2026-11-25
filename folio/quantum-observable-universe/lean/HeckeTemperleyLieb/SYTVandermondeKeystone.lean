@@ -1,4 +1,5 @@
 import Mathlib.LinearAlgebra.Vandermonde
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.Mathlib.SYTVandermondeKeystone — the divided-difference keystone via `det_vandermonde`
