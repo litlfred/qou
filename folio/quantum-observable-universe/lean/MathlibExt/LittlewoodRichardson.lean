@@ -310,11 +310,9 @@ theorem isLRTableau_rowSumTableau (la mu : YoungDiagram) :
     have := card_filter_subtype (s := skewCells (rowSum la mu) la) (fun c => c.1 = (i : ℕ))
     rw [← card_skewCells_rowSum_row la mu i, ← this]
     congr 1
-    ext c
-    simp [rowSumTableau, Fin.ext_iff]
   · intro c i
     simp only [rowSumTableau, Fin.val_mk]
-    rw [card_filter_subtype (s := skewCells (rowSum la mu) la)
+    erw [card_filter_subtype (s := skewCells (rowSum la mu) la)
         (fun d => readLE d c.1 ∧ d.1 = (i : ℕ) + 1),
       card_filter_subtype (s := skewCells (rowSum la mu) la)
         (fun d => readLE d c.1 ∧ d.1 = (i : ℕ))]
@@ -338,7 +336,7 @@ theorem isLRTableau_rowSumTableau (la mu : YoungDiagram) :
       have hL : ((skewCells (rowSum la mu) la).filter
           fun d => readLE d c.1 ∧ d.1 = (i : ℕ) + 1) ⊆
           (skewCells (rowSum la mu) la).filter fun d => d.1 = (i : ℕ) + 1 :=
-        monotone_filter_right _ (fun _ h => h.2)
+        monotone_filter_right _ (fun _ _ h => h.2)
       rw [hR]
       refine (card_le_card hL).trans ?_
       rw [card_skewCells_rowSum_row, card_skewCells_rowSum_row]
