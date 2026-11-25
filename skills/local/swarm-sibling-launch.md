@@ -22,6 +22,7 @@ Whenever a Swarm Manager / Coordinator spawns subagents or sibling sessions on `
 
 ## 1. Pre-Launch Swarm Manager Checklist (Verify BEFORE Spawning)
 
+- [ ] **Interactive vs background (owner directive 2026-11-25, STRICT; [`dispatch-agent.md` §0a](dispatch-agent.md)):** Any research / derivation / open-question front that may need the owner is launched as an **interactive child session** (`mcp__claude-code-remote__create_session`), which the owner can see and steer — never as a background `Agent` the owner cannot reach. Only mechanical fronts (known procedure, one right answer) may run as background agents. When unsure, launch interactive.
 - [ ] **Swarm authorization & sizing (`swarm-management.md`):** Confirm explicit owner authorization (or in-scope `swarm-spawn` waiver) for the worker count, model tiers, and bounded CPU concurrency.
 - [ ] **Disjoint worktrees & authored slices (`merge-overlap.ts`):** Assign one dedicated worktree per writer (`ws1..wsN`), with strictly disjoint authored file slices (`bun run cat merge:overlap` / `folio-assistant/cat-harness-tools/scripts/merge-overlap.ts`). Two siblings editing the same authored file is a self-inflicted merge conflict.
 - [ ] **Exactly ONE active `merge-steward` (`merge-manager-watcher.md`):** Designate at most one session to hold the `merge-steward` lane on `litlfred/qou`, and pass its agent/session ID (or queue submission instructions) to every sibling. **No sibling ever self-merges onto `main`.**
