@@ -9,14 +9,20 @@
 #
 #   0. qa-gate          scripts/generate-accuracy-scorecard.py --check --qa-report
 #                       (fail-fast if ACCURACY.md drifted or an upstream witness failed)
+#   0b. qa-publish      scripts/qa-publish-local.sh: the QA writers qou.json
+#                       declares, published to qa-reports as main/<sha> for the
+#                       integrated QA page (with --deploy; without, writers only)
 #   1. build            scripts/build-site.sh (folio site + /accuracy/ + Lean render)
 #   2. rail             cat-harness-tools rail-standalone-pages.ts --foreign-site
-#   3. publish          cat-harness-tools publish-main-site.ts: deletes only the
+#   3. keep old root    build-site-landing.py --keep-old-root: a root index.html
+#                       the landing generator did not write is kept beside it
+#                       as index-<YYYY-MM>.html before it is replaced
+#   4. publish          cat-harness-tools publish-main-site.ts: deletes only the
 #                       files its previous publish listed in _main-site.json, so
 #                       branches/, the old lean/, drafts/ and the PDFs that
 #                       README links are never touched
-#   4. log + commit     render-log.ts, then one commit on gh-pages
-#   5. push             only with --deploy; without it, stops after the commit
+#   5. log + commit     render-log.ts, then one commit on gh-pages
+#   6. push             only with --deploy; without it, stops after the commit
 #                       in a local worktree and prints where
 #
 # Usage (from a clean checkout of main at the merged commit):
@@ -45,6 +51,8 @@ fi
 echo "== publish-main-local: accuracy scorecard pre-publish QA gate"
 python3 scripts/generate-accuracy-scorecard.py --check --qa-report
 
+if [ "$DEPLOY" = 1 ]; then bash scripts/qa-publish-local.sh; else bash scripts/qa-publish-local.sh --no-publish; fi
+
 rm -rf "$SITE"
 SITE_DIR="$SITE" PLATFORM_DIR="$PLAT" bash scripts/build-site.sh
 
@@ -55,6 +63,7 @@ git worktree remove --force "$PAGES" 2>/dev/null || true
 git fetch -q --depth 1 origin gh-pages
 git worktree add -q -B gh-pages "$PAGES" origin/gh-pages
 
+python3 scripts/build-site-landing.py --site "$SITE" --keep-old-root "$PAGES"
 bun run "$PLAT/cat-harness-tools/scripts/publish-main-site.ts" \
   --site "$SITE" --pages "$PAGES" --commit "$SHA"
 printf '%s\n' "{\"summary\":\"main's site published at the root (agent, Actions not enabled)\"}" \

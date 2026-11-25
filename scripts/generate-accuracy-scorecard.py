@@ -1271,6 +1271,8 @@ def run_check(root: Path, qa_report: bool = False, html_out: Path | None = None)
             "seconds": json.loads(seconds_dec),
             "output_sha256": hashlib.sha256((msg + "\n").encode("utf-8")).hexdigest(),
             "output_head": "\n".join(msg.splitlines()[:14]),
+            # The verdict in the shared QA vocabulary, as scripts/compute-qa.py writes it.
+            "counts": {verdict: 1},
         }
         qa_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
