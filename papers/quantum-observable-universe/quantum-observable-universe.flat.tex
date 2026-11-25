@@ -65966,10 +65966,32 @@ The \textbf{information bandwidth} per Planck time is the product of the \hyperr
 \]
 \end{definition}
 
-\phantomsection\label{rem:information-bandwidth-remark}\phantomsection\label{rem:speed-of-light-regimes-lieb-robinson}\begin{proposition}[{Mass--energy equivalence from the causal-cone Legendre transform ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$)}]
+\phantomsection\label{rem:information-bandwidth-remark}\phantomsection\label{rem:speed-of-light-regimes-lieb-robinson}\begin{conjecture}[{Braid-boost inertial equivalence}]
+  \label{conj:braid-boost-inertial-equivalence}
+  \blockannot[spec]{conj:braid-boost-inertial-equivalence}{QOU.Core.CategoricalHamiltonianLegendre.BraidBoostInertialEquivalence}{quantum-observable-universe/information-theory/braid-boost-inertial-equivalence.md}
+  \uses{def:categorical-hamiltonian, def:mass-identity, def:information-speed-of-light, def:categorical-dirac-operator, def:contact-affine-chart}
+\emph{Let $(\mathbf{C}, A, \tau)$ be an archimedean quantum observable universe over $\mathbb{R}$ with substrate parameter $q > 1$ and causal-cone speed $c_q = 1/(q-1)$ (\hyperref[def:information-speed-of-light]{speed of light}). For every braid class $\beta$, the kinematic inertia $m_{\mathrm{in}}(\beta)$ that $\beta$ carries as a worldline under a boost along the causal cone equals its Frobenius--Hopf holonomy mass (\hyperref[def:mass-identity]{mass identity}):}
+
+\[
+  m_{\mathrm{in}}(\beta) = \mathfrak{m}(\beta).
+\]
+
+The statement has content only once $m_{\mathrm{in}}(\beta)$ is defined without reference to $\mathfrak{m}(\beta)$, through an action of boosts on braid classes. No such action is defined in this work. Two routes are recorded.
+
+\begin{enumerate}
+  \item \textbf{Reeb-clock kinetic coefficient.} Write $\hbar_q = 1 - q^{-1}$ and $\iota_\xi\nabla$ for the Reeb contraction of the connection in the \hyperref[def:categorical-dirac-operator]{categorical Dirac operator}. Scaling the Reeb contraction by a clock rate $\omega$ turns the traced \hyperref[def:categorical-hamiltonian]{categorical Hamiltonian} Lagrangian into $a_2\,\omega^2 + a_1\,\omega + a_0$, and $m_{\mathrm{in}} =\allowbreak{} 2a_2 =\allowbreak{} 2\hbar_q^2\,\tau(\iota_\xi\nabla \circ \iota_\xi\nabla)$ is the natural kinetic coefficient. Under non-abelian Stokes descent the trace $\tau(\iota_\xi\nabla \circ \iota_\xi\nabla)$ is the Casimir-weighted, regular trace of the Hecke algebra, not the Markov trace. This candidate fails. In $H_2(q)$ and $H_3(q)$ the ratio $m_{\mathrm{in}}/\mathfrak{m}$ is a non-constant rational function that depends on $\beta$, and at $q = 1$ one has $m_{\mathrm{in}} = 0$ while $\mathfrak{m} = 2^{c(\beta)}$, with $c(\beta)$ the number of components of the closure. Any candidate of the form $\hbar_q^2$ times a trace that is finite at $q = 1$ fails for the same reason.
+  \item \textbf{Boost action on the affine causality cone.} On the \hyperref[def:contact-affine-chart]{contact affine chart} with homogeneous coordinates $[\omega : u]$ (Reeb and horizontal components), the affine coordinate is $Z = u/\omega$ and the causality cone is $\vert Z\vert  < c_q$ with null points $Z = \pm c_q$. A binary quadratic form vanishing at both null points is a multiple of $c_q^2\omega^2 - u^2$, so the cone alone fixes a Lorentzian form. The projective maps fixing both null points act on $Z$ as boosts $Z \mapsto (Z + v)/(1 + vZ/c_q^2)$. They compose by relativistic velocity addition and preserve the cone $\vert Z\vert  < c_q$. Eliminating an einbein from the cone form gives the worldline Lagrangian $-m\,c_q\sqrt{c_q^2 - v^2}$ used in the \hyperref[prop:mass-energy]{mass--energy equivalence}. So the boost group and the worldline are derived from the cone rather than postulated. The parameter $m$ stays free: the conjecture now says that a braid class's traced Lagrangian along a worldline is boost-covariant in this sense, with coefficient $m = \mathfrak{m}(\beta)$. That remains open.
+\end{enumerate}
+
+If the conjecture holds, the rest energy of a braid class is $\mathfrak{E}(\beta) =\allowbreak{} \mathfrak{m}(\beta)\,c_q^2$ (\hyperref[prop:mass-energy]{mass--energy equivalence}).
+\end{conjecture}
+
+\begin{proposition}[{Mass--energy equivalence from the causal-cone Legendre transform ($\mathfrak{E} = \mathfrak{m} \cdot c_q^2$)}]
   \label{prop:mass-energy}
   \blockannot[compiled]{prop:mass-energy}{QOU.Information.energy}{quantum-observable-universe/information-theory/mass-energy-equivalence.md}
-  \uses{def:categorical-hamiltonian, def:information-speed-of-light, def:mass-identity}
+  \uses{def:categorical-hamiltonian, def:information-speed-of-light, def:mass-identity, conj:braid-boost-inertial-equivalence}
+\textbf{Proposition (conditional on the \hyperref[conj:braid-boost-inertial-equivalence]{braid-boost inertial equivalence}).} Part 1 is unconditional; part 2 holds under that conjecture.
+
 \emph{Let $(\mathbf{C}, A, \tau)$ be an archimedean quantum observable universe over $\mathbb{R}$ with substrate parameter $q > 1$ and causal-cone speed $c_q = q^{-1}/\hbar_q = 1/(q-1)$ (\hyperref[def:information-speed-of-light]{speed of light}).}
 
 \begin{enumerate}
@@ -65982,7 +66004,7 @@ The \textbf{information bandwidth} per Planck time is the product of the \hyperr
   E(v)^2 - p(v)^2\,c_q^2 = \bigl(m_{\mathrm{in}}\,c_q^2\bigr)^2,
 \]
 \emph{with rest-frame energy $E(0) =\allowbreak{} m_{\mathrm{in}}\,c_q^2 =\allowbreak{} m_{\mathrm{in}}/(q -\allowbreak{} 1)^2$ and classical Galilean divergence $c_q^2 \to \infty$ as $q \to 1$.}
-  \item \emph{Conditional on boost-inertial equivalence equating the kinematic worldline inertia $m_{\mathrm{in}}(\beta)$ of a braid class $\beta$ with its static Frobenius--Hopf holonomy mass $\mathfrak{m}(\beta)$ (\hyperref[def:mass-identity]{mass identity}), the rest energy of $\beta$ is}
+  \item \emph{Conditional on \hyperref[conj:braid-boost-inertial-equivalence]{boost-inertial equivalence} equating the kinematic worldline inertia $m_{\mathrm{in}}(\beta)$ of a braid class $\beta$ with its static Frobenius--Hopf holonomy mass $\mathfrak{m}(\beta)$ (\hyperref[def:mass-identity]{mass identity}), the rest energy of $\beta$ is}
 \[
   \mathfrak{E}(\beta)
   = \mathfrak{m}(\beta) \cdot c_q^2
