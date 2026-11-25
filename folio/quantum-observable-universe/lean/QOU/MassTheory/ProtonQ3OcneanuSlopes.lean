@@ -110,6 +110,7 @@ theorem ySign_slope_zD {q : 𝕜} (hq : q ≠ 0) (h1 : q ^ 2 + 1 ≠ 0) (h3 : q 
   have hD : q ^ 2 * (q ^ 2 + 1) + 1 ≠ 0 := by
     rwa [show q ^ 2 * (q ^ 2 + 1) + 1 = q ^ 4 + q ^ 2 + 1 by ring]
   convert hd using 1
+  · funext x; rfl
   simp only [id]
   field_simp
   ring
@@ -129,6 +130,7 @@ theorem yTriv_slope_zero {q : 𝕜} (hq : q ≠ 0) (h1 : q ^ 2 + 1 ≠ 0) (h3 : 
     rwa [show q ^ 2 * (q ^ 2 + 1) + 1 = q ^ 4 + q ^ 2 + 1 by ring]
   have h5 : 1 + q ^ 2 ≠ 0 := by rwa [add_comm]
   convert hd using 1
+  · funext x; rfl
   simp only [id, mul_one, Pi.add_apply]
   field_simp
   ring
@@ -139,6 +141,7 @@ theorem yRefl_slope_q (q : 𝕜) :
   have hd := ((((hasDerivAt_id q).sub_const q).const_mul q).mul
     (((hasDerivAt_id q).const_mul q).add_const 1)).neg.div_const (q ^ 4 + q ^ 2 + 1)
   convert hd using 1
+  · funext x; rfl
   simp only [id]
   ring
 
