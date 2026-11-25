@@ -1,42 +1,43 @@
 # qou-v4-24-0-lean-direct-refresh — addon over `qou-v4-24-0`
 
-Seeded 2026-11-19 by the `lean-verifier` agent from qou `c4a0c309a`
-(branch `claude/modest-heisenberg-k201yv`, source = that tree).
-**Lean-direct output: plain oleans, NO fresh `.trace`.** Restore with `tar`,
-verify with `lean`-direct / `scripts/lean-direct-cone.sh`. **Never `lake build`
-over it** — Lake would consult the base seed's (now stale) traces.
+Reseeded 2026-11-25 from qou `74a6167bd` (branch
+`claude/lean-cache-consolidate-2026-11-24` = origin/main `327f01818` merged),
+parent commit `4b44063549a` (the 2026-11-19 seed from `c4a0c309a`).
+**Lean-direct output: plain oleans, NO fresh `.trace`.** Restore with `tar`
+(`scripts/lean-restore-refresh-oleans.sh`, called by
+`scripts/lean-cache-restore.sh`), verify with `lean`-direct /
+`scripts/lean-direct-cone.sh`. **Never `lake build` over it.**
 
-## What it holds (paths relative to the repo root, already `folio/…`)
+## What it holds (repo-relative `folio/…` paths)
 
-- 3251 `.olean`: 3223 QOU + 28 UGB rebuilt lean-direct from current source
-  (`-DautoImplicit=false -s 65536`), i.e. every library module whose olean in
-  the base seed `a792c46` did not match its current source, plus its import
-  closure (and modules the cone builder's dep-mtime rule re-ran).
-- 28 `.ilean` (UGB only; the QOU cone builder writes none — QOU ileans in the
-  base seed are stale for rebuilt modules; they only matter to the LSP).
-- 3324 `.srcsha` stamps (sha256 of the source each olean was built from), read
-  by `scripts/lean_freshness.py`, so `lean-direct-cone.sh` and
-  `lean-axiom-guard.py` decide freshness by content. 312 of them stamp base-seed
-  oleans whose Lake `.trace` source hash equals the current source hash.
+3961 `.olean`, each with a `.srcsha` stamp equal to sha256 of its current
+source at `74a6167bd` (checked one by one before packing), plus 246 `.ilean`
+written alongside them:
 
-Not included: the QOU root aggregator `QOU.olean` — `QOU.lean` is red at
-`c4a0c309a` (`QOU.Tetraplectic.unitJ` declared in both
-`QOU/BringConeGauge.lean:60` and `QOU/BringConeIcosahedral.lean:45`).
+- 3913 modules of the `qou` package graph — the WHOLE current graph, not a
+  diff: QOU 2126 (including the root `QOU.olean`, green at this commit) and the
+  top-level namespace libraries that 559a7210b introduced: BraidKnotOctonion
+  834, HeckeTemperleyLieb 496, MathlibExt 302, QCalculus 92, TwistedFrobeniusHopf
+  25, ToricConicOpt 20, CompactQuantumMetrics 18.  Earlier seeds had no
+  HeckeTemperleyLieb oleans, so any file importing it (e.g.
+  QOU/MassTheory/BorromeanWordForcing.lean) failed with "unknown module prefix".
+- 45 UGB and 3 Fred2005 modules, rebuilt lean-direct where the base seed's
+  olean did not match its current source.
 
-## Restore (after the base seed)
+Not included: ~3150 orphan oleans left in a working tree for module paths that
+no longer exist after the chapter consolidation, and every Lake `.trace` /
+`.hash` (stale for rebuilt modules).
+
+## How it was built
+
+`scripts/lean-direct-cone.sh --all -k -j2` over the base seed + gap addon
+(`mathlib-gap-modules` @ `91643168ca5`), then `-j1` for
+HeckeTemperleyLieb.HeckeH4Semisimple (OOM-killed at -j2: 8.3 GB RSS) and the
+root `QOU`, then an incremental top-up after merging main (6 modules).
+3908 + 6 modules, 0 errors.  Flags: `-DautoImplicit=false -s 65536`.
+
+## Restore (after the base seed and the gap addon)
 
 ```sh
-ROOT=$(git rev-parse --show-toplevel)
-scripts/lean-cache-restore.sh                 # base seed qou-v4-24-0 (a792c46)
-scripts/lean-restore-gap-oleans.sh            # Mathlib gap addon (>= bcadf92: 158 oleans)
-T=/tmp/addonfetch; rm -rf $T; git init -q $T
-git -C $T remote add origin https://github.com/litlfred/qou
-git -C $T fetch --depth=1 -q origin cat/folio-assistant-sci/lake-cache/qou-v4-24-0-lean-direct-refresh
-C=$(git -C $T rev-parse FETCH_HEAD)
-( for p in $(git -C $T ls-tree --name-only $C | grep '^lake-oleans\.tgz\.part' | sort); do
-    git -C $T show "$C:$p"; done ) | tar xzf - -C "$ROOT" --unlink-first
-echo "PIPESTATUS=${PIPESTATUS[*]}"; rm -rf $T
+scripts/lean-cache-restore.sh     # base + gap + this addon
 ```
-
-Staleness after restore is decided by the stamps: anything changed on `main`
-since `c4a0c309a` is rebuilt by `scripts/lean-direct-cone.sh <Module>`.
