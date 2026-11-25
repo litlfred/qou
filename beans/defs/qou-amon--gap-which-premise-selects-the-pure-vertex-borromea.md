@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-11-25T11:44:28Z
-updated_at: 2026-11-25T16:15:20Z
+updated_at: 2026-11-25T16:22:55Z
 parent: qou-y2o9
 ---
 
@@ -15,3 +15,6 @@ Singular (2026-11-25, PR #9415 audit §11.2): V^3 = gamma(phi)gamma(psi) has 8 p
 
 
 2026-11-25: OWNER RULING 'Term-by-term, same scope as now'. Term-wise linking neutrality is the selecting premise; the weights qh, -q^-1 h are derived (neutral_selects_corpus). Recorded in owner-rulings.md, prop:borromean-photon-factorisations, audit §15; PR #9431 head f9e57513981. The anti-fit flag (reading chosen with the result known) is in the ruling row. The rule itself is a working conjecture per the ledger; this bean's question (which premise) is answered.
+
+
+HANDOVER NOTE: PR #9431 (head f9e57513981) edits the blocks borromean-photon-factorisations (.md/.ts) and borromean-two-photon-factorisation (.ts). The .jsonld nodes were NOT regenerated: gen-block-jsonld on this container's light platform (pin 42bd8d6, without the folio-assistant-sci/core layers) emits the platform default @context (folio-assistant/ns/content/v1) and would rewrite all 3892 nodes away from the committed qou context. The 6 brings-surface blocks added in #9427/#9430 have NO .jsonld node. Regenerate on the full platform (scripts/setup-folio-assistant.sh) before the site build.
