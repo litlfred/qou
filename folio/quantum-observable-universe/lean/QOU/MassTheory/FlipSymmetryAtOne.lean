@@ -50,7 +50,7 @@ lemma uCount_flip (s : St n) : uCount (flip s) = n - uCount s := by
       = Finset.univ.filter (fun i => ¬ (s i = false)) := by
     ext i; simp [flip]
   rw [h1]
-  have h2 := Finset.filter_card_add_filter_neg_card_eq_card
+  have h2 := Finset.card_filter_add_card_filter_not
     (s := (Finset.univ : Finset (Fin n))) (fun i => s i = false)
   simp only [Finset.card_univ, Fintype.card_fin] at h2
   omega

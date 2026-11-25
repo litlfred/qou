@@ -100,12 +100,12 @@ variable {D : R → R}
 theorem map_zero (hD : IsDeriv D) : D 0 = 0 := by
   have h := hD.map_add 0 0
   rw [add_zero] at h
-  exact self_eq_add_left.mp h
+  exact right_eq_add.mp h
 
 theorem map_one (hD : IsDeriv D) : D 1 = 0 := by
   have h := hD.leibniz 1 1
   simp only [one_mul, mul_one] at h
-  exact self_eq_add_left.mp h
+  exact right_eq_add.mp h
 
 /-- Leibniz forces the inverse rule `D(u⁻¹) = −u⁻¹ (D u) u⁻¹`. -/
 theorem inv (hD : IsDeriv D) (u : Rˣ) :

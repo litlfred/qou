@@ -171,7 +171,7 @@ theorem card_above_add_card_below (cells : Finset α) (v : α → ℝ)
     · intro h; exact lt_of_le_of_ne (not_lt.mp h) (hnd x hx)
     · intro h; exact not_lt.mpr (le_of_lt h)
   rw [← heq]
-  exact Finset.filter_card_add_filter_neg_card_eq_card (p := fun x => 1 < v x)
+  exact Finset.card_filter_add_card_filter_not (p := fun x => 1 < v x)
 
 /-! ### The main result -/
 
