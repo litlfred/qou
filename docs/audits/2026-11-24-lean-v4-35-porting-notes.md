@@ -85,3 +85,22 @@ then for the statement shape.
   make it a `@[reducible] noncomputable def` and pass it explicitly.
 - Last resort used in two files (PLPolygonalLink, YoungDiagramTransposeBridge):
   `set_option backward.isDefEq.respectTransparency false` (Mathlib uses it too).
+
+## Added from batch C (QOU.MassTheory, 52 files)
+
+- `self_eq_add_left` -> `right_eq_add`; `le_or_lt` -> `le_or_gt`;
+  `Finset.filter_card_add_filter_neg_card_eq_card` -> `Finset.card_filter_add_card_filter_not`;
+  `Polynomial.monomial_add` -> `map_add`; nonnegative `Finset.prod_le_prod` -> `Finset.prod_le_prod₀`.
+- `add_lt_add_left`/`add_lt_add_right` swapped meaning (like `add_le_add_*`).
+- `zero_le _` -> `zero_le`; `AddMonoidAlgebra.lift k G A` -> `AddMonoidAlgebra.lift R A M`.
+- Splits: `Splits (RingHom.id K) P` -> `P.Splits`; `IsAlgClosed.splits_codomain` -> `IsAlgClosed.splits`.
+- `CategoryTheory.End X` is a structure now (`End.of`, `.asHom`); `End.mul_def` -> `End.ext` + `mul_asHom`.
+- `PosSemidef`: use `h.diag_nonneg`; `eigenvalues_nonneg` needs `Mathlib.Analysis.Matrix.PosDef`.
+- Imports no longer transitive: `Analysis.SpecialFunctions.Trigonometric.DerivHyp`,
+  `Analysis.Calculus.Deriv.Add`, `Analysis.Calculus.ContDiff.Convolution`, `Analysis.ODE.ExistUnique`,
+  `Algebra.CharZero.Infinite`, `LinearAlgebra.Dimension.Constructions`,
+  `Analysis.Normed.Lp.MeasurableSpace`.
+- `HasDerivAt.mul/add/sub/div` state Pi-arithmetic functions: after `convert h using 1` close with `rfl`.
+- `simp [Function.comp]` -> `simp [Function.comp_def]`; `ring` failing now leaves `ring_nf` residue
+  silently: use `ring1`.
+- EuclideanSpace literals need `WithLp.toLp 2 ![..]`.
