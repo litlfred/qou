@@ -86,7 +86,7 @@ theorem dzbar_eq_zero_iff {f : ℂ → ℂ} {z : ℂ} (hf : DifferentiableAt ℝ
 theorem dz_of_hasDerivAt {f : ℂ → ℂ} {f' z : ℂ} (h : HasDerivAt f f' z) : dz f z = f' := by
   have hL := h.hasFDerivAt.restrictScalars ℝ
   rw [(dz_dzbar_of_hasFDerivAt hL).1]
-  simp only [ContinuousLinearMap.coe_restrictScalars', ContinuousLinearMap.smulRight_apply,
+  simp only [ContinuousLinearMap.coe_restrictScalars', ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.toSpanSingleton_apply,
     ContinuousLinearMap.one_apply, smul_eq_mul, one_mul]
   ring_nf
   rw [I_sq]
@@ -105,7 +105,7 @@ theorem dz_comp_holo {f g : ℂ → ℂ} {g' z : ℂ} (hf : DifferentiableAt ℝ
     (hg : HasDerivAt g g' z) : dz (fun w => f (g w)) z = dz f (g z) * g' := by
   rw [(dz_dzbar_of_hasFDerivAt (hasFDerivAt_comp_holo hf hg)).1]
   simp only [ContinuousLinearMap.comp_apply, ContinuousLinearMap.coe_restrictScalars',
-    ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.one_apply, smul_eq_mul, one_mul,
+    ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.toSpanSingleton_apply, ContinuousLinearMap.one_apply, smul_eq_mul, one_mul,
     fderiv_eq_dz_add_dzbar f (g z), map_mul, conj_I]
   ring_nf
   rw [I_sq]
@@ -117,7 +117,7 @@ theorem dzbar_comp_holo {f g : ℂ → ℂ} {g' z : ℂ} (hf : DifferentiableAt 
     dzbar (fun w => f (g w)) z = dzbar f (g z) * (starRingEnd ℂ) g' := by
   rw [(dz_dzbar_of_hasFDerivAt (hasFDerivAt_comp_holo hf hg)).2]
   simp only [ContinuousLinearMap.comp_apply, ContinuousLinearMap.coe_restrictScalars',
-    ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.one_apply, smul_eq_mul, one_mul,
+    ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.toSpanSingleton_apply, ContinuousLinearMap.one_apply, smul_eq_mul, one_mul,
     fderiv_eq_dz_add_dzbar f (g z), map_mul, conj_I]
   ring_nf
   rw [I_sq]
@@ -155,7 +155,7 @@ theorem dzbar_mul_holo {f h : ℂ → ℂ} {h' z : ℂ} (hf : DifferentiableAt �
   have H := hf.hasFDerivAt.mul (hh.hasFDerivAt.restrictScalars ℝ)
   rw [(dz_dzbar_of_hasFDerivAt (f := fun w => f w * h w) H).2]
   simp only [ContinuousLinearMap.add_apply, ContinuousLinearMap.smul_apply,
-    ContinuousLinearMap.coe_restrictScalars', ContinuousLinearMap.smulRight_apply,
+    ContinuousLinearMap.coe_restrictScalars', ContinuousLinearMap.smulRight_apply, ContinuousLinearMap.toSpanSingleton_apply,
     ContinuousLinearMap.one_apply, smul_eq_mul, one_mul, fderiv_eq_dz_add_dzbar f z, map_one,
     conj_I]
   ring_nf
