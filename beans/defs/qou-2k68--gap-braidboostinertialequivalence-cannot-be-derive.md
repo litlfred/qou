@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T00:38:04Z
-updated_at: 2026-11-25T01:30:20Z
+updated_at: 2026-11-25T01:52:03Z
 parent: qou-s028
 ---
 
@@ -36,3 +36,9 @@ PR #9402, f32835580e3. All sorry-free, standard axioms.
 - worldlineLagrangian = -m c_q sqrt(coneForm) (ReebHamiltonianChartBridgeReal), with einbein elimination (ReebWorldlineSignature.einbein_stationary_value). So the worldline form is DERIVED from the cone, not postulated.
 - ReebWorldlineSignature: the trace route cannot supply the signature. tau((wX+uY)^2) >= 0 for symmetric X, Y and positive weights (convention-D y >= 0); only a skew Reeb contraction gives an indefinite form. The cone comes from projective geometry, not traces.
 STILL OPEN (the conjecture proper): show a braid class's traced Lagrangian along a worldline is boost-covariant, with coefficient m = m(beta). Route 1 (m = 2 hbar^2 tr_reg) is excluded. The E_e / 70x split is unresolved.
+
+
+## 2026-11-25T01:52:02Z — route 2b: boost covariance is rigid in q (draft PR #9407, stacked on #9402)
+QOU/Core/BoostCovarianceRigidity.lean: the traced square A W_R^2 + B W_R W_H + C W_H^2 is boost-covariant iff B = 0 and A = -c_q^2 C. With q-independent traces it holds at most at one q unless A = C = 0.
+Probe (pre-registered P5, holds): for substrateDirac at size 2, A, B and C are non-zero polynomials in the data (C = 2 disc Omega).
+So imposing covariance at q0 would derive q0 from the substrate (forbidden, 2026-08-02). Route 2b needs a Dirac datum whose traces scale as A/C = -1/(q-1)^2; none exists in the corpus. m = m(beta) stays OPEN.
