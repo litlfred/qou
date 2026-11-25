@@ -6,6 +6,7 @@ import Mathlib.Tactic.Module
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Algebra.Module.FiniteDimension
+import Mathlib.Analysis.ODE.ExistUnique
 
 /-!
 # Drinfeld–Kohno for two strands, proved
@@ -120,16 +121,22 @@ lemma qq_ne {q : R} (hq0 : q ≠ 0) (hq : q ^ 2 + 1 ≠ 0) : q + q⁻¹ ≠ 0 :=
 lemma conj_mul_conjInv {q : R} (hq0 : q ≠ 0) (hq : q ^ 2 + 1 ≠ 0) :
     conj q * conjInv q = 1 := by
   have h := qq_ne hq0 hq
+  have hq' : 1 + q ^ 2 ≠ 0 := by rwa [add_comm]
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [conj, conjInv, Matrix.mul_apply, Fin.sum_univ_four] <;> field_simp <;> ring
+    simp [conj, conjInv, Matrix.mul_apply, Fin.sum_univ_four]
+  all_goals (try field_simp)
+  all_goals (first | ring1 | exact hq' | (ring_nf; exact hq'))
 
 lemma conjInv_mul_conj {q : R} (hq0 : q ≠ 0) (hq : q ^ 2 + 1 ≠ 0) :
     conjInv q * conj q = 1 := by
   have h := qq_ne hq0 hq
+  have hq' : 1 + q ^ 2 ≠ 0 := by rwa [add_comm]
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [conj, conjInv, Matrix.mul_apply, Fin.sum_univ_four] <;> field_simp <;> ring
+    simp [conj, conjInv, Matrix.mul_apply, Fin.sum_univ_four]
+  all_goals (try field_simp)
+  all_goals (first | ring1 | exact hq' | (ring_nf; exact hq'))
 
 /-- The conjugator preserves total weight: it commutes with `K ⊗ K`. -/
 lemma conj_commute_weight (q : R) : conj q * weightKK q = weightKK q * conj q := by
@@ -255,6 +262,7 @@ lemma transport_hasDerivAt (c : ℂ) (x : Fin 4 → ℂ) (t : ℝ) :
   have h := (e1.smul_const x).add ((e2.sub e1).smul_const (antiProj *ᵥ x))
   rw [casimir_mulVec_transport]
   convert h using 1
+  · rfl
   ext i
   simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul]
   ring
@@ -274,7 +282,8 @@ theorem kz_solution_unique (c : ℂ) (x : Fin 4 → ℂ) (F : ℝ → Fin 4 → 
   have hv : ∀ t ∈ Ico (0:ℝ) 1, LipschitzOnWith ‖L‖₊ (fun y : Fin 4 → ℂ => c • (casimir *ᵥ y)) univ := by
     intro t _
     have := L.lipschitz.lipschitzOnWith (s := univ)
-    simpa [hL] using this
+    rw [show (⇑L) = fun y => c • (casimir *ᵥ y) from funext hL] at this
+    exact this
   apply ODE_solution_unique_of_mem_Icc_right (v := fun (_ : ℝ) (y : Fin 4 → ℂ) => c • (casimir *ᵥ y))
     (s := fun _ => univ) hv
   · exact (continuous_iff_continuousAt.2 fun t => (hF t).continuousAt).continuousOn
