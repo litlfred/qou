@@ -7,7 +7,7 @@ priority: normal
 owner: Antigravity
 parent: qou-c20n
 created_at: 2026-11-21T05:45:00Z
-updated_at: 2026-11-21T05:45:00Z
+updated_at: 2026-11-25T11:02:54Z
 ---
 
 Owner instruction (2026-11-21 04:42 Copenhagen): put things that fail because of a
@@ -54,3 +54,37 @@ red, not shown green.
 
 Logs from the run that found this: `/tmp/lake-full.log`, `/tmp/lake-full2.log`,
 `/tmp/lb-QOU.*.log` in the coordinator container (ephemeral).
+
+## 2026-11-25 update: steps 1-2 done by lean-direct; step 3 not done (bean qou-om0t)
+
+The five modules were renamed by 559a7210b (the 83 -> 12 chapter consolidation),
+so look them up under their new names:
+
+| old name | current name | lean-direct result (this session) |
+|---|---|---|
+| QOU.BraidsAndKnots.YoungDiagramKernel | HeckeTemperleyLieb.YoungDiagramKernel | ok, 190.8 s (-j2) |
+| QOU.Interactions.GramMatrixH3Symbolic | QOU.Confinement.GramMatrixH3Symbolic | ok, 183.1 s (-j2) |
+| QOU.Mathlib.SYTEnumerationN7 | BraidKnotOctonion.SYTEnumerationN7 | ok, 114.6 s (-j2) |
+| QOU.Knot.GeneratedGluingHigh | BraidKnotOctonion.GeneratedGluingHigh | ok, 208.1 s (-j2) |
+| QOU.Machinery.HeckeH4Semisimple | HeckeTemperleyLieb.HeckeH4Semisimple | OOM at -j2 (cgroup kill, lean 8.3 GB RSS); ok at -j1, 846.6 s |
+
+The 12-module downstream cone, under current names, is all green: QOU.MassTheory.spectrahedral_phase_collapse,
+QOU.BraidsAndKnots.WedderburnUnconditional and BraidKnotOctonion.WedderburnUnconditional,
+BraidKnotOctonion.HookArmLeg, .PlancherelNormalisation, .SecondMomentKernelVanishes,
+.YoungDiagramKernelDimPos, .YoungDiagramKernelPincer, .YoungDiagramTailFirstInstance,
+.GeneratedCertifiedHigh; HeckeTemperleyLieb.YoungDiagramTransposeBridge;
+QOU.Confinement.GramQuotientDetD. The root QOU is ok (120.1 s, at 74a6167bd).
+
+- Verification route: `lean -DautoImplicit=false -s 65536` via
+  scripts/lean-direct-cone.sh, at qou 74a6167bd. This is NOT lake build.
+- Machine: this container's cgroup is 15 GB, not the ~6 GB the original run
+  had. So these modules are within reach of an ordinary container when run one
+  job at a time. They are not Antigravity-only.
+- Answer to step 2: all 17 are GREEN on current source. No corpus defect.
+- Step 3 is NOT done. The base seed cat/folio-assistant-sci/lake-cache/qou-v4-24-0
+  (Lake-traced) was not reseeded. Instead, the untraced lean-direct addon
+  cat/folio-assistant-sci/lake-cache/qou-v4-24-0-lean-direct-refresh was
+  reseeded at bedc1a000a1. It carries these oleans, with .srcsha stamps, for
+  lean-direct consumers. A Lake consumer still rebuilds them from the base.
+  The base reseed still needs a lake build. That build risks evicting the
+  restored tree (bean 02kc), so this session left it.
