@@ -128,3 +128,24 @@ the paper keeps the word "induced".
 - Building the Bring complex itself in Lean, so that `hgap` and dim ker Δ₁ = 8
   become theorems rather than exact-rank facts. Possible (24×24 integer
   matrices) but heavy; not attempted.
+
+## Addendum: does a regularity condition fix ν_q? (bean `qou-gd5s`)
+
+Coordinator route (owner question *"can we generalize and make use?"*): take
+the *shape* of the Bredberg–Keeler–Lysov–Strominger §4 argument (smoothness forces η = r_c)
+and test whether a regularity or convergence condition on the q-step forces ν_q.
+I did not choose the conditions because they give ℏ_q/2 (anti-fit), and none of them does.
+Lean: `QOU/FluidDynamics/ViscosityRegularityRoutes.lean`, lean-direct exit 0,
+axioms `propext` / `Classical.choice` / `Quot.sound` only.
+
+| condition | outcome | Lean |
+|---|---|---|
+| positivity of energy dissipation | leaves ν free: any ν ≥ 0 | `DEC.Complex2.energy_nonincreasing` |
+| stability of the explicit q-step on every rung of the unbounded ladder [k]_q² | forces **ν = 0** (Euler); an implicit step leaves ν free | `explicit_mode_stable_iff`, `nu_eq_zero_of_stable_on_unbounded_ladder` |
+| Habiro integrality of ν | **excludes** ν_q = ℏ_q/2: at q = i, ν_q = (1+i)/2 ∉ ℤ[i]; ℏ_q itself is a Habiro element | `two_mul_ne_one_add_I`; Habiro's evaluation property is cited, not proved |
+
+Scope (a) throughout: these three conditions alone do not fix ν_q; that is not a
+claim that no condition can. The literature's mechanism (a horizon or cutoff
+regularity that admits exactly one viscosity) has no QOU counterpart yet. The
+Habiro row is the sharpest: if the paper ever asks ν_q to live in the same
+integral ring as its other q-objects, the factor ½ has to go or be justified.
