@@ -10,6 +10,7 @@ export default proposition({
   cites: ["iwahori1964", "kassel2008"],
   tags: ["borromean", "hecke-algebra", "photon", "gamma-gamma", "nucleon-element"],
   authorNotes: [
+    { kind: "note", date: "2026-11-25", body: "The weights $qh$ and $-q^{-1}h$ are derived from term-by-term linking neutrality (owner ruling 2026-11-25) in `prop:borromean-photon-factorisations`; among the 8 two-photon factorisations of $V^3$ only this one survives it." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean statement holds in every algebra that satisfies the relations," },
   ],
 });

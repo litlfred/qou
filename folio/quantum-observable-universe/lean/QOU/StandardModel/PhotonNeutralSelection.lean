@@ -4,10 +4,12 @@
 
   Over `ℚ(h)`, `γ(φ)γ(ψ) = V³` has 8 solutions: the corpus pair and an irreducible degree-6
   component (Singular, §11.2). Expand `γ(φ)γ(ψ)` formally in the group algebra `ℤ[B₃]` and
-  collect by braid-group element. Four of the group elements that occur are not linking-neutral
+  collect by braid-group element. Nine of the group elements that occur are not linking-neutral
   (`QOU.PhotonU1NeutralCut.table`): `σ₀` (coefficient `φ₀ + ψ₀ + φ₀₁ψ₁`, since `Vσ₁ = σ₀` in
-  `B₃`), `σ₁` (`φ₁ + ψ₁`), `σ₀V` (`φ₀ψ₀₁`) and `σ₁V` (`φ₁ψ₀₁`). Requiring those four
-  coefficients to vanish, term-wise linking neutrality, leaves only the corpus pair
+  `B₃`), `σ₁` (`φ₁ + ψ₁`), `σ₀V` (`φ₀ψ₀₁`), `σ₁V` (`φ₁ψ₀₁`), and `σ₀²`, `σ₀σ₁`, `σ₁σ₀`,
+  `σ₁²`, `Vσ₀`. Term-wise linking neutrality sets all nine coefficients to zero. The theorem
+  assumes only the first four, so it is stronger than needed: those four alone leave only
+  the corpus pair
   (`neutral_selects_corpus`), in the concrete model of `H₃(q)`, over any domain with
   `h ≠ 0` and `h² + 2 ≠ 0`.
 
