@@ -311,7 +311,7 @@ inductive QRel (d : QuadData G k ord) : MA G k → MA G k → Prop
 /-- Two algebra maps out of the free algebra agree when they agree on letters. -/
 theorem MA_algHom_ext {B : Type*} [Semiring B] [Algebra k B] {f g : MA G k →ₐ[k] B}
     (h : ∀ a, f (ofW [a]) = g (ofW [a])) : f = g :=
-  MonoidAlgebra.algHom_ext' (FreeMonoid.hom_eq fun a => h a)
+  MonoidAlgebra.algHom_ext' (FreeMonoid.hom_eq fun a => h a) (Subsingleton.elim _ _)
 
 /-- The span of the rules in context lies in the ideal predicate `InId`. -/
 theorem inId_of_mem_ctxSpan (sys : RewritingSystem G k) {X : MA G k}

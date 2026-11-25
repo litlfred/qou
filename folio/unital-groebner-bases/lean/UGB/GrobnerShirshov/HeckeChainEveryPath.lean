@@ -59,7 +59,8 @@ theorem heckeRelation_coeff_ne_zero (i : Fin n) {w : Monomial (HeckeGen n)}
   have e1 : sg i * sg i = (ofW [⟨i⟩, ⟨i⟩] : MA (HeckeGen n) ℝ) := by
     rw [sg, ← ofW_append]; rfl
   have e0 : (1 : MA (HeckeGen n) ℝ) = ofW [] := rfl
-  rw [e1, e0, Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, smul_eq_mul, sg,
+  rw [e1, e0, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_smul,
+    Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, smul_eq_mul, sg,
     ofW_apply, ofW_apply, ofW_apply] at h
   by_contra hc
   push_neg at hc
@@ -148,27 +149,31 @@ theorem multiStep_heckeOnly_of_weaklySorted (hn : 0 < n) {f g : AlgElement (Heck
 /-- The support of a product of linear forms `∏ (c σᵢ + d)` over a flat list of
     `(index, pair)` consists of subwords of the index list. -/
 theorem support_prod_lin_flat (l : List (Fin n × (ℝ × ℝ))) :
-    ∀ x ∈ ((l.map (fun p => lin p.1 p.2)).prod).support,
+    ∀ x ∈ ((l.map (fun p => lin p.1 p.2)).prod).coeff.support,
       (FreeMonoid.toList x).Sublist (l.map (fun p => (⟨p.1⟩ : HeckeGen n))) := by
   classical
   induction l with
   | nil =>
     intro x hx
-    rw [List.map_nil, List.prod_nil, MonoidAlgebra.one_def] at hx
+    rw [List.map_nil, List.prod_nil, MonoidAlgebra.one_def, MonoidAlgebra.coeff_single] at hx
     rw [Finset.mem_singleton.mp (Finsupp.support_single_subset hx)]
     simp
   | cons p l ih =>
     intro x hx
     rw [List.map_cons, List.prod_cons] at hx
-    obtain ⟨y, hy, z, hz, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_mul _ _ hx)
+    obtain ⟨y, hy, z, hz, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_coeff_mul_subset _ _ hx)
     have hz' := ih z hz
     rw [FreeMonoid.toList_mul, List.map_cons]
     have hy' : y = FreeMonoid.ofList [⟨p.1⟩] ∨ y = 1 := by
+      unfold lin at hy
+      rw [MonoidAlgebra.coeff_add] at hy
       rcases Finset.mem_union.mp (Finsupp.support_add hy) with h | h
-      · exact Or.inl (Finset.mem_singleton.mp
+      · rw [MonoidAlgebra.coeff_smul, sg, ofW, MonoidAlgebra.coeff_single] at h
+        exact Or.inl (Finset.mem_singleton.mp
           (Finsupp.support_single_subset (Finsupp.support_smul h)))
-      · have := Finsupp.support_smul h
-        rw [MonoidAlgebra.one_def] at this
+      · rw [MonoidAlgebra.coeff_smul] at h
+        have := Finsupp.support_smul h
+        rw [MonoidAlgebra.one_def, MonoidAlgebra.coeff_single] at this
         exact Or.inr (Finset.mem_singleton.mp (Finsupp.support_single_subset this))
     rcases hy' with rfl | rfl
     · exact hz'.cons₂ _
@@ -202,7 +207,7 @@ theorem chainFlat_index_sorted (L : Fin n → List (ℝ × ℝ)) :
 /-- `Ξ` is weakly sorted. -/
 theorem chainXi_weaklySorted (L : Fin n → List (ℝ × ℝ)) : WeaklySorted (ofMA (chainXi L)) := by
   intro m hm
-  have hx : FreeMonoid.ofList m ∈ (chainXi L).support := Finsupp.mem_support_iff.mpr hm
+  have hx : FreeMonoid.ofList m ∈ (chainXi L).coeff.support := Finsupp.mem_support_iff.mpr hm
   rw [chainXi_eq_flat] at hx
   have := support_prod_lin_flat (chainFlat L) _ hx
   rw [FreeMonoid.toList_ofList] at this
@@ -257,8 +262,9 @@ theorem coeff_L3 (w : Monomial (HeckeGen 2)) : (ofMA (chainXi L3)).coeff w =
     (if [g0, g0, g1] = w then 1 else 0) + (if [g0, g0] = w then 1 else 0)
       + 2 * (if [g0, g1] = w then 1 else 0) + 2 * (if [g0] = w then 1 else 0)
       + (if [g1] = w then 1 else 0) + (if [] = w then 1 else 0) := by
-  show (chainXi L3) (FreeMonoid.ofList w) = _
+  show (chainXi L3).coeff (FreeMonoid.ofList w) = _
   rw [chainXi_L3]
+  simp only [MonoidAlgebra.coeff_add, MonoidAlgebra.coeff_smul]
   rw [Finsupp.add_apply, Finsupp.add_apply, Finsupp.add_apply, Finsupp.add_apply,
     Finsupp.add_apply, Finsupp.smul_apply, Finsupp.smul_apply, smul_eq_mul, smul_eq_mul,
     ofW_apply, ofW_apply, ofW_apply, ofW_apply, ofW_apply, ofW_apply]

@@ -141,8 +141,8 @@ theorem zeroNF_of_twoIdeal (hgs : IsGrobnerShirshovBasis G k ord sys)
   induction h with
   | gen X g Y hg =>
     obtain ⟨r, hr, rfl⟩ := hg
-    have e : X * toMA r.relation * Y = ∑ p ∈ X.support, ∑ q ∈ Y.support,
-        (X p * Y q) • (ofW (FreeMonoid.toList p) * toMA r.relation *
+    have e : X * toMA r.relation * Y = ∑ p ∈ X.coeff.support, ∑ q ∈ Y.coeff.support,
+        (X.coeff p * Y.coeff q) • (ofW (FreeMonoid.toList p) * toMA r.relation *
           ofW (FreeMonoid.toList q)) := by
       conv_lhs => rw [ma_eq_sum X, ma_eq_sum Y]
       rw [Finset.sum_mul, Finset.sum_mul]
@@ -150,7 +150,7 @@ theorem zeroNF_of_twoIdeal (hgs : IsGrobnerShirshovBasis G k ord sys)
       rw [Finset.mul_sum]
       refine Finset.sum_congr rfl (fun q _ => ?_)
       simp only [smul_mul_assoc, mul_smul_comm, smul_smul]
-      rw [mul_comm (Y q)]
+      rw [mul_comm (Y.coeff q)]
     rw [e]
     refine zeroNF_sum hgs hlc _ _ (fun p _ => zeroNF_sum hgs hlc _ _ (fun q _ => ?_))
     exact zeroNF_congr hlc (ofMA_smul _ _)
@@ -205,7 +205,8 @@ theorem toMA_heckeRelation (i : Fin n) :
   have e1 : sg i * sg i = (ofW [⟨i⟩, ⟨i⟩] : MA (HeckeGen n) ℝ) := by
     rw [sg, ← ofW_append]; rfl
   have e0 : (1 : MA (HeckeGen n) ℝ) = ofW [] := rfl
-  rw [e1, e0, Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, smul_eq_mul, sg,
+  rw [e1, e0, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_smul,
+    Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, smul_eq_mul, sg,
     ofW_apply, ofW_apply, ofW_apply]
   simp only [heckeRelation, AlgElement.ofTerms, hq]
   by_cases h2 : [(⟨i⟩ : HeckeGen n), ⟨i⟩] = m
@@ -283,29 +284,33 @@ theorem chainXi_sub_chainForm_mem (L : Fin n → List (ℝ × ℝ)) :
 
 /-- The support of `∏_{i ∈ l} (aᵢ σᵢ + bᵢ)` consists of subwords of `l`. -/
 theorem support_prod_lin (ab : Fin n → ℝ × ℝ) (l : List (Fin n)) :
-    ∀ x ∈ ((l.map (fun i => lin i (ab i))).prod).support,
+    ∀ x ∈ ((l.map (fun i => lin i (ab i))).prod).coeff.support,
       (FreeMonoid.toList x).Sublist (l.map (fun i => (⟨i⟩ : HeckeGen n))) := by
   classical
   induction l with
   | nil =>
     intro x hx
-    rw [List.map_nil, List.prod_nil, MonoidAlgebra.one_def] at hx
+    rw [List.map_nil, List.prod_nil, MonoidAlgebra.one_def, MonoidAlgebra.coeff_single] at hx
     rw [Finset.mem_singleton.mp (Finsupp.support_single_subset hx)]
     simp
   | cons i l ih =>
     intro x hx
     rw [List.map_cons, List.prod_cons] at hx
-    obtain ⟨y, hy, z, hz, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_mul _ _ hx)
+    obtain ⟨y, hy, z, hz, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_coeff_mul_subset _ _ hx)
     have hz' := ih z hz
     rw [FreeMonoid.toList_mul, List.map_cons]
     have hy' : y = FreeMonoid.ofList [⟨i⟩] ∨ y = 1 := by
+      unfold lin at hy; rw [MonoidAlgebra.coeff_add] at hy
       have h1 := Finsupp.support_add hy
       rcases Finset.mem_union.mp h1 with h | h
-      · have := Finsupp.support_smul h
+      · rw [MonoidAlgebra.coeff_smul] at h
+        have := Finsupp.support_smul h
+        rw [sg, ofW, MonoidAlgebra.coeff_single] at this
         have := Finsupp.support_single_subset this
         exact Or.inl (Finset.mem_singleton.mp this)
-      · have := Finsupp.support_smul h
-        rw [MonoidAlgebra.one_def] at this
+      · rw [MonoidAlgebra.coeff_smul] at h
+        have := Finsupp.support_smul h
+        rw [MonoidAlgebra.one_def, MonoidAlgebra.coeff_single] at this
         exact Or.inr (Finset.mem_singleton.mp (Finsupp.support_single_subset this))
     rcases hy' with rfl | rfl
     · exact hz'.cons₂ _
@@ -329,7 +334,7 @@ theorem chainForm_isNormalForm (hn : 0 < n) (L : Fin n → List (ℝ × ℝ)) :
     isNormalForm (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (ofMA (chainForm hp L)) := by
   intro r hr m hm hinf
-  have hx : FreeMonoid.ofList m ∈ (chainForm hp L).support := Finsupp.mem_support_iff.mpr hm
+  have hx : FreeMonoid.ofList m ∈ (chainForm hp L).coeff.support := Finsupp.mem_support_iff.mpr hm
   have hsub := support_prod_lin (fun i => blockCoeff (hq hp) (L i)) _ _ hx
   rw [FreeMonoid.toList_ofList] at hsub
   have hpw : (r.lm (heckeOrder n)).Pairwise (fun a b : HeckeGen n => a.index < b.index) :=
