@@ -538,6 +538,33 @@ Concretely:
   assessment — is a source of robustness. The cheapest way to catch a
   wrong turn is a second agent walking in from a different direction.
 
+## Handoff envelope (owner directive 2026-11-25)
+
+Verbatim: *"(improve swarm managem,etc. process, when passing to child sibling, then give them the porcess/task they are enging in , their role, your role. this should be a part of general agent to agenet communication use by swarm/merge managers, etc. .)"*
+
+Every agent-to-agent handoff opens with four to six lines before the body.
+That covers an `Agent`-tool subagent, a child session created with
+`create_session`, and a `send_message` to a sibling, swarm or merge-manager
+session:
+
+```
+PROCESS / TASK: <process or skill by name, e.g. "merge (prepare-merge-auto)",
+                "research swarm front", "library intake (document-intake)">
+                — <the task>; done when <criteria>.
+YOUR ROLE:      <merge manager | research child | verifier | …>. You decide <…>;
+                escalate <…> to <the owner directly | me>.
+MY ROLE:        <coordinator | swarm manager | …>, session <id>; reply by
+                <send_message to <id> | the PR>.
+```
+
+Then the existing body: the owner's words verbatim, constraints, fences and
+the reporting format. The rules on questions to the owner are unchanged.
+The canonical rule is the platform skill
+`folio-assistant/cat-harness/sdlc/skills/sdlc-core/agent-handoff.md` §0 (litlfred/cat-harness#1405). `dispatch-agent`, `swarm-management`, `swarm-monitor` and
+`merge-manager-watcher` point to it. Since AGENTS.md edits do not reach
+subagents in the session that makes them (§Subagents below), put the
+envelope in the prompt itself.
+
 ## Subagents with persistent memory (`.claude/agents/`)
 
 Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
