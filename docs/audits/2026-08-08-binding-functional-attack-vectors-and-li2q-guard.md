@@ -284,6 +284,8 @@ A map from a multiplicative trace to an additive energy must satisfy
 `f(xy) = f(x) + f(y)` — the Cauchy functional equation on `(ℝ₊, ×)` — whose only
 continuous solutions are `f(x) = c·ln x`. **The log form is forced.**
 
+> **Formalised 2026-11-25** (owner ruling, bean `qou-xj4p`): `QOU.Nuclear.LogFormUniqueness.eq_mul_log_of_mul_add` proves that a function continuous on `(0, ∞)` with `f(xy) = f(x) + f(y)` equals `f(e)·log x`, and `binding_eq_neg_mul_log` states the binding corollary `B r = −c·log r`. Sorry-free; `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`. The scale `c` is not fixed by this argument.
+
 > **Convention scope, added 2026-08-31.** The `1.4875` below is a
 > **convention-C** figure — this audit is dated one day before the 2026-08-09
 > convention-D excision. Re-measured at the proton pin with `μ_pp = z`,
