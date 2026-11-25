@@ -83,6 +83,8 @@ namespace QOU.MathlibExt.PL
 
 open Set
 
+set_option backward.isDefEq.respectTransparency false
+
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 /-! ## Polygons -/
@@ -181,7 +183,7 @@ lemma next_last : P.next (Fin.last P.n) = 0 := finRotate_last
 
 lemma next_castSucc_lt (k : Fin P.n) :
     P.next k.castSucc = k.succ := by
-  simp [next, finRotate_succ_apply, Fin.coeSucc_eq_succ]
+  simp [next, finRotate_apply, Fin.coeSucc_eq_succ]
 
 /-- **Insert a vertex `c` on the closing edge** `[v n, v 0]`: the new vertex list is
 `v 0, …, v n, c`. -/
