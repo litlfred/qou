@@ -75,3 +75,40 @@ selection against AME), same code base.
   Every strand stays in the trace; nothing is closed down before the full trace.
 - Reported: passing nucleon words; for every pair, whether the bare `x` and each `x·K` pass, the
   ratio and `B`. Summary: the set of `B` over passing atoms. No pair is labelled "the deuteron".
+
+## Addendum 2 (owner card 2, answer "A + B + D"), committed before any of its numbers
+
+Applies to the twelve four-strand nucleon words that pass reading 3 in Phase B (L = 6). Nothing in
+this addendum selects a word by its binding. Exact arithmetic: sympy, Laurent polynomials /
+rational functions in q, no floats; numerical residuals at the proton pin q₀ with mpmath.
+
+### (A) normal-form net against net(p), net(n)
+
+- Corpus definition (`neutron-qvalue-symbolic.md` §Retired Form A; `qbeta_delta_candidate_census_probe.py::net`):
+  `net(x)` = the sum of the coordinates of x in the normal-form basis {T_w} of H₃(q), with
+  σ² = hσ + 1, σ⁻¹ = σ − h, h = q − q⁻¹. Targets: `net(p) = 1 − h/2`, `net(n) = 1 − 3h/2 + h²/2`.
+- A four-strand word lives in H₄. "Closing to three strands" is not fixed by the corpus, so three
+  readings are computed and all are reported:
+  - **A1**: coordinate sum of the normal form in H₄ (no closure).
+  - **A2**: Ocneanu conditional expectation E₄→₃ at z = 1 (T_u T₂ T_v ↦ z·T_u T_v, u, v ∈ ⟨s₀, s₁⟩),
+    then the H₃ coordinate sum. z = 1 is the parameter at which the corpus calls `net` a trace.
+  - **A3**: the same with z = z_D = q³/(q²+1).
+- Reported per word and per reading: the exact net, the exact differences from net(p) and net(n),
+  and their values at q₀. An **exact match** is a zero difference as a rational function of q. A
+  **near match** is reported with its residual; no threshold makes it a match. If (A) yields a
+  unique word equal to net(p) and a unique word equal to net(n), under one reading, that pair's
+  Phase B binding (both bonds) is reported as the identified value with its scope. Otherwise none is.
+
+### (B) bar-involution pairs
+
+- bar is the ring automorphism σᵢ ↦ σᵢ⁻¹, q ↦ q⁻¹. bar(V(i)) = σᵢ⁻¹σᵢ₊₁ is not a γγ vertex, so
+  bar of a γγ word is not a γγ word as a letter string; the test is equality of elements.
+- For every ordered pair (w₁, w₂) of passing nucleon words: is the H₄ normal form of w₂ equal to
+  bar(w₁) (normal form of the letter-inverted word, coefficients mapped q ↦ q⁻¹)? Also reported,
+  as a weaker relation: equality of the z_D Markov traces of w₂ and bar(w₁), and of the nets under
+  A1–A3.
+
+### (D) every pair
+
+- All 144 ordered pairs, both bonds, with bare-x pass, ratio and B, are written out in
+  `phaseB-pairs.md` from the witness. No pair is labelled the deuteron.
