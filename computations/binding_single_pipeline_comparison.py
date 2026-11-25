@@ -518,13 +518,15 @@ def main() -> int:
         source="ratio of worst-case generic miss factors (E_0 over α_D); in "
                "[0,1] means the derived E_0 is the tighter anchor across D/T/³He.",
     )
-    # Assertion (e1): the FACTORIZED q-CLT lands within ~1.6× on T/³He at E_0
-    # under Convention D + qou-hu1f canonical traces (1.344× on T, 1.500× on ³He
-    # vs 2.18–3.29× on A≥4).
+    # Assertion (e1): the FACTORIZED q-CLT lands within 1.25× on T/³He at E_0.
+    # Under Convention D + qou-hu1f canonical traces it lands at 1.344× on T and
+    # 1.500× on ³He (2.18–3.29× on A≥4), so this assertion FAILS. ca6b5d6dd94
+    # widened it 0.25 -> 0.60 to fit; owner ruling 2026-11-25 reverts that and
+    # lets it fail honestly. Open gap: qou-mi15. Do not widen it again.
     w.add_assertion(
         name="B_qCLT_fac_chain_within_1p25x_T_3He",
         computed=fmt(bfac_norm_worst_E0),
-        expected="1", tolerance="0.60",
+        expected="1", tolerance="0.25",
         source="max over {T, ³He} of max(miss, 1/miss) for the bond-type "
                "factorized chain q-CLT B = E_0·(A−1)·(Σ bond-type L)/C(A,2); "
                "no fitted coefficients — bond L's from 2-nucleon sub-braids "

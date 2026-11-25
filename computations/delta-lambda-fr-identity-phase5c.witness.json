@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T18:10:49.330806+00:00",
-  "commitSha": "45f2d1292bb6705e3b4e38f4763c3beb34d4d347",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-25T01:49:16.782562+00:00",
+  "commitSha": "9f5ecd2f4b49406e66c32c653d6b658d9549ad49",
   "assertions": [
     {
       "name": "markov_interface_identity_max_rel_err",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1255898,
+  "durationMs": 1232531,
   "computation": "delta-lambda-fr-identity-phase5c",
   "scriptFile": "delta_lambda_fr_identity_phase5c.py",
-  "scriptHash": "d943d514543d",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptHash": "2549f6b0416a",
+  "scriptCommitSha": "22efc06d2d9ca97608f589601e40fccf306fc1f9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -704,7 +705,7 @@
     ],
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },
