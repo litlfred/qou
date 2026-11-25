@@ -49,7 +49,7 @@ variable {n : ℕ}
 /-- The Young diagram of a partition `p ⊢ n`: its parts, sorted weakly-decreasing, as row lengths
 (the same sorted list `PartitionListBridge.toList` produces). -/
 def partitionShape (p : Nat.Partition n) : YoungDiagram :=
-  YoungDiagram.ofRowLens (p.parts.sort (· ≥ ·)) (Multiset.sort_sorted _ _)
+  YoungDiagram.ofRowLens (p.parts.sort (· ≥ ·)) (Multiset.pairwise_sort _ _).sortedGE
 
 /-- The standard-tableau dimension of a partition: `#SYT` of its Young diagram.  This is the
 genuine combinatorial `dim(p)` (a `Finite`-backed `Nat.card`), the concrete value the abstract

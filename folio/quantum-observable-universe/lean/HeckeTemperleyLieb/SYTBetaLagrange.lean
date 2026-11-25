@@ -193,7 +193,7 @@ theorem count_pairs (i : Fin k) :
         exact ⟨a, ⟨(by rintro rfl; exact hab h), mem_univ a⟩, by rw [h, Finset.pair_comm]⟩
     · rintro ⟨j, ⟨hji, -⟩, rfl⟩
       refine ⟨⟨subset_univ _, ?_⟩, mem_insert_self i {j}⟩
-      rw [card_insert_of_not_mem (by simp [Ne.symm hji]), card_singleton]
+      rw [card_insert_of_notMem (by simp [Ne.symm hji]), card_singleton]
   have hinj : Set.InjOn (fun j => ({i, j} : Finset (Fin k))) ↑(univ.erase i) := by
     intro a ha b hb hab
     simp only [mem_coe, mem_erase] at ha hb

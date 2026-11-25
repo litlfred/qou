@@ -62,15 +62,17 @@ left-multiplication by `z` on the regular representation is `|G| · z(1)`. Proof
 No field, no representation theory — pure group-algebra/linear-algebra over generic `R`. -/
 theorem trace_mulLeft_eq_card_mul_coeff_one {G : Type*} [Group G] [Fintype G] [DecidableEq G]
     (z : MonoidAlgebra R G) :
-    LinearMap.trace R (MonoidAlgebra R G) (LinearMap.mulLeft R z) = (Fintype.card G : R) * z 1 := by
-  let b : Module.Basis G R (MonoidAlgebra R G) := Finsupp.basisSingleOne
+    LinearMap.trace R (MonoidAlgebra R G) (LinearMap.mulLeft R z)
+      = (Fintype.card G : R) * z.coeff 1 := by
+  let b : Module.Basis G R (MonoidAlgebra R G) :=
+    Finsupp.basisSingleOne.map (MonoidAlgebra.coeffLinearEquiv R).symm
   rw [LinearMap.trace_eq_matrix_trace R b (LinearMap.mulLeft R z), Matrix.trace]
   have hdiag : ∀ j : G,
-      (LinearMap.toMatrix b b (LinearMap.mulLeft R z)).diag j = z 1 := by
+      (LinearMap.toMatrix b b (LinearMap.mulLeft R z)).diag j = z.coeff 1 := by
     intro j
     rw [Matrix.diag_apply, LinearMap.toMatrix_apply, LinearMap.mulLeft_apply]
-    show (z * single j (1 : R)) j = z 1
-    rw [MonoidAlgebra.mul_single_apply, mul_inv_cancel, mul_one]
+    show (z * single j (1 : R)).coeff j = z.coeff 1
+    rw [MonoidAlgebra.coeff_mul_single_apply, mul_inv_cancel, mul_one]
   rw [Finset.sum_congr rfl (fun j _ => hdiag j), Finset.sum_const, Finset.card_univ, nsmul_eq_mul]
 
 /-- The Jucys–Murphy central element `C₂ = Σ_k X_k²`, `X_k = Σ_{i<k}(i k)`, as a named element of
@@ -82,7 +84,7 @@ noncomputable def centralC2 (n : ℕ) : MonoidAlgebra R (Equiv.Perm (Fin n)) :=
 
 /-- The identity coefficient of `centralC2` is `binom(n,2)` (re-exported from the merged
 ℂ-free core `JucysMurphyCoeff.centralC2_coeff_one`; the two agree by definitional unfolding). -/
-theorem centralC2_coeff_one (n : ℕ) : (centralC2 (R := R) n) 1 = (n.choose 2 : R) :=
+theorem centralC2_coeff_one (n : ℕ) : (centralC2 (R := R) n).coeff 1 = (n.choose 2 : R) :=
   QOU.BraidKnot.JucysMurphyCoeff.centralC2_coeff_one n
 
 /-- **Identity (B), coefficient side, general `n`, ℂ-free.** The trace of the Jucys–Murphy central
