@@ -109,7 +109,7 @@ theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContex
     Tendsto (fun n : ℕ => ctx.char_variance n) atTop (𝓝 0) := by
   -- The assumed majorant `1/√(n − 3)` tends to `0`.
   have hden : Tendsto (fun n : ℕ => (n : ℝ) - 3) atTop atTop := by
-    simpa using tendsto_atTop_add_const_right atTop (-3 : ℝ) tendsto_natCast_atTop_atTop
+    simpa [sub_eq_add_neg] using tendsto_atTop_add_const_right atTop (-3 : ℝ) tendsto_natCast_atTop_atTop
   have hinv : Tendsto (fun n : ℕ => ((n : ℝ) - 3)⁻¹) atTop (𝓝 0) :=
     tendsto_inv_atTop_zero.comp hden
   have hmaj : Tendsto (fun n : ℕ => 1 / Real.sqrt ((n : ℝ) - 3)) atTop (𝓝 0) := by
