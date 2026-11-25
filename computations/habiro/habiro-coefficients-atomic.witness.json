@@ -7,7 +7,7 @@
     "thm:knot-mass-formula-unified",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-09-06T12:47:30.235169+00:00",
+  "timestamp": "2026-11-24T17:54:13.885386+00:00",
   "parameters": {
     "q_0": "1.1099785827513808",
     "engine": "sympy Poly + sequential cyclotomic division"
@@ -551,14 +551,14 @@
       "tr_M_at_q0": "0.0585962536544363767579001662417"
     }
   },
-  "scriptHash": "f7ba1ae7ce7a",
-  "scriptCommitSha": "126edfa8929a1489af3b7466099d46492545b86f",
-  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+  "scriptFile": "habiro_coefficients_atomic.py",
+  "scriptHash": "c6bcaf4a0cae",
+  "scriptCommitSha": "bc6e912e5ee26d8cfb3cbdf48205f8303a7ed06e",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "engine": "mpmath",
-  "computedAt": "2026-09-06T12:47:31.488343+00:00",
+  "computedAt": "2026-11-24T17:54:14.130246+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.4.1",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "habiro_coefficients_atomic.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

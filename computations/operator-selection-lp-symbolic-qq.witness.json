@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-22T19:29:49.850101+00:00",
-  "commitSha": "8c4b1839af2ca53d19ca939ecb10e3174c8da71c",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:01:58.706780+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "gram_symmetric",
@@ -141,8 +141,8 @@
   "durationMs": 4,
   "computation": "operator-selection-lp-symbolic-qq",
   "scriptFile": "operator_selection_lp_symbolic_qq.py",
-  "scriptHash": "1c31beca42c4",
-  "scriptCommitSha": "314ae367c9eb90d2c7840f6c1a5e9096493b133f",
+  "scriptHash": "a7d684232a40",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -150,11 +150,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/operator_selection_lp_symbolic_qq.py"
+    ],
+    "reproduce": "python3 -u computations/operator_selection_lp_symbolic_qq.py"
   },
   "description": "Dual-certificate existence for the operator-selection LP, exact in Q(q). Bean qou/k4f8 stage 2. Self-contained rational-function arithmetic (fractions.Fraction, polynomial gcd, canonical normal form) — no numpy, mpmath or pyhecke in the computation, because the question turns on whether det G is ZERO rather than small: gram.py records |lambda_min| = 3.9e-17 through its NF path at 60 dps, and np.linalg.inv returning ||G G_inv - I|| = 1.64 without raising. For H_3(q) (d = 6): t is row 0 of G structurally (b_0 = 1), det G = 0 identically, rank 5, radical v ~ (-1/q)^len(w_i) — the q-antisymmetriser — and <1, v> = -(q-1)(q^2-q+1) is nonzero for every q != 1, so y_0 = 0 is FORCED for every dual-feasible (y_0, s). The certificate y_0 = 0, s = e_0 exists and is unique for q > 0; the optimum is attained on the radical with objective 0 and every Frobenius constraint tight. For H_2(q) the Gram is non-singular, so the degeneracy is a fact about H_3 rather than about how the LP was written down. Each assertion names the Lean hypothesis it discharges in operator_selection_lp.lean, so the two sides can be audited against each other.",
   "contentBlock": "prop:operator-selection-lp",
@@ -290,7 +299,7 @@
       "det_G": "(q^4 + q^2 + 1)/(q^4 + 2*q^2 + 1)",
       "nullity": 0
     },
-    "lean_companion": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean"
+    "lean_companion": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean"
   },
   "caveats": [
     "Exact in Q(q) and therefore says nothing about any pinned q_0 that a numeric solve would use — deliberately. The committed f64 solves (a-K-via-lp-dual-full, a-K-via-lp-dual-hecke-basis) agree: y0_star = -0.0, y_star = e_0, dual_obj = 0.",

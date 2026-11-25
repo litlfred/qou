@@ -279,7 +279,7 @@ python3 scripts/compute-qa.py --gate accuracy-scorecard
 | [`computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json`](computations/probes/gap1b_4he_tetrahedral_k4_flux_ring/gap1b-4he-tetrahedral-k4-flux-ring.witness.json) | `63f0971cb24d` | `allPassed: true` | §2, §3.2a, §3.5b |
 | [`computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b-mtau-s3-circulant-koide-probe.witness.json`](computations/probes/gap2b_mtau_s3_circulant_koide_test/gap2b-mtau-s3-circulant-koide-probe.witness.json) | `cf26dc3f95b7` | `allPassed: true` | §2, §3.1a |
 | [`computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json`](computations/probes/gap3b_t29_composite_decay_threshold/gap3b-t29-composite-decay-threshold.witness.json) | `61d781bdf3d8` | `allPassed: true` | §2, §3.5a |
-| [`computations/u1-hypercharge-assignment.witness.json`](computations/u1-hypercharge-assignment.witness.json) | `f00e0c3d4ed5` | `allPassed: true` | §2, §3.3a |
+| [`computations/u1-hypercharge-assignment.witness.json`](computations/u1-hypercharge-assignment.witness.json) | `54d9572eeffe` | `allPassed: true` | §2, §3.3a |
 | [`computations/charge-coulomb-tn3he-derived.witness.json`](computations/charge-coulomb-tn3he-derived.witness.json) | `0b254a046dd6` | `allPassed: true` | §2, §3.3a |
 | [`computations/mirror-nuclei-coulomb-systematics.witness.json`](computations/mirror-nuclei-coulomb-systematics.witness.json) | `1b11035996c1` | `allPassed: true` | §2, §3.3a |
 | [`computations/beta-decay-from-q.witness.json`](computations/beta-decay-from-q.witness.json) | `6845cc311b6b` | Audit witness (`verified`) | §2, §3.4a, §5.1 |

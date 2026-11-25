@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:48:48.440746+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T17:54:11.622889+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "the (2,1) block is the unique chirality cell (c_λ=0, D_q²=0) for H₃",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 17,
   "computation": "h2s-chirality-residue-s3-holonomy",
   "scriptFile": "h2s_chirality_residue_s3_holonomy.py",
-  "scriptHash": "46a8b0b5bac5",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "9f46d60429eb",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,12 +25,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/h2s_chirality_residue_s3_holonomy.py"
+    ],
+    "reproduce": "python3 -u computations/h2s_chirality_residue_s3_holonomy.py"
   },
   "description": "Pins the H₂S +2.1° chiral residue to the framework's exact chirality machinery. The chirality cell is the Wedderburn block with signed content c_λ=0 (q-Dirac kernel D_q²=[c_λ]_q²=0): for H₃ this is exactly the (2,1) standard block (sym (3) c=+3, alt (1,1,1) c=−3) — the block the chiral p-orbital occupies. The residue is the braid holonomy ρ(β) around the singular fibre = the q-deformed Chern–Simons holonomy of a Wilson loop in S³. So the +2.1° = the S³ holonomy phase of the chiral p-lone on the c_λ=0 (2,1) cell; the exact angle is the monodromy phase around ζ_ℓ, the remaining compute.",
   "contentBlock": "prop:symmetric-block-domain-weight",

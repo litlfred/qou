@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T10:41:05.197754+00:00",
-  "commitSha": "3220f1b5e47b89bc77b60d29aec8e2bc74f7f52c",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:07:06.226433+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "asymptotic_shape_matches_derived_expansion",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 106,
+  "durationMs": 164,
   "computation": "kashaev-remainder-omega-grade",
   "scriptFile": "kashaev_remainder_omega_grade_probe.py",
-  "scriptHash": "179e00673197",
-  "scriptCommitSha": "f6f17fa092e7dd00d24d940cb414bc2cbd919abf",
+  "scriptHash": "d9ed74b2e916",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,11 +53,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -67,7 +70,7 @@
   },
   "description": "The omega-grade of the Kashaev remainder for 4_1. kashaev-surreal.md recasts the volume conjecture as a standard-part identity and never says what st() discards. Derived from the leading asymptotic that prop:one-loop-prefactor-provenance DERIVES from the saddle at theta*=5pi/6 (Lean c_pow_four_eq_third) -- NOT cited to Ohtsuki/Andersen-Hansen, which is what this description said before the 2026-09-13 correction: expansion: delta_N = 3pi logN/N - (pi log3)/(2N) + O(1/N^2), so ord_omega(delta) = -1 in the coarse grading but delta is NOT a grade-(-1) monomial -- omega*delta is infinite and the convergence is logarithmically slow. Derive-then-check; every constant is read off the citation before measurement. Exact mpmath at 50 dps; no float64.",
   "bean": "qou-cds1",
-  "fills_gap_in": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+  "fills_gap_in": "folio/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
   "derived_remainder": "delta_N = 3*pi*log(N)/N - (pi*log 3)/(2N) + O(1/N^2)",
   "omega_grade": {
     "coarse_ord_omega": -1,
