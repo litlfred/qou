@@ -109,6 +109,13 @@ def numerical_chain(q: mp.mpf) -> dict:
 
     B_cand = E0 * net_p * dtr                     # the derived-shape candidate
     B_via_qbeta = Qb_kashiwara * dtr / h          # production-Q_β route
+    # The corpus's live binding law, exactly as binding_log_free_energy.py:95
+    # (owner ruling relayed 2026-11-25, AGENTS.md exemption 2, bean qou-xj4p):
+    # B = E_0 . log(|tr_free| / |tr_atom|). B_cand above is a RAW trace
+    # difference = tr_free . (1 - r); tr_free is a per-nucleon self-trace that
+    # the 2026-09-05 intra reordering moved 3.785x, so B_cand is not a function
+    # of the bond ratio r = prod(z + d_e). The log law is.
+    B_law = E0 * mp.log(abs(mp.mpf(tf)) / abs(mp.mpf(ta)))
     return {
         "h": mp.nstr(h, 20), "net_p": mp.nstr(net_p, 20),
         "net_n": mp.nstr(net_n, 20),
@@ -125,6 +132,11 @@ def numerical_chain(q: mp.mpf) -> dict:
         "B_cand_err_vs_AME_pct": mp.nstr((B_cand / B_AME - 1) * 100, 20),
         "B_via_kashiwara_qbeta_MeV": mp.nstr(B_via_qbeta, 18),
         "B_via_qbeta_err_vs_AME_pct": mp.nstr((B_via_qbeta / B_AME - 1) * 100, 20),
+        "tr_free": mp.nstr(mp.mpf(tf), 20),
+        "tr_atom": mp.nstr(mp.mpf(ta), 20),
+        "B_canonical_log_law_MeV": mp.nstr(B_law, 18),
+        "B_canonical_log_law_err_vs_AME_pct":
+            mp.nstr((B_law / B_AME - 1) * 100, 20),
         "consistency_cand_vs_ansatz_route_rel":
             mp.nstr(abs((B_cand - abs_delta * E0 * dtr / h)
                         / (abs_delta * E0 * dtr / h)), 20),
@@ -153,6 +165,9 @@ def main() -> int:
           f"(rel {nc['Qbeta_ansatz_vs_kashiwara_rel']})")
     print(f"  B_D = E₀·net(p)·Δtr = {nc['B_cand_E0_netp_dtr_MeV'][:12]} MeV  "
           f"err {nc['B_cand_err_vs_AME_pct'][:8]}%")
+    print(f"  B_D canonical law E₀·log(tr_free/tr_atom) = "
+          f"{nc['B_canonical_log_law_MeV'][:12]} MeV  "
+          f"err {nc['B_canonical_log_law_err_vs_AME_pct'][:8]}%")
     print(f"  B_D via Kashiwara Q_β·Δtr/h = {nc['B_via_kashiwara_qbeta_MeV'][:12]} "
           f"MeV  err {nc['B_via_qbeta_err_vs_AME_pct'][:8]}%")
 
@@ -171,7 +186,11 @@ def main() -> int:
               "+0.29% hit came only from the superseded grouped word under "
               "the excised Markov convention C (attribution: "
               "probes/probe_d_dressing_is_proton_net/attribution/); on the "
-              "ruled inputs B_D misses AME by about -75%. NOT wired.")
+              "ruled inputs the raw-difference B_D misses AME by about -75%, "
+              "because it is not normalised by tr_free. The binding magnitude "
+              "is now reported on the corpus's live law, exactly "
+              "binding_log_free_energy.py: B = E_0*log(|tr_free|/|tr_atom|) "
+              "(about +27% for the deuteron). NOT wired.")
           .set_audit_only(
               "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md")
           .add_parameter("q0", Q_50_DIGIT_STR)
@@ -181,6 +200,12 @@ def main() -> int:
           .add_data("binding_candidate_status", {
               "verdict": "negative",
               "B_cand_err_vs_AME_pct": nc["B_cand_err_vs_AME_pct"],
+              "B_cand_defect": "raw trace difference tr_free*(1-r); tr_free is a "
+                               "per-nucleon self-trace, not bond data",
+              "reported_binding_form": "B = E_0*log(|tr_free|/|tr_atom|), "
+                                       "computations/binding_log_free_energy.py:95",
+              "B_canonical_log_law_err_vs_AME_pct":
+                  nc["B_canonical_log_law_err_vs_AME_pct"],
               "ruling": "owner 2026-11-25 (qou-xj4p): keep the exact identities; "
                         "record the binding match as a negative; the sub-percent "
                         "assertion is removed",
