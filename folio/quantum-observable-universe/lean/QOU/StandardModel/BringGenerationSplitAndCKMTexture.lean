@@ -243,7 +243,8 @@ theorem permAct_singletVec4_of_fix4 {R : Type*} [CommRing R]
   by_cases hi : i = 4
   · subst hi; simp [permAct, singletVec4, hinv4]
   · have hji : σ⁻¹ i ≠ 4 := fun h => hi (by simpa [hσ] using congrArg σ h)
-    simp [permAct, singletVec4, hi, hji]
+    have hji' : σ.symm i ≠ 4 := hji
+    simp [permAct, singletVec4, hi, hji, hji']
 
 /-- 1D $S_4$-singlet projector $P_{\mathrm{sing}}(x) = -\frac{x_4}{4}\,(1,1,1,1,-4)$. -/
 def projSing1 {F : Type*} [Field F] (x : Fin 5 → F) : Fin 5 → F :=
