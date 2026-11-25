@@ -5,6 +5,7 @@ import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import BraidKnotOctonion.KeystoneBalancedRibbon
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.Types.Basic
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
 import Mathlib.CategoryTheory.Limits.Shapes.Kernels
 import Mathlib.CategoryTheory.Preadditive.Basic
@@ -39,16 +40,12 @@ namespace QOU
 
 universe u v w
 
-/-- The standard category structure on `Type w`, with morphisms as functions.
-    Defined locally because `Mathlib.CategoryTheory.Types` does not exist
-    at the pinned Mathlib commit (f897ebcf). -/
-instance : CategoryTheory.Category.{w} (Type w) where
-  Hom X Y := X → Y
-  id _ := _root_.id
-  comp f g := g ∘ f
-  id_comp _ := rfl
-  comp_id _ := rfl
-  assoc _ _ _ := rfl
+-- The category structure on `Type w` is Mathlib's `CategoryTheory.types`
+-- (`Mathlib.CategoryTheory.Types.Basic`). A local duplicate instance used to sit here,
+-- justified as "`Mathlib.CategoryTheory.Types` does not exist at f897ebcf"; it did exist
+-- (`Mathlib/CategoryTheory/Types.lean`). The duplicate was definitionally equal to
+-- Mathlib's only while Mathlib's morphisms were bare functions; from v4.35 they are
+-- `TypeCat.Hom`, so the duplicate split `Type` into two categories.
 
 /-- **Frobenius–Hopf data** in a monoidal category.
 
