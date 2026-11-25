@@ -69,7 +69,7 @@ theorem mem_toWord (J : I →₀ ℕ) (g : Σ _ : I, ℕ+) : g ∈ toWord J ↔ 
 theorem toWord_pairwise (J : I →₀ ℕ) : (toWord J).Pairwise fun a c => a.1 < c.1 := by
   unfold toWord
   rw [List.pairwise_filterMap]
-  refine (Finset.sort_sorted_lt _).imp ?_
+  refine (Finset.sortedLT_sort _).pairwise.imp ?_
   intro a c hac b hb b' hb'
   simp only [letterOf] at hb hb'
   split_ifs at hb hb'
@@ -130,10 +130,10 @@ theorem mem_iff_of_pairwise (w : List (Σ _ : I, ℕ+)) (hw : w.Pairwise fun a c
 
 theorem toWord_ofWord (w : List (Σ _ : I, ℕ+)) (hw : IsIncr w) : toWord (ofWord w) = w := by
   rw [isIncr_iff_pairwise] at hw
-  haveI : IsAntisymm (Σ _ : I, ℕ+) fun a c => a.1 < c.1 :=
+  haveI : Std.Antisymm (fun a c : Σ _ : I, ℕ+ => a.1 < c.1) :=
     ⟨fun _ _ h1 h2 => absurd (h1.trans h2) (lt_irrefl _)⟩
-  haveI : IsIrrefl (Σ _ : I, ℕ+) fun a c => a.1 < c.1 := ⟨fun _ h => lt_irrefl _ h⟩
-  refine List.Sorted.eq_of_mem_iff (toWord_pairwise _) hw fun g => ?_
+  haveI : Std.Irrefl (fun a c : Σ _ : I, ℕ+ => a.1 < c.1) := ⟨fun _ h => lt_irrefl _ h⟩
+  refine List.Pairwise.eq_of_mem_iff (toWord_pairwise _) hw fun g => ?_
   rw [mem_toWord, mem_iff_of_pairwise w hw]
 
 /-- Increasing words are multi-indices. -/
