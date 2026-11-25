@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T00:38:04Z
-updated_at: 2026-11-25T01:13:10Z
+updated_at: 2026-11-25T01:30:20Z
 parent: qou-s028
 ---
 
@@ -28,3 +28,11 @@ Status: OPEN. Needs an owner choice of definition for inertial mass (chat, 2026-
 Probe computations/probes/braid_boost_inertial_clock/ (PR #9402, d32f457aaa5): exact computation in H2(q) and H3(q), 9 braids, pre-registered P1-P3, all hold. m_clock = 2 hbar_q^2 tr_reg is not the holonomy mass m. The ratio is braid-dependent (8 distinct rational functions), never identically 1, and changes sign; at proton q0 it runs -8.5e-4 .. 1.4e-2. m_clock(1) = 0 while m(1) = 2^c.
 Scope (a) for this definition. Scope (b) for any hbar^2 x (finite trace) definition, invariant = order of vanishing at q = 1 (same obstruction as E0WeightAllWords).
 STILL OPEN: option 2 (an explicit boost action on braids); a compensating 1/hbar^2 from the w -> v map. Next step: formalize-first scaffold for option 2.
+
+
+## 2026-11-25T01:30:19Z — routes 2a + 2b (owner: '2a 2b'; 'light cone --> affine causality cone should be in corpus')
+PR #9402, f32835580e3. All sorry-free, standard axioms.
+- QOU/Core/AffineCausalityCone.lean, from def:contact-affine-chart (Z = u/w). The cone's null points +-c_q fix coneForm = c^2 w^2 - u^2 up to scale (quadratic_with_cone_roots). The boosts Z -> (Z+v)/(1+vZ/c^2) fix +-c (boost_fix_pos/neg), compose by velocity addition (boost_comp) and preserve |Z|<c (boost_preserves_cone).
+- worldlineLagrangian = -m c_q sqrt(coneForm) (ReebHamiltonianChartBridgeReal), with einbein elimination (ReebWorldlineSignature.einbein_stationary_value). So the worldline form is DERIVED from the cone, not postulated.
+- ReebWorldlineSignature: the trace route cannot supply the signature. tau((wX+uY)^2) >= 0 for symmetric X, Y and positive weights (convention-D y >= 0); only a skew Reeb contraction gives an indefinite form. The cone comes from projective geometry, not traces.
+STILL OPEN (the conjecture proper): show a braid class's traced Lagrangian along a worldline is boost-covariant, with coefficient m = m(beta). Route 1 (m = 2 hbar^2 tr_reg) is excluded. The E_e / 70x split is unresolved.
