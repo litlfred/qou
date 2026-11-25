@@ -62,7 +62,7 @@ structure QuadData (G : Type u) [DecidableEq G] (k : Type v) [CommRing k]
   /-- The right-hand side of each rule. -/
   R : G → G → MA G k
   /-- **Filtration**: every monomial of `R(a, b)` is below `a b`. -/
-  R_lt : ∀ p ∈ pairs, ∀ w ∈ (R p.1 p.2).support,
+  R_lt : ∀ p ∈ pairs, ∀ w ∈ (R p.1 p.2).coeff.support,
     ord.lt (FreeMonoid.toList w) [p.1, p.2]
 
 variable {ord : AdmissibleOrder G}
@@ -78,15 +78,15 @@ noncomputable def relMA (a b : G) : MA G k := ofW [a, b] - d.R a b
 noncomputable def overlapElt (a b c : G) : MA G k := ofW [a] * d.R b c - d.R a b * ofW [c]
 
 theorem R_apply_self {p : G × G} (hp : p ∈ d.pairs) :
-    (d.R p.1 p.2) (FreeMonoid.ofList [p.1, p.2]) = 0 := by
+    (d.R p.1 p.2).coeff (FreeMonoid.ofList [p.1, p.2]) = 0 := by
   by_contra h
   have := d.R_lt p hp _ (Finsupp.mem_support_iff.mpr h)
   rw [FreeMonoid.toList_ofList] at this
   exact ord.irrefl _ this
 
 theorem relMA_apply_self {p : G × G} (hp : p ∈ d.pairs) :
-    d.relMA p.1 p.2 (FreeMonoid.ofList [p.1, p.2]) = 1 := by
-  rw [relMA, Finsupp.sub_apply, ofW_apply, if_pos rfl, d.R_apply_self hp, sub_zero]
+    (d.relMA p.1 p.2).coeff (FreeMonoid.ofList [p.1, p.2]) = 1 := by
+  rw [relMA, MonoidAlgebra.coeff_sub, Finsupp.sub_apply, ofW_apply, if_pos rfl, d.R_apply_self hp, sub_zero]
 
 variable [Nontrivial k]
 
@@ -117,7 +117,7 @@ theorem rule_lm (p : d.pairs) : (d.rule p).lm ord = [p.1.1, p.1.2] := by
     obtain ⟨w, hw, rfl⟩ := Finset.mem_image.mp hm
     rw [Finsupp.mem_support_iff, ← FreeMonoid.ofList_toList w] at hw
     set m := FreeMonoid.toList w
-    rw [relMA, Finsupp.sub_apply, ofW_apply, if_neg (Ne.symm hne), zero_sub, neg_ne_zero] at hw
+    rw [relMA, MonoidAlgebra.coeff_sub, Finsupp.sub_apply, ofW_apply, if_neg (Ne.symm hne), zero_sub, neg_ne_zero] at hw
     have := d.R_lt _ p.2 (FreeMonoid.ofList m) (Finsupp.mem_support_iff.mpr hw)
     rwa [FreeMonoid.toList_ofList] at this
 

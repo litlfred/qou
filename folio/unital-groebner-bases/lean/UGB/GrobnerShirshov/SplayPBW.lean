@@ -74,7 +74,7 @@ structure SplayData (G : Type u) [DecidableEq G] (k : Type v) [CommRing k]
   /-- The swapped word is smaller. -/
   swap_lt : ∀ p ∈ pairs, ord.lt [p.2, p.1] [p.1, p.2]
   /-- **Strong filtration**: every monomial of `π(a, b)` is below `a b`. -/
-  pi_lt : ∀ p ∈ pairs, ∀ w ∈ (π p.1 p.2).support,
+  pi_lt : ∀ p ∈ pairs, ∀ w ∈ (π p.1 p.2).coeff.support,
     ord.lt (FreeMonoid.toList w) [p.1, p.2]
   /-- The rule-carrying relation is transitive (`a ≫ b ≫ c ⇒ a ≫ c`). -/
   trans : ∀ a b c : G, (a, b) ∈ pairs → (b, c) ∈ pairs → (a, c) ∈ pairs
@@ -96,7 +96,7 @@ noncomputable def jacobi (a b c : G) : MA G k :=
     + d.cf b c • (d.π a c * ofW [b]) - d.cf a b • (ofW [b] * d.π a c)
 
 theorem pi_apply_self {p : G × G} (hp : p ∈ d.pairs) :
-    (d.π p.1 p.2) (FreeMonoid.ofList [p.1, p.2]) = 0 := by
+    (d.π p.1 p.2).coeff (FreeMonoid.ofList [p.1, p.2]) = 0 := by
   by_contra h
   have := d.pi_lt p hp _ (Finsupp.mem_support_iff.mpr h)
   rw [FreeMonoid.toList_ofList] at this
@@ -109,10 +109,11 @@ theorem ne_of_mem {p : G × G} (hp : p ∈ d.pairs) : p.1 ≠ p.2 := by
   exact ord.irrefl _ this
 
 theorem relMA_apply_self [Nontrivial k] {p : G × G} (hp : p ∈ d.pairs) :
-    d.relMA p.1 p.2 (FreeMonoid.ofList [p.1, p.2]) = 1 := by
+    (d.relMA p.1 p.2).coeff (FreeMonoid.ofList [p.1, p.2]) = 1 := by
   have hne : ([p.2, p.1] : List G) ≠ [p.1, p.2] := by
     intro h; exact d.ne_of_mem hp (List.cons.inj h).1.symm
-  rw [relMA, Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, ofW_apply, ofW_apply,
+  rw [relMA, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_smul,
+    Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, ofW_apply, ofW_apply,
     if_pos rfl, if_neg hne, d.pi_apply_self hp, smul_zero, sub_zero, sub_zero]
 
 variable [Nontrivial k]
@@ -143,7 +144,8 @@ theorem rule_lm (p : {p : G × G // p ∈ d.pairs}) :
     obtain ⟨w, hw, rfl⟩ := Finset.mem_image.mp hm
     rw [Finsupp.mem_support_iff, ← FreeMonoid.ofList_toList w] at hw
     set m := FreeMonoid.toList w
-    rw [relMA, Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, ofW_apply,
+    rw [relMA, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_sub, MonoidAlgebra.coeff_smul,
+    Finsupp.sub_apply, Finsupp.sub_apply, Finsupp.smul_apply, ofW_apply,
       ofW_apply] at hw
     by_cases h2 : [p.1.2, p.1.1] = m
     · rw [← h2]; exact d.swap_lt _ p.2
