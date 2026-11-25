@@ -1897,6 +1897,8 @@ import QOU.Core.CategoricalLagrangianTwoTermBridge
 import QOU.Core.CategoricalHamiltonianLegendre
 import QOU.Core.ReebHamiltonianChartBridge
 import QOU.Core.ReebHamiltonianChartBridgeReal
+import QOU.Core.AffineCausalityCone
+import QOU.Core.ReebWorldlineSignature
 import QOU.MassTheory.GPMTThreeRowCumulantBridge
 import QOU.MassTheory.ThreeRowSpringerSYTDerivation
 import QOU.MassTheory.H4GPMTModifiedDimensionCumulants
