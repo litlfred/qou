@@ -60,17 +60,15 @@ noncomputable abbrev triv3 : Rep (ZMod 3) Γ := Rep.ofDistribMulAction (ZMod 3) 
 /-- **Our `Z2` is Mathlib's `cocycles₂`.** -/
 theorem Z2_eq_cocycles₂ : Z2 Γ = cocycles₂ (triv3 Γ) := by
   ext f
-  rw [mem_cocycles₂_iff]
-  simp only [Rep.ofDistribMulAction_ρ_apply_apply, trivDMA_smul]
-  exact Iff.rfl
+  exact Iff.trans Iff.rfl (mem_cocycles₂_iff (A := triv3 Γ) f).symm
 
 /-- **Our `B2` is Mathlib's `coboundaries₂`.** -/
 theorem B2_eq_coboundaries₂ : B2 Γ = coboundaries₂ (triv3 Γ) := by
   ext f
   constructor
   · rintro ⟨t, ht⟩
-    exact ⟨t, funext fun g => by simpa using ht g.1 g.2⟩
+    exact ⟨t, funext fun g => ht g.1 g.2⟩
   · rintro ⟨t, ht⟩
-    exact ⟨t, fun g h => by simpa using congrFun ht (g, h)⟩
+    exact ⟨t, fun g h => congrFun ht (g, h)⟩
 
 end QOU.Eightfold.ObstructionH2
