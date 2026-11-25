@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-24T21:01:22Z
-updated_at: 2026-11-24T21:16:58Z
+updated_at: 2026-11-25T01:03:26Z
 parent: qou-s028
 ---
 
@@ -14,3 +14,6 @@ Full trace posted on #9395: https://github.com/litlfred/qou/pull/9395#issuecomme
 
 ## 2026-11-24 owner rulings (cards, relayed by coordinator)
 1 'A: switch' -> eigvalsh done (PR https://github.com/litlfred/qou/pull/9401, 50f8ecc64d7). 2 'A: Hermitian form' -> NOT applied: section 1 of categorical-mass-markov-proof defines the Frobenius object via the bilinear pairing, so the ruling's stop condition fired. Reported on https://github.com/litlfred/qou/pull/9401 with options; recommendation is 'non-degenerate' plus a positivity sentence for the Hermitian form. 3 'A: revert' -> done (qou-mi15). 4 #9395 merged by the coordinator. All four rows are in docs/coordination/owner-rulings.md.
+
+## 2026-11-25
+PR #9401 merged (by the coordinator) with commits 82643b15227..31756fa8fe0. Ruling 2 (Hermitian rewording) is still unapplied by design (stop condition); it awaits the owner's choice between A (non-degenerate + Hermitian positivity sentence) and B.
