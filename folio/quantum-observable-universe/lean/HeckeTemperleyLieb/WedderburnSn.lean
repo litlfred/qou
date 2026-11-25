@@ -118,8 +118,8 @@ theorem sn_sum_sq_eq_factorial
   obtain ⟨N, 𝔫, -, ⟨e⟩⟩ := sn_wedderburnArtin_algClosed K n
   refine ⟨N, 𝔫, ?_⟩
   have hfact : Module.finrank K (MonoidAlgebra K (Equiv.Perm (Fin n))) = n.factorial := by
-    unfold MonoidAlgebra
-    rw [Module.finrank_finsupp_self, Fintype.card_perm, Fintype.card_fin]
+    rw [(MonoidAlgebra.coeffLinearEquiv K).finrank_eq, Module.finrank_finsupp_self,
+      Fintype.card_perm, Fintype.card_fin]
   have hblocks : Module.finrank K (∀ i, Matrix (Fin (𝔫 i)) (Fin (𝔫 i)) K) = ∑ i, 𝔫 i ^ 2 := by
     rw [Module.finrank_pi_fintype]
     refine Finset.sum_congr rfl (fun i _ => ?_)
