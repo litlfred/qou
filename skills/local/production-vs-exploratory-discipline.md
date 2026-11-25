@@ -418,6 +418,28 @@ there fails nothing and needs no re-run; chasing it re-runs
 producers to no effect. Only the substantive fields above justify
 the regen loop. See bean `qou-wsha`.
 
+### Antipattern 7: "the binding is E₀ times the trace difference"
+
+Symptom: a binding energy computed as `scale · (tr_free − tr_atom)`, possibly
+with a dressing factor, landing close to AME. Worked case: probe-d,
+`E₀·net(p)·Δtr`, +0.29 % on 2026-07-04 and −75.2 % on the ruled inputs.
+
+Why it is wrong: `tr_free − tr_atom = tr_free · (1 − r)` with
+`r = tr_atom/tr_free = ∏_bonds (z + d_e)` (Markov property,
+`QOU.Nuclear.InterfaceScalar.interface_scalar`). `r` is bond data; `tr_free` is
+a product of per-nucleon self-traces, and a letter reordering inside a nucleon
+moved it 3.785× for ²H while leaving `r` fixed to 1e-60. A raw difference mixes
+the mass (self) sector into binding (mutual), and agrees with anything only when
+`tr_free` happens to be ≈ 1.
+
+Fix: use the corpus law `B = E₀·log(|tr_free|/|tr_atom|)`
+(`computations/binding_log_free_energy.py`). It is forced: trace multiplicative
+on disjoint blocks plus extensive energy gives the Cauchy equation, and
+`QOU.Nuclear.LogFormUniqueness.binding_eq_neg_mul_log` proves every continuous
+solution is `−c·log r`. The linear `E₀·(1 − r)` is its first-order truncation,
+not extensive (`linearForm_not_extensive`) and capped below `E₀`. Never choose
+among normalisations by residual (owner ruling 2026-11-25, bean `qou-xj4p`).
+
 ## Pre-promotion checklist (run before adopting any candidate in production)
 
 If you are about to:
