@@ -56,6 +56,14 @@ noncomputable def ofModuleAsModuleEquiv (M : Type*) [AddCommMonoid M]
       (RestrictScalars.addEquiv k (MonoidAlgebra k G) M))
     (fun r m => smul_ofModule_asModule M r m)
 
+/-- Port note (Lean v4.35 / Mathlib 56a0058): Mathlib's `AddCommGroup ρ.asModule` instance no
+longer fires for `ρ = ofModule M` (its `Module k (RestrictScalars …)` argument is not found by
+unification), so the additive group structure is supplied directly; it is the one of `M`. -/
+noncomputable instance addCommGroup_ofModule_asModule {k G : Type*} [CommRing k] [Monoid G] (M : Type*)
+    [AddCommGroup M] [Module (MonoidAlgebra k G) M] :
+    AddCommGroup (ofModule (k := k) (G := G) M).asModule :=
+  inferInstanceAs (AddCommGroup M)
+
 /-- **Simplicity transfers across the round-trip.**
 
 If `M` is a simple `k[G]`-module then so is `(ofModule M).asModule` — which is the form every
