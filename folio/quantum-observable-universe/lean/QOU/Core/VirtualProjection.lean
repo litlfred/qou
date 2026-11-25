@@ -1,6 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.NoZeroSMulDivisors.Defs
 
 /-!
 # QOU.Virtual — off-shell non-observability of virtual particles
