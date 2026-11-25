@@ -93,6 +93,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
+import Mathlib.Analysis.Normed.Lp.MeasurableSpace
 
 namespace QOU.Archimedean.HyperbolicMetric
 
@@ -139,12 +140,12 @@ theorem dH_le_pathLenH {γ : ℝ → E} {x y : E} (h : AdmissiblePath γ x y) :
   iInf₂_le γ h
 
 /-- The distance is nonnegative — automatic in `ℝ≥0∞`, recorded for readers. -/
-theorem dH_nonneg (x y : E) : 0 ≤ dH x y := zero_le _
+theorem dH_nonneg (x y : E) : 0 ≤ dH x y := zero_le
 
 /-- **`dH x x = 0`** for `x ∈ H³`: the constant path at `x` is admissible and has
 hyperbolic length `0` (its derivative vanishes). -/
 theorem dH_self {x : E} (hx : x ∈ upperH) : dH x x = 0 := by
-  refine le_antisymm ?_ (zero_le _)
+  refine le_antisymm ?_ zero_le
   have hadm : AdmissiblePath (fun _ => x) x x :=
     { source := rfl
       target := rfl
@@ -579,9 +580,9 @@ theorem pathLenH_concat {γ δ : ℝ → E} {x y z : E}
           have h1 : 0 ≤ 1 - 2*t := by linarith [ht.2]
           have h2 : (0:ℝ) ≤ 2*t := by linarith [ht.1]
           positivity))
-      (by simp only []; rw [show (2:ℝ)*0 = 0 by ring, sprof_zero])
-      (by simp only []; rw [show (2:ℝ)*(1/2) = 1 by norm_num, sprof_one])
-    simpa only [concatL] using this
+      (by (try simp only []); rw [show (2:ℝ)*0 = 0 by ring, sprof_zero])
+      (by (try simp only []); rw [show (2:ℝ)*(1/2) = 1 by norm_num, sprof_one])
+    exact this
   -- right segment reparam
   have hRightIcc : ∫⁻ t in Set.Icc (1/2:ℝ) 1,
       ENNReal.ofReal (‖deriv (concatR δ) t‖ / (concatR δ t) 2) = pathLenH δ 0 1 := by
@@ -598,9 +599,9 @@ theorem pathLenH_concat {γ δ : ℝ → E} {x y z : E}
           have h1 : 0 ≤ 1 - (2*t-1) := by linarith [ht.2]
           have h2 : (0:ℝ) ≤ 2*t-1 := by linarith [ht.1]
           positivity))
-      (by simp only []; rw [show (2:ℝ)*(1/2) - 1 = 0 by norm_num, sprof_zero])
-      (by simp only []; rw [show (2:ℝ)*1 - 1 = 1 by norm_num, sprof_one])
-    simpa only [concatR] using this
+      (by (try simp only []); rw [show (2:ℝ)*(1/2) - 1 = 0 by norm_num, sprof_zero])
+      (by (try simp only []); rw [show (2:ℝ)*1 - 1 = 1 by norm_num, sprof_one])
+    exact this
   -- assemble
   rw [pathLenH, hsplit, lintegral_union measurableSet_Ioc hdisj]
   congr 1
@@ -656,7 +657,7 @@ theorem deriv_coord {γ : ℝ → E} {t : ℝ} (hγ : DifferentiableAt ℝ γ t)
     HasDerivAt (fun s => (γ s) i) ((deriv γ t) i) t := by
   have h := hγ.hasDerivAt
   have := (coordCLM i).hasFDerivAt.comp_hasDerivAt t h
-  simpa [coordCLM_apply] using this
+  exact this
 
 /-- **z-component length lower bound.**  Every admissible path from `x` to `y`
 has hyperbolic length at least `|log (y₂/x₂)|` — the vertical drop is a lower
