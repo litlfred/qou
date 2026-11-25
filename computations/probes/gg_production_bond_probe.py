@@ -30,6 +30,7 @@ does not fit either — it isolates them. (a) scope-limited: measures the collap
 production (owner-gated — the canonical gg bond needs the keystone color-weight matrix).
 """
 from __future__ import annotations
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 
 import sys
 from math import comb, log
@@ -192,7 +193,7 @@ def report(res):
     print("| mirror pair | ΔB_sym (prod) | ΔB_sym (gg) | ΔB_AME |")
     print("|---|--:|--:|--:|")
     for p in res["mirror_pairs"]:
-        dba = f"{p['dB_AME']:+.3f}" if p["dB_AME"] is not None else "n/a"
+        dba = f"{mpmath.nstr(p['dB_AME'], 7)}" if p["dB_AME"] is not None else "n/a"
         print(f"| {p['pair']} | {p['dB_sym_prod']:+.3f} | {p['dB_sym_gg']:+.3f} | {dba} |")
     print("\nUnder the flavor-blind gg bond the mirror split collapses toward 0 — the residual to "
           "ΔB_AME is then the (unwired) Coulomb energy, the physically correct mirror-split source.\n")

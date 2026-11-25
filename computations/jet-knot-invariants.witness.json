@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T08:02:13.287468+00:00",
-  "commitSha": "eba68cb580eb04437f269096ce0f8017b9dc1554",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T17:54:20.042282+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "jet-knot-invariants",
   "scriptFile": "jet_knot_invariants.py",
-  "scriptHash": "7fbecd49553b",
-  "scriptCommitSha": "0d1143c4efea48014be71c4c1b7cf966976c87d4",
+  "scriptHash": "a059b9c1fa0e",
+  "scriptCommitSha": "bc6e912e5ee26d8cfb3cbdf48205f8303a7ed06e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [

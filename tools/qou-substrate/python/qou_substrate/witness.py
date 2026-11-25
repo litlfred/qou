@@ -1124,6 +1124,9 @@ def _raw_float_paths(obj, path="", integral_is_exact: bool = True):
             if "dur" in n.lower() or "elapsed" in n.lower()
         )
         for k, v in obj.items():
+            # A producer may hand in int (or other non-str) keys; JSON
+            # serialisation turns them into strings, so scan by that name.
+            k = str(k)
             if k.endswith("_str"):
                 yield from _raw_float_paths(v, f"{path}.{k}", integral_is_exact)
                 continue

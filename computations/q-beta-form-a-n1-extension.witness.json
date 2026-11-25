@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:06:08.530541+00:00",
-  "commitSha": "766a531446726071965fd29785f076e1780bc036",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T18:06:58.405654+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "geometric_N1_lift_overshoots_per_braid_ceiling",
@@ -13,7 +13,7 @@
     {
       "name": "factor_N1_equals_2q_squared_minus_2q_plus_1_over_q_squared",
       "computed": "1.0098171864542750738105690571795642528890492845754",
-      "expected": "1.009817186454275073810569057179564252889049284575397769243735710018152",
+      "expected": "1.00981718645427507381056905717956425288904928457539794617042749924236",
       "passed": true,
       "tolerance": "1e-40"
     },
@@ -25,11 +25,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 320,
+  "durationMs": 411,
   "computation": "q-beta-form-a-n1-extension",
   "scriptFile": "q_beta_form_a_n1_extension.py",
-  "scriptHash": "0b19bbdbd569",
-  "scriptCommitSha": "a4edb12a83ed9aa87b2f71996fb8bb5aaabf69fc",
+  "scriptHash": "c43926ed29a8",
+  "scriptCommitSha": "884e4ab20d628ae6f6261536cbbfb7bd043e5083",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,14 +37,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -55,31 +55,31 @@
   "description": "Symbolic extension of Form A Q_β to N=1 brane-tower depth. Derives the N=1 correction factor (1 + ℏ_q²) = (2q²-2q+1)/q² from the geometric series of E_0_full = E_0_N=0/(1-ℏ_q²). Closed form: Q_β^A,N=1 = m_e · (q+1) · |q²-2q-1| · (2q²-2q+1) / (2 q⁵). Substrate-only (CAL-1 m_e + CAL-2 q_0); no CAL-3 input. Comparator-only against CODATA Q_β. Class C (diagnostic / prediction).",
   "contentBlock": "prop:neutron-qvalue-symbolic",
   "parameters": {
-    "q_0_50dps": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "q_0_50dps": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "m_e_MeV": "0.51099895069",
-    "Q_beta_codata_MeV": "0.78233341"
+    "Q_beta_codata_MeV": "0.78233355931"
   },
   "data": {
     "Q_beta_N0_symbolic": "m_e*Abs((q**2 - 1)*(q*(q - 2) - 1))/(2*q**3*(q - 1))",
     "Q_beta_N1_symbolic": "m_e*(q**2 + (q - 1)**2)*Abs((q**2 - 1)*(q*(q - 2) - 1))/(2*q**5*(q - 1))",
     "E0_N0_MeV_50dps": "4.1859813632944758969450621587590084101434868908796",
-    "E0_N1_MeV_50dps": "4.2270759228320583323781531913513960712446606945831",
-    "E0_full_MeV_50dps": "4.227483355629030550268056026587211153615184198065608964520540847379139",
-    "E0_full_li2q_MeV_50dps": "4.226976042529561596920990827426593659826561031821569807161074568303882",
-    "E0_calibrated_MeV_50dps": "4.178970856150663877756931910339178825162367738171627508820824930313014",
-    "E0_full_vs_calibrated_pct": 1.160871926325242,
-    "E0_full_li2q_vs_calibrated_pct": 1.1487322604378314,
-    "E0_N0_vs_calibrated_pct": 0.1677567847474663,
-    "Q_beta_N0_MeV": "0.7836458273746212130749397513413968905257364410303",
+    "E0_N1_MeV_50dps": "4.227075922832058332378153191351396071244660694583",
+    "E0_full_MeV_50dps": "4.22748335562903055026805602658721115361518419806560971989079619155913",
+    "E0_full_li2q_MeV_50dps": "4.226976042529561596920990827426593659826561031821570544190745989977847",
+    "E0_calibrated_MeV_50dps": "4.178971653716165435277814966947362710269345829511388885502543460060287",
+    "E0_full_vs_calibrated_pct": 1.1608526195607456,
+    "E0_full_li2q_vs_calibrated_pct": 1.1487129559902156,
+    "E0_N0_vs_calibrated_pct": 0.1677376675210767,
+    "Q_beta_N0_MeV": "0.78364582737462121307493975134139689052573644103029",
     "Q_beta_N1_MeV": "0.79133902457607252727519257619382222324755888249807",
-    "Q_beta_full_MeV": "0.7914152989269529539721893000491746460838674556801316931927744945832309",
-    "N0_residual_keV": 1.312417374621213,
-    "N0_residual_pct": 0.1677567847474663,
-    "N1_residual_keV": 9.005614576072528,
-    "N1_residual_pct": 1.1511223298098092,
-    "N1_residual_ppm": 11511.223298098093,
+    "Q_beta_full_MeV": "0.7914152989269529539721893000491746460838674556801318346035208285073084",
+    "N0_residual_keV": 1.312268064621213,
+    "N0_residual_pct": 0.1677376675210767,
+    "N1_residual_keV": 9.005465266072527,
+    "N1_residual_pct": 1.1511030249060437,
+    "N1_residual_ppm": 11511.030249060437,
     "per_braid_ceiling_N1_pct": 0.009733268297486105,
-    "hbar_q_50dps": "0.099081716044258507839177117518906063985258373389444926476688081412443"
+    "hbar_q_50dps": "0.09908171604425850783917711751890606398525837338944581930888181427717694"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

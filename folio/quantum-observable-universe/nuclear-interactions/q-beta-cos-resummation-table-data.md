@@ -8,8 +8,8 @@
 | $\mathfrak{Q}_\beta^{\Delta,\cos}$ | $0.4443360045$ MeV | Markov-trace $\Delta$ base, cos-dressed |
 | $\mathfrak{Q}_\beta^A$ | $0.7836458274$ MeV | Form A ($z = 1$ coordinate sum) |
 | $\mathfrak{Q}_\beta^{A,\cos}$ | $0.7830036789$ MeV | Form A, cos-dressed at $z = q^3/(q^2+1)$ |
-| CODATA $\mathfrak{Q}_\beta$ | $0.78233341$ MeV | comparison value |
-| residual ($\Delta$ base) | $-431571.8$ ppm | — |
-| residual ($\Delta$ base, cos) | $-432037.5$ ppm | moves away from zero |
-| residual (Form A) | $+1677.6$ ppm | — |
-| residual (Form A, cos) | $+856.8$ ppm | $1.96\times$ smaller |
+| CODATA 2022 $\mathfrak{Q}_\beta$ | $0.78233355931$ MeV | comparison value |
+| residual ($\Delta$ base) | $-431571.9$ ppm | — |
+| residual ($\Delta$ base, cos) | $-432037.7$ ppm | moves away from zero |
+| residual (Form A) | $+1677.4$ ppm | — |
+| residual (Form A, cos) | $+856.6$ ppm | $1.96\times$ smaller |

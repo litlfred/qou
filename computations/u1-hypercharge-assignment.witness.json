@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T08:32:28.978522+00:00",
-  "commitSha": "0a455009681d90a8a1bc5d6d34b088b8973b3670",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T17:46:18.568908+00:00",
+  "commitSha": "fb2b10d004b67b29c3c5f0b6bfcf211c77a15caf",
   "assertions": [
     {
       "name": "coulomb_charge_pp_eq_writhe_half",
@@ -81,11 +81,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 38,
   "computation": "u1-hypercharge-assignment",
   "scriptFile": "u1_hypercharge_assignment.py",
-  "scriptHash": "e35e3ed85c4c",
-  "scriptCommitSha": "726eecfe685f46afdfb16e38c02c38616459e667",
+  "scriptHash": "1952db3016ad",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -93,13 +93,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -110,7 +111,7 @@
   "description": "EXPLORATORY derivation of the U(1) -> quantum-number map for the framing phase q^{w.c}. Engine: python+mpmath (mpmath for the q0 numerics; sympy for the symbolic twist expressions). Q1: c=1/2 is STRUCTURALLY FIXED by def:coulomb-charge (Q(H)=(1/2)(n_+-n_-)=w/2), NOT free, NOT fitted. Q2: the writhe ladder is tested against (Q,I_3,Y) by sign+ratio (scale-free); the p/n same-Y falsifier is applied. Q3: ribbon twist theta_j=q^{j(j+1)} eigenvalue ladder per Wedderburn block. RAW @ 70 dps (canonical COMPUTE_DPS); q0 is the proton-pinned q_parameter.Q_MP; PDG values are falsification references only; NO tuning.",
   "auditOnly": "docs/audits/2026-06-02-u1-hypercharge-assignment.md",
   "parameters": {
-    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
     "dps": 70,
     "c_coulomb_from_def_coulomb_charge": "1/2"
   },

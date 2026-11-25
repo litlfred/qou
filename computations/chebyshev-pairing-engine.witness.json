@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T14:04:43.651418+00:00",
-  "commitSha": "0878e35848247b7f0b5195c5082a212c88c774d9",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T17:49:49.743439+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "identity_holds_all_q",
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "chebyshev-pairing-engine",
   "scriptFile": "chebyshev_pairing_engine_witness.py",
-  "scriptHash": "6bfcde1d3273",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "93d20549ca19",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -132,7 +132,7 @@
   },
   "refs": [
     "docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md",
-    "content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md",
-    "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md"
+    "folio/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md",
+    "folio/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md"
   ]
 }
