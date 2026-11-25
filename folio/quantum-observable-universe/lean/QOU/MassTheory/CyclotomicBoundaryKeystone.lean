@@ -248,11 +248,11 @@ theorem Ctil_has_nonreal_root :
     simp only [Ctilℂ, eval_add, eval_sub, eval_mul, eval_pow, eval_C, eval_X]
   have hPmonic : P.Monic := by rw [hPdef]; monicity!
   have hPdeg : P.natDegree = 4 := by rw [hPdef]; compute_degree!
-  have hsplit : Splits (RingHom.id ℂ) P := IsAlgClosed.splits_codomain P
+  have hsplit : P.Splits := IsAlgClosed.splits P
   have hcard : P.roots.card = 4 := by rw [splits_iff_card_roots.mp hsplit, hPdeg]
   obtain ⟨a, b, c, d, hroots⟩ := Multiset.card_eq_four.mp hcard
   have hfacP : P = (X - C a) * (X - C b) * (X - C c) * (X - C d) := by
-    have h := eq_prod_roots_of_monic_of_splits_id hPmonic hsplit
+    have h := hsplit.eq_prod_roots_of_monic hPmonic
     rw [hroots] at h
     simp only [Multiset.insert_eq_cons, Multiset.map_cons, Multiset.map_singleton,
       Multiset.prod_cons, Multiset.prod_singleton] at h
