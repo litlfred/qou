@@ -87,8 +87,8 @@ the relators (`FourTermRelation.lean`) are instances of this action. -/
 theorem involutive_conj (σ : Perm (Fin (2 * n))) (hσ : Function.Involutive σ)
     (g : Perm (Fin (2 * n))) : Function.Involutive (g * σ * g⁻¹) := by
   intro i
-  simp only [Perm.mul_apply, Perm.inv_apply_self]
-  rw [hσ (g⁻¹ i), Perm.apply_inv_self]
+  simp only [Perm.mul_apply, Perm.coe_inv, Equiv.symm_apply_apply]
+  rw [hσ (g.symm i), Equiv.apply_symm_apply]
 
 /-- Conjugation preserves fixed-point-freeness. -/
 theorem fixedPointFree_conj (σ : Perm (Fin (2 * n))) (hσ : ∀ i, σ i ≠ i)
@@ -98,7 +98,7 @@ theorem fixedPointFree_conj (σ : Perm (Fin (2 * n))) (hσ : ∀ i, σ i ≠ i)
   -- h : g (σ (g⁻¹ i)) = i, so σ (g⁻¹ i) = g⁻¹ i, contradicting hσ.
   have h2 : σ (g⁻¹ i) = g⁻¹ i := by
     apply g.injective
-    rw [Perm.apply_inv_self]
+    rw [Perm.coe_inv, Equiv.apply_symm_apply]
     exact h
   exact hσ (g⁻¹ i) h2
 

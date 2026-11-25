@@ -66,9 +66,13 @@ theorem qDimTwistedWith_congr_dual [BalancedCategory C] {A B₁ B₂ : C}
     (p₁ : ExactPairing A B₁) (p₂ : ExactPairing A B₂) :
     @qDimTwistedWith C _ _ _ _ A B₁ p₁ = @qDimTwistedWith C _ _ _ _ A B₂ p₂ := by
   have hη : η_ A B₁ ≫ (A ◁ (rightDualIso p₁ p₂).hom) = η_ A B₂ := by
-    simpa using (@coevaluation_comp_rightAdjointMate C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A))
+    have h := @coevaluation_comp_rightAdjointMate C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A)
+    rw [MonoidalCategory.id_whiskerRight, Category.comp_id] at h
+    exact h
   have hε : ((rightDualIso p₁ p₂).hom ▷ A) ≫ ε_ A B₂ = ε_ A B₁ := by
-    simpa using (@rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A))
+    have h := @rightAdjointMate_comp_evaluation C _ _ A A ⟨B₂⟩ ⟨B₁⟩ (𝟙 A)
+    rw [MonoidalCategory.whiskerLeft_id, Category.id_comp] at h
+    exact h
   simp only [qDimTwistedWith]
   rw [← hη, ← hε]
   simp only [Category.assoc]
@@ -307,7 +311,13 @@ theorem qTrWith_tensor_monodromy (X X' Y Y' : C)
             ≫ (α_ X Y (Y' ⊗ X')).inv ≫ k := by
     intro Z k; monoidal
   simp only [ExactPairing.coevaluation] at hpre
-  simp only [qTrWith, tensorExactPairing, ExactPairing.coevaluation, ExactPairing.evaluation]
+  have hc : (@ExactPairing.coevaluation' C _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y'))
+      = η_ X X' ⊗≫ X ◁ η_ Y Y' ▷ X' ⊗≫ 𝟙 _ := rfl
+  have he : (@ExactPairing.evaluation' C _ _ (X ⊗ Y) (Y' ⊗ X') (tensorExactPairing X X' Y Y'))
+      = 𝟙 _ ⊗≫ Y' ◁ ε_ X X' ▷ Y ⊗≫ ε_ Y Y' := rfl
+  simp only [qTrWith, ExactPairing.coevaluation, ExactPairing.evaluation]
+  rw [hc, he]
+  simp only [ExactPairing.coevaluation, ExactPairing.evaluation]
   rw [hpre]
   rw [braiding_naturality_left_assoc, braiding_tensor_left_hom]
   simp only [Category.assoc, Iso.inv_hom_id_assoc]
