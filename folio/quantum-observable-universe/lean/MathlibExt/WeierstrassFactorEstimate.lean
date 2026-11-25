@@ -233,13 +233,13 @@ private theorem hasDerivAt_seg (p : ℕ) (z : ℂ) (t : ℝ) :
     HasDerivAt (fun r : ℝ => 1 - weierstrassFactor p ((r : ℂ) * z))
       (z ^ (p + 1) * (t : ℂ) ^ p * Complex.exp (expSum p ((t : ℂ) * z))) t := by
   have h1 : HasDerivAt (fun r : ℝ => (r : ℂ)) 1 t := by
-    simpa using (Complex.ofRealCLM.hasDerivAt (x := t))
+    simpa using (hasDerivAt_id' t).ofReal_comp
   have hinner : HasDerivAt (fun r : ℝ => (r : ℂ) * z) z t := by
     simpa using h1.mul_const z
   have h := (hasDerivAt_weierstrassFactor p ((t : ℂ) * z)).scomp t hinner
   have h2 := h.const_sub 1
   convert h2 using 1
-  simp only [smul_eq_mul, mul_pow]
+  simp only [smul_eq_mul, mul_pow, Function.comp_def]
   ring
 
 /-- **Integral representation.**  `1 - Eₚ(z) = ∫₀¹ z^{p+1}·t^p·exp(Sₚ(tz)) dt`.
