@@ -51,18 +51,18 @@ variable {R : Type*} [CommRing R]
 
 /-! ## Elements of `supp` -/
 
-theorem pth_toList (m : FreeMonoid Step) : (pth m.toList : PA R) = Finsupp.single m 1 := rfl
+theorem pth_toList (m : FreeMonoid Step) : (pth m.toList : PA R) = MonoidAlgebra.single m 1 := rfl
 
 theorem single_eq_smul_pth (m : FreeMonoid Step) (c : R) :
-    (Finsupp.single m c : PA R) = c • pth m.toList := by
-  rw [pth_toList, Finsupp.smul_single, smul_eq_mul, mul_one]
+    (MonoidAlgebra.single m c : PA R) = c • pth m.toList := by
+  rw [pth_toList, MonoidAlgebra.smul_single, smul_eq_mul, mul_one]
 
 /-- Induction principle for `supp R x y`: it is spanned by the valid strings. -/
 theorem supp_induction {x y : Word} {P : PA R → Prop} (h0 : P 0)
     (hadd : ∀ f g, P f → P g → P (f + g)) (hsmul : ∀ (c : R) f, P f → P (c • f))
     (hp : ∀ π, Valid x π y → P (pth π)) {f : PA R} (hf : f ∈ supp R x y) : P f := by
-  rw [supp, Finsupp.mem_supported] at hf
-  rw [← Finsupp.sum_single f, Finsupp.sum]
+  rw [supp, MonoidAlgebra.mem_supported] at hf
+  rw [← MonoidAlgebra.sum_coeff_single f, Finsupp.sum]
   refine Finset.sum_induction _ P hadd h0 fun m hm => ?_
   rw [single_eq_smul_pth]
   exact hsmul _ _ (hp _ (hf hm))
