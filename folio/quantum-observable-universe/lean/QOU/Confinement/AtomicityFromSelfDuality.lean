@@ -242,7 +242,7 @@ theorem sl2_diagonal_eq_diagEmbed (g : SpecialLinearGroup (Fin 2) R)
   have hinv : (↑(Units.mkOfMulEqOne ((g : Matrix (Fin 2) (Fin 2) R) 0 0)
       ((g : Matrix (Fin 2) (Fin 2) R) 1 1) hdet)⁻¹ : R) = (g : Matrix (Fin 2) (Fin 2) R) 1 1 := rfl
   fin_cases i <;> fin_cases j <;>
-    simp [diagEmbedHom, diagMat, h01, h10, hinv]
+    simp [diagEmbedHom, diagMat, h01, h10, hinv] <;> rfl
 
 end SL2Torus
 
