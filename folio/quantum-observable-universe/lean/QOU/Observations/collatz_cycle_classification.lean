@@ -295,7 +295,6 @@ theorem classify_ge_two_unit (M : ℕ) (hM : 2 ≤ M) (s : ℕ → ℤ[X]) (K : 
     (fun s s' h => odd_coeffs M hM h) s K hK hstep hβ
   have := affine_zero (fun i => s i + X ^ (M - 2)) K hK1 (by simp [hK]) (by
     intro j hj
-    simp only
     rw [mul_add, hodd j hj]
     have : (X : ℤ[X]) ^ M = X ^ 2 * X ^ (M - 2) := by
       rw [← pow_add]; congr 1; omega
@@ -423,7 +422,7 @@ theorem classify_one_unit (s : ℕ → ℤ[X]) (K : ℕ) (hK1 : 1 ≤ K) (hK : s
         simp at h4
       · exact hO
     have := affine_zero (fun i => X * s i + 1) K hK1 (by simp [hK]) (by
-      intro j hj; simp only
+      intro j hj
       rw [mul_add, mul_left_comm, allodd j hj]; ring)
     have := congrArg (coeff · 0) this
     simp at this
