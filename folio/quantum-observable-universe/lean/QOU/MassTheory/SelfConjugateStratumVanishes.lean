@@ -139,7 +139,7 @@ theorem box2_transpose : box2.transpose = box2 := by
 
 theorem box2_colLen_le_two : box2.colLen 0 ≤ 2 := by
   have hb : ∀ i, (i, 0) ∈ box2 ↔ i < 2 := by
-    intro i; simp [box2, YoungDiagram.mem_mk]
+    intro i; change (i, 0) ∈ Finset.range 2 ×ˢ Finset.range 2 ↔ i < 2; simp
   by_contra hc
   have h2 : (2, 0) ∈ box2 := mem_iff_lt_colLen.mpr (by omega)
   exact absurd ((hb 2).mp h2) (by omega)
