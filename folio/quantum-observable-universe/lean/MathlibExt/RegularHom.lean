@@ -34,11 +34,18 @@ open Representation Module
 
 variable {k G V : Type*} [Field k] [Group G] [AddCommGroup V] [Module k V]
 
-/-- The regular representation of `G` on `G →₀ k`, i.e. `Representation.ofMulAction`
-applied to `G` acting on itself. -/
+/-- The regular representation of `G` on `G →₀ k`: `G` acting on itself by left
+multiplication, pushed forward along `Finsupp.lmapDomain`. (This is what
+`Representation.ofMulAction k G G` was before Mathlib moved it onto `MonoidAlgebra k G`.) -/
 noncomputable abbrev regular (k G : Type*) [CommSemiring k] [Monoid G] :
-    Representation k G (G →₀ k) :=
-  ofMulAction k G G
+    Representation k G (G →₀ k) where
+  toFun g := Finsupp.lmapDomain k k (g • ·)
+  map_one' := by
+    ext x y
+    simp
+  map_mul' x y := by
+    ext z w
+    simp [mul_assoc]
 
 /-- `ρ_reg g` sends the basis vector at `h` to the basis vector at `g * h`. -/
 @[simp] theorem regular_single (g h : G) (c : k) :
@@ -70,7 +77,7 @@ theorem ofVector_mem (ρ : Representation k G V) (v : V) :
   -- both sides are linear in `x`; check on the `Finsupp` basis.
   induction x using Finsupp.induction_linear with
   | zero => simp
-  | add a b ha hb => simp [ha, hb]
+  | add a b ha hb => rw [map_add, map_add, ha, hb, map_add, map_add]
   | single h c =>
       rw [regular_single, ofVector_single, ofVector_single, map_smul, ← Module.End.mul_apply,
         ← map_mul]
