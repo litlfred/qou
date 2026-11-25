@@ -156,7 +156,7 @@ theorem card_filter_ge (d ell : ℕ) :
     ext j
     simp only [Finset.mem_filter, Finset.mem_range, not_le]
     omega
-  have hsum := Finset.filter_card_add_filter_neg_card_eq_card
+  have hsum := Finset.card_filter_add_card_filter_not
     (s := range ell) (p := fun j => ell ≤ j + d)
   rw [hnot, Finset.card_range, Finset.card_range] at hsum
   omega
