@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Does beta_Bor = V^3 factor as gamma(phi)*gamma(psi) with general colour weights, beyond
 the collinear corpus factorisation? Groebner basis of the 6 equations in 6 unknowns at a
-rational q (exact). Reports the solution-set dimension via the Hilbert-dimension test:
-the set is finite iff for every variable some leading term is a pure power of it.
-Never reads q0."""
+rational q (exact). Reports: whether the solution set is finite (every variable has a pure
+power among the leading terms); vdim, the number of solutions over the algebraic closure
+counted with multiplicity (standard monomials); and the solutions sympy's solve returns.
+CORRECTED 2026-11-25: sympy's solve returns only the solutions it can express, here the
+rational ones, so `solutions` is NOT the full solution set. Compare its length with vdim.
+Singular (symbolic h): the ideal is radical, 8 points = the corpus pair + an irreducible
+degree-6 component. Never reads q0."""
 import json
 from pathlib import Path
 import sympy as sp
@@ -21,8 +25,14 @@ def run(qv):
     r = {'q': str(qv), 'groebner_size': len(G.exprs), 'finite_solution_set': len(pure) == 6,
          'variables_with_pure_leading_power': sorted(X[i].name for i in pure)}
     if r['finite_solution_set']:
+        lead = [m for m in lts]
+        bound = max(sum(m) for m in lead) + 2
+        std = [m for m in __import__('itertools').product(range(bound + 1), repeat=6)
+               if not any(all(m[i] >= l[i] for i in range(6)) for l in lead)]
+        r['vdim'] = len(std)
         sols = sp.solve(G.exprs, X, dict=True)
-        r['solutions'] = [{str(k): str(v) for k, v in d.items()} for d in sols]
+        r['solutions_returned_by_sympy_solve'] = [{str(k): str(v) for k, v in d.items()} for d in sols]
+        r['sympy_solve_complete'] = len(sols) == r['vdim']
     return r
 
 out = {'q0Anchor': 'independent', 'q0AnchorReason': 'rational q; never reads q0',

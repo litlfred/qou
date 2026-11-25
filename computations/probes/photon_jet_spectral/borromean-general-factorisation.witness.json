@@ -14,7 +14,8 @@
     "s01",
     "s1"
    ],
-   "solutions": [
+   "vdim": 8,
+   "solutions_returned_by_sympy_solve": [
     {
      "p0": "0",
      "p01": "-5/9",
@@ -31,7 +32,8 @@
      "s01": "-5/9",
      "s1": "0"
     }
-   ]
+   ],
+   "sympy_solve_complete": false
   },
   {
    "q": "7/5",
@@ -45,7 +47,8 @@
     "s01",
     "s1"
    ],
-   "solutions": [
+   "vdim": 8,
+   "solutions_returned_by_sympy_solve": [
     {
      "p0": "0",
      "p01": "-24/49",
@@ -62,7 +65,8 @@
      "s01": "-24/49",
      "s1": "0"
     }
-   ]
+   ],
+   "sympy_solve_complete": false
   }
  ]
 }

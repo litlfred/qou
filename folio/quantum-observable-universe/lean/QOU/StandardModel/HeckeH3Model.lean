@@ -126,7 +126,8 @@ theorem one_V_V2_independent (h : R) :
   intro i; fin_cases i <;> simp [k0, k1, k2]
 
 open QOU.PhotonTangent in
-/-- **The Borromean photon weights are forced in `H₃(q)`**, with no measured hypothesis. -/
+/-- **The Borromean photon weights are forced on the line `R·V` in `H₃(q)`**, with no measured
+hypothesis. Over all photons the factorisation is not unique (audit §11.2). -/
 theorem borromean_weights_forced_model [IsDomain R] {q q' : R} (hqq : q * q' = 1) {x y : R}
     (hxy : (1 + x • modelV (q - q')) * (1 + y • modelV (q - q'))
       = modelV (q - q') * modelV (q - q') * modelV (q - q')) :

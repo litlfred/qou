@@ -280,11 +280,15 @@ What is NOT established: a reason why the slice is this W, rather than some othe
 | P9 | S₅ × C₂ has no Gassmann pair | **confirmed**: 535 subgroups, 57 classes, 0 pairs |
 | P10 | T(W)/(R) has degree-3 part 0 | **confirmed**: dim R = 7, Hilbert series 1 + 3t + 2t² = that of gr H₃ |
 
-**Not pre-registered, and stronger than P8.** Solving γ(φ)γ(ψ) = V³ over all six colour
-weights (Gröbner basis, finite solution set, all complex solutions) at q = 3/2 and q = 7/5
-gives exactly two solutions: φ = (0,0,qh), ψ = (0,0,−q⁻¹h) and the same pair swapped. So the
-two factors are forced to be pure vertex photons and their weights are forced. Two rational
-specialisations, not a generic-q proof.
+**Not pre-registered. 🛑 CORRECTED the same day: the claim originally written here was
+false.** It read: "solving γ(φ)γ(ψ) = V³ over all six colour weights at q = 3/2 and q = 7/5
+gives exactly two solutions … so the two factors are forced to be pure vertex photons". The
+Gröbner basis was right (the solution set is finite), but `sympy.solve` returned only the
+two rational points and silently dropped the rest. Singular, symbolic in h: the ideal is
+radical with **8 points** over the algebraic closure of ℚ(h), the corpus pair plus one
+irreducible degree-6 component (§11.2). At the proton q₀, **2 of the 6 extra points are
+real**; at q = 3/2 and 7/5, 4 are. So the pure-vertex form of the two factors is **not**
+forced over all photons; it is forced only on the line R·V (proved, P8).
 (`borromean_general_factorisation_probe.py`, witness `borromean-general-factorisation.witness.json`.)
 
 ### §8.2 What "W is tangent" buys downstream (owner question)
@@ -293,11 +297,14 @@ specialisations, not a generic-q proof.
    records "the photon weights qh, −q⁻¹h are still ruled, not derived". On the tangent line
    R·V, a product of two photons is 1 + (a+b)V + abV², and V's minimal polynomial forces
    a + b = h², ab = −h², so {a, b} = {qh, −q⁻¹h}. Proved in Lean given that 1, V, V² are
-   independent (`QOU.PhotonTangent.borromean_weights_forced`; independence measured, not
-   proved). Over all photons, not only the line, the measured solution set is the same pair
-   at two rational q. **What is still not derived:** why the Borromean core should be a
-   product of two photons at all. That premise is the γγ reading of β_Bor; once it is
-   granted, nothing about the weights is chosen.
+   independent (`QOU.PhotonTangent.borromean_weights_forced`; independence now proved in the
+   model, §11). 🛑 **Corrected:** over all photons, not only the line, the factorisation is
+   NOT unique; at q₀ there are two further real factorisations with nonzero strand weights
+   (§11.2). The weights are forced only under the extra premise that both factors are pure
+   vertex photons. **What is still not derived:** why the Borromean core should be a
+   product of two photons at all, and (corrected) why both should be pure vertex photons.
+   Granting both premises, nothing about the weights is chosen; granting only the first,
+   there are 4 real factorisations at q₀.
 2. **Factorisation into collinear photons becomes root-finding.** A word P(V) with
    P(0) = 1 factors into k photons on the line R·V iff P, reduced by V's minimal polynomial
    (x−1)(x² + (1+h²)x + 1), splits over R with constant term 1. This is a reusable test for
@@ -438,7 +445,7 @@ group at q₀ physically is not proposed here (anti-fit).
 | W ≠ W′, θ(W) = W′ | measured; **not Lean** |
 | normaliser of F₁ = centre; continuous symmetry; SO(1,1) vs SO(2); broken at cubic order | measured; **not Lean** |
 | photon filtration ranks; gr H₃ quadratic, dim R = 7; R not flip-stable | measured; **not Lean** |
-| V³ = γ(φ)γ(ψ) only the corpus pair over all photons | measured at q = 3/2, 7/5; **not Lean** |
+| V³ = γ(φ)γ(ψ) only the corpus pair over all photons | 🛑 **false** (corrected, §11.2): 8 points over ℂ, 4 real at q₀ |
 | Gassmann counts (S₅, S₅ × C₂) | measured (finite enumeration); **not Lean** |
 
 The unformalised rows are finite-dimensional linear-algebra or finite-group facts over H₃,
@@ -474,10 +481,44 @@ weights (generic-q Gröbner basis attempted, §11.1); the dimension 7 of the two
 relation space and degree-3 vanishing; the continuous (ℓ, G) symmetry and its signature;
 the Gassmann counts.
 
-### §11.1 Six-weight uniqueness: not closed
+### §11.1 Six-weight uniqueness: not closed (superseded by §11.2)
 
 A lex Gröbner basis of the six factorisation equations over ℚ(h), symbolic in h, did not
 finish in about 15 minutes and was stopped. The 4×4 consistency minors in p alone are
 dense polynomials of degree up to 8 in h. Uniqueness over all six colour weights therefore
 stays measured at q = 3/2 and q = 7/5, not proved for generic q. The collinear case is
 proved (`borromean_weights_forced_model`).
+
+### §11.2 Six-weight uniqueness is FALSE (Singular, owner: "keep trying")
+
+Singular 4 (`computations/probes/photon_jet_spectral/singular/`), coefficients ℚ(h), symbolic
+in h:
+
+- the ideal of γ(φ)γ(ψ) = V³ has dimension 0 and is **radical with 8 points**;
+- `minAssGTZ` gives two prime components: the corpus pair (φ₀ = φ₁ = ψ₀ = ψ₁ = 0,
+  φ₀₁ + ψ₀₁ = h², ψ₀₁² − h²ψ₀₁ − h² = 0; 2 points) and an **irreducible component of
+  degree 6** in shape position (every weight a polynomial in ψ₀₁ of degree ≤ 5, ψ₀₁ a root of a
+  sextic over ℚ(h)).
+
+Real points of the extra component (mpmath, 60 dps; each checked by γ(φ)γ(ψ) − V³ in the
+model, residual ≤ 1e-53; `borromean_extra_factorisations_probe.py`):
+
+| q | real extra factorisations |
+|---|---|
+| proton q₀ | **2** |
+| 3/2 | 4 |
+| 7/5 | 4 |
+
+At q₀ one of them is φ ≈ (0.0213, −0.0392, 0.2313), ψ ≈ (−0.0318, 0.0436, −0.1877). It sits
+close to the corpus pair (qh ≈ 0.2321, −q⁻¹h ≈ −0.1884) but has nonzero strand weights.
+
+**Consequence.** "β_Bor is a product of two photons" does not fix the photons. The corpus
+factorisation is singled out by the additional condition that both factors be pure vertex
+photons (φ₀ = φ₁ = 0). Under the 2026-11-21 ruling, the V-only letter cut is no longer a premise, so
+that condition is currently unruled. The Lean results are unaffected; they are all stated on
+the line R·V. Scope (a): this is about factorisation within the photon family, not about the
+linking-neutrality selection of V³ itself.
+
+Detector note: `sympy.solve` on a zero-dimensional Gröbner basis returned 2 of 8 points with
+no warning. The producer now records `vdim` (standard-monomial count) beside the returned
+solutions and a `sympy_solve_complete` flag (`false` here).
