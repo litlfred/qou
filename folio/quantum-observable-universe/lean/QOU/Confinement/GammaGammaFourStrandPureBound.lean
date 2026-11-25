@@ -690,16 +690,16 @@ theorem norm_le_of_rows {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (r : ℝ) (hr
   rw [Matrix.linfty_opNorm_def]
   have : (Finset.univ.sup fun i => ∑ j, ‖A i j‖₊) ≤ (⟨r, hr⟩ : NNReal) := by
     refine Finset.sup_le fun i _ => ?_
-    rw [← NNReal.coe_le_coe]
+    refine NNReal.coe_le_coe.mp ?_
     push_cast
-    simpa [Real.norm_eq_abs] using h i
+    simpa [Real.norm_eq_abs] using (h i).trans_eq (rfl : r = ((⟨r, hr⟩ : NNReal) : ℝ))
   exact_mod_cast this
 
 theorem abs_entry_le_norm {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (i j : Fin n) :
     |A i j| ≤ ‖A‖ := by
   rw [Matrix.linfty_opNorm_def]
   have h1 : ‖A i j‖₊ ≤ ∑ k, ‖A i k‖₊ :=
-    Finset.single_le_sum (f := fun k => ‖A i k‖₊) (fun _ _ => zero_le _) (Finset.mem_univ j)
+    Finset.single_le_sum (f := fun k => ‖A i k‖₊) (fun _ _ => zero_le) (Finset.mem_univ j)
   have h2 : ∑ k, ‖A i k‖₊ ≤ Finset.univ.sup fun i => ∑ k, ‖A i k‖₊ :=
     Finset.le_sup (f := fun i => ∑ k, ‖A i k‖₊) (Finset.mem_univ i)
   have h3 := h1.trans h2
