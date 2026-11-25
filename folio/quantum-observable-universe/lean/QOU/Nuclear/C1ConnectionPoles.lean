@@ -275,7 +275,7 @@ theorem summable_qThetaTerm (P w : ℝ) (hP : 1 < P) (hw : w ≠ 0) :
     rw [hexp, hCdef, ← Real.exp_add]
     apply Real.exp_le_exp.mpr
     have habs : ((n.natAbs : ℝ)) = |(n : ℝ)| := by
-      rw [Int.cast_natAbs]; simp
+      rw [Nat.cast_natAbs]; simp
     rw [habs]
     have h1 : M * (n : ℝ) - L * (n : ℝ) ≤ |M - L| * |(n : ℝ)| := by
       calc M * (n : ℝ) - L * (n : ℝ) = (M - L) * (n : ℝ) := by ring
@@ -670,7 +670,9 @@ theorem deriv_qThetaC_functional_equation (P : ℝ) (hP : 1 < P) (w : ℂ) (hw :
     rwa [mul_comm (deriv (qThetaC P) (c * w)) c] at h
   have h2 : HasDerivAt (fun z : ℂ => z * qThetaC P z)
       (qThetaC P w + w * deriv (qThetaC P) w) w := by
-    simpa using (hasDerivAt_id w).mul ((hdiff w hw).hasDerivAt)
+    have h := (hasDerivAt_id' w).mul ((hdiff w hw).hasDerivAt)
+    simp only [one_mul] at h
+    exact h
   have hEq : (fun z : ℂ => z * qThetaC P z) =ᶠ[nhds w] (fun z : ℂ => qThetaC P (c * z)) := by
     filter_upwards [isOpen_compl_singleton.mem_nhds (show w ∈ ({(0:ℂ)}ᶜ) by simpa using hw)]
       with z hz
@@ -844,7 +846,7 @@ theorem logDeriv_pow_sub_mul (u : ℂ → ℂ) (a : ℂ) (m : ℕ) (z : ℂ)
   have hsubne : (z - a) ≠ 0 := sub_ne_zero.mpr hz
   have hpow : DifferentiableAt ℂ (fun w : ℂ => (w - a) ^ m) z := hsub.pow m
   have hpowne : ((z - a) ^ m) ≠ 0 := pow_ne_zero _ hsubne
-  rw [logDeriv_mul z hpowne hun hpow hu, logDeriv_fun_pow hsub m]
+  rw [logDeriv_fun_mul z hpowne hun hpow hu, logDeriv_fun_pow hsub m]
   congr 1
   rw [logDeriv_apply]
   have : deriv (fun w : ℂ => w - a) z = 1 := by
@@ -915,7 +917,9 @@ theorem argumentPrinciple_annulus_single (u : ℂ → ℂ) (a : ℂ) (m : ℕ) {
       exact hρa h.symm
     have := (circleIntegrable_sub_zpow_iff (c := (0:ℂ)) (w := a) (R := ρ) (n := -1)).2
       (Or.inr (Or.inr h0))
-    simpa using this.const_mul (m : ℂ)
+    have h := this.const_mul (m : ℂ)
+    simp only [zpow_neg, zpow_one] at h
+    exact h
   -- assemble
   have hRne : R ≠ ‖a‖ := by linarith
   have hrne : r ≠ ‖a‖ := by linarith
@@ -992,7 +996,7 @@ theorem logDeriv_prod_pow_sub_mul (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ �
   have hprodne : (∏ a ∈ S, (z - a) ^ (m a)) ≠ 0 := Finset.prod_ne_zero_iff.mpr hne
   have hprodd : DifferentiableAt ℂ (fun w : ℂ => ∏ a ∈ S, (w - a) ^ (m a)) z :=
     DifferentiableAt.fun_finset_prod (fun a ha => hd a ha)
-  rw [logDeriv_mul z hprodne hun hprodd hu, logDeriv_prod S _ z hne hd]
+  rw [logDeriv_fun_mul z hprodne hun hprodd hu, logDeriv_fun_prod (s := S) (f := fun a w => (w - a) ^ (m a)) hne hd]
   congr 1
   refine Finset.sum_congr rfl fun a ha => ?_
   rw [logDeriv_fun_pow (by fun_prop : DifferentiableAt ℂ (fun w : ℂ => w - a) z)]
@@ -1071,7 +1075,9 @@ theorem argumentPrinciple_annulus_filter (u : ℂ → ℂ) (S : Finset ℂ) (m :
       exact hρa h.symm
     have := (circleIntegrable_sub_zpow_iff (c := (0:ℂ)) (w := a) (R := ρ) (n := -1)).2
       (Or.inr (Or.inr h0))
-    simpa using this.const_mul (m a : ℂ)
+    have h := this.const_mul (m a : ℂ)
+    simp only [zpow_neg, zpow_one] at h
+    exact h
   have hRne : ∀ a ∈ S, R ≠ ‖a‖ := fun a ha => ((hS a ha).2).symm
   have hrne : ∀ a ∈ S, r ≠ ‖a‖ := fun a ha => ((hS a ha).1).symm
   have hbig : ∀ ρ : ℝ, 0 ≤ ρ → Metric.sphere (0:ℂ) ρ ⊆ A → (∀ a ∈ S, ρ ≠ ‖a‖) →
