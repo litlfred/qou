@@ -115,7 +115,8 @@ theorem norm_le_of_re_le {R M r : ℝ} {f : ℂ → ℂ}
         intro w hw
         simp only [mem_ball, hg0, dist_zero_right]
         exact lt_of_le_of_lt (hgle w hw) (by linarith)
-      have := Complex.dist_le_div_mul_dist_of_mapsTo_ball hgdiff hmaps hzR
+      have := Complex.dist_le_div_mul_dist_of_mapsTo_ball hgdiff
+        (hmaps.mono_right Metric.ball_subset_closedBall) hzR
       simpa [hg0, dist_zero_right] using this
     refine le_of_forall_pos_le_add ?_
     intro δ hδ
@@ -126,7 +127,7 @@ theorem norm_le_of_re_le {R M r : ℝ} {f : ℂ → ℂ}
         = ‖z‖ / R + (δ / (‖z‖ / R + 1)) * (‖z‖ / R) := by
       field_simp
     rw [hexp] at h
-    refine h.trans (add_le_add_left ?_ _)
+    refine h.trans (add_le_add le_rfl ?_)
     rw [div_mul_eq_mul_div, div_le_iff₀ hpos]
     nlinarith [norm_nonneg z, hR.le, div_nonneg (norm_nonneg z) hR.le]
   -- `‖g z‖ ≤ r / R < 1`, then invert WITHOUT the Möbius map.
