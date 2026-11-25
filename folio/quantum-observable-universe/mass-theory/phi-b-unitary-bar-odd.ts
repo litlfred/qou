@@ -7,7 +7,7 @@ export default proposition({
   // schema field, so as a top-level key it was silently stripped. `meta` is
   // the declared escape hatch and keeps the declaration.
   meta: { is_mathematics: true },
-  lean: { ref: "qou:QOU.Nuclear.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even" },
+  lean: { ref: "qou:QCalculus.FaddeevModularDouble.sq_eq_one_of_bar_even" },
   computation: {
     engine: "python+mpmath",
     script: "computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py",
