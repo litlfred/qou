@@ -1,7 +1,6 @@
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Complex.Basic
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Positivity
@@ -14,8 +13,8 @@ Review of an external essay, owner request 2026-11-25
 (`docs/coordination/owner-rulings.md`; audit
 `docs/audits/2026-11-25-holography-qns-essay-review.md`). Each result below
 settles the premise of one verdict there. All are stated over a generic ring
-or ordered field (§7c); only `realGtOne_not_rootOfUnity` uses `ℝ`/`ℂ`, because
-"root of unity" is a statement about the complex number `q₀`.
+or ordered field (§7c). The archimedean statement that a real `q > 1` is not a
+root of unity lives in `QOU.BringsSurface.RealQNotRootOfUnity`.
 
 1. `hecke_inverse_eq` / `trace_inverse_eq`: from `σ² = hσ + 1` and
    `σ·s = 1`, the inverse is `σ − h`, so any linear trace has
@@ -30,9 +29,7 @@ or ordered field (§7c); only `realGtOne_not_rootOfUnity` uses `ℝ`/`ℂ`, beca
    the total of `dα` over faces vanishes, so a constant face value `c` is a
    coboundary only if `card F • c = 0`. Over a field of characteristic 0 and
    a nonempty face set, `c = 0`.
-4. `realGtOne_not_rootOfUnity`: a real `q > 1` is not a root of unity in `ℂ`.
-   This is the hypothesis the fusion (finite-rank) quotient of `Rep U_q` needs.
-5. `perm3_not_commutative`: `S₃` is nonabelian, so `Vec_{S₃}` has
+4. `perm3_not_commutative`: `S₃` is nonabelian, so `Vec_{S₃}` has
    `δ_g ⊗ δ_h ≇ δ_h ⊗ δ_g` for some `g, h` and carries no braiding, while
    Turaev–Viro is defined for it. Flip (Pachner 2–2) invariance therefore
    does not use, and is not, a braid relation.
@@ -125,14 +122,6 @@ theorem const_eq_zero_of_coboundary {K : Type*} [Field K] [CharZero K]
   exact (mul_eq_zero.mp h).resolve_left hF
 
 end Stokes
-
-/-- A real `q > 1` is not a root of unity in `ℂ`: `(q : ℂ) ^ n ≠ 1` for `n ≥ 1`. -/
-theorem realGtOne_not_rootOfUnity (q : ℝ) (hq : 1 < q) (n : ℕ) (hn : n ≠ 0) :
-    (q : ℂ) ^ n ≠ 1 := by
-  intro h
-  have h' : ((q ^ n : ℝ) : ℂ) = 1 := by rw [Complex.ofReal_pow]; exact h
-  have : q ^ n = 1 := Complex.ofReal_eq_one.mp h'
-  exact (one_lt_pow₀ hq hn).ne' this
 
 /-- `S₃` is not commutative, so `Vec_{S₃}` admits no braiding. -/
 theorem perm3_not_commutative : ∃ g h : Equiv.Perm (Fin 3), g * h ≠ h * g :=

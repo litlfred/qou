@@ -57,11 +57,11 @@ to F; the two are distinct axioms that interact, and neither is the other.
 
 **Scope (a), not established.** Both constructions need C to be spherical fusion:
 finitely many simples, semisimple (Turaev–Virelizier; Levin–Wen
-cond-mat/0404617; Müger's centre theorem, `library/arxiv-0812.2426v1`). For
+cond-mat/0404617; Bruguières–Virelizier, `library/arxiv-0812.2426v1`, recalling Müger's centre theorem). For
 generic q the Hecke algebras H_n(q) are semisimple, but `Rep U_q(sl₂)` has
 infinitely many simples V_n with nonzero quantum dimension, so it is not fusion.
 The standard finite (fusion) quotient exists only when q is a root of unity.
-`realGtOne_not_rootOfUnity` (Lean) proves that a real q > 1, in particular
+`realGtOne_not_rootOfUnity` (Lean, `QOU/BringsSurface/RealQNotRootOfUnity.lean`) proves that a real q > 1, in particular
 q₀ ≈ 1.10998, is not one. The implication "fusion quotient ⇒ root of unity" is
 cited, not proved here.
 
@@ -162,7 +162,9 @@ into the paper; that literature is not yet in `library/`.
 ## What is usable from the ingested papers
 
 Owner question, relayed 2026-11-25: *"what is usable from the ingested papers?"*
-Every row is grounded in the ingested text (`library/<doc-id>/sections/`, page
+Every row is grounded in the ingested text (`library/<doc-id>/sections/`; the
+full text of the 11 new papers lives in `litlfred/qou-private` (PR #2) under the
+same paths, per the owner ruling of 2026-11-25; public qou keeps their metadata), page
 numbers from the section front matter), and every quote was spot-checked.
 "Use" is one of cite / Lean-formalise / compute / scope-limit.
 
