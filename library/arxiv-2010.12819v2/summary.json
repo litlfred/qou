@@ -1,0 +1,281 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2010.12819v2",
+ "source_sha256": "ddc0493d60d48e77",
+ "brief": "The action of the Virasoro algebra in quantum spin chains. I. The non-rational case — We investigate the action of discretized Virasoro generators, built out of generators of the lattice",
+ "extended": "**The action of the Virasoro algebra in quantum spin chains. I. The non-rational case**\n\n*Linnea Grans-Samuelsson 1, Jesper Lykke Jacobsen 1,2,3,4, and Hubert Saleur 1,5*\n\n61 pp, 52 sections.\n\n**Abstract.** We investigate the action of discretized Virasoro generators, built out of generators of the lattice Temperley-Lieb algebra (“Koo-Saleur generators” [1]), in the critical XXZ quantum spin chain. We ex- plore the structure of the continuum-limit Virasoro modules at generic central charge for the XXZ vertex model, paralleling [2] for the loop model. We ﬁnd again indecomposable modules, but this time not loga- rithmic ones. The limit of the Temperley-Lieb modules Wj,1 for j ⁄= 0 contains pairs of “conjugate states” with conformal weights ( hr,s, hr,−s) and ( hr,−s, hr,s) that give rise to dual structures: Verma or co-Verma modules. The limit of W0,q±2 contains diagonal ﬁelds (hr,1, hr,1) and gives rise to either only Verma or only co-Verma modules, depending on the sign of the exponent in q±2.\n\n**Outline.** Front matter; 1 Introduction; 2 Discrete Virasoro algebra and the Koo-Saleur; 2.1 The Temperley-Lieb algebra in the periodic; 2.1.1 The algebra TaN(m); 2.1.2 Standard modules; 2.2 Physical systems and the Temperley-Lieb Ha; 2.3 Indecomposability; 2.4 Discrete Virasoro algebra; 3 Some features of the continuum limit; 3.1 Modules in the continuum; 3.2 Bosonization and expected results; 3.3 The choices of metric; 3.4 Feigin-Fuchs modules and conjugate states; 4 Bethe Ansatz picture; 4.1 Bethe-ansatz and the identification of sca; 4.1.1 Overlaps and mixing; 4.2 Conjugate states and Bethe roots",
+ "tokens": {
+  "brief": 46,
+  "extended": 404
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-001-2-discrete-virasoro-algebra-and-the-koo-saleur-f",
+   "title": "Discrete Virasoro algebra and the Koo-Saleur formulae",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-002-21-the-temperley-lieb-algebra-in-the-periodic-ca",
+   "title": "The Temperley-Lieb algebra in the periodic case",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-211-the-algebra-tanm",
+   "title": "The algebra TaN(m)",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-004-212-standard-modules",
+   "title": "Standard modules",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-005-22-physical-systems-and-the-temperley-lieb-hamil",
+   "title": "Physical systems and the Temperley-Lieb Hamiltonian",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-006-23-indecomposability",
+   "title": "Indecomposability",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-24-discrete-virasoro-algebra",
+   "title": "Discrete Virasoro algebra",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-3-some-features-of-the-continuum-limit",
+   "title": "Some features of the continuum limit",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-009-31-modules-in-the-continuum",
+   "title": "Modules in the continuum",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-32-bosonization-and-expected-results",
+   "title": "Bosonization and expected results",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-011-33-the-choices-of-metric",
+   "title": "The choices of metric",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-012-34-feigin-fuchs-modules-and-conjugate-states",
+   "title": "Feigin-Fuchs modules and conjugate states",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-013-4-bethe-ansatz-picture",
+   "title": "Bethe Ansatz picture",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-014-41-bethe-ansatz-and-the-identification-of-scalin",
+   "title": "Bethe-ansatz and the identification of scaling states",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-015-411-overlaps-and-mixing",
+   "title": "Overlaps and mixing",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-016-42-conjugate-states-and-bethe-roots",
+   "title": "Conjugate states and Bethe roots",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-017-43-some-results-about-form-factors",
+   "title": "Some results about form factors",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-018-431-properties-under-conjugation-and-parity-impl",
+   "title": "Properties under conjugation and parity, implications for the modules",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-019-5-lattice-virasoro-in-the-non-degenerate-case",
+   "title": "Lattice Virasoro in the non-degenerate case",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-020-51-koo-saleur-generators-and-lattice-momentum",
+   "title": "Koo-Saleur generators and lattice momentum",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-021-52-numerical-results-for-l-1",
+   "title": "Numerical results for L-1",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-022-6-lattice-virasoro-in-the-degenerate-case",
+   "title": "Lattice Virasoro in the degenerate case",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-023-61-modules-wj1-for-j-0",
+   "title": "Modules Wj,1 for j =0",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-024-62-modules-w0qpm2",
+   "title": "Modules W0,qpm2",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-025-7-anomalies-and-the-convergence-of-the-koo-saleu",
+   "title": "Anomalies, and the convergence of the Koo-Saleur generators",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-026-71-scaling-weak-convergence",
+   "title": "``Scaling-weak'' convergence",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-027-72-a-closer-look-at-limits-and-commutators",
+   "title": "A closer look at limits and commutators",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-028-721-the-case-of-n-0",
+   "title": "The case of n =0",
+   "pages": "29-32"
+  },
+  {
+   "id": "sec-029-722-the-case-of-n-0",
+   "title": "The case of n= 0",
+   "pages": "32-36"
+  },
+  {
+   "id": "sec-030-8-conclusions",
+   "title": "Conclusions",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-031-a-some-remarks-on-scalar-products",
+   "title": "A Some remarks on scalar products",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-032-b-more-on-form-factors",
+   "title": "B More on form factors",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-033-b1-general-framework-notations-conventions",
+   "title": "B.1 General framework, notations, conventions",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-034-b2-quantum-inverse-scattering-method",
+   "title": "B.2 Quantum Inverse Scattering Method",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-035-b3-the-expressions-for-the-necessary-fo1oj",
+   "title": "B.3 The expressions for the necessary FO1,…,Oj",
+   "pages": "40-42"
+  },
+  {
+   "id": "sec-036-b33-scalar-products-and-the-homogeneous-limit",
+   "title": "B.3.3 Scalar products and the homogeneous limit",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-037-c-numerical-results-for-the-degenerate-case",
+   "title": "C Numerical results for the degenerate case",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-038-c1-the-case-of-wj1",
+   "title": "C.1 The case of Wj,1",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-039-c11-considerations-at-level-2",
+   "title": "C.1.1 Considerations at level 2",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-040-c12-form-factor-results-for-wj1",
+   "title": "C.1.2 Form factor results for Wj,1",
+   "pages": "45-47"
+  },
+  {
+   "id": "sec-041-c2-the-case-of-w0qpm2",
+   "title": "C.2 The case of W0,qpm2",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-042-c3-relevant-bethe-roots",
+   "title": "C.3 Relevant Bethe roots",
+   "pages": "48-49"
+  },
+  {
+   "id": "sec-043-d-proof-of-133",
+   "title": "D Proof of (133)",
+   "pages": "49-50"
+  },
+  {
+   "id": "sec-044-e-further-numerical-results-for-section-72",
+   "title": "E Further numerical results for Section 7.2",
+   "pages": "50-53"
+  },
+  {
+   "id": "sec-045-f-the-chiral-antichiral-commutator",
+   "title": "F The chiral-antichiral commutator",
+   "pages": "53-55"
+  },
+  {
+   "id": "sec-046-g-the-ordinary-xxz-case",
+   "title": "G The ordinary XXZ case",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-047-g1-algebraic-description-of-the-ordinary-xxz-cas",
+   "title": "G.1 Algebraic description of the ordinary XXZ case",
+   "pages": "55-56"
+  },
+  {
+   "id": "sec-048-g2-central-charge-and-conformal-weights-for-the",
+   "title": "G.2 Central charge and conformal weights for the ordinary XXZ case",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-049-g3-numerical-results-for-the-ordinary-xxz-case",
+   "title": "G.3 Numerical results for the ordinary XXZ case",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-050-g4-interpolation-between-c1-and-c1-6xx1",
+   "title": "G.4 Interpolation between c=1 and c=1-6x(x+1)",
+   "pages": "57-61"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

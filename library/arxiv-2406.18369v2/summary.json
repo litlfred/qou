@@ -1,0 +1,87 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2406.18369v2",
+ "source_sha256": "20b3f8dbc40eacc3",
+ "brief": "112 years of listening to Riemannian manifolds — In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace eigenvalue equation, also known as the Helmholtz equation, pondering to what extent the",
+ "extended": "**112 years of listening to Riemannian manifolds**\n\n*GUSTAV MÅRDBY AND JULIE ROWLETT*\n\n42 pp, 13 sections.\n\n**Abstract.** In1910, HendrikAntoonLorentzdelvedintotheenigmaticLaplace eigenvalue equation, also known as the Helmholtz equation, pondering to what extent the geometry in which one solves the equation can be recovered from knowledge of the eigenvalues. Lorentz, inspired by physical and musical analo- gies, conjectured a fundamental relationship between eigenvalues, domain vol- ume, and dimensionality. While his conjecture initially seemed insurmount- able, Hermann Weyl’s groundbreaking proof in 1912 illuminated the deep con- nection between eigenvalues and geometric properties. Over the ensuing 112 years, mathematicians and physicists have continued to decipher the intricate interplay between eigenvalues and geometry.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgements; 2 Weyl's asymptotic law; 2.1 Preliminaries; 3 Listening to flat tori; 4 One cannot hear the shape of a Riemannian ma; 4.1 Geometric preliminaries; 4.2 What could Kac hear?; 5 One cannot hear...; 6 One cannot hear the shape of a drum, but one; 7 We're still listening...; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3: Let Ω be a domain with piecewise smooth boundary. Ifλk denotes\n- Theorem 2.5: Let Ω⊂ R2 be a bounded domain and let0 < λ1≤\n- Theorem 3.1: The spectrum of a flat torusRn/Γ is the multi-set\n- Theorem 3.3: Two flat tori are isospectral if and only if their\n- Theorem 3.5: LetP andQ be the associated matrices of two even\n- Theorem 4.2: If Ω has r holes, thenχ(Ω) = 1−r.",
+ "tokens": {
+  "brief": 48,
+  "extended": 402
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-2-weyls-asymptotic-law",
+   "title": "Weyl's asymptotic law",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-21-preliminaries",
+   "title": "Preliminaries",
+   "pages": "4-12"
+  },
+  {
+   "id": "sec-004-3-listening-to-flat-tori",
+   "title": "Listening to flat tori",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-005-4-one-cannot-hear-the-shape-of-a-riemannian-mani",
+   "title": "One cannot hear the shape of a Riemannian manifold but can one hear the shape of a drum?",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-006-41-geometric-preliminaries",
+   "title": "Geometric preliminaries",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-007-42-what-could-kac-hear",
+   "title": "What could Kac hear?",
+   "pages": "17-33"
+  },
+  {
+   "id": "sec-008-5-one-cannot-hear",
+   "title": "One cannot hear...",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-009-6-one-cannot-hear-the-shape-of-a-drum-but-one-ca",
+   "title": "One cannot hear the shape of a drum, but one can hear...",
+   "pages": "35-37"
+  },
+  {
+   "id": "sec-010-7-were-still-listening",
+   "title": "We're still listening...",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "38-42"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

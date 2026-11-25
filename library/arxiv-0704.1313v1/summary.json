@@ -1,0 +1,72 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0704.1313v1",
+ "source_sha256": "a75bb39c60ec9b15",
+ "brief": "Mutant knots and intersection graphs — We prove that if a ﬁnite order knot invariant does not disting uish mutant knots, then the corresponding weight system depends on the interse ction graph of a",
+ "extended": "**Mutant knots and intersection graphs**\n\n*S. V. Chmutov ∗, S. K. Lando †*\n\n13 pp, 10 sections.\n\n**Abstract.** We prove that if a ﬁnite order knot invariant does not disting uish mutant knots, then the corresponding weight system depends on the interse ction graph of a chord diagram rather than on the diagram itself. The convers e statement is easy and well known. We discuss relationship between our res ults and certain Lie algebra weight systems.\n\n**Outline.** Front matter; Introduction; Proof; Representability of graphs as the intersection; Proof of Theorem ??; Lie algebra weight systems and intersection gr; Weight systems via Lie algebras; The 4-bialgebra of graphs; The sl(2) weight system; The gl(1|1) weight system\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: If a ﬁnite order knot invariant does not distinguish mutants , then the\n- Theorem 2: Two chord diagrams have the same intersection graph if and on ly if they\n- Theorem 3: The universal weight systems associated to the Lie algebra sl(2) and\n- Theorem 4: The universal weight system associated to the Lie algebra sl(2) depends\n- Theorem 5: The universal weight systems associated to the Lie superalg ebra gl(1|1)\n- Theorem 3: Consider the part C2 participating in the Whitney twist and apply to",
+ "tokens": {
+  "brief": 49,
+  "extended": 320
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-proof",
+   "title": "Proof",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-representability-of-graphs-as-the-intersection-g",
+   "title": "Representability of graphs as the intersection graphs of chord diagrams",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-lie-algebra-weight-systems-and-intersection-grap",
+   "title": "Lie algebra weight systems and intersection graphs",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-weight-systems-via-lie-algebras",
+   "title": "Weight systems via Lie algebras",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-006-the-4-bialgebra-of-graphs",
+   "title": "The 4-bialgebra of graphs",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-the-sl2-weight-system",
+   "title": "The sl(2) weight system",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-008-the-gl11-weight-system",
+   "title": "The gl(1|1) weight system",
+   "pages": "11-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

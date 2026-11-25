@@ -1,0 +1,110 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-cond-mat-0404617v2",
+ "source_sha256": "8e31b9ec8ac2e034",
+ "brief": "String-net condensation: A physical mechanism for topological phases — 18 sections: Front matter; Introduction; String-nets and gauge theories",
+ "extended": "**String-net condensation: A physical mechanism for topological phases**\n\n*Michael A. Levin and Xiao-Gang Wen ∗*\n\n21 pp, 18 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 String-nets and gauge theories; 3 General string-net picture; 4 String-net condensation in $(2+1)$ dimension; 4.1 Fixed-point wave functions; 4.2 Fixed-point Hamiltonians; 4.3 Quasiparticle excitations; 5 String-net condensation in $(3+1)$ and highe; 6 Examples; 6.1 $N=1$ string model; 6.2 $N=1$ string-net model; 6.3 $N = 2$ string-net models; 7 Conclusion; A General string-net models; B Self-consistency conditions; C Graphical representation of the Hamiltonian; D Graphical representation of the string opera",
+ "tokens": {
+  "brief": 35,
+  "extended": 173
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-string-nets-and-gauge-theories",
+   "title": "String-nets and gauge theories",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-3-general-string-net-picture",
+   "title": "General string-net picture",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-4-string-net-condensation-in-21-dimensions",
+   "title": "String-net condensation in $(2+1)$ dimensions",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-41-fixed-point-wave-functions",
+   "title": "Fixed-point wave functions",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-005-42-fixed-point-hamiltonians",
+   "title": "Fixed-point Hamiltonians",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-006-43-quasiparticle-excitations",
+   "title": "Quasiparticle excitations",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-007-5-string-net-condensation-in-31-and-higher-dimen",
+   "title": "String-net condensation in $(3+1)$ and higher dimensions",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-008-6-examples",
+   "title": "Examples",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-009-61-n1-string-model",
+   "title": "$N=1$ string model",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-010-62-n1-string-net-model",
+   "title": "$N=1$ string-net model",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-011-63-n-2-string-net-models",
+   "title": "$N = 2$ string-net models",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-012-7-conclusion",
+   "title": "Conclusion",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-013-a-general-string-net-models",
+   "title": "General string-net models",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-014-b-self-consistency-conditions",
+   "title": "Self-consistency conditions",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-015-c-graphical-representation-of-the-hamiltonian",
+   "title": "Graphical representation of the Hamiltonian",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-016-d-graphical-representation-of-the-string-operato",
+   "title": "Graphical representation of the string operators",
+   "pages": "20-21"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

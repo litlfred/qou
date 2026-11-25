@@ -1,0 +1,1728 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1503.06237v2",
+ "source": {
+  "file": "1503.06237v2.pdf",
+  "sha256": "55572e7133514f4adc54f5bfb025111fc3fcb911c87ca22bae0a9e30955d1e05",
+  "bytes": 4496178,
+  "pages": 65,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:42:51Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1503.06237",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "22 Jul 2015"
+  },
+  "doi": null,
+  "title": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence",
+  "authors_raw": null,
+  "title_lines": [
+   "Holographic quantum error-correcting codes:",
+   "Toy models for the bulk/boundary",
+   "correspondence",
+   "Fernando Pastawski,*a Beni Yoshida*a Daniel Harlow,b John Preskill,a",
+   "aInstitute for Quantum Information & Matter and Walter Burke Institute for Theoretical"
+  ],
+  "abstract": "We propose a family of exactly solvable toy models for the AdS/CFT correspondence based on a novel construction of quantum error-correcting codes with a tensor network structure. Our building block is a special type of tensor with maximal entanglement along any bipartition, which gives rise to an isometry from the bulk Hilbert space to the boundary Hilbert space. The entire tensor network is an encoder for a quantum error-correcting code, where the bulk and boundary degrees of freedom may be identi\ufb01ed as logical and physical degrees of freedom respectively. These models capture key features of entanglement in the AdS/CFT correspondence; in particular, the Ryu-Takayanagi formula and the negativity of tripartite information are obeyed exactly in many cases. That bulk logical operators can be represented on multiple boundary regions mimics the Rindler-wedge reconstruction of boundary operators from bulk operators, realizing explicitly the quantum error-correcting features of AdS/CFT recently proposed in [1]. arXiv:1503.06237v2 [hep-th] 22 Jul 2015",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20150723003034Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_raw": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 1,
+   "title": "Isometries and perfect tensors",
+   "page": 5,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "Construction of holographic quantum states and codes",
+   "page": 8,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Entanglement structure of holographic states",
+   "page": 11,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "Ryu-Takayanagi formula",
+   "page": 11,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "Bipartite entanglement of disconnected regions",
+   "page": 13,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "A map of multipartite entanglement",
+   "page": 16,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "Negative tripartite information",
+   "page": 21,
+   "source": "outline",
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 1,
+   "title": "Quantum error correction in holographic codes",
+   "page": 23,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "AdS-Rindler reconstruction as error correction",
+   "page": 23,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 2,
+   "title": "The physical interpretation of holographic codes",
+   "page": 25,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 2,
+   "title": "Bulk reconstruction from tensor pushing",
+   "page": 25,
+   "source": "outline",
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 2,
+   "title": "Connected reconstruction and the causal wedge",
+   "page": 27,
+   "source": "outline",
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 2,
+   "title": "Disconnected reconstruction and the entanglement wedge",
+   "page": 28,
+   "source": "outline",
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
+  },
+  {
+   "level": 2,
+   "title": "Erasure threshold",
+   "page": 32,
+   "source": "outline",
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
+  },
+  {
+   "level": 2,
+   "title": "Holographic stabilizer codes",
+   "page": 36,
+   "source": "outline",
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
+  },
+  {
+   "level": 2,
+   "title": "Are local gauge constraints enough?",
+   "page": 39,
+   "source": "outline",
+   "number": "5.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
+  },
+  {
+   "level": 1,
+   "title": "Black holes and holography",
+   "page": 40,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
+  },
+  {
+   "level": 1,
+   "title": "Open problems and outlook",
+   "page": 41,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
+  },
+  {
+   "level": 1,
+   "title": "A Perfect tensor examples",
+   "page": 43,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
+  },
+  {
+   "level": 2,
+   "title": "A.1 5-qubit code and 6-qubit state",
+   "page": 43,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
+  },
+  {
+   "level": 2,
+   "title": "A.2 3 -qutrit code and 4-qutrit state",
+   "page": 45,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
+  },
+  {
+   "level": 2,
+   "title": "A.3 Large n",
+   "page": 46,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
+  },
+  {
+   "level": 1,
+   "title": "B Proof of RT for negatively curved planar graphs",
+   "page": 47,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
+  },
+  {
+   "level": 1,
+   "title": "C Counting tensors in the pentagon code",
+   "page": 50,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
+  },
+  {
+   "level": 2,
+   "title": "C.1 Counting tensors",
+   "page": 50,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
+  },
+  {
+   "level": 2,
+   "title": "C.2 Connected reconstruction",
+   "page": 51,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
+  },
+  {
+   "level": 1,
+   "title": "D Estimating greedy erasure thresholds",
+   "page": 53,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
+  },
+  {
+   "level": 2,
+   "title": "D.1 Analytic bounds",
+   "page": 54,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
+  },
+  {
+   "level": 2,
+   "title": "D.2 Numerical evaluation",
+   "page": 58,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
+  },
+  {
+   "level": 1,
+   "title": "E Reconstructing beyond the greedy algorithm",
+   "page": 58,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
+  },
+  {
+   "level": 2,
+   "title": "E.1 Reconstruction from symmetry guarantees",
+   "page": 58,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
+  },
+  {
+   "level": 2,
+   "title": "E.2 Approximate reconstruction for typical tensors",
+   "page": 61,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Diagrammatic tensor notation, here showing that T is an isometry",
+   "page": 6,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Operator pushing through an isometric tensor",
+   "page": 6,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "If",
+   "page": 6,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "White dots represent physical legs on the boundary. Red dots represent logical input legs associated to each perfect tensor",
+   "page": 9,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A cut through a holographic tensor network by a curve c bounded by \u2202A. Boundary indices a and b are uncontracted in A and its complement Ac respectively; tensors P and Q are contracted by summing over the index i which is cut by c",
+   "page": 12,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A step in the greedy algorithm. The upper node has at least three legs contracted with the region P , which we have shaded red, so we include it into P",
+   "page": 14,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Three examples where the greedy algorithm fails to \ufb01nd the matching minimal geodesics from complementary regions. The \ufb01rst example involves disconnected regions in the holographic state. The second example involves a positive curvature obstruction at the center of the tiling which blocks the greedy",
+   "page": 14,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "(a) Distillation of two EPR pairs. (b) The corresponding local moves. Before the \ufb01rst move, the tensor on the left has four legs crossed by the cut. Because the tensor is perfect, its remaining two legs are maximally entangled with a subsystem of these four. The \ufb01rst local unitary transformation act",
+   "page": 17,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "A geometric map of bipartite entanglement. White dots represent physical spins distilled by applying local unitary transformations to A and Ac",
+   "page": 18,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The \u201cmap of entanglement\u201d and multipartite residual regions in a holographic state. For",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Bulk \ufb01eld reconstruction in the causal wedge. On the left is a spacetime diagram, [A] associated with a boundary sub-",
+   "page": 24,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Boundary reconstruction of bulk operators. The blue operator on the central bulk leg is pushed to an operator supported on a fairly large boundary region, while the green bulk operator further from the center is pushed to an operator supported on a smaller boundary region. Bulk legs for the other te",
+   "page": 26,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Disconnected reconstruction of a central operator beyond the causal wedge. Each of two separate connected boundary regions is too small for reconstruction of the central operator, yet the reconstruction is possible on the union of the two regions. In this example the greedy algorithm reaches the cen",
+   "page": 29,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "The intersection of the entanglement wedge",
+   "page": 31,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "29"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "it may have a very shallow causal wedge",
+   "page": 32,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Dangerous small erasures for the triangle (a) and pentagon codes (b). In the triangle code erasing two boundary spins, boxed in blue, can prevent reconstruction of the central tensor. In the pentagon code erasing four spins can prevent the reconstruction",
+   "page": 33,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Tensor networks for holographic pentagon/hexagon codes with erasure thresholds, where neighboring polygons share contracted indices. In the network shown on the left, pentagons and hexagons alternate on the lattice; each pentagon carries one dangling bulk index, and hexagons carry no bulk degrees of",
+   "page": 35,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "A black hole in a holographic code, and the corresponding wormhole geometry",
+   "page": 41,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Here we illustrate how to construct a unitary circuit interpretation of a holographic state which witnesses the RT entanglement for a simply connected boundary region",
+   "page": 49,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "The \ufb01rst few levels of the unwrapped pentagon code. The dangling logical legs are not shown, and the \u201chollow\u201d lines and dots are identi\ufb01ed with the solid ones on the other side. The tensors in the top row have all remaining non-logical legs extended outwards and treated as physical qubits",
+   "page": 50,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "The best-case reconstruction of the center; we need to use only three \u201cbranches\u201d of the tree, and in the outer branches we can choose to push \u201cinwards\u201d every time",
+   "page": 52,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "The worst-case reconstruction of the center; we are just barely not able to use the second branch, so we need to use the third, fourth, and \ufb01fth",
+   "page": 52,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "Locations of the \u201cbad\u201d points from \ufb01gure 16b. If the worst-case region were just a little smaller on the right it wouldn\u2019t contain any of them so, it wouldn\u2019t be able to reconstruct the center",
+   "page": 53,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "We illustrate how correlated erasures can not grow beyond nearest neighbor in the hierarchical recovery model",
+   "page": 56,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "We illustrate the prerequisite for two erasures to be propagated one layer higher. The most fragile case corresponds to one of the sites having only four descendants since at least one of them needs to have \ufb01ve. Irrespective of the availability of a shared descendant there is a minimum number of era",
+   "page": 57,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "55"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "Here we present Monte Carlo simulation for the probability of the central tensor being incorporated by the greedy algorithm applied to a holographic code. The greedy algorithm is applied to a region A constructed by randomly taking each boundary physical index to belong to A with probability p. We p",
+   "page": 59,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "In (a) we represent a bipartite network composed of tensors with a symmetry H and H \u2217. We alternate applying H (solid squares) and H \u2217 (hollow squares) to all legs of tensors in the bipartite tensor network. In (b) we represent the same tensor network where a portion A of the boundary was marked wit",
+   "page": 60,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "58"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3011,
+   "n_words": 433,
+   "label_start": null,
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5562,
+   "n_words": 851,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-2-isometries-and-perfect-tensors",
+   "number": "2",
+   "title": "Isometries and perfect tensors",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5878,
+   "n_words": 1064,
+   "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-002-3-construction-of-holographic-quantum-states-and",
+   "number": "3",
+   "title": "Construction of holographic quantum states and codes",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6334,
+   "n_words": 1045,
+   "label_start": "6",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-003-4-entanglement-structure-of-holographic-states",
+   "number": "4",
+   "title": "Entanglement structure of holographic states",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 85,
+   "n_words": 13,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-41-ryu-takayanagi-formula",
+   "number": "4.1",
+   "title": "Ryu-Takayanagi formula",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4395,
+   "n_words": 810,
+   "label_start": "9",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-005-42-bipartite-entanglement-of-disconnected-region",
+   "number": "4.2",
+   "title": "Bipartite entanglement of disconnected regions",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 6781,
+   "n_words": 1189,
+   "label_start": "11",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-006-43-a-map-of-multipartite-entanglement",
+   "number": "4.3",
+   "title": "A map of multipartite entanglement",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 11402,
+   "n_words": 1931,
+   "label_start": "14",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-007-44-negative-tripartite-information",
+   "number": "4.4",
+   "title": "Negative tripartite information",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 5127,
+   "n_words": 859,
+   "label_start": "19",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-008-5-quantum-error-correction-in-holographic-codes",
+   "number": "5",
+   "title": "Quantum error correction in holographic codes",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 329,
+   "n_words": 56,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-009-51-ads-rindler-reconstruction-as-error-correctio",
+   "number": "5.1",
+   "title": "AdS-Rindler reconstruction as error correction",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3993,
+   "n_words": 686,
+   "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-010-52-the-physical-interpretation-of-holographic-co",
+   "number": "5.2",
+   "title": "The physical interpretation of holographic codes",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1330,
+   "n_words": 216,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-011-53-bulk-reconstruction-from-tensor-pushing",
+   "number": "5.3",
+   "title": "Bulk reconstruction from tensor pushing",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3801,
+   "n_words": 641,
+   "label_start": "23",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-012-54-connected-reconstruction-and-the-causal-wedge",
+   "number": "5.4",
+   "title": "Connected reconstruction and the causal wedge",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3489,
+   "n_words": 607,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-013-55-disconnected-reconstruction-and-the-entanglem",
+   "number": "5.5",
+   "title": "Disconnected reconstruction and the entanglement wedge",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 32,
+   "n_chars": 9329,
+   "n_words": 1602,
+   "label_start": "26",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-014-56-erasure-threshold",
+   "number": "5.6",
+   "title": "Erasure threshold",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 10890,
+   "n_words": 1856,
+   "label_start": "30",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-015-57-holographic-stabilizer-codes",
+   "number": "5.7",
+   "title": "Holographic stabilizer codes",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 6342,
+   "n_words": 1098,
+   "label_start": "34",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-016-58-are-local-gauge-constraints-enough",
+   "number": "5.8",
+   "title": "Are local gauge constraints enough?",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 3286,
+   "n_words": 532,
+   "label_start": "37",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-017-6-black-holes-and-holography",
+   "number": "6",
+   "title": "Black holes and holography",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 3103,
+   "n_words": 532,
+   "label_start": "38",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-018-7-open-problems-and-outlook",
+   "number": "7",
+   "title": "Open problems and outlook",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 4570,
+   "n_words": 709,
+   "label_start": "39",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-019-a-perfect-tensor-examples",
+   "number": null,
+   "title": "A Perfect tensor examples",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 370,
+   "n_words": 60,
+   "label_start": "41",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-020-a1-5-qubit-code-and-6-qubit-state",
+   "number": null,
+   "title": "A.1 5-qubit code and 6-qubit state",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 3100,
+   "n_words": 534,
+   "label_start": "41",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-021-a2-3--qutrit-code-and-4-qutrit-state",
+   "number": null,
+   "title": "A.2 3 -qutrit code and 4-qutrit state",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 1928,
+   "n_words": 347,
+   "label_start": "43",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-022-a3-large-n",
+   "number": null,
+   "title": "A.3 Large n",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 1392,
+   "n_words": 233,
+   "label_start": "44",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-023-b-proof-of-rt-for-negatively-curved-planar-graph",
+   "number": null,
+   "title": "B Proof of RT for negatively curved planar graphs",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 50,
+   "n_chars": 8215,
+   "n_words": 1403,
+   "label_start": "45",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-024-c-counting-tensors-in-the-pentagon-code",
+   "number": null,
+   "title": "C Counting tensors in the pentagon code",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "48",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-025-c1-counting-tensors",
+   "number": null,
+   "title": "C.1 Counting tensors",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 1384,
+   "n_words": 308,
+   "label_start": "48",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-026-c2-connected-reconstruction",
+   "number": null,
+   "title": "C.2 Connected reconstruction",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 53,
+   "n_chars": 2924,
+   "n_words": 582,
+   "label_start": "49",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-027-d-estimating-greedy-erasure-thresholds",
+   "number": null,
+   "title": "D Estimating greedy erasure thresholds",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 837,
+   "n_words": 125,
+   "label_start": "51",
+   "label_end": "52"
+  },
+  {
+   "id": "sec-028-d1-analytic-bounds",
+   "number": null,
+   "title": "D.1 Analytic bounds",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 58,
+   "n_chars": 8851,
+   "n_words": 1547,
+   "label_start": "52",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-029-d2-numerical-evaluation",
+   "number": null,
+   "title": "D.2 Numerical evaluation",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 1787,
+   "n_words": 297,
+   "label_start": "56",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-030-e-reconstructing-beyond-the-greedy-algorithm",
+   "number": null,
+   "title": "E Reconstructing beyond the greedy algorithm",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 430,
+   "n_words": 68,
+   "label_start": "56",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-031-e1-reconstruction-from-symmetry-guarantees",
+   "number": null,
+   "title": "E.1 Reconstruction from symmetry guarantees",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 61,
+   "n_chars": 6479,
+   "n_words": 1102,
+   "label_start": "56",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-032-e2-approximate-reconstruction-for-typical-tensor",
+   "number": null,
+   "title": "E.2 Approximate reconstruction for typical tensors",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 65,
+   "n_chars": 9395,
+   "n_words": 1464,
+   "label_start": "59",
+   "label_end": "63"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 33,
+  "toc_inferred_entries": 0,
+  "figure_entries": 27,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 34,
+  "chars_total": 146129,
+  "furniture_lines_stripped": 0
+ }
+}

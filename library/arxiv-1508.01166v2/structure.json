@@ -1,0 +1,798 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1508.01166v2",
+ "source": {
+  "file": "1508.01166v2.pdf",
+  "sha256": "0abff3bfd7d3d3e439c322c0c9fe534a98fb8d48026f134b63e6f156cb84c05b",
+  "bytes": 6816129,
+  "pages": 35,
+  "text_source": "embedded",
+  "extractor": "pypdf",
+  "mtime": "2026-11-25T15:43:05Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1508.01166",
+   "version": "2",
+   "primary_class": "physics.flu-dyn",
+   "stamp_date": "11 Feb 2016"
+  },
+  "doi": null,
+  "title": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes",
+  "authors_raw": "Mamdouh S. Mohameda,1,\u2217, Anil N. Hiranib, Ravi Samtaneya",
+  "title_lines": [
+   "Discrete exterior calculus discretization of",
+   "incompressible Navier-Stokes equations over surface",
+   "simplicial meshes"
+  ],
+  "abstract": "A conservative discretization of incompressible Navier-Stokes equations is de- veloped based on discrete exterior calculus (DEC). A distinguishing feature of our method is the use of an algebraic discretization of the interior product op- erator and a combinatorial discretization of the wedge product. The governing equations are \ufb01rst rewritten using the exterior calculus notation, replacing vector calculus di\ufb00erential operators by the exterior derivative, Hodge star and wedge product operators. The discretization is then carried out by substituting with the corresponding discrete operators based on the DEC framework. Numerical exper- iments for \ufb02ows over surfaces reveal a second order accuracy for the developed scheme when using structured-triangular meshes, and \ufb01rst order accuracy for oth- erwise unstructured meshes. By construction, the method is conservative in that both mass and vorticity are conserved up to machine precision. The relative error in kinetic energy for inviscid \ufb02ow test cases converges in a second order fashion with both the mesh size and the time step.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20160212070507Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_raw": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "outline": "Introduction",
+   "text": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Navier-Stokes equations in exterior calculus notation",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "The discretization method",
+   "page": 6,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "The domain discretization",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Discrete exterior calculus",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Two dimensional discretization",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Three dimensional discretization",
+   "page": 16,
+   "source": "outline",
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Results and Discussion",
+   "page": 18,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Driven cavity",
+   "page": 18,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Taylor-Green vortices",
+   "page": 18,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Poiseuille flow",
+   "page": 19,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Double periodic shear layer",
+   "page": 21,
+   "source": "outline",
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Taylor vortices on flat surfaces",
+   "page": 24,
+   "source": "outline",
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Taylor vortices on a spherical surface",
+   "page": 26,
+   "source": "outline",
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "A ring of vortices on a spherical surface",
+   "page": 27,
+   "source": "outline",
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 29,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix A The complementary contribution to the dual 2-cells boundary operator",
+   "page": 32,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A sample simplicial mesh in 2D showing the primal simplices (in black color) and their dual cells (in red color). The positive orientation of the primal 2-simplices and dual 2-cells is counterclockwise",
+   "page": 7,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Cross-section of the velocity pro\ufb01le at the two domain center lines for",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "(a) The vorticity contour plot for Taylor-Green vortices at time T = 10. (b) Cross-section of the velocity y-component pro\ufb01le at the horizontal center line",
+   "page": 20,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The numerical convergence of the velocity 1-form (\ufb02ux) and the interpolated velocity vector for the Poiseuille \ufb02ow test case. The dashed lines represent the 1-st and 2-nd order slopes",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The vorticity contour plot for double periodic shear layer with a mesh",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The vorticity contour plot for two Taylor vortices using a mesh consist-",
+   "page": 25,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The vorticity contour plot for two Taylor vortices on a spherical surface",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The vorticity contour plot for 6 vortices on a spherical surface at latitude",
+   "page": 30,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1932,
+   "n_words": 256,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5394,
+   "n_words": 789,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-navier-stokes-equations-in-exterior-calculus-n",
+   "number": "2",
+   "title": "Navier-Stokes equations in exterior calculus notation",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5291,
+   "n_words": 946,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-the-discretization-method",
+   "number": "3",
+   "title": "The discretization method",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 661,
+   "n_words": 108,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-31-the-domain-discretization",
+   "number": "3.1",
+   "title": "The domain discretization",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2664,
+   "n_words": 459,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-32-discrete-exterior-calculus",
+   "number": "3.2",
+   "title": "Discrete exterior calculus",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 4268,
+   "n_words": 724,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-33-two-dimensional-discretization",
+   "number": "3.3",
+   "title": "Two dimensional discretization",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 16,
+   "n_chars": 15504,
+   "n_words": 2694,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-34-three-dimensional-discretization",
+   "number": "3.4",
+   "title": "Three dimensional discretization",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4359,
+   "n_words": 782,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-4-results-and-discussion",
+   "number": "4",
+   "title": "Results and Discussion",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 928,
+   "n_words": 143,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-41-driven-cavity",
+   "number": "4.1",
+   "title": "Driven cavity",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1097,
+   "n_words": 185,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-42-taylor-green-vortices",
+   "number": "4.2",
+   "title": "Taylor-Green vortices",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1298,
+   "n_words": 220,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-43-poiseuille-flow",
+   "number": "4.3",
+   "title": "Poiseuille flow",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3570,
+   "n_words": 577,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-44-double-periodic-shear-layer",
+   "number": "4.4",
+   "title": "Double periodic shear layer",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 2986,
+   "n_words": 514,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-45-taylor-vortices-on-flat-surfaces",
+   "number": "4.5",
+   "title": "Taylor vortices on flat surfaces",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 4704,
+   "n_words": 837,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-46-taylor-vortices-on-a-spherical-surface",
+   "number": "4.6",
+   "title": "Taylor vortices on a spherical surface",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2425,
+   "n_words": 406,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-47-a-ring-of-vortices-on-a-spherical-surface",
+   "number": "4.7",
+   "title": "A ring of vortices on a spherical surface",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 3627,
+   "n_words": 646,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-5-conclusions",
+   "number": "5",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 32,
+   "n_chars": 3396,
+   "n_words": 503,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-appendix-a-the-complementary-contribution-to-the",
+   "number": null,
+   "title": "Appendix A The complementary contribution to the dual 2-cells boundary operator",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 7386,
+   "n_words": 1189,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 18,
+  "chars_total": 71490,
+  "furniture_lines_stripped": 0
+ }
+}

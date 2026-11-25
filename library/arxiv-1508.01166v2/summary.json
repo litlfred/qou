@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1508.01166v2",
+ "source_sha256": "0abff3bfd7d3d3e4",
+ "brief": "Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes — A conservative discretization of incompressible Navier-Stokes equations is de",
+ "extended": "**Discrete exterior calculus discretization of incompressible Navier-Stokes equations over surface simplicial meshes**\n\n*Mamdouh S. Mohameda,1,∗, Anil N. Hiranib, Ravi Samtaneya*\n\n35 pp, 18 sections.\n\n**Abstract.** A conservative discretization of incompressible Navier-Stokes equations is de- veloped based on discrete exterior calculus (DEC). A distinguishing feature of our method is the use of an algebraic discretization of the interior product op- erator and a combinatorial discretization of the wedge product. The governing equations are ﬁrst rewritten using the exterior calculus notation, replacing vector calculus diﬀerential operators by the exterior derivative, Hodge star and wedge product operators. The discretization is then carried out by substituting with the corresponding discrete operators based on the DEC framework. Numerical exper- iments for ﬂows over surfaces reveal a second order accuracy for the developed scheme when using structured-triangular meshes, and ﬁrst order accuracy for oth- erwise unstructured meshes.\n\n**Outline.** Front matter; 1 Introduction; 2 Navier-Stokes equations in exterior calculus; 3 The discretization method; 3.1 The domain discretization; 3.2 Discrete exterior calculus; 3.3 Two dimensional discretization; 3.4 Three dimensional discretization; 4 Results and Discussion; 4.1 Driven cavity; 4.2 Taylor-Green vortices; 4.3 Poiseuille flow; 4.4 Double periodic shear layer; 4.5 Taylor vortices on flat surfaces; 4.6 Taylor vortices on a spherical surface; 4.7 A ring of vortices on a spherical surface; 5 Conclusions; Appendix A The complementary contribution to t",
+ "tokens": {
+  "brief": 48,
+  "extended": 404
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-navier-stokes-equations-in-exterior-calculus-n",
+   "title": "Navier-Stokes equations in exterior calculus notation",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-3-the-discretization-method",
+   "title": "The discretization method",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-31-the-domain-discretization",
+   "title": "The domain discretization",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-32-discrete-exterior-calculus",
+   "title": "Discrete exterior calculus",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-33-two-dimensional-discretization",
+   "title": "Two dimensional discretization",
+   "pages": "10-16"
+  },
+  {
+   "id": "sec-006-34-three-dimensional-discretization",
+   "title": "Three dimensional discretization",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-007-4-results-and-discussion",
+   "title": "Results and Discussion",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-008-41-driven-cavity",
+   "title": "Driven cavity",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-009-42-taylor-green-vortices",
+   "title": "Taylor-Green vortices",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-010-43-poiseuille-flow",
+   "title": "Poiseuille flow",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-011-44-double-periodic-shear-layer",
+   "title": "Double periodic shear layer",
+   "pages": "21-24"
+  },
+  {
+   "id": "sec-012-45-taylor-vortices-on-flat-surfaces",
+   "title": "Taylor vortices on flat surfaces",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-013-46-taylor-vortices-on-a-spherical-surface",
+   "title": "Taylor vortices on a spherical surface",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-014-47-a-ring-of-vortices-on-a-spherical-surface",
+   "title": "A ring of vortices on a spherical surface",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-015-5-conclusions",
+   "title": "Conclusions",
+   "pages": "29-32"
+  },
+  {
+   "id": "sec-016-appendix-a-the-complementary-contribution-to-the",
+   "title": "Appendix A The complementary contribution to the dual 2-cells boundary operator",
+   "pages": "32-35"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

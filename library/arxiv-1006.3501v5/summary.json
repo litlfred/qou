@@ -1,0 +1,117 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1006.3501v5",
+ "source_sha256": "e939aec50387ce2d",
+ "brief": "On two approaches to 3-dimensional TQFTs — W e prove that|M |C = τZ(C)(M ) for any closed oriented 3-manifold M and for any spherical fusion category C of non-zero dimension.",
+ "extended": "**On two approaches to 3-dimensional TQFTs**\n\n*VLADIMIR TURAEV AND ALEXIS VIRELIZIER*\n\n72 pp, 19 sections.\n\n**Abstract.** W e prove that|M |C = τZ(C)(M ) for any closed oriented 3-manifold M and for any spherical fusion category C of non-zero dimension. Here |M |C is the Turaev-Viro-Barrett-W estbury state sum invariant of M derived from C, Z(C) is the Drinfeld-Joyal-Street center of C, and τZ(C)(M ) is the Reshetikhin- Turaev surgery invariant of M derived from Z(C).\n\n**Outline.** Front matter; Introduction; 1 Pivotal and spherical categories; 2 Multiplicities in pivotal categories; 3 Invariants of colored graphs; 4 Pre-fusion and fusion categories; 5 State sums on triangulated 3-manifolds; 6 State sums on skeletons of 3-manifolds; 7 Moves on skeletons and proof of Theorems 5.1; 8 Skeletons in the relative case; 9 The state-sum TQFT; 10 Modular categories and categorical centers; 11 Main theorems and applications; 12 State sum invariants of links in 3-manifold; 13 Deduction of Theorems 11.1 and 11.2 from Le; 14 The coend of the center; 15 Proof of Lemma 11.3; Appendix. The 6j-symbols\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.1: |M|C is a topological invariant of M (independent of the choice of t\n- Theorem 6.1: For any skeleton P of M ,\n- Theorem 9.1: For a skeleton P of (M,G ), set\n- Theorem 10.3: LetC be a spherical fusion\n- Theorem 11.1: LetC be a spherical fusion category over an algebraically closed\n- Theorem 11.2: Under the conditions of Theorem 11.1, the TQFTs |·| C andτZ(C)",
+ "tokens": {
+  "brief": 43,
+  "extended": 381
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-1-pivotal-and-spherical-categories",
+   "title": "Pivotal and spherical categories",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-2-multiplicities-in-pivotal-categories",
+   "title": "Multiplicities in pivotal categories",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-003-3-invariants-of-colored-graphs",
+   "title": "Invariants of colored graphs",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-4-pre-fusion-and-fusion-categories",
+   "title": "Pre-fusion and fusion categories",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-005-5-state-sums-on-triangulated-3-manifolds",
+   "title": "State sums on triangulated 3-manifolds",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-006-6-state-sums-on-skeletons-of-3-manifolds",
+   "title": "State sums on skeletons of 3-manifolds",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-007-7-moves-on-skeletons-and-proof-of-theorems-51-an",
+   "title": "Moves on skeletons and proof of Theorems 5.1 and 6.1",
+   "pages": "16-22"
+  },
+  {
+   "id": "sec-008-8-skeletons-in-the-relative-case",
+   "title": "Skeletons in the relative case",
+   "pages": "22-26"
+  },
+  {
+   "id": "sec-009-9-the-state-sum-tqft",
+   "title": "The state-sum TQFT",
+   "pages": "26-31"
+  },
+  {
+   "id": "sec-010-10-modular-categories-and-categorical-centers",
+   "title": "Modular categories and categorical centers",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-011-11-main-theorems-and-applications",
+   "title": "Main theorems and applications",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-012-12-state-sum-invariants-of-links-in-3-manifolds",
+   "title": "State sum invariants of links in 3-manifolds",
+   "pages": "35-55"
+  },
+  {
+   "id": "sec-013-13-deduction-of-theorems-111-and-112-from-lemma",
+   "title": "Deduction of Theorems 11.1 and 11.2 from Lemma 11.3",
+   "pages": "55-59"
+  },
+  {
+   "id": "sec-014-14-the-coend-of-the-center",
+   "title": "The coend of the center",
+   "pages": "59-64"
+  },
+  {
+   "id": "sec-015-15-proof-of-lemma-113",
+   "title": "Proof of Lemma 11.3",
+   "pages": "64-69"
+  },
+  {
+   "id": "sec-016-appendix-the-6j-symbols",
+   "title": "Appendix. The 6j-symbols",
+   "pages": "69-70"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "70-72"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
