@@ -47,6 +47,14 @@ calls when someone dispatches it:
 Without `--deploy` it stops after the commit in `.gh-pages-worktree/`, which is
 the way to check a run before publishing.
 
+**Before step 1, on the merged `main` (BLOCKING, owner 2026-11-25):**
+`scripts/gen-block-jsonld.sh --check`. The site build refuses a missing or stale
+block node, and two PRs that each passed can still leave nodes stale between
+them. If it fails, do not publish: regenerate with
+`scripts/gen-block-jsonld.sh --paper <paper>`, open a PR with the nodes, merge
+it, then rebuild. Exit 3 means the root layer mounts are absent; run
+`bash .github/mount-from-lock.sh && bun install` first.
+
 ## The Lean render needs Lean
 
 `build-site.sh` builds `lean/` only when `lake` is on `PATH`. It restores the

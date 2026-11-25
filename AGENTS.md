@@ -1578,7 +1578,15 @@ ephemeral.
     >   content-block siblings only) — nothing but the agent checks it.
     > - **Content blocks changed** → [`scripts/check-sidecars.sh`](scripts/check-sidecars.sh)
     >   clean + `qa-sweep` on the touched criteria; math-bearing `.md`
-    >   also needs the render-QA gate.
+    >   also needs the render-QA gate. **Its knowledge-graph step is
+    >   BLOCKING** (owner, 2026-11-25, after the photon PRs left 11 block
+    >   nodes stale): it runs `scripts/gen-block-jsonld.sh --check --paper
+    >   <paper>` for every paper the branch touches and exits 1 on a stale
+    >   or missing `<block>.jsonld`. Regenerate with
+    >   `scripts/gen-block-jsonld.sh --paper <paper>`. The wrapper refuses
+    >   (exit 3) on the light platform, which would rewrite every node; the
+    >   session-start hook now replays `index.lock.json` so the root mounts
+    >   are there.
     > - **Compute changed** → the producer re-run + witness refreshed.
     >
     > Do **not** write "CI green" in a PR or merge rationale unless a

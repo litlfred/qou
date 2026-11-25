@@ -137,6 +137,17 @@ way (`qou-tqr9`). The script is additive and skips any entry whose
 > `scripts/check-sidecars.sh`, run-validate, producer re-runs) and record what ran in
 > the PR. The text below is history.
 
+> **🟥 BLOCKING (owner 2026-11-25): the block knowledge-graph nodes.** Verbatim:
+> *"how can coding agent avoid before sending to merge PR - day's photon PRs left 11
+> knowledge-graph nodes stale or missing,? improive process"*. Before the PR goes to the
+> merge manager, and again after the rebase onto `main`, run
+> `scripts/gen-block-jsonld.sh --check --paper <paper>` for every paper the branch
+> touches (`scripts/check-sidecars.sh` does this and exits 1 on a failure). On a stale
+> or missing node, run `scripts/gen-block-jsonld.sh --paper <paper>` and commit the
+> regenerated `.jsonld` in the same PR. Exit 3 means the root layer mounts are absent:
+> run `bash .github/mount-from-lock.sh && bun install`, never the light platform, and
+> never mark the check as passed. Record the check's last line in the PR.
+
 ~~Wait for the Copilot review to land before proceeding.~~
 Do NOT skip ahead — the review is the input to Phase 2.
 
