@@ -95,6 +95,7 @@ lemma exists_posProd_of_nonneg_aux (n : ℕ) :
       refine ⟨true :: u, ?_⟩
       rw [posProd_cons_true, hu]
       ext i j
+      rw [SpecialLinearGroup.coe_mul]
       fin_cases i <;> fin_cases j <;>
         simp [R, M', Matrix.mul_apply, Fin.sum_univ_two]
     by_cases hB : M 0 0 ≤ M 1 0 ∧ M 0 1 ≤ M 1 1
@@ -115,6 +116,7 @@ lemma exists_posProd_of_nonneg_aux (n : ℕ) :
       refine ⟨false :: u, ?_⟩
       rw [posProd_cons_false, hu]
       ext i j
+      rw [SpecialLinearGroup.coe_mul]
       fin_cases i <;> fin_cases j <;>
         simp [L, M', Matrix.mul_apply, Fin.sum_univ_two]
     -- mixed cases are impossible
@@ -150,6 +152,7 @@ lemma S_conj_apply (N : SpecialLinearGroup (Fin 2) ℤ) :
     (S * N * S⁻¹) 0 0 = N 1 1 ∧ (S * N * S⁻¹) 0 1 = -N 1 0 ∧
       (S * N * S⁻¹) 1 0 = -N 0 1 ∧ (S * N * S⁻¹) 1 1 = N 0 0 := by
   refine ⟨?_, ?_, ?_, ?_⟩ <;>
+    rw [SpecialLinearGroup.coe_mul, SpecialLinearGroup.coe_mul, SpecialLinearGroup.coe_inv] <;>
     simp [S, SpecialLinearGroup.coe_inv, Matrix.adjugate_fin_two, Matrix.mul_apply,
       Matrix.vecMul, dotProduct, Fin.sum_univ_two]
 
@@ -158,6 +161,7 @@ lemma T_conj_apply (k : ℤ) (N : SpecialLinearGroup (Fin 2) ℤ) :
       (T k * N * (T k)⁻¹) 0 1 = N 0 1 + k * N 1 1 - k * (N 0 0 + k * N 1 0) ∧
       (T k * N * (T k)⁻¹) 1 0 = N 1 0 ∧ (T k * N * (T k)⁻¹) 1 1 = N 1 1 - k * N 1 0 := by
   refine ⟨?_, ?_, ?_, ?_⟩ <;>
+    rw [SpecialLinearGroup.coe_mul, SpecialLinearGroup.coe_mul, SpecialLinearGroup.coe_inv] <;>
     simp [T, SpecialLinearGroup.coe_inv, Matrix.adjugate_fin_two, Matrix.mul_apply,
       Matrix.vecMul, dotProduct, Fin.sum_univ_two] <;> ring
 
