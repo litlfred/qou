@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-11-25T11:06:49Z
+updated_at: 2026-11-25T16:23:36Z
 ---
 
 ## The finding
@@ -91,3 +91,6 @@ work list under its own name).
 
 ## 2026-11-25 exact dual face (PR https://github.com/litlfred/qou/pull/9420)
 Pre-registered (076ab8fb4ff), then solved the a-K LP in exact rationals and min/maxed each coordinate over the optimal face. Rows with c=y*chi=0 (= y=0, all l>=3): u in [0,+inf), NOT identified; c!=0 rows u=1 exactly; y0=0, w=0, opt=0. Holds on p,n,d,t,3He; so the x1e-4 move is a solver picking another point. Also unidentified: active_set/n_active, chirality_dual_sum (5 atoms), self_conjugate_dual_sum (d,t,3He), x_star on zero rows when >=2. Exception 4He: chi cache has 1e-73..1e-149 residue not exact 0, so exact LP identifies all (y0=1.45e-149, u=1-y0/|c|) and published 4He u=6.3288 lies outside; exact-zero arm restores the structure. Why 4He did not move in the refresh is not explained. Owner decision framed in RESULTS.md (1 intervals [rec] / 2 canonical min-norm u=0 / 3 re-pose on support / 4 no-op default). Producer unchanged.
+
+
+## RESUME STATE (handover 2026-11-25): owner card 3 = '1 intervals'. Analysis in draft PR #9420 (claude/ak-lp-dual-face-20261125). Implementation delegated to child session_01EucfRq7fzfsm3Q1DZg9UTS (producer aK_via_lp_dual_full.py publishes u_lambda_star null + interval [0,+inf) + u_identified false on c=0 rows; sums and active set over determined rows only; lp_dual_witness_validator accepts it). Check that child's PR; if absent, do it from the child prompt. He-4 chi-cache residues (50 dps) are a separate hygiene item for chi_at_q0_via_hoefsmit_mpfr.py.

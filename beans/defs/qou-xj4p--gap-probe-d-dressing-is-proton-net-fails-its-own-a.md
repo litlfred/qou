@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-25T16:22:14Z
+updated_at: 2026-11-25T16:23:36Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/probes/probe-d-dressing-is-proton-net.witness.json` was self-stale. Re-running the current producer `computations/probes/probe_d_dressing_is_proton_net.py` (exit 0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold producers that fail their own assertion). Main still carries the old passing witness.
@@ -72,3 +72,9 @@ Choosing among these by residual would be selection against the target; not done
 
 
 2026-11-25T16:2xZ: owner 'go' on card 1 (A). Selected deuteron in the gamma-gamma cell: V^3 x V^3, bond V(2)^3, B = 0.0063 MeV (-99.7 %) (#9426, 963c58bc0b4). Deep error-budget analysis launched as interactive child session_01EucfRntKGFoPCof8huHo3z. Siblings Phase B / intervals / E0 had stopped on the 5-hour usage limit at ~11:50Z; resumed.
+
+
+## RESUME STATE (handover 2026-11-25T16:3xZ)
+DONE: #9421 merged (probe-d cone on the log law, scoped); #9423 merged (Lean LogFormUniqueness). #9426 draft, head 963c58bc0b4 plus child pushes: gamma-gamma deuteron probes, first run + Phase A all bonds + card-1 selection (V^3 x V^3, bond V(2)^3, B = 0.0063 MeV, -99.7 %); four card rulings in owner-rulings.md.
+IN FLIGHT: child session_01EucfRmaNiqxRg52fQZeNVB, Phase B (4-strand nucleons, 8 strands) + card 2 (A net(p)/net(n) match, B bar pair, D all pairs), on branch claude/gg-deuteron-bond-20261125. Child session_01EucfRntKGFoPCof8huHo3z, deep binding-error budget (docs/audits/2026-11-25-binding-error-budget.md).
+NEXT: (1) collect Phase B results; if not run, run 'cd computations/probes/gg_deuteron_bond && PYTHONPATH=<repo>/tools/qou-substrate/python:<repo>/computations python3 -u gg_deuteron_flavoured_probe.py 6 | tee /tmp/ggdB.log' (est. 10-30 min). (2) Flip #9426 to ready once Phase B is in and the gates are green. (3) Keep this bean OPEN: the deuteron binding is unexplained (keV on gamma-gamma bonds vs 2.22 MeV).
