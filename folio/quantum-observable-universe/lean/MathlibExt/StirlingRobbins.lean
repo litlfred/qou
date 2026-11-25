@@ -240,7 +240,7 @@ theorem le_log_stirlingSeq_sub_log_sqrt_pi {n : ℕ} (hn : n ≠ 0) :
       refine tendsto_atTop_mono (fun m => ?_) tendsto_natCast_atTop_atTop
       have : (0 : ℝ) ≤ (m : ℝ) := Nat.cast_nonneg m
       linarith
-    simpa only [one_div] using hmono.inv_tendsto_atTop
+    simpa only [one_div, Pi.inv_def] using hmono.inv_tendsto_atTop
   have hlim2 : Tendsto
       (fun m : ℕ => Real.log (stirlingSeq (m + 1)) - 1 / (12 * ((m : ℝ) + 1) + 1))
       atTop (𝓝 (Real.log (Real.sqrt π) - 0)) := hlim.sub htend0
