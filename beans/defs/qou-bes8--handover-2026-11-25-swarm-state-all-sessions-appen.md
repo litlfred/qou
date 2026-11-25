@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:32:18Z
+updated_at: 2026-11-25T16:36:40Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -85,3 +85,5 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
   - cat-harness#1405 is outside the grant.
   - The merge API intermittently returns 500/502. Re-read main ~30 s after a 5xx before retrying.
 - Resume cold: read bean qou-au0d (queue + traps). Restore the cache with scripts/lean-cache-restore.sh. Shadow builds go under --shadow /home/user/lean-shadow (container-local). Run scripts/setup-folio-assistant.sh to match the pin before gen-block-jsonld --check.
+
+- [q-NS child, 16:55Z] qou-4k93: Yekutieli bridge proved (DEC vorticity = abelian specialisation of Yekutieli face holonomy), PR #9434. Next: content blocks for qou-lke8/dvfy/9lxj; global non-abelian Stokes on Bring open.
