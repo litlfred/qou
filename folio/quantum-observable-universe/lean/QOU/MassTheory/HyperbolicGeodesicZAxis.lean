@@ -45,7 +45,7 @@ noncomputable def single2CLM : ℝ →L[ℝ] E :=
 noncomputable def zpt (a : ℝ) : E := EuclideanSpace.single 2 a
 
 @[simp] theorem zpt_height (a : ℝ) : (zpt a) 2 = a := by
-  simp [zpt, EuclideanSpace.single_apply]
+  simp [zpt, PiLp.single_apply]
 
 theorem zpt_mem {a : ℝ} (ha : 0 < a) : zpt a ∈ upperH := by
   rw [mem_upperH, zpt_height]; exact ha
@@ -80,7 +80,8 @@ theorem hasDerivAt_heightProfile (a b t : ℝ) :
     HasDerivAt (heightProfile a b)
       ((Real.log b - Real.log a) * heightProfile a b t) t := by
   have h := (hasDerivAt_logInterp a b t).exp
-  simpa [heightProfile, mul_comm] using h
+  rw [mul_comm] at h
+  exact h
 
 /-- **The vertical z-axis segment** `γ(t) = (0,0, f(t))` from `(0,0,a)` to
 `(0,0,b)`. -/
@@ -93,7 +94,7 @@ noncomputable def vseg (a b t : ℝ) : E := EuclideanSpace.single 2 (heightProfi
   simp [vseg, zpt, heightProfile_one hb]
 
 @[simp] theorem vseg_height (a b t : ℝ) : (vseg a b t) 2 = heightProfile a b t := by
-  simp [vseg, EuclideanSpace.single_apply]
+  simp [vseg, PiLp.single_apply]
 
 theorem vseg_mem (a b t : ℝ) : vseg a b t ∈ upperH := by
   rw [mem_upperH, vseg_height]; exact heightProfile_pos a b t
@@ -105,7 +106,8 @@ theorem hasDerivAt_vseg (a b t : ℝ) :
   have h1 : HasDerivAt (fun s => single2CLM (heightProfile a b s))
       (single2CLM ((Real.log b - Real.log a) * heightProfile a b t)) t :=
     single2CLM.hasFDerivAt.comp_hasDerivAt t (hasDerivAt_heightProfile a b t)
-  simpa [vseg] using h1
+  simp only [single2CLM_apply] at h1
+  exact h1
 
 theorem differentiableAt_vseg (a b t : ℝ) : DifferentiableAt ℝ (vseg a b) t :=
   (hasDerivAt_vseg a b t).differentiableAt
@@ -118,7 +120,7 @@ theorem differentiableAt_vseg (a b t : ℝ) : DifferentiableAt ℝ (vseg a b) t 
 /-- The Euclidean norm of the segment's velocity: `‖γ'(t)‖ = f(t)·|log b − log a|`. -/
 theorem norm_deriv_vseg (a b t : ℝ) :
     ‖deriv (vseg a b) t‖ = heightProfile a b t * |Real.log b - Real.log a| := by
-  rw [deriv_vseg, EuclideanSpace.norm_single, Real.norm_eq_abs, abs_mul,
+  rw [deriv_vseg, PiLp.norm_single, Real.norm_eq_abs, abs_mul,
     abs_of_pos (heightProfile_pos a b t), mul_comm]
 
 /-- **The vertical segment has constant hyperbolic speed** `|log b − log a|`: the
