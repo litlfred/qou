@@ -515,3 +515,13 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
 - Restore already present on arrival (root mathlib 3697, QOU pkg 3466, UGB 35, traced, gap modules incl. PicardLindelof/GroupCohomology.LowDegree present) — no fetch.
 - **TRAP (measured)**: `559a7210bf5` (2026-11-24, "Q3 Option 1 7+1 Reservoir lean_libs & 83->12 QOU chapter consolidation") moved modules to new paths/libs (`QOU/Core/*`, `CompactQuantumMetrics/*`, `HeckeTemperleyLieb/*`, `QOU/BringsSurface/PlanckStepAtomicity` ...). The cache (seed 2026-11-21) predates it: `lean-library-sweep.py --report --package QOU` says 3591 of 3908 never built. Namespaces were KEPT; only module paths moved. Pre-restructure branches fail on `import` (object file does not exist), not on content.
 - **STABLE recipe that worked**: own cone walker (scratchpad cone.py) over source roots `folio/quantum-observable-universe/lean:folio/unital-groebner-bases/lean`; shadow = `cp -al` of QOU pkg lib -> `$SH/QOUPKG`, UGB lib -> `$SH/UGB`; rebuild cone topologically with `rm -f` then `lean -DautoImplicit=false -s 65536 <rel>.lean -o -i` from cwd = pkg dir; LEAN_PATH = `$SH/QOUPKG:$SH/UGB:<root .lake/packages/*/.lake/build/lib/lean>`. 30 modules in 1m58s (NucleonWeightSpaceTwoTerm 43 s). Real tree untouched (3466 before/after).
+
+## 2026-11-25 — UniversalScaleMinimax.lean (Mathlib-only file), fresh container, 0 oleans on arrival
+- Restore via throwaway repo + stream into tar (`--transform 's,^content/,folio/,'`): branch
+  `cat/folio-assistant-sci/lake-cache/qou-v4-24-0` head `7c61a1ba876`, 24 parts, fetch 1m52s,
+  PIPESTATUS `0 0`; root mathlib 3697 oleans; disk 50G -> 42G free. `scripts/lean-cache-restore.sh`
+  fetches into the real `.git` — avoided for that reason.
+- **TRAP (measured)** `import Mathlib.Tactic.FieldSimp` does NOT bring in `ring`: the error is
+  `unknown tactic` at the `ring` line plus `unsolved goals` on the post-field_simp goal. Add
+  `import Mathlib.Tactic.Ring`. A Mathlib-only file then checks in ~4 s on LEAN_PATH = the 8
+  root `.lake/packages/*/.lake/build/lib/lean` dirs (first lean run ~60 s cold page-in).
