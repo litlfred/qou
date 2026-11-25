@@ -117,7 +117,14 @@ What does transfer:
   orthogonal to ker Δ₂ and decays at rate at least λ₁(Δ₂) = 5 − √5 under the
   linear part. That is true of every closed oriented surface with its own gap,
   and it is a statement about the linear part only.
-- Sibling #9415 is proving dim ker Δ₁ = 8 independently; results were exchanged.
+- Cross-checked independently by the sibling session (PR #9430, probe
+  `computations/probes/photon_jet_spectral/bring_map_hodge_probe.py`, generators
+  S = (1 2 3 4), A = (0 1)): same counts, rank ∂₁ = 29, rank ∂₂ = 23, dim ker
+  Δ₁ = 8, harmonic modes closed and co-closed. Its
+  `QOU/BringsSurface/BringRegularMap.lean` (sorry-free, on #9430) proves the
+  group facts: element orders 4/2/5, generation of S₅, coset indices 30/60/24,
+  χ = −6, genus 4, and 240 (2,4,5) triangles. Cite that file for those facts.
+  The Hodge kernel itself is exact-rank in both probes, not Lean.
 
 ### 5. "ℏ_q > 0 plays the role of the kinematic viscosity ν_q."
 
