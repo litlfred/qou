@@ -29,6 +29,7 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic
+import Mathlib.Analysis.Calculus.Deriv.Pow
 
 namespace QOU.MathlibExt
 
@@ -43,7 +44,7 @@ theorem integral_sq_weight (a b : ℝ) :
     have hbt : HasDerivAt (fun s : ℝ => b - s) (-1) t := by
       simpa using (hasDerivAt_id t).const_sub b
     have h3 : HasDerivAt (fun s : ℝ => (b - s) ^ 3) (3 * (b - t) ^ 2 * (-1)) t := by
-      simpa using hbt.pow 3
+      simpa using hbt.fun_pow 3
     have := (h3.neg).div_const 6
     convert this using 1
     ring
@@ -146,7 +147,7 @@ theorem taylor_two_integral_remainder {f f₁ f₂ f₃ : ℝ → ℝ} {a b : �
       simpa using (hasDerivAt_id x).const_sub b
     have hbx2 : HasDerivAt (fun s : ℝ => (b - s) ^ 2 / 2) (-(b - x)) x := by
       have h2 : HasDerivAt (fun s : ℝ => (b - s) ^ 2) (2 * (b - x) * (-1)) x := by
-        simpa using hbx.pow 2
+        simpa using hbx.fun_pow 2
       have := h2.div_const 2
       convert this using 1
       ring
