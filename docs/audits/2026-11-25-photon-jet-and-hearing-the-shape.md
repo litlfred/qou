@@ -446,3 +446,30 @@ which has no Lean model in the corpus (the files work with abstract algebras sat
 relations). Formalising them needs a concrete Lean model of H₃(q) (a 6-dimensional basis with
 its multiplication table). That model is the one infrastructure step that would let every
 "measured" row above become a theorem.
+
+## §11 A concrete Lean model of H₃(q) (owner: "Fix - no lean model of H₃(q)")
+
+`QOU/StandardModel/HeckeH3Model.lean` gives H₃(q) as its left regular representation: σ₀, σ₁
+act on R⁶ (basis T_e, T_0, T_1, T_01, T_10, T_010) by explicit linear maps, over any
+commutative ring R and any h = q − q⁻¹. `model_rel` proves the Hecke and braid relations, so
+every abstract theorem stated for `HeckeH3Rel` applies to the model. An element's coordinates
+are its value on T_e. All theorems below are sorry-free (lean-direct exit 0, no `sorryAx`):
+
+| measured fact (§10) | theorem in the model |
+|---|---|
+| 1, σ₀, σ₁, V independent (F₁ has rank 4) | `F1_independent`, `coord_F1` (any ring) |
+| 1, V, V² independent | `one_V_V2_independent` (any ring, no condition on q) |
+| Borromean weights forced, no measured hypothesis | `borromean_weights_forced_model` (any domain) |
+| [σ₀, σ₁] ∉ F₁, so gr is noncommutative | `commutator_not_mem_F1` |
+| W ≠ W′ (mirror vertex σ₁σ₀⁻¹ ∉ W) | `mirror_not_mem_W` |
+| F₂ = H₃ (e⁻ = Vσ₀ + h²σ₀ + h; σ₁σ₀ is a product of two) | `electron_eq` (abstract) |
+| normaliser of F₁ = centre | `normaliser_F1_central` |
+
+Correction to §10: the independence of 1, V, V² holds in the regular representation over any
+commutative ring, with no condition. The condition q⁴ + q² + 1 ≠ 0 in `independent_of_rep`
+came from using only the trivial and reflection blocks, without the sign block.
+
+Still measured, not Lean: the uniqueness of the Borromean factorisation over all six colour
+weights (generic-q Gröbner basis attempted, §11.1); the dimension 7 of the two-photon
+relation space and degree-3 vanishing; the continuous (ℓ, G) symmetry and its signature;
+the Gassmann counts.
