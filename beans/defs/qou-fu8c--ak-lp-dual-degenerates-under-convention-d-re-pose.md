@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-14T16:21:57Z
-updated_at: 2026-11-25T16:23:36Z
+updated_at: 2026-11-25T16:38:07Z
 ---
 
 ## The finding
@@ -94,3 +94,12 @@ Pre-registered (076ab8fb4ff), then solved the a-K LP in exact rationals and min/
 
 
 ## RESUME STATE (handover 2026-11-25): owner card 3 = '1 intervals'. Analysis in draft PR #9420 (claude/ak-lp-dual-face-20261125). Implementation delegated to child session_01EucfRq7fzfsm3Q1DZg9UTS (producer aK_via_lp_dual_full.py publishes u_lambda_star null + interval [0,+inf) + u_identified false on c=0 rows; sums and active set over determined rows only; lp_dual_witness_validator accepts it). Check that child's PR; if absent, do it from the child prompt. He-4 chi-cache residues (50 dps) are a separate hygiene item for chi_at_q0_via_hoefsmit_mpfr.py.
+
+## 2026-11-25 — owner ruling implemented (intervals), PR #9438
+
+Owner ruling card 3 / answer "1 intervals" implemented on branch `claude/ak-lp-dual-intervals-20261125`, draft PR #9438 (commit 0b0f7f8a0).
+- `aK_via_lp_dual_full.py`: c=0 rows publish `u_lambda_star: null`, `u_lambda_star_interval: ["0","+inf"]`, `u_identified: false`, `is_active: null`; row `y_star`/`y_star_str` masked + same-length `y_star_interval`. `x_star` null with `[-M, n+M(k-1)]` (M=1e6, now passed explicitly) when k>=2 zero-cost rows. `active_set`, `n_active`, both dual sums over identified rows only, labelled `*_scope`.
+- Helium-4 l>=3 cache residues (70 rows, max 2.568e-73) set to exact 0 on `ocneanuWeight_conventionD_eq_zero_of_three_rows` (qou-u2jg); dropped residue published (`l3_residue_max_abs`), guard 1e-40. He-4 now has the same face structure as the other five.
+- `lp_dual_witness_validator.py`: `check_unidentified_intervals()` accepts null only with a valid interval (exact comparison). Validator totals unchanged (5/31 WARN, pre-existing).
+- Determined fields (y0_star ~0, degeneracy flag, a_K null) unchanged in meaning; no consumer moves.
+- Still open (not done here): the He-4 chi-cache producer computing at 50 dps vs 80 (data hygiene), and re-posing the LP on the two-row quotient (this bean).
