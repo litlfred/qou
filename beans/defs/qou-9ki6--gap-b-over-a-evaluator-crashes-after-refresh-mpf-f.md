@@ -1,11 +1,11 @@
 ---
 # qou-9ki6
 title: 'GAP: b_over_a_evaluator crashes after refresh (mpf.__format__, held with the assertion failures)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:38Z
-updated_at: 2026-11-24T21:16:57Z
+updated_at: 2026-11-25T01:04:07Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/b-over-a.witness.json` was self-stale. The current producer `computations/b_over_a_evaluator.py` writes its witness ("0 assertions, all passed") and then **crashes**:
@@ -28,3 +28,5 @@ Next honest step: replace mpf format specs with `mp.nstr` in the 8 producers, re
 
 ## 2026-11-24 fixed in PR https://github.com/litlfred/qou/pull/9401 (agent, session 01Eucf)
 All 8 producers run (exit 0, assertions pass) after rewriting only the crashing f-string fields to mpmath.nstr (82643b15227 and 299625e1bb8). alpha_5_jucys_murphy_central also needed a fix to qou_substrate.witness._raw_float_paths, which handles int dict keys now. Witnesses were re-run on mpmath 1.4.1 + clarabel 0.11.1 (venv) so the environment record does not degrade (the guard warns on 1.3.0). Payload moves are float noise; the exception is gg-production-bond-probe E0 4.18598 -> 4.22748 MeV via the routed qbeta_e0 (#8590). Note the mechanism is version-dependent (qou-eg4l): 1.4.1 accepts the format spec, while 1.3.0 is what sympy 1.14 pins. Complete when https://github.com/litlfred/qou/pull/9401 merges.
+
+Merged in #9401 (2026-11-25).

@@ -1,11 +1,11 @@
 ---
 # qou-h1h5
 title: 'GAP: qbeta_cos_resummation_d_probe fails its own assertion after refresh'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:38Z
-updated_at: 2026-11-24T21:16:57Z
+updated_at: 2026-11-25T01:04:07Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/qbeta/qbeta-cos-resummation-d.witness.json` was self-stale. Re-running the current producer `computations/qbeta/qbeta_cos_resummation_d_probe.py` **exits 1** and writes `allPassed: false` ("5 assertions, FAILURES"). The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold producers that fail their own assertion).
@@ -27,3 +27,5 @@ Not the anchor (proton pin unchanged) and not E0: every Q value is identical (ma
 
 ## 2026-11-24 fixed in PR https://github.com/litlfred/qou/pull/9401 (cf53560dce3)
 The block, its table-data and the probe's PUBLISHED_PPM now carry the producer's output against CODATA 2022: -431571.9 / -432037.7 / +1677.4 / +856.6 ppm; current-pin C cell +305.86. Tolerance 0.051 unchanged; the probe passes 5/5 (max offset 0.047). Complete when merged.
+
+Merged in #9401 (2026-11-25).
