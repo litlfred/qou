@@ -283,11 +283,11 @@ theorem colLen_eq_zero (t : List ℕ) (j : ℕ) (h : ∀ b ∈ t, b ≤ j) : col
 /-- **Cell-membership duality (sorry-free).** For a weakly-decreasing partition, row `i`
 reaches column `j` iff column `j` reaches row `i`: `i < colLen(j) ↔ j < λ_i`.  The gateway
 to the Fubini transpose; an induction on the parts using the column-empty lemma at the head. -/
-theorem colLen_duality : ∀ (l : List ℕ), l.Sorted (· ≥ ·) → ∀ (i j : ℕ),
+theorem colLen_duality : ∀ (l : List ℕ), l.Pairwise (· ≥ ·) → ∀ (i j : ℕ),
     (i < colLen l j ↔ j < l.getD i 0)
   | [], _, i, j => by simp [colLen]
   | a :: t, hl, i, j => by
-    obtain ⟨hat, ht⟩ := List.sorted_cons.mp hl
+    obtain ⟨hat, ht⟩ := List.pairwise_cons.mp hl
     rw [colLen_cons]
     cases i with
     | zero =>
@@ -314,7 +314,7 @@ theorem colLen_le_length (l : List ℕ) (j : ℕ) : colLen l j ≤ l.length := b
   exact List.length_filter_le _ _
 
 /-- Every part is `≤` the first (largest) part, for a weakly-decreasing partition. -/
-theorem getD_le_headD (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i : ℕ) :
+theorem getD_le_headD (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) (i : ℕ) :
     l.getD i 0 ≤ l.headD 0 := by
   cases l with
   | nil => simp
@@ -324,7 +324,7 @@ theorem getD_le_headD (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i : ℕ) :
     | zero => simp
     | succ i' =>
       rw [List.getD_cons_succ]
-      obtain ⟨hat, _⟩ := List.sorted_cons.mp hl
+      obtain ⟨hat, _⟩ := List.pairwise_cons.mp hl
       rcases lt_or_ge i' t.length with hlen | hlen
       · rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hlen, Option.getD_some]
         exact hat _ (List.getElem_mem hlen)
@@ -334,7 +334,7 @@ theorem getD_le_headD (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i : ℕ) :
 /-- **Fubini transpose (sorry-free).** A row-indexed cell sum equals the column-indexed one,
 for any cell function `g`.  This is the (L1)/(Lal) 2-D reindex, via `Finset.sum_comm'` and the
 cell-membership duality.  The leg terms of `Σ_c h²` become per-column sums under it. -/
-theorem cell_fubini (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (g : ℕ → ℕ → ℤ) :
+theorem cell_fubini (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) (g : ℕ → ℕ → ℤ) :
     ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), g i j
       = ∑ j ∈ Finset.range (l.headD 0), ∑ i ∈ Finset.range (colLen l j), g i j := by
   apply Finset.sum_comm'
@@ -393,7 +393,7 @@ With the parts weakly decreasing, `min(λ_i, λ_k) = λ_{max(i,k)}`, so each col
 order-split below is the engine: it turns `Σ_{i,k} min(λ_i,λ_k)` into `Σ_i (2i+1)·λ_i`. -/
 
 /-- For a weakly-decreasing list, `getD` is antitone in the index. -/
-theorem getD_antitone (l : List ℕ) (hl : l.Sorted (· ≥ ·)) {i k : ℕ} (hik : i ≤ k) :
+theorem getD_antitone (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) {i k : ℕ} (hik : i ≤ k) :
     l.getD k 0 ≤ l.getD i 0 := by
   rcases lt_or_ge k l.length with hk | hk
   · have hi : i < l.length := lt_of_le_of_lt hik hk
@@ -432,7 +432,7 @@ theorem indicator_mul (j a b : ℕ) :
 
 /-- `Σ_j colLen(j)² = Σ_{i,k} min(λ_i, λ_k)` (expand each `colLen` to row-indicators,
 `Finset.sum_comm` the column index inward, then the indicator/`min` count). -/
-theorem sum_colLen_sq_eq_sum_min (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_sq_eq_sum_min (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ j ∈ Finset.range (l.headD 0), (colLen l j) ^ 2
       = ∑ i ∈ Finset.range l.length, ∑ k ∈ Finset.range l.length,
           min (l.getD i 0) (l.getD k 0) := by
@@ -448,14 +448,14 @@ theorem sum_colLen_sq_eq_sum_min (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   exact min_eq_right (le_trans (min_le_left _ _) (getD_le_headD l hl i))
 
 /-- **`K2` as a row form (sorry-free).** `Σ_j colLen(j)² = Σ_i (2i+1)·λ_i`. -/
-theorem sum_colLen_sq_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_sq_row_form (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ j ∈ Finset.range (l.headD 0), (colLen l j) ^ 2
       = ∑ i ∈ Finset.range l.length, (2 * i + 1) * (l.getD i 0) := by
   rw [sum_colLen_sq_eq_sum_min l hl,
     antitone_min_sum (fun i => l.getD i 0) (fun i k hik => getD_antitone l hl hik) l.length]
 
 /-- **`K1` as a row form (sorry-free).** `Σ_j colLen(j) = Σ_i λ_i` (both count cells). -/
-theorem sum_colLen_eq_sum_parts (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_eq_sum_parts (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ j ∈ Finset.range (l.headD 0), colLen l j = ∑ i ∈ Finset.range l.length, l.getD i 0 := by
   simp_rw [colLen_eq_indicator_sum l]
   rw [Finset.sum_comm]
@@ -530,7 +530,7 @@ theorem antitone_min3_sum (a : ℕ → ℕ) (h : ∀ i k, i ≤ k → a k ≤ a 
 /-- `Σ_c colLen(c)³ = Σ_{x,i,m} min3(λ_x,λ_i,λ_m)` (cube each `colLen` into row-indicators,
 `sum_comm` the column index inward, then the triple-indicator/`min` count).  Right-associated
 `min` to match the natural product expansion. -/
-theorem sum_colLen_cube_eq_sum_min3 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_cube_eq_sum_min3 (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ c ∈ Finset.range (l.headD 0), (colLen l c) ^ 3
       = ∑ x ∈ Finset.range l.length, ∑ i ∈ Finset.range l.length, ∑ m ∈ Finset.range l.length,
           min (l.getD x 0) (min (l.getD i 0) (l.getD m 0)) := by
@@ -554,7 +554,7 @@ theorem sum_colLen_cube_eq_sum_min3 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   exact min_eq_right (le_trans (min_le_left _ _) (getD_le_headD l hl x))
 
 /-- **`K3` as a row form (sorry-free).** `Σ_j colLen(j)³ = Σ_i (3i²+3i+1)·λ_i`. -/
-theorem sum_colLen_cube_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_cube_row_form (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ c ∈ Finset.range (l.headD 0), (colLen l c) ^ 3
       = ∑ i ∈ Finset.range l.length, (3 * i ^ 2 + 3 * i + 1) * (l.getD i 0) := by
   rw [sum_colLen_cube_eq_sum_min3 l hl]
@@ -618,7 +618,7 @@ theorem sum_ite_lt_id (a b : ℕ) :
       rw [hm]; simp [h]
 
 /-- `Σ_c c·colLen(c)² = Σ_{i,k} Σ_{j<min(λ_i,λ_k)} j` (`j`-weighted analogue of K2). -/
-theorem sum_j_colLen_sq_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_j_colLen_sq_eq (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ c ∈ Finset.range (l.headD 0), c * (colLen l c) ^ 2
       = ∑ i ∈ Finset.range l.length, ∑ k ∈ Finset.range l.length,
           ∑ j ∈ Finset.range (min (l.getD i 0) (l.getD k 0)), j := by
@@ -631,7 +631,7 @@ theorem sum_j_colLen_sq_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   rw [sum_ite_lt_id, min_eq_right (le_trans (min_le_left _ _) (getD_le_headD l hl i))]
 
 /-- **`j`-weighted K2 as a row form (sorry-free).** `Σ_j j·colLen(j)² = Σ_i (2i+1)·Σ_{j<λ_i} j`. -/
-theorem sum_j_colLen_sq_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_j_colLen_sq_row_form (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ c ∈ Finset.range (l.headD 0), c * (colLen l c) ^ 2
       = ∑ i ∈ Finset.range l.length, (2 * i + 1) * (∑ j ∈ Finset.range (l.getD i 0), j) := by
   rw [sum_j_colLen_sq_eq l hl]
@@ -641,7 +641,7 @@ theorem sum_j_colLen_sq_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
 /-- **λ-weighted min-sum (sorry-free).** `2·Σ_i λ_i·Σ_k min(λ_i,λ_k) = Σ_i(2i+1)λ_i² + n²`
 (over `ℕ`).  Uses the pointwise identity `(a+b)·min(a,b) = min(a,b)² + a·b` + symmetry,
 collapsing to `antitone_f_min_sum` (`f = ·²`) and `(Σλ)² = n²` — no per-row split needed. -/
-theorem two_mul_sum_lambda_min (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem two_mul_sum_lambda_min (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     2 * ∑ i ∈ Finset.range l.length, (l.getD i 0) *
         (∑ k ∈ Finset.range l.length, min (l.getD i 0) (l.getD k 0))
       = (∑ i ∈ Finset.range l.length, (2 * i + 1) * (l.getD i 0) ^ 2) + (sz l) ^ 2 := by
@@ -705,19 +705,19 @@ theorem two_mul_sum_range_refl (M : ℕ) :
   rw [h1, ← h2, two_mul_sum_range_int (M + 1)]; push_cast; ring
 
 /-- ℤ form of the K1 row moment. -/
-theorem sum_colLen_parts_int (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_parts_int (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ c ∈ Finset.range (l.headD 0), (colLen l c : ℤ)
       = ∑ i ∈ Finset.range l.length, (l.getD i 0 : ℤ) := by
   exact_mod_cast sum_colLen_eq_sum_parts l hl
 
 /-- ℤ form of the K2 row moment. -/
-theorem sum_colLen_sq_row_int (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_sq_row_int (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ c ∈ Finset.range (l.headD 0), (colLen l c : ℤ) ^ 2
       = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 1) * (l.getD i 0 : ℤ) := by
   exact_mod_cast sum_colLen_sq_row_form l hl
 
 /-- ℤ form of the K3 row moment. -/
-theorem sum_colLen_cube_row_int (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sum_colLen_cube_row_int (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     ∑ c ∈ Finset.range (l.headD 0), (colLen l c : ℤ) ^ 3
       = ∑ i ∈ Finset.range l.length, (3 * (i : ℤ) ^ 2 + 3 * (i : ℤ) + 1) * (l.getD i 0 : ℤ) := by
   exact_mod_cast sum_colLen_cube_row_form l hl
@@ -745,7 +745,7 @@ theorem cellP_eq (l : List ℕ) :
   exact two_mul_sum_range_refl (l.getD i 0)
 
 /-- `Q²` term (`cell_fubini` + column reflection + K-moment row forms). -/
-theorem cellQ_sq_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem cellQ_sq_eq (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     6 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((colLen l j : ℤ) - i) ^ 2
       = ∑ i ∈ Finset.range l.length,
           (6 * (i : ℤ) ^ 2 + 12 * (i : ℤ) + 6) * (l.getD i 0 : ℤ) := by
@@ -765,7 +765,7 @@ theorem cellQ_sq_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   apply Finset.sum_congr rfl; intro i _; ring
 
 /-- `Q` term (`cell_fubini` + column reflection + K-moment row forms). -/
-theorem cellQ_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem cellQ_eq (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     2 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((colLen l j : ℤ) - i)
       = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 2) * (l.getD i 0 : ℤ) := by
   rw [cell_fubini l hl (fun i j => ((colLen l j : ℤ) - (i : ℤ)))]
@@ -781,7 +781,7 @@ theorem cellQ_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   apply Finset.sum_congr rfl; intro i _; ring
 
 /-- `AC` cross piece `Σ_c λ_i·colLen j` (λ-weighted min-sum). -/
-theorem cellAC_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem cellAC_eq (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     2 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
         (l.getD i 0 : ℤ) * (colLen l j : ℤ)
       = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 1) * (l.getD i 0 : ℤ) ^ 2 + (sz l : ℤ) ^ 2 := by
@@ -797,7 +797,7 @@ theorem cellAC_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   exact_mod_cast two_mul_sum_lambda_min l hl
 
 /-- `BC` cross piece `Σ_c j·colLen j` (j-weighted K2; `2·` clears the inner Gauss sum). -/
-theorem cellBC_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem cellBC_eq (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     2 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ) * (colLen l j : ℤ)
       = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 1) * ((l.getD i 0 : ℤ) * ((l.getD i 0 : ℤ) - 1)) := by
   have hbase : ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ) * (colLen l j : ℤ)
@@ -834,7 +834,7 @@ Each cell sum has a row form discharged above:
 * the `λ·i`, `j·i`, and constant sums — direct (`hT5`, `hT7`, `hT3`).
 The two `6·n²` scalars cancel and the nine rows collapse to the content cubic by
 `ring`. -/
-theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
   -- Ref: [leitner2026] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
   -- Step 1: bridge to Finset double sum + cast the ℕ hook to its ℤ form (exact on cells).
