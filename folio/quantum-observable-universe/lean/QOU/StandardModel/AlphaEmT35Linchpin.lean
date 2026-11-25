@@ -1,6 +1,7 @@
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
+import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
@@ -831,16 +832,16 @@ theorem hadronLine_jet_bounds (α : ℝ) (hα : 0 ≤ α) :
         have hd1 : HasDerivAt (fun y : ℝ => 1 - y + y ^ 2 / 2) (-1 + x) x := by
           convert ((hasDerivAt_const x (1 : ℝ)).sub (hasDerivAt_id x)).add
             (((hasDerivAt_pow 2 x).div_const 2)) using 1
-          ring
+          all_goals first | rfl | ring
         have hd2 : HasDerivAt (fun y : ℝ => Real.exp (-y)) (-Real.exp (-x)) x := by
-          simpa using (Real.hasDerivAt_exp (-x)).comp x (hasDerivAt_id x).neg
+          simpa [Function.comp_def] using (Real.hasDerivAt_exp (-x)).comp x (hasDerivAt_id x).neg
         convert hd1.sub hd2 using 1
-        ring
+        all_goals first | rfl | ring
       rw [hderiv.deriv]
       have := Real.add_one_le_exp (-x)
       linarith
   have hg2_nonneg : 0 ≤ 1 - α + α ^ 2 / 2 - Real.exp (-α) := by
-    have h0 := hg2_mono (Set.left_mem_Ici) hα hα
+    have h0 := hg2_mono (Set.self_mem_Ici) hα hα
     simp at h0
     linarith
   have hg3_mono : MonotoneOn (fun x : ℝ => x - x ^ 2 / 2 + x ^ 3 / 6 - (1 - Real.exp (-x)))
@@ -856,19 +857,19 @@ theorem hadronLine_jet_bounds (α : ℝ) (hα : 0 ≤ α) :
             (1 - x + x ^ 2 / 2) x := by
           convert ((hasDerivAt_id x).sub ((hasDerivAt_pow 2 x).div_const 2)).add
             ((hasDerivAt_pow 3 x).div_const 6) using 1
-          ring
+          all_goals first | rfl | ring
         have hd2 : HasDerivAt (fun y : ℝ => 1 - Real.exp (-y)) (Real.exp (-x)) x := by
           have hexp : HasDerivAt (fun y : ℝ => Real.exp (-y)) (-Real.exp (-x)) x := by
-            simpa using (Real.hasDerivAt_exp (-x)).comp x (hasDerivAt_id x).neg
+            simpa [Function.comp_def] using (Real.hasDerivAt_exp (-x)).comp x (hasDerivAt_id x).neg
           convert (hasDerivAt_const x (1 : ℝ)).sub hexp using 1
-          ring
+          all_goals first | rfl | ring
         exact hd1.sub hd2
       rw [hderiv.deriv]
-      have h0 := hg2_mono (Set.left_mem_Ici) hx0 hx0
+      have h0 := hg2_mono (Set.self_mem_Ici) hx0 hx0
       simp at h0
       linarith
   have hg3_nonneg : 0 ≤ α - α ^ 2 / 2 + α ^ 3 / 6 - (1 - Real.exp (-α)) := by
-    have h0 := hg3_mono (Set.left_mem_Ici) hα hα
+    have h0 := hg3_mono (Set.self_mem_Ici) hα hα
     simp at h0
     linarith
   exact ⟨hub1, by linarith, by linarith⟩
