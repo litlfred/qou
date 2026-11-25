@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -20,9 +20,7 @@
   "cites": [
     "references/brundankleshchev2009",
     "references/kashiwara1991",
-    "references/lecouvey2007",
-    "references/khovanovlauda2009",
-    "references/marsh2000"
+    "references/lecouvey2007"
   ],
   "tags": [
     "tier:S",
@@ -33,7 +31,7 @@
     "computational-shortcut",
     "audit-flag-13a"
   ],
-  "leanRef": "qou:QOU.BraidKnot.CrystalGraphRealization",
+  "leanRef": "qou:BraidKnotOctonion.CrystalGraphRealization",
   "text": "crystal-graph-realization.md",
   "provenance": "authored"
 }

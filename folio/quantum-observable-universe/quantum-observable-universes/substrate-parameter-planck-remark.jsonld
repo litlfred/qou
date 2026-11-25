@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-parameter-planck-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:substrate-parameter-planck-remark",
+  "kind": "remark",
+  "title": "The substrate parameter as a measure of non-commutativity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter-planck"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter-planck",
+  "tags": [
+    "substrate-parameter",
+    "planck-constant",
+    "q-deformation"
+  ],
+  "text": "substrate-parameter-planck-remark.md",
+  "provenance": "authored"
+}

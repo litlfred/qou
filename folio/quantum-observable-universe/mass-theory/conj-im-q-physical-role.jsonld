@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -27,7 +27,7 @@
     "open-conjecture",
     "phase-3"
   ],
-  "leanRef": "qou:QOU.BraidKnot.ImQPhysicalRole",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.ImQPhysicalRole",
   "text": "conj-im-q-physical-role.md",
   "leanSource": "conj-im-q-physical-role.lean",
   "provenance": "authored"

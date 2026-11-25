@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-colour-relabel",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:colour-relabel",
+  "kind": "remark",
+  "title": "Colour-tube sheets and the ordered colour basis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-colour-relabel-singlet",
+    "papers/quantum-observable-universe/blocks/def-color-tube-fibers"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-colour-relabel-singlet",
+  "tags": [
+    "colour",
+    "quantum-group",
+    "brings-surface"
+  ],
+  "text": "colour-relabel-remark.md",
+  "provenance": "authored"
+}

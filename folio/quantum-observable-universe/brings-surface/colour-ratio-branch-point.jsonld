@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-colour-ratio-branch-point",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:colour-ratio-branch-point",
+  "kind": "remark",
+  "title": "The colour ratio at a branch point of the colour tube cubic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-colour-ratio-mobius-matrix",
+    "papers/quantum-observable-universe/blocks/rem-color-tube-cubic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-colour-ratio-mobius-matrix",
+  "tags": [
+    "brings-surface",
+    "color-tube",
+    "branch-point",
+    "puiseux-expansion"
+  ],
+  "text": "colour-ratio-branch-point.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-characteristic-classes-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-characteristic-classes-remark",
+  "kind": "remark",
+  "title": "Vanishing of the quantum characteristic classes and lifting",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+    "papers/quantum-observable-universe/blocks/def-yekutieli-lifting-condition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes",
+  "text": "quantum-characteristic-classes-remark.md",
+  "provenance": "authored"
+}

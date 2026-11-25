@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
@@ -19,6 +19,12 @@
     "papers/quantum-observable-universe/blocks/def-confined-particle"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-recursive-atom-knot-atlas",
+  "cites": [
+    "references/wenzl1988",
+    "references/codata2022",
+    "references/pdg2024",
+    "references/ame2020tables"
+  ],
   "tags": [
     "archimedean-bridge",
     "atlas",

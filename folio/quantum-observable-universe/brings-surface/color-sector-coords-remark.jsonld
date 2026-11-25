@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-color-sector-coords-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:color-sector-coords-remark",
+  "kind": "remark",
+  "title": "The color twist and the tiling of the exceptional divisor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-color-sector-coords",
+    "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/rem-chirality-trefoil"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-color-sector-coords",
+  "text": "color-sector-coords-remark.md",
+  "provenance": "authored"
+}

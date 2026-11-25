@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -13,10 +13,7 @@
   ],
   "label": "prop:c-equals-bar-iff-all-1dim",
   "kind": "proposition",
-  "title": "Charge conjugation equals bar involution iff all irreps are one-dimensional",
-  "uses": [
-    "papers/quantum-observable-universe/blocks/prop-lepton-meson-torus-knot-dictionary"
-  ],
+  "title": "Charge conjugation equals the bar involution on the characters of $H_3(q)$",
   "cites": [
     "references/jones1987",
     "references/wenzl1988c"
@@ -25,12 +22,11 @@
     "charge-conjugation",
     "bar-involution",
     "CPT",
-    "lepton",
-    "meson",
     "standard-representation",
-    "matter-antimatter"
+    "matter-antimatter",
+    "tits-deformation"
   ],
-  "leanRef": "qou:QOU.ParticleInteractions.two_only_unit_squares",
+  "leanRef": "qou:QOU.ParticleInteractions.CBar.trace_conj_eq_trace_bar",
   "text": "c-equals-bar-iff-all-1dim.md",
   "leanSource": "c-equals-bar-iff-all-1dim.lean",
   "provenance": "authored"

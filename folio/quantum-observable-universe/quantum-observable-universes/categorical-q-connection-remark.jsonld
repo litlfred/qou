@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-q-connection-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-q-connection-remark",
+  "kind": "remark",
+  "title": "The undeformed limit of $\\nabla_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-connection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+  "tags": [
+    "connection",
+    "deformation"
+  ],
+  "text": "categorical-q-connection-remark.md",
+  "provenance": "authored"
+}

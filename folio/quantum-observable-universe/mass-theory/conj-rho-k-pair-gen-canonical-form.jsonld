@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -31,7 +31,7 @@
     "wedderburn-coupling",
     "phase-3"
   ],
-  "leanRef": "qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.PairGenCanonical",
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.RhoKPairGenCanonicalForm.PairGenCanonical",
   "text": "conj-rho-k-pair-gen-canonical-form.md",
   "leanSource": "conj-rho-k-pair-gen-canonical-form.lean",
   "provenance": "authored"
