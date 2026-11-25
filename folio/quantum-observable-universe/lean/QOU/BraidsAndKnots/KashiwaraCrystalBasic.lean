@@ -65,6 +65,8 @@ without first clearing the do-not-re-pitch prior with the owner.
 
 namespace QOU.Machinery
 
+universe u v
+
 /-! ## Basic Kashiwara crystal graph -/
 
 /-- **Kashiwara crystal graph** structure: a type `V` of vertices,
@@ -157,10 +159,10 @@ construction is substantial and not in Mathlib); the class carries it as
 a datum, `embed` as a genuine crystal morphism (`CrystalHom`, so the two
 morphism laws are separate fields), and `embed_injective` making it a
 true *embedding*. -/
-class TypeACrystal (G : CrystalGraph) (n : ℕ) where
+class TypeACrystal (G : CrystalGraph.{u}) (n : ℕ) where
   /-- The target crystal — a tensor power of the standard `sl_n` crystal
       (abstract datum). -/
-  target : CrystalGraph
+  target : CrystalGraph.{v}
   /-- The embedding as a crystal morphism (commutes with `f` and `e`).
       (Was the `True` field `sl_n_embedding`.) -/
   embed : CrystalHom G target
@@ -342,12 +344,12 @@ empirical c_2 = -1 Taylor coefficient (this is the proven content of
 
 /-- Conditional class combining the three classes above for the
 composite identification of residue A. -/
-class CompositeKashiwaraResidueA (G : CrystalGraph) : Prop where
+class CompositeKashiwaraResidueA (G : CrystalGraph.{u}) : Prop where
   /-- Stembridge axioms hold. -/
   is_stembridge : StembridgeCrystal G
   /-- Type-A specialisation at some n (data class, so wrapped in `Nonempty`
       to sit inside the existential). -/
-  has_type_A : ∃ n, Nonempty (TypeACrystal G n)
+  has_type_A : ∃ n, Nonempty (TypeACrystal.{u, v} G n)
   /-- Demazure sub-crystal correspondence at some level (`Nonempty` for the
       same reason). -/
   has_demazure : ∃ level, Nonempty (DemazureSubcrystal G level)
