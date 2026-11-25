@@ -71,6 +71,9 @@ import re
 import shutil
 import subprocess
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from lean_freshness import read_source_sha, source_sha  # noqa: E402
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -216,6 +219,23 @@ def last_commit_times() -> dict[str, int]:
     return times
 
 
+def _stamp_stale(olean: pathlib.Path, src: pathlib.Path):
+    """Decide freshness by the `.srcsha` stamp when the olean carries one.
+
+    Returns True (stale) / False (current) from the stamp, or None when there is
+    no stamp and the clock rule below must decide.  Same rule as
+    `lean_freshness.olean_is_current`: a stamp is exact in both directions, so
+    no clock is consulted.  Without this, a fresh checkout over a restored,
+    fully-stamped refresh addon read as 100 % dirty (measured 2026-11-25:
+    3913/3913 QOU, 46/46 UGB, 3/3 Fred2005 "changed"), while
+    `lean-direct-cone.sh`, which reads the stamps, found all 3913 up to date.
+    """
+    recorded = read_source_sha(olean)
+    if recorded is None:
+        return None
+    return recorded != source_sha(src)
+
+
 def _standard_dirty(mod2path, oleans, times, never_built):
     """Modules the SNAPSHOT cannot vouch for: no olean, or source newer than it.
 
@@ -235,6 +255,11 @@ def _standard_dirty(mod2path, oleans, times, never_built):
         if m in out:
             continue
         o = oleans / (m.replace(".", "/") + ".olean")
+        st = _stamp_stale(o, p_)
+        if st is not None:
+            if st:
+                out.add(m)
+            continue
         c = times.get(str(p_.relative_to(ROOT)))
         src = max(c, p_.stat().st_mtime) if c is not None else None
         if src is None or src > o.stat().st_mtime:
@@ -271,6 +296,11 @@ def dirty_closure(mod2path, imports, oleans, all_dirty=False):
         if not o.exists():
             changed.add(m)
             never_built.add(m)
+            continue
+        st = _stamp_stale(o, p)
+        if st is not None:          # a .srcsha stamp decides exactly; no clock
+            if st:
+                changed.add(m)
             continue
         c = times.get(str(p.relative_to(ROOT)))
         # Take the LATER of the source's last-commit date and its on-disk mtime.
