@@ -104,3 +104,23 @@ nucleon's own word, e.g. V(2)V(3) = σ₂σ₄⁻¹.
 
 Owner card 2026-11-25: which of these sets counts as the p–n bond is decided after this table
 (card 1, answer C). Nothing here selects.
+
+## Selection under owner card 1 (2026-11-25)
+
+Owner, after this table: *"go"*, taken as acceptance of the recommendation on card 1 (A): a p–n
+bond is a pure-junction γγ word (vertices V(1), V(2) only), and among those that pass reading 3 the
+bond is the cheapest by crossing count. That is the corpus selection rule `FrobeniusSelected`
+(`QOU/Mass/GammaGammaFrobeniusSelection.lean`), the same rule that picks the nucleon V³ = β_Bor on
+three strands. The nucleon is therefore V³ as well (cheapest passing γγ nucleon), and by the
+2026-11-22 ruling (a bond enters the newer nucleon) the site is s = 2.
+
+**Selected deuteron in this cell:** nucleons V³ ⊗ V³, bond V(2)³ = (σ₂σ₃⁻¹)³.
+Trace ratio 0.998497160633, `B = −E₀ ln r = 0.006296` MeV at order-zero E₀ (0.006358 MeV at the
+ruled brane-tower E₀ = 4.227483, owner card 4), against AME 2.224566 MeV: **−99.7 %.**
+
+So under the γγ rule, reading 3 and the corpus selection rule, the deuteron is bound by about
+6 keV, not 2.2 MeV. This agrees in magnitude with the 2026-11-22 result on production blocks
+(unbound by 3–4 keV). The +27.4 % of the superseded interface letter is replaced by −99.7 %. The
+selection was made by the rule, not by the binding: the bonds that bind by MeV are either not pure
+junction or not cheapest. Scope (a): three-strand γγ nucleons (p = n), bonds up to six vertices,
+convention D, proton pin. The flavoured four-strand cell (Phase B) is running separately.
