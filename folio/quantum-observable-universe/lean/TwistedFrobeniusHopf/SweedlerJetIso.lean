@@ -6,6 +6,8 @@ import TwistedFrobeniusHopf.SweedlerJet
 import Mathlib.Algebra.MonoidAlgebra.Basic
 import Mathlib.Data.ZMod.Defs
 import Mathlib.RingTheory.Ideal.Maps
+import Mathlib.Tactic.Module
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Sweedler's algebra is the noncommutative jet of `k[ℤ/2]`
@@ -106,12 +108,12 @@ instance : IsScalarTower k (KZ2 k)ᵐᵒᵖ (OmegaU k) where
 
 /-- The coefficient of `m` in an element of `k[ℤ/2]`. -/
 def coef (m : Z2) : KZ2 k →ₗ[k] k where
-  toFun x := x m
+  toFun x := x.coeff m
   map_add' _ _ := rfl
   map_smul' _ _ := rfl
 
 @[simp] theorem coef_one_one : coef k 1 (1 : KZ2 k) = 1 :=
-  Finsupp.single_eq_same
+  MonoidAlgebra.coeff_one_one
 @[simp] theorem coef_g_one : coef k gZ (1 : KZ2 k) = 0 :=
   Finsupp.single_eq_of_ne gZ_ne_one
 @[simp] theorem coef_one_g : coef k 1 (g2 k) = 0 :=
@@ -121,7 +123,7 @@ def coef (m : Z2) : KZ2 k →ₗ[k] k where
 
 /-- Every element of `k[ℤ/2]` is `x₁ · 1 + x_g · g`. -/
 theorem kz2_decomp (x : KZ2 k) : x = coef k 1 x • (1 : KZ2 k) + coef k gZ x • g2 k := by
-  ext m
+  apply MonoidAlgebra.ext; ext m
   rcases z2_cases m with rfl | rfl
   · change coef k 1 x = coef k 1 (coef k 1 x • (1 : KZ2 k) + coef k gZ x • g2 k)
     rw [map_add, map_smul, map_smul, coef_one_one, coef_one_g, smul_eq_mul, smul_eq_mul,
