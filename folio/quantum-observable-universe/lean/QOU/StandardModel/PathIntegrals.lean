@@ -43,6 +43,8 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory TensorProduct
 
 namespace QOU.PathIntegrals
 
+universe u v w x y z t
+
 /-! ## §1  Braid Group on Three Strands -/
 
 /-- **Braid group `B₃`**: presented as `⟨σ₁, σ₂ | σ₁σ₂σ₁ = σ₂σ₁σ₂⟩`.
@@ -364,11 +366,11 @@ structure SchurWeylDecomposition where
   /-- Number of tensor factors. -/
   n : ℕ
   /-- The Hecke algebra. -/
-  hecke : HeckeAlgebra
+  hecke : HeckeAlgebra.{u}
   /-- Consistency: same `n`. -/
   n_eq : hecke.n = n
   /-- Type of the tensor power `V^{⊗n}`. -/
-  tensor_power : Type*
+  tensor_power : Type v
   /-- The set of partitions of `n` with at most 2 parts. -/
   partitions : List YoungDiagram
   /-- Each partition has size `n`. -/
@@ -376,9 +378,9 @@ structure SchurWeylDecomposition where
   /-- Each partition has at most 2 parts. -/
   partitions_rank : ∀ μ ∈ partitions, μ.numParts ≤ 2
   /-- Irreducible `SU_q(2)`-module for partition `μ` (spin `j = (μ₁−μ₂)/2`). -/
-  V_irrep : YoungDiagram → Type*
+  V_irrep : YoungDiagram → Type w
   /-- Irreducible `H_n(q)`-module for partition `μ`. -/
-  S_irrep : YoungDiagram → Type*
+  S_irrep : YoungDiagram → Type x
   /-- Embedding of each summand `V_μ ⊗ S_μ` into `V^{⊗n}`. -/
   summand_embed : ∀ μ ∈ partitions, V_irrep μ → S_irrep μ → tensor_power
   /-- **Completeness**: every element of `V^{⊗n}` lies in the image of some
@@ -403,9 +405,9 @@ structure SchurWeylDecomposition where
 --   Proc. Natl. Acad. Sci. USA 9 (1923), 93–95.
 structure AlexanderSurjectivity where
   /-- Type of oriented links in `S³`. -/
-  Link : Type*
+  Link : Type y
   /-- Type of braids (union over all `B_n`). -/
-  Braid : Type*
+  Braid : Type z
   /-- Braid closure map `β ↦ β̂`. -/
   closure : Braid → Link
   /-- Surjectivity: every link is the closure of some braid. -/
@@ -422,7 +424,7 @@ structure AlexanderSurjectivity where
 --   and link polynomials", Annals of Mathematics 126 (1987), 335–388.
 structure MarkovTrace where
   /-- The Hecke algebra. -/
-  hecke : HeckeAlgebra
+  hecke : HeckeAlgebra.{u}
   /-- The trace functional `tr : H_n(q) → ℝ`. -/
   tr : hecke.carrier → ℝ
   /-- Trace property: `tr(ab) = tr(ba)`. -/
@@ -454,11 +456,11 @@ structure MarkovTrace where
 -- Ref: [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987)
 structure KnotEigenbasisComplete where
   /-- Part 1: the q-Schur–Weyl decomposition. -/
-  decomposition : SchurWeylDecomposition
+  decomposition : SchurWeylDecomposition.{u, v, w, x}
   /-- Part 2: Alexander surjectivity. -/
-  alexander : AlexanderSurjectivity
+  alexander : AlexanderSurjectivity.{y, z}
   /-- Part 3: the Markov trace detects every irreducible summand. -/
-  markov : MarkovTrace
+  markov : MarkovTrace.{u}
   /-- Consistency: the Markov trace is on the same Hecke algebra
       as the decomposition. -/
   consistent : markov.hecke = decomposition.hecke
@@ -477,6 +479,6 @@ structure KnotEigenbasisComplete where
       `𝓗_phys = lim→ V^{⊗n}` is spanned by the irreducible summands.
       Encoded as: the direct limit over `n` of the `V^{⊗n}` spaces
       admits no element orthogonal to all summand embeddings. -/
-  density : Type* -- abstract direct-limit type `𝓗_phys`
+  density : Type t -- abstract direct-limit type `𝓗_phys`
 
 end QOU.PathIntegrals
