@@ -1,0 +1,11 @@
+{
+  "description": "qou-2k68 route 2b: traced square of substrateDirac at d+2=2",
+  "A": "2*m0*n1 + m1**2 - 2*m3*n1 + 2*m3 + n0**2 - 2*n0*n3 + n3**2",
+  "B": "-2*m0*w1 + 2*m1*w0 - 2*m1*w3 + 2*m3*w1 - 4*n1*w2 + 4*n2*w1 + 2*w2",
+  "C": "2*w0**2 - 4*w0*w3 + 8*w1*w2 + 2*w3**2",
+  "P5": true,
+  "covariance_condition": [
+    "B = 0",
+    "(2*w0**2 - 4*w0*w3 + 8*w1*w2 + 2*w3**2 + (q - 1)**2*(2*m0*n1 + m1**2 - 2*m3*n1 + 2*m3 + n0**2 - 2*n0*n3 + n3**2))/(q - 1)**2 = 0"
+  ]
+}
