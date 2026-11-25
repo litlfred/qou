@@ -332,3 +332,17 @@ normal subgroups of the (2,4,5) triangle group, since Bring is H/Γ with Γ ⊲ 
 index 120; Riemann–Hurwitz: 120·(1 − 1/2 − 1/4 − 1/5) = 6 = 2g − 2 at g = 4), searched for a Gassmann pair whose one member's quotient is Bring. This is a
 finite-group computation (GAP's library of quotients of Δ(2,4,5) would do it; GAP is not
 installed here). Rigidity side: no route found in the held literature. Status: open.
+
+### §8.4 Owner change: Bring as an open question; braided measurement
+
+Owner, relayed 2026-11-25: *"Bring isospectrality --> leave is as an open question in the
+paper instead"*. The construction / rigidity work in §8.3 stops there. The question is
+stated in `conj:bring-isospectrality-question` (brings-surface/), with no direction
+conjectured.
+
+Exploratory measurement for the braided question (not pre-registered): the 7-dimensional
+two-photon relation space R is not invariant under the flip τ(x⊗y) = y⊗x
+(dim R ∩ τR = 5). It meets Sym²W in dimension 4 and Λ²W in dimension 1. So the photon
+quadratic algebra is not a quotient of the symmetric or exterior algebra by a flip-stable
+relation space. Any braiding presenting R (the conjecture carrier) cannot commute with the
+flip.

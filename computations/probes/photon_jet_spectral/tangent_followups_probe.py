@@ -46,3 +46,18 @@ r3 = sp.Matrix.hstack(*gens).rank(simplify=True)
 out['P10_rank_I3'] = int(r3); out['P10_dim_degree3_of_quadratic_algebra'] = 27 - int(r3)
 Path(__file__).with_name('tangent-followups.witness.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
 for k, v in out.items(): print(k, ':', v)
+
+# P10b (exploratory, not pre-registered): position of R relative to the flip tau(x(x)y) = y(x)x
+def flip_vec(v):
+    return sp.Matrix([v[3*(k % 3) + k // 3] for k in range(9)])
+Rm = sp.Matrix.hstack(*R)
+tauR = sp.Matrix.hstack(*[flip_vec(r) for r in R])
+out['P10b_dim_R_cap_tauR'] = 7 + 7 - int(sp.Matrix.hstack(Rm, tauR).rank(simplify=True))
+Sym = [sp.Matrix([int(k == 3*i+j) + int(k == 3*j+i) for k in range(9)]) for i in range(3) for j in range(i, 3)]
+Alt = [sp.Matrix([int(k == 3*i+j) - int(k == 3*j+i) for k in range(9)]) for i in range(3) for j in range(i+1, 3)]
+def capdim(A, B):
+    MA, MB = sp.Matrix.hstack(*A), sp.Matrix.hstack(*B)
+    return int(MA.rank(simplify=True)) + int(MB.rank(simplify=True)) - int(sp.Matrix.hstack(MA, MB).rank(simplify=True))
+out['P10b_dim_R_cap_Sym2'] = capdim(R, Sym); out['P10b_dim_R_cap_Alt2'] = capdim(R, Alt)
+Path(__file__).with_name('tangent-followups.witness.json').write_text(json.dumps(out, indent=1, ensure_ascii=False))
+for k in ('P10b_dim_R_cap_tauR', 'P10b_dim_R_cap_Sym2', 'P10b_dim_R_cap_Alt2'): print(k, out[k])

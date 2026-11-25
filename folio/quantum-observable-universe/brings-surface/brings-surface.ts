@@ -217,6 +217,7 @@ export default chapter({
         "photon",
         "photon-augmentation-jet",
         "photon-response-determines-q",
+        "bring-isospectrality-question",
         "cohomological-embedding",
         "cohomological-embedding-table1-data",
         "cohomological-embedding-table2-data",
