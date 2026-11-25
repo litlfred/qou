@@ -1,0 +1,19 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "accuracy-scorecard",
+  "node": "Task_Staleness",
+  "title": "Observational accuracy scorecard drift & witness gate",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 7.0,
+  "output_sha256": "e07043408e99a5ef29cc8f8a6be04a44e4356f33197b0ab682f9b78f1e65a9fe",
+  "output_head": "PASS accuracy-scorecard: ACCURACY.md and the accuracy-dashboard block byte-identical to 80-dps render (17 upstream inputs verified, 0 hygiene leaks, README.md linked, 0.7s)\nSELFTEST PASS: clean fixture + 5 defect classes (scorecard drift, dashboard drift, hygiene, README link, witness failure) verified.\nFAIL accuracy-scorecard:\n  - ACCURACY.md is out of date with upstream witnesses/template (run `python3 scripts/generate-accuracy-scorecard.py --write`)\nFAIL accuracy-scorecard:\n  - folio/quantum-observable-universe/authors-note/accuracy-dashboard.md is out of date with upstream witnesses/template (run `python3 scripts/generate-accuracy-scorecard.py --write`)\nFAIL accuracy-scorecard:\n  - ACCURACY.md:288: forbidden internal-convention-label token `Convention C`\nFAIL accuracy-scorecard:\n  - README.md does not contain an authored markdown link to `ACCURACY.md` outside `<!-- folio:* -->` blocks\nFAIL accuracy-scorecard:\n  - witness gate failed (`allPassed != True`): computations/u1-hypercharge-assignment.witness.json\nPASS accuracy-scorecard: ACCURACY.md and the accuracy-dashboard block byte-identical to 80-dps render (17 upstream inputs verified, 0 hygiene leaks, README.md linked, 0.7s)",
+  "counts": {
+    "pass": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "lp-dual-backend",
+  "node": "Task_LpDual",
+  "title": "Confirm CI solves at 50 dps, not float64",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0
+  ],
+  "seconds": 0.4,
+  "output_sha256": "49635c0ac9cb766d63dcad46c827464a5fa2ff7076963597e6fd7bac2a79362e",
+  "output_head": "backend='clarabel-mpfr' precision_bits=167\nprimal_obj=3.5733e-44",
+  "counts": {
+    "pass": 1
+  }
+}

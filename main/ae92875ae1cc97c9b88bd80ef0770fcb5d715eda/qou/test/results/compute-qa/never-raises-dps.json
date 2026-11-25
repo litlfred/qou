@@ -1,0 +1,19 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "never-raises-dps",
+  "node": "Task_Precision",
+  "title": "never-raises-dps ratchet",
+  "verdict": "pass",
+  "reason": "",
+  "mode": "strict",
+  "exit_codes": [
+    0,
+    0
+  ],
+  "seconds": 10.4,
+  "output_sha256": "c5cbb4816fb85792c0b98ac5bb0ea31eb01cc12683723bb5971d8108b95882b3",
+  "output_head": "SELF-TEST PASSED \u2014 15 cases: every condition fires, every exemption holds, unparseable is not 'clean'.\n==========================================================================\nNEVER-RAISES-DPS AUDIT \u2014 producers computing at mpmath's default 15\n==========================================================================\n  runnable producers never raising dps : 0\n  mpmath value constructions in them   : 0\n  raise dps only VIA AN IMPORT         : 8 file(s), 42 construction(s) \u2014 not at 15, but fragile:\n         1  computations/c_alpha_from_Q_beta_trace.py\n            inherits from `experimental_constants`\n         3  computations/deltalambda/magnus_sign_row_truncation_probe.py\n            inherits from `he4_magnus_omega2_sign_sparse_probe`\n        29  computations/deltalambda/magnus_tr_decay_perpair_cluster_probe.py\n            inherits from `he4_magnus_omega2_sign_sparse_probe`\n         3  computations/garside-irrep-qvalues.py\n            inherits from `experimental_constants`\n         1  computations/qbeta/qbeta_admissible_functional_hierarchy_probe.py",
+  "counts": {
+    "pass": 1
+  }
+}

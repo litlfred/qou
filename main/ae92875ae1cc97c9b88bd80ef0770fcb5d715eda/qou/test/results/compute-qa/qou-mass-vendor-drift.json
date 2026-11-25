@@ -1,0 +1,18 @@
+{
+  "$schema": "qou-compute-qa/v1",
+  "gate": "qou-mass-vendor-drift",
+  "node": "Task_Staleness",
+  "title": "qou-mass vendored _internal/ vs computations/ (warn)",
+  "verdict": "warn",
+  "reason": "gate exited 1 (warn: reported, not failed)",
+  "mode": "warn",
+  "exit_codes": [
+    1
+  ],
+  "seconds": 0.6,
+  "output_sha256": "549d22ff2bf14db6cc37b236cc876f8b187b91ddf126d129694ec77878686698",
+  "output_head": "DRIFTED from source (3):\n  habiro-coefficients-atomic.witness.json\n  mass-endomorphism.witness.json\n  markov_trace_canonical\n\nRun: python3 scripts/sync-qou-mass-vendor.py --apply\nDo NOT hand-edit files under _internal/ -- they are generated.",
+  "counts": {
+    "warn": 1
+  }
+}

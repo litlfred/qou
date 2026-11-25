@@ -1,0 +1,450 @@
+{
+  "$schema": "qa-reports-manifest/v1",
+  "key": "main/ae92875ae1cc97c9b88bd80ef0770fcb5d715eda",
+  "source": "ae92875ae1cc97c9b88bd80ef0770fcb5d715eda",
+  "written_at": "2026-11-25T16:16:26.420Z",
+  "roots": [
+    "qou/test/results"
+  ],
+  "payloadTree": "6ea10bb31d0dd2bf2f60b21b7d705570076a8836",
+  "files": 50,
+  "bytes": 179387,
+  "listing": [
+    {
+      "path": "qou/test/results/compute-qa/accuracy-scorecard.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/authors-note-coverage.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/float64-padding.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/import-time-dps.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/lp-dual-backend.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/lp-dual-survey.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/lp-dual-wired.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/module-const.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/mpf-context-dps.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/mpf-float-source.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/never-raises-dps.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/no-free-parameter.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "warn": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/probe-float64-diff.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/probe-float64-survey.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/pyhecke-tests.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "fail": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/q0-anchor-flip.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/q0-value-drift.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/qou-mass-vendor-drift.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "warn": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/raw-float64.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/staleness-report.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "warn": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/word-provenance-diff.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/word-provenance-selftest.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/compute-qa/word-provenance-survey.json",
+      "schema": "qou-compute-qa/v1",
+      "counts": {
+        "pass": 1
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa.manifest.json",
+      "schema": "kg-qa-manifest/v1",
+      "axis": "kg"
+    },
+    {
+      "path": "qou/test/results/kg-qa/processes/content/lean-regenerate-and-diff.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "process:Process_LeanRegenerateAndDiff",
+      "counts": {
+        "pass": 27,
+        "fail": 1,
+        "na": 10,
+        "unknown": 7
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/processes/content/witness-refresh.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "process:Process_WitnessRefresh",
+      "counts": {
+        "pass": 26,
+        "fail": 2,
+        "na": 10,
+        "unknown": 7
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/processes/tools/compute-qa.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "process:Process_ComputeQA",
+      "counts": {
+        "pass": 25,
+        "fail": 3,
+        "na": 10,
+        "unknown": 7
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/accuracy-scorecard.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:accuracy-scorecard",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/bean-coordination.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:bean-coordination",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/bib-human-review.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:bib-human-review",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/bib-photo-ingestion-watcher.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:bib-photo-ingestion-watcher",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/bib-qa.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:bib-qa",
+      "counts": {
+        "pass": 2,
+        "fail": 2,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/block-density.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:block-density",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/build-docs.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:build-docs",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/build-pdf.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:build-pdf",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/canonical-watcher.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:canonical-watcher",
+      "counts": {
+        "pass": 3,
+        "fail": 1,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/category-theory.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:category-theory",
+      "counts": {
+        "pass": 3,
+        "fail": 2,
+        "na": 2,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/chapter-analysis.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:chapter-analysis",
+      "counts": {
+        "pass": 5,
+        "fail": 1,
+        "na": 1,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/chapter-complexity-review.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:chapter-complexity-review",
+      "counts": {
+        "pass": 4,
+        "fail": 0,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/compute-audit.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:compute-audit",
+      "counts": {
+        "pass": 2,
+        "fail": 2,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/compute-author.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:compute-author",
+      "counts": {
+        "pass": 2,
+        "fail": 2,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/compute-integration-watcher.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:compute-integration-watcher",
+      "counts": {
+        "pass": 2,
+        "fail": 2,
+        "na": 3,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/content-block-review.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:content-block-review",
+      "counts": {
+        "pass": 5,
+        "fail": 0,
+        "na": 2,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/kg-qa/skills/local/content-graph.kg-qa.json",
+      "schema": "kg-qa/v1",
+      "axis": "kg",
+      "subject": "skill:content-graph",
+      "counts": {
+        "pass": 3,
+        "fail": 2,
+        "na": 2,
+        "unknown": 0
+      }
+    },
+    {
+      "path": "qou/test/results/lean/lean-vacuity-axiom-audit.json",
+      "axis": "lean",
+      "counts": {
+        "fail": 9,
+        "warn": 57,
+        "pass": 4846
+      }
+    },
+    {
+      "path": "qou/test/results/rendering/paper.render-qa.json",
+      "schema": "folio-paper-render-qa/v1",
+      "axis": "rendering",
+      "subject": "paper-render:paper",
+      "counts": {
+        "na": 5
+      }
+    },
+    {
+      "path": "qou/test/results/witnesses/colourdisc-fixedratio-comptrace-zeroslope-equidcap-probe.witness.json",
+      "axis": "compute"
+    },
+    {
+      "path": "qou/test/results/witnesses/lambdasum-taupos-pairenergy-c1eval-nobranch-probe.witness.json",
+      "axis": "compute"
+    },
+    {
+      "path": "qou/test/results/witnesses/nzvol-blockself-simplexinv-threestep-meridianshear-probe.witness.json",
+      "axis": "compute"
+    }
+  ]
+}

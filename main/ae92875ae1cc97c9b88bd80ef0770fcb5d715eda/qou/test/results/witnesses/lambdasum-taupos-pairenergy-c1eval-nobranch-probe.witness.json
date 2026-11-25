@@ -1,0 +1,44 @@
+{
+  "probe": "computations/probes/lambdasum_taupos_pairenergy_c1eval_nobranch_probe.py",
+  "scriptCommitSha": "e226ba66ce53cea91430549ce1efc48cd1eeef24",
+  "scriptHash": "0635fcc96bfd3bd66e7452f9553ce1314e6829b0b1a6b7202ea86d48b4b232a6",
+  "scriptSha256": "0635fcc96bfd3bd66e7452f9553ce1314e6829b0b1a6b7202ea86d48b4b232a6",
+  "executedAt": "2026-11-18T07:49:34Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "lambda_sum_eq_tau",
+      "bean": "qou-jgk6",
+      "maxAbsError": "4.21687917729220928973943e-81",
+      "passed": true
+    },
+    {
+      "id": "tauAnchor_pos",
+      "bean": "qou-k6ub",
+      "minTauAnchor": "2.625",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "pairEnergy_pos_for_crossing_pair",
+      "bean": "qou-ygyx",
+      "minPairEnergy": "0.01818181818181818181818182",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "c1ExponentPoly_eval_one_sub_zero",
+      "bean": "qou-nalu",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "not_isRoot_of_irreducible",
+      "bean": "qou-2q85",
+      "minAbsEvalOnGrid": "0.046875",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
