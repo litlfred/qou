@@ -229,7 +229,7 @@ theorem barSymmetric_ge_at_one {m : ℕ} (c : Fin m → ℝ) (c₀ : ℝ) {q : �
   have : 2 * ∑ i, c i = ∑ i : Fin m, c i * 2 := by
     rw [Finset.mul_sum]; exact Finset.sum_congr rfl fun i _ => by ring
   rw [this]
-  exact add_le_add_left (Finset.sum_le_sum fun i _ => hterm i) c₀
+  exact add_le_add_right (Finset.sum_le_sum fun i _ => hterm i) c₀
 
 /-- **The `q`-transfer, conditional on the presentation.** Suppose the na-Stokes period
 `S(n)(q) = Σ_{λ⊢n} dim_q λ` is presented as a bar-symmetric Laurent polynomial with

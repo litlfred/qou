@@ -115,7 +115,7 @@ theorem det_inversionDeriv {x : Fin 3 → ℝ} (hx : nsq x ≠ 0) :
     ContinuousLinearMap.coe_id', id_eq, ContinuousLinearMap.smulRight_apply,
     ContinuousLinearMap.add_apply, ContinuousLinearMap.coe_smul', ContinuousLinearMap.proj_apply,
     smul_eq_mul]
-  simp only [Fin.isValue, Fin.reduceEq, if_true, if_false, mul_one, mul_zero, add_zero, zero_add]
+  simp only [Fin.isValue, Pi.single_apply, Fin.reduceEq, ↓reduceIte, if_true, if_false, mul_one, mul_zero, add_zero, zero_add]
   have hn : nsq x = x 0 ^ 2 + x 1 ^ 2 + x 2 ^ 2 := rfl
   field_simp
   rw [hn]

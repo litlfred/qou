@@ -232,7 +232,7 @@ theorem gate_not_a_function_of_displayed_data :
   refine ⟨fun _ => 1, fun x => |x|, fun _ => 1, fun _ => -1, fun x => abs_neg x, ?_, ?_, ?_⟩
   · intro i; simp
   · simp [uicAll]
-  · simp [uicGated]
+  · norm_num [uicGated]
 
 /-! ## Axiom audit -/
 

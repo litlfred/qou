@@ -77,7 +77,7 @@ theorem diff_unconstrained (B₁ B₂ t : R) :
   refine ⟨max B₂ (B₁ - t) + t, max B₂ (B₁ - t), ?_, le_max_left _ _, by abel⟩
   have h : B₁ - t ≤ max B₂ (B₁ - t) := le_max_right _ _
   calc B₁ = (B₁ - t) + t := by abel
-    _ ≤ max B₂ (B₁ - t) + t := add_le_add_right h t
+    _ ≤ max B₂ (B₁ - t) + t := add_le_add_left h t
 
 /-- The same fact in the form the arc needs to hear it: **no** value of the
 mirror split is excluded by the bound. Whatever the AME ladder had turned out to
