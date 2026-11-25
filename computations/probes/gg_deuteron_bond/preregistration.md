@@ -46,3 +46,32 @@ computes one, in the cell the corpus already defines for H₂ (`../h2_gg_atom/`)
   (m = 3, 6 pass).
 - K2: for the production interface letter `σ₂ + d_pn·1` on the production free word, the ratio
   equals `z_D + d_pn` (the Markov property) to 1e-30.
+
+## Addendum 1 (owner 2026-11-25: "need all strands"), committed before any of its numbers
+
+The first run covered three-strand γγ nucleons and bonds `V(s)ᵏ` at two sites. This addendum
+removes both limits. Same test (reading 3 at every level, convention D, proton pin), same
+reporting rules (ruling B: trace ratio and `B = −E₀ ln r` reported, never used to select; no
+selection against AME), same code base.
+
+### Phase A: every γγ bond word on all six strands
+
+- Free word `x = Vᵐ ⊗ Vᵐ`, m ∈ {3, 6}.
+- Bond `K` = every γγ word on six strands, i.e. every concatenation of vertices `V(0)…V(4)`,
+  of length 1 to L = 6 vertices (5 + 25 + … + 15625 = 19530 words), that contains at least one
+  junction-crossing vertex (`V(1)` or `V(2)`). Words with no junction vertex are not bonds.
+- Reported: the number that pass reading 3 at every level; for each passing word its ratio and
+  `B`; the full distribution of ratios over the passing set. If the run time exceeds 2 h, L is
+  lowered and the change stated.
+
+### Phase B: flavoured nucleons on four strands, all eight strands kept
+
+- A nucleon is a γγ word on its own four strands (vertices `V(0), V(1), V(2)`), length 1 to 6
+  vertices, that passes reading 3 at every level on four strands. Proton and neutron can now be
+  different words. **Which word is the proton and which the neutron is not determined by the
+  corpus**, so every ordered pair (w₁, w₂) of passing nucleon words is evaluated; none is chosen.
+- Deuteron on 8 strands: `x = w₁ (gens 0–2) · w₂ (gens 4–6)`, bond `K = V(3)ᵏ`, k ∈ {1, 2, 3}
+  (the junction vertex that enters the newer nucleon, per the 2026-11-22 ruling) and `V(2)ᵏ`.
+  Every strand stays in the trace; nothing is closed down before the full trace.
+- Reported: passing nucleon words; for every pair, whether the bare `x` and each `x·K` pass, the
+  ratio and `B`. Summary: the set of `B` over passing atoms. No pair is labelled "the deuteron".
