@@ -57,7 +57,7 @@ theorem conj_getD (l : List ℕ) (j : ℕ) (hj : j < l.headD 0) :
 transpose (`c(i,j) = j − i ↦ i − j`); squaring kills the sign, so the per-cell summand is preserved,
 and `cell_fubini` (the column-length duality of `IdentityIContentDecomposition`) matches the
 row-indexed cells of `λ` with the column-indexed cells of `λ'`. -/
-theorem sumSqContents_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sumSqContents_conj (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     sumSqContents (conj l) = sumSqContents l := by
   -- Expand both sides to Finset double sums over the cell index sets.
   unfold sumSqContents
@@ -87,7 +87,7 @@ indicator-sum / duality / `min` machinery; the hook then matches under transpose
 `l`: `colLen (conj l) c = λ_c`.  Proof: `colLen (conj l) c = #{r < λ_1 : c < colLen l r}`
 (`colLen_eq_indicator_sum` + `conj_getD`), then `c < colLen l r ↔ r < λ_c` (`colLen_duality`), and
 `#{r < λ_1 : r < λ_c} = min λ_1 λ_c = λ_c` (`sum_indicator_lt_eq_min` + `getD_le_headD`). -/
-theorem colLen_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (c : ℕ) :
+theorem colLen_conj (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) (c : ℕ) :
     colLen (conj l) c = l.getD c 0 := by
   rw [colLen_eq_indicator_sum, conj_length]
   have hcongr : ∀ k ∈ Finset.range (l.headD 0),
@@ -103,7 +103,7 @@ theorem colLen_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (c : ℕ) :
 conjugate's hook at `(r,c)` is `(colLen l r − c) + (λ_c − r) − 1`, equal — commuting arm and leg —
 to `l`'s hook at `(c,r)`; `colLen_conj` supplies the leg and `cell_fubini` matches the cell sets.
 This is the moment that feeds `d_q(λ)` and thus `W_λ = W_{λ'}` (C2). -/
-theorem sumSqHooks_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sumSqHooks_conj (l : List ℕ) (hl : l.Pairwise (· ≥ ·)) :
     sumSqHooks (conj l) = sumSqHooks l := by
   unfold sumSqHooks
   simp_rw [list_range_map_sum]
