@@ -51,9 +51,8 @@ noncomputable def realJet : diffAtOne →+* DualNumber ℝ where
       simp
   map_mul' f g := by
     ext
-    · simp [TrivSqZeroExt.fst_mul]
-    · simp only [DualNumber.snd_mul, TrivSqZeroExt.fst_mk, TrivSqZeroExt.snd_mk]
-      show deriv (fun x => f.1 x * g.1 x) 1 = _
+    · rfl
+    · show deriv (fun x => f.1 x * g.1 x) 1 = f.1 1 * deriv g.1 1 + deriv f.1 1 * g.1 1
       have h : HasDerivAt (fun x => f.1 x * g.1 x)
           (deriv f.1 1 * g.1 1 + f.1 1 * deriv g.1 1) 1 :=
         (f.2.hasDerivAt).mul (g.2.hasDerivAt)
@@ -84,7 +83,7 @@ noncomputable def realFixedPointJet : FixedPointJet diffAtOne ℝ where
       have hf1 : HasDerivAt f.1 (deriv f.1 1) ((1 : ℝ)⁻¹) := by
         rw [inv_one]; exact f.2.hasDerivAt
       have := (hf1.comp (1 : ℝ) hasDerivAt_inv_one).deriv
-      simpa using this
+      simpa [Function.comp_def] using this
 
 /-- **The original statement recovered as an instance** (global bar-evenness form):
 a real function differentiable at `1` with `f(q⁻¹) = f(q)` for all `q` has `f'(1) = 0`.

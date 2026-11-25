@@ -48,7 +48,7 @@ theorem shape_getD (T : List (List ℕ)) (i : ℕ) :
     Routed through the unconditional `shape_getD` and Mathlib's own `getElem?`
     lemmas, so it does not depend on the `getD_row_*` case split. -/
 theorem mem_shape_iff {T : List (List ℕ)}
-    {hw : (tableauShape T).Sorted (· ≥ ·)} {i j : ℕ} :
+    {hw : (tableauShape T).SortedGE} {i j : ℕ} :
     (i, j) ∈ ofRowLens (tableauShape T) hw ↔ j < (T.getD i []).length := by
   rw [mem_ofRowLens]
   dsimp only
@@ -65,10 +65,10 @@ theorem mem_shape_iff {T : List (List ℕ)}
 /-- The shape list of a column-strict tableau is weakly decreasing, hence a valid
     `ofRowLens` argument. -/
 theorem tableauShape_sorted {T : List (List ℕ)} (h : ColStrict T) :
-    (tableauShape T).Sorted (· ≥ ·) := by
+    (tableauShape T).SortedGE := by
   have hchain : (tableauShape T).IsChain (· ≥ ·) :=
     (colShapeYoung_iff_shape T).mp (colStrict_shapeYoung h)
-  exact hchain.pairwise
+  exact List.sortedGE_iff_isChain.mpr hchain
 
 /-- **The Schensted semistandard Young tableau.**  A list tableau with weakly
     increasing rows (`RowsSorted`) and strictly increasing columns (`ColStrict`)
