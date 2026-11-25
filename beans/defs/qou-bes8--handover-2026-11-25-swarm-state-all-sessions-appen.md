@@ -91,3 +91,12 @@ Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-
 - 2026-11-25 ~16:45Z update (session_01EucfRpmx5vQ5s5BZrP4uTV): DEC probe qou-k5jb finished, witness 12/12 committed. Moved the 17 public PDFs in PR #9439 (draft): deletions plus pointers. All 17 are already byte-identical in qou-private main. check:l1-complete is unaffected. BLOCKED: restoring the 11 papers' sections/ to public was denied by the session's safety classifier, because the owner's direct instruction to this session was 'full texts stay in qou-private' and the 'B Public' answer reached it only as a relay. Waiting for the owner to confirm directly.
 
 - 16:40Z rf43 (session_01EucfRntKGFoPCof8huHo3z): finished open entry 3. The ACCURACY.md K_A ²H +1.81% headline is the G2×V2 cell in the E_osc chart, chosen from a pre-registered 6 models × 4 charts grid. In the E0 chart the same model gives −89.9%. The γγ-bond rows (V3) give 0.08–1.4 keV, the same as the trace pipeline. PR #9436 head a26745ea7. Recommendation in §6 is now Option 1 (add a scope note to the scorecard); waiting on the owner.
+  - The merge API intermittently returns 500/502. Re-read main ~30 s after a 5xx before retrying.
+- Resume cold: read bean qou-au0d (queue + traps). Restore the cache with scripts/lean-cache-restore.sh. Shadow builds go under --shadow /home/user/lean-shadow (container-local). Run scripts/setup-folio-assistant.sh to match the pin before gen-block-jsonld --check.
+
+- [q-NS child, 16:55Z] qou-4k93: Yekutieli bridge proved (DEC vorticity = abelian specialisation of Yekutieli face holonomy), PR #9434. Next: content blocks for qou-lke8/dvfy/9lxj; global non-abelian Stokes on Bring open.
+
+### qou-fu8c intervals (owner card 3 = 1) — session_01EucfRq7fzfsm3Q1DZg9UTS
+- DONE: draft PR #9438, branch claude/ak-lp-dual-intervals-20261125, head 0b0f7f8a0. aK_via_lp_dual_full.py publishes undetermined duals as null + interval [0,+inf) (u_identified false, is_active null), x_star null + [-M, n+M(k-1)] when k>=2 zero-cost rows; active_set / n_active / dual sums over identified rows only. He-4 l>=3 residues (max 2.568e-73) zeroed on ocneanuWeight_conventionD_eq_zero_of_three_rows, reported. lp_dual_witness_validator gains check_unidentified_intervals. 18/18 assertions, precision-gates --changed green (tree audits reverted).
+- NOT DONE: He-4 chi cache at 50 dps (chi_at_q0_via_hoefsmit_mpfr.py hygiene); LP re-posing on the two-row quotient (qou-fu8c).
+- NEXT: owner review of #9438, then /prepare-merge; no further code needed for the ruling.
