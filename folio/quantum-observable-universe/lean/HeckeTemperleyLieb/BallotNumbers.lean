@@ -406,7 +406,7 @@ theorem ballot_sq_sum_fold (n : ℕ) :
     rw [hidx, ballot_reflect n j (by omega)]
     ring
   rw [htail] at hsplit
-  rw [← hsplit]
+  rw [Finset.range_eq_Ico (n + 2), ← hsplit]
   rcases Nat.even_or_odd n with he | ho
   · obtain ⟨m, hm⟩ := he
     have hhm : h = m := by omega

@@ -74,7 +74,7 @@ theorem single_self_mem_of_separating (A : Subalgebra R (Matrix ι ι R)) (d : �
   have hprod_mem : ∀ s : Finset ι, Matrix.diagonal (∏ j ∈ s, (fun U => g j U)) ∈ A := by
     intro s
     refine Finset.induction_on s ?_ ?_
-    · simpa only [Finset.prod_empty, Matrix.diagonal_one] using one_mem A
+    · simpa only [Finset.prod_empty, Pi.one_def, Matrix.diagonal_one] using one_mem A
     · intro j t hj ih
       rw [Finset.prod_insert hj]
       have hmul : Matrix.diagonal ((fun U => g j U) * ∏ k ∈ t, (fun U => g k U))
