@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T10:30:31Z
-updated_at: 2026-11-25T11:44:28Z
+updated_at: 2026-11-25T15:32:57Z
 parent: qou-y2o9
 ---
 
@@ -18,3 +18,5 @@ parent: qou-y2o9
 2026-11-25 round 4 (owner: 'Fix - no lean model of H3(q)'): HeckeH3Model.lean, regular representation over any comm ring; model_rel, F1_independent, one_V_V2_independent (any ring), borromean_weights_forced_model, commutator_not_mem_F1, mirror_not_mem_W, electron_eq, normaliser_F1_central — all sorry-free. Remaining measured-only: general 6-weight factorisation uniqueness (symbolic Groebner over Q(h) running), dim R=7, continuous symmetry, Gassmann counts.
 
 2026-11-25 round 5: CORRECTED my claim that the two-photon factorisation of V^3 is unique over all photons; Singular shows 8 points, 2 real extra at q0. #9415 head 4635901077.
+
+2026-11-25 round 6: L(n)=floor(n^2/4) for n=3..6 (conj); bounds proved on paper, Lean core; external discussion part 2 not incorporated. PR #9427 stacked on #9415.
