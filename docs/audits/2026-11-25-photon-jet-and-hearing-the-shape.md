@@ -329,6 +329,6 @@ and Bring = X/H₁. Neither Aut⁺(Bring) = S₅ nor Aut(Bring) = S₅ × C₂ c
 so any partner must come from a group acting on a proper cover. Next measurable step: the
 finite quotients of the genus-4 surface group that contain S₅ (equivalently, finite-index
 normal subgroups of the (2,4,5) triangle group, since Bring is H/Γ with Γ ⊲ Δ(2,4,5) of
-index 240), searched for a Gassmann pair whose one member's quotient is Bring. This is a
+index 120; Riemann–Hurwitz: 120·(1 − 1/2 − 1/4 − 1/5) = 6 = 2g − 2 at g = 4), searched for a Gassmann pair whose one member's quotient is Bring. This is a
 finite-group computation (GAP's library of quotients of Δ(2,4,5) would do it; GAP is not
 installed here). Rigidity side: no route found in the held literature. Status: open.
