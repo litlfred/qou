@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T00:38:04Z
-updated_at: 2026-11-25T01:52:03Z
+updated_at: 2026-11-25T10:14:12Z
 parent: qou-s028
 ---
 
@@ -42,3 +42,7 @@ STILL OPEN (the conjecture proper): show a braid class's traced Lagrangian along
 QOU/Core/BoostCovarianceRigidity.lean: the traced square A W_R^2 + B W_R W_H + C W_H^2 is boost-covariant iff B = 0 and A = -c_q^2 C. With q-independent traces it holds at most at one q unless A = C = 0.
 Probe (pre-registered P5, holds): for substrateDirac at size 2, A, B and C are non-zero polynomials in the data (C = 2 disc Omega).
 So imposing covariance at q0 would derive q0 from the substrate (forbidden, 2026-08-02). Route 2b needs a Dirac datum whose traces scale as A/C = -1/(q-1)^2; none exists in the corpus. m = m(beta) stays OPEN.
+
+
+## 2026-11-25T10:14:11Z — step (1) moved to an INTERACTIVE child session (owner directive)
+Interactive research session: session_01EucfRpTfEzeh6w5EMGiM6Q (title 'qou-2k68: E=mc_q^2 open step — braid-attached Hecke Dirac datum'). The owner can steer it directly. The earlier background agent was stopped with no unpushed work.

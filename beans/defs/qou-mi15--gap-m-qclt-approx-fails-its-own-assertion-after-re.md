@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-25T01:31:20Z
+updated_at: 2026-11-25T10:14:12Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). The witness `computations/m-qclt-approx.witness.json` was self-stale (scriptHash drift). Re-running the current producer `computations/m_qclt_approx.py` (exit 0, Python 3.13.18, mpmath 1.3.0, sympy 1.14.0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold the producers that fail their own assertion). The committed witness on main still says `allPassed: true` and is stale.
@@ -35,3 +35,7 @@ Owner card 'A: revert, fail honestly'. B_sym_E0_within_1p25x_T_3He tolerance res
 
 ## 2026-11-25 owner ruling: second revert (https://github.com/litlfred/qou/pull/9404, 64e78785035)
 B_qCLT_fac_chain_within_1p25x_T_3He restored to 0.25 and now FAILS (1.5002). Both A=3 1.25x claims in binding-single-pipeline-comparison fail honestly: B_sym 1.5803, B_qCLT_fac 1.5002 (and m_qclt_approx 1.5002). witness_failed_assertion_audit keeps flagging them, with no baseline entry (owner, 2026-11-25). OPEN GAP remains.
+
+
+## 2026-11-25T10:14:12Z — diagnosis moved to an INTERACTIVE child session (owner directive)
+Interactive research session: session_01EucfRoGm8awMWkCqgZi628 (title 'qou-mi15: A=3 binding 1.5x vs 1.25x gap — diagnosis'). The owner can steer it directly.
