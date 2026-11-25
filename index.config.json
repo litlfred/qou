@@ -57,7 +57,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-sci",
-          "ref": "a407fce69d8f3c43da59354c77e34caec225c30b",
+          "ref": "78f33214788754a4858f942ef6379a3a8a9b0d40",
           "overrides": {
             "folio-assistant-sci": {
               "whole": true
@@ -82,8 +82,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-25",
-              "ref": "a407fce69d8f3c43da59354c77e34caec225c30b",
-              "evidence": "litlfred 2026-11-25 ~11:20Z, card answer \"Approve both pins (Recommended)\" to: approve pinning folio-assistant-sci a407fce (#222) and folio-assistant-core e5a97aa (#874) so the harness site with the Documents landing can be built and published now; re-pin to the merge commits when they land."
+              "ref": "78f33214788754a4858f942ef6379a3a8a9b0d40",
+              "evidence": "litlfred 2026-11-25 ~11:35Z, card answer \"Approve both (Recommended)\" to: approve pinning folio-assistant-sci 78f3321 (#222 + #221) and folio-assistant-core e2beef4 (#874 + #875) for the harness site publish; re-pin to the merge commits when they land."
             }
           }
         }
@@ -94,7 +94,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "e5a97aa58cb70b40c72b65909f2e582323ef7941",
+          "ref": "e2beef41ee730e248671ec7b0a628cea67271426",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -116,8 +116,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-25",
-              "ref": "e5a97aa58cb70b40c72b65909f2e582323ef7941",
-              "evidence": "litlfred 2026-11-25 ~11:20Z, card answer \"Approve both pins (Recommended)\" to: approve pinning folio-assistant-sci a407fce (#222) and folio-assistant-core e5a97aa (#874) so the harness site with the Documents landing can be built and published now; re-pin to the merge commits when they land."
+              "ref": "e2beef41ee730e248671ec7b0a628cea67271426",
+              "evidence": "litlfred 2026-11-25 ~11:35Z, card answer \"Approve both (Recommended)\" to: approve pinning folio-assistant-sci 78f3321 (#222 + #221) and folio-assistant-core e2beef4 (#874 + #875) for the harness site publish; re-pin to the merge commits when they land."
             }
           }
         }
