@@ -2,6 +2,7 @@ import Mathlib.Analysis.ODE.PicardLindelof
 import Mathlib.Analysis.ODE.Gronwall
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Normed.Operator.Mul
+import Mathlib.Analysis.ODE.ExistUnique
 
 /-!
 # Linear ODEs `U' = X U` in a Banach algebra on `[0,1]`
