@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-24T21:12:04.052483+00:00",
-  "commitSha": "dd5f163edbddf8601e4c32f0a7557244ca9c33df",
+  "computedAt": "2026-11-25T01:22:53.795627+00:00",
+  "commitSha": "c8e2e7595621222cb3df9f87c3beac8f52f59fbc",
   "assertions": [
     {
       "name": "B_sym_E0_within_1p25x_T_3He",
@@ -32,8 +32,8 @@
       "name": "B_qCLT_fac_chain_within_1p25x_T_3He",
       "computed": "1.50019563542815161247747180532319903089238538725088706057726",
       "expected": "1",
-      "passed": true,
-      "tolerance": "0.60",
+      "passed": false,
+      "tolerance": "0.25",
       "source": "max over {T, ³He} of max(miss, 1/miss) for the bond-type factorized chain q-CLT B = E_0·(A−1)·(Σ bond-type L)/C(A,2); no fitted coefficients — bond L's from 2-nucleon sub-braids (post-C→D + qou-hu1f canonical trace regime: 1.34–1.50×)."
     },
     {
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 40805,
+  "durationMs": 41956,
   "computation": "binding-single-pipeline-comparison",
   "scriptFile": "binding_single_pipeline_comparison.py",
-  "scriptHash": "b032fc090cb4",
-  "scriptCommitSha": "ca6b5d6dd94f98c676b98935f844dadadfdc28fd",
+  "scriptHash": "a89d8f2899fd",
+  "scriptCommitSha": "02df6d6961b001e63a518f27b72aef961dfa9c69",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
