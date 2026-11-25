@@ -159,6 +159,37 @@ and the dual-graph systole 4 (exact, probe C8). That is an observation about the
 Bring map. It needs the hyperbolic-surface-code literature before it is written
 into the paper; that literature is not yet in `library/`.
 
+## What is usable from the ingested papers
+
+Owner question, relayed 2026-11-25: *"what is usable from the ingested papers?"*
+Every row is grounded in the ingested text (`library/<doc-id>/sections/`, page
+numbers from the section front matter), and every quote was spot-checked.
+"Use" is one of cite / Lean-formalise / compute / scope-limit.
+
+| Paper | Usable part (section, pages) | Use | Attaches to | Does not apply at real q₀, because |
+|---|---|---|---|---|
+| Turaev–Virelizier 2010 (`arxiv-1006.3501v5`) | Thm 11.1, §11, pp. 34–35: TV = RT(Z(C)) for spherical fusion C, dim C ≠ 0. Appendix 6j-symbols, pp. 69–70 (pre-fusion layer) | cite; scope-limit | `fluid-dynamics/root-of-unity-truncation.md`; `qou-r4ky` | §4.2, pp. 10–13: fusion = finitely many simples; the state sum (§5.2, pp. 13–14) needs a finite representative set. At q₀ the category is pre-fusion with infinitely many simples. It is also a 3-manifold invariant, not a surface one |
+| Levin–Wen 2004 (`arxiv-cond-mat-0404617v2`) | §4.2, pp. 6–8: exactly soluble Hamiltonian for every (F, d) satisfying the pentagon and unitarity | cite (source of the string-net hypotheses) | `qou-r4ky` | needs N+1 labels (finite) and Σd_i² finite (§4.2); trivalent nets (§3, pp. 3–4). The Bring map is 4-valent |
+| Pastawski–Yoshida–Harlow–Preskill 2015 (`arxiv-1503.06237v2`) | §3, pp. 8–11, Thm 1: the pentagon-tiling network is a bulk-to-boundary isometry on {5,4}. §4.1, pp. 11–13, Thm 2 (Ryu–Takayanagi) | cite; scope-limit | `qou-r43g` | Thm 2 assumes a simply connected planar network with a boundary (§4.1). Bring is closed, genus 4. Our [[60,8]] is a homological code, not HaPPY; QOU has no perfect tensors |
+| Bhattacharyya–Hubeny–Minwalla–Rangamani 2008 (`arxiv-0712.2456v4`) | §4.5, p. 24: η/s = 1/4π from the bulk; §6, p. 34: second-order coefficients | cite (example of a *derived* viscosity) | `qou-0nqs`; `fluid-dynamics/q-navier-stokes.md` | input is AdS₅ gravity with a conformal boundary (§2, pp. 6–9). QOU has no bulk metric or horizon area |
+| Bredberg–Keeler–Lysov–Strominger 2011 (`arxiv-1101.2451v2`) | §4, pp. 5–7: a smooth horizon *forces* η = r_c ("any value … other than (12) … singularity") | cite (shape of argument for `qou-0nqs`: viscosity fixed by regularity) | `qou-0nqs` | Minkowski region inside a cutoff Σ_c (§1, pp. 3–4); r_c has no counterpart in q. It assumes NS existence and uniqueness (§5.4, p. 10), so it says nothing about regularity |
+| Mohamed–Hirani–Samtaney 2016 (`arxiv-1508.01166v2`) | §3.3, pp. 10–16: DEC NS scheme on surfaces; §5, pp. 29–32: exact discrete conservation of mass and vorticity | compute (operator template for `qou-k5jb`) | `qou-k5jb` | needs a pairwise-Delaunay simplicial mesh with circumcentric stars (§3.1, pp. 7–8), and it is float numerics. **Caveat for our use:** its stream-function form U = ∗d∗dΨ makes every velocity coexact, so on genus 4 it drops the 8 harmonic modes. The paper does not discuss topology |
+| Grans-Samuelsson–Jacobsen–Saleur 2020 (`arxiv-2010.12819v2`) | §2.4, pp. 10–11: Koo–Saleur generators from TL e_j; §8, p. 36: commutators converge only up to an anomalous central term, which the paper leaves conjectural | scope-limit; cite | `braids-and-knots/tl-is-the-xxz-chain.md`; sibling #9415/#9430 | q = e^{iγ} on the unit circle (§2.2, pp. 8–9). At real q₀ > 1 the XXZ chain is massive, so there is no Virasoro continuum limit |
+| Chmutov–Lando 2007 (`arxiv-0704.1313v1`) | Introduction, pp. 1–3: an invariant is mutant-blind iff its weight system depends only on intersection graphs; Jones/HOMFLY are mutant-blind. §4, pp. 7–8, Thm 3: sl(2) weight systems | scope-limit: any mass or binding assignment built only on Jones/HOMFLY traces cannot separate mutant knots | `mass-theory/vassiliev-filtration-mass-tower.md` (calls c₂ "mass-discriminating") | it *does* apply at q₀, and that is the point. It covers oriented knots only (Introduction), so not links such as Borromean or Hopf |
+| Ciubotaru–He 2014 (`arxiv-1409.0902v1`) | §1.2, pp. 2–4, Thm 1.1(1): basis of the rigid cocenter; §1.3, p. 4, Thm 1.3(1): trace map injective for admissible q | cite (for the sibling's cocenter thread) | `braids-and-knots/affine-hecke-homology-prior-art.md`; sibling #9415 | admissibility holds (Def 6.5, §6.3, pp. 14–15: "q ∈ ℂ× has infinite order"), but the theorems concern the *affine* Hecke algebra. QOU's finite H_n(q) is semisimple and its cocenter is already the block traces |
+| Fortier Bourque–Petri 2023 (`arxiv-2302.02540v3`) | §9.2, pp. 33–36: m₁(Bring) ≥ 4 from S₅ representations; §8.2, pp. 26–28, Table 3: genus-4 λ₁ bounds | cite; compute: decompose the probe's exact eigenspaces into S₅ irreducibles | `brings-surface/brings-smoothness.md`; sibling #9415 | Laplace–Beltrami on the hyperbolic metric via Selberg (§1, pp. 1–3). It does not bound our combinatorial λ₁(Δ₀) = 2 or λ₁(Δ₂) = 5 − √5, and it notes the 1.91556 is "not rigorous" |
+| Mårdby–Rowlett 2024 (`arxiv-2406.18369v2`) | §2.1, pp. 4–12, Thm 2.5 (Weyl's law); §4.2, pp. 17–33 (χ is a heat invariant) | cite only, as background | none | continuum and asymptotic in λ → ∞; a 30/60/24-dimensional operator has no such limit. Nothing Bring-specific |
+| Riera–Rodríguez 1992 (`pjm-v154-n1-p09-s`) | PDF pp. 3–5 (journal pp. 180–182): integral S₅ action on H₁(B,ℤ) by 8×8 matrices, "twice the following irreducible representation" (PDF p. 5); Thm 1, PDF p. 7 | compute: check that the probe's 8 harmonic cochains carry 2 × (4-dim irreducible); Lean: the integer matrix identities | `nuclear-interactions/x5-bring-prym-jacobian.md`; probe; `qou-b7fc` | the period matrix and τ are complex-analytic, fixed by a transcendental (Schottky) equation (PDF p. 2), unrelated to q₀. Only the topological H₁ action transfers |
+| Braden–Northover 2012 (`arxiv-1206.6004v2`) | §4.2, pp. 7–9: explicit change of basis to the RR basis; §4.4, pp. 12–15; §5.3, pp. 17–19: unique invariant spin structure | compute: express the [[60,8]] logical basis in the RR basis; Lean: the spin-structure count is finite ℤ₂ arithmetic | `nuclear-interactions/x5-bring-prym-jacobian.md`; `qou-r43g`; `qou-b7fc` | τ₀ and the Riemann constants come from floating-point Maple output (`extcurves`, §4.4), so they are not admissible as QOU numbers. The paper has no q |
+| Cook 2021 thesis (`210811825v1`) | App. E, pp. 144–150: FreeFEM λ₁ ≈ 1.91556, multiplicities 6, 5, 5, 5, 4, 6, …; GAP gives the full symmetry group C₂ × S₅, order 240 | cite as numerical, non-rigorous data; qualitative multiplicity comparison | `brings-surface/brings-smoothness.md` (already cites it); sibling #9415 | continuum finite-element computation in floating point, conjectural by its own account. **Do not equate 1.91556 with our combinatorial λ₁(Δ₀) = 2**: they are different operators |
+
+Net: nothing in the 14 papers makes TV/RT, string nets, HaPPY holography or
+fluid/gravity apply at q₀ as stated. What is usable:
+1. Citations that scope those claims.
+2. Mohamed et al. as the DEC template, which needs a harmonic-mode fix on genus 4.
+3. The Riera–Rodríguez / Braden–Northover integer H₁ data, as an exact S₅ cross-check on the probe.
+4. Chmutov–Lando's mutant-blindness, as a scope limit on trace-only mass assignments.
+
 ## What the paper can take
 
 1. Citations: Turaev–Virelizier, Levin–Wen, Pastawski et al., Bhattacharyya
