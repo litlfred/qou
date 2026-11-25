@@ -6,7 +6,7 @@
   "sha256": "51d21209730be025e950dbcb999ed081a7be4ba4794117bd8171d163f283b38d",
   "bytes": 786094,
   "mtime": "2026-10-10T18:27:27Z",
-  "mimetype_sniffed": "text/plain",
+  "mimetype_sniffed": null,
   "mimetype_source": "unrecognised",
   "pages": 261
  },
@@ -20,7 +20,7 @@
   "doi": null,
   "title": "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem",
   "authors_raw": "Sergio Ciamprone, Marco Valerio Giannone, Claudia Pinzari",
-  "abstract": "We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular tensor category structure on the module category of the affine vertex operator algebra Vgk, equivalent to the quantum group fusion category C(g, q, \u2113), within the Doplicher\u2013Roberts quantum group duality program for the Wess\u2013 Zumino\u2013Witten model. The construction reaches positive integer levels that Finkelberg\u2019s argument does not cover, namely E6 and E7 at k = 1 and E8 at k = 2, and it treats simply\u0002laced and non-simply-laced types uniformly, whereas the Kazhdan\u2013Lusztig construction was carried out for the simply-laced case. We establish that a weak quasi-fibre structure on a functor preserving a coboundary symmetry in the sense of Drinfeld extends a symmetric functor under permutation sym\u0002metry. Using Wenzl\u2019s functor associated with the unitary quantum group fusion category, we construct such a structure compatible with the associativity morphisms, yielding uni\u0002tary coboundary weak Hopf C \u2217 -algebras for all Lie types and positive integer levels, a new class axiomatically introduced here. Via a specialized Drinfeld twist for our algebras and the Wenzl de-quantization curve, this structure is transported onto the Zhu algebra, which becomes a unitary coboundary weak quasi-Hopf C \u2217 -algebra with a 3-coboundary associator. Rigidity is obtained from the quantum group side, without the Knizhnik\u2013 Zamolodchikov equations or the Verlinde formula. We further analyze the type A case via classification methods based on Kazhdan\u2013Wenzl theory and our weak Hopf algebra framework, which gives insight into the determination of associativity from the braiding in the general case. Our methods settle several further problems: Galindo\u2019s question on the uniqueness of unitary tensor structures, Kirillov\u2019s conjecture on the positivity of a Hermitian form on the braided tensor category of modules of an affine Lie algebra introduced by Beilinson, Feigin and Mazur, the quantum group structure on the Zhu algebra sought by Frenkel and Zhu, and the Kazhdan\u2013Lusztig\u2013 Finkelberg equivalence for all Lie types and all positive integer levels without passing through the negative shifted levels, as raised by Huang. We also compare our braided tensor structure with that of Huang and Lepowsky.",
+  "abstract": "We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular tensor category structure on the module category of the affine vertex operator algebra Vgk, equivalent to the quantum group fusion category C(g, q, ℓ), within the Doplicher–Roberts quantum group duality program for the Wess– Zumino–Witten model. The construction reaches positive integer levels that Finkelberg’s argument does not cover, namely E6 and E7 at k = 1 and E8 at k = 2, and it treats simply\u0002laced and non-simply-laced types uniformly, whereas the Kazhdan–Lusztig construction was carried out for the simply-laced case. We establish that a weak quasi-fibre structure on a functor preserving a coboundary symmetry in the sense of Drinfeld extends a symmetric functor under permutation sym\u0002metry. Using Wenzl’s functor associated with the unitary quantum group fusion category, we construct such a structure compatible with the associativity morphisms, yielding uni\u0002tary coboundary weak Hopf C ∗ -algebras for all Lie types and positive integer levels, a new class axiomatically introduced here. Via a specialized Drinfeld twist for our algebras and the Wenzl de-quantization curve, this structure is transported onto the Zhu algebra, which becomes a unitary coboundary weak quasi-Hopf C ∗ -algebra with a 3-coboundary associator. Rigidity is obtained from the quantum group side, without the Knizhnik– Zamolodchikov equations or the Verlinde formula. We further analyze the type A case via classification methods based on Kazhdan–Wenzl theory and our weak Hopf algebra framework, which gives insight into the determination of associativity from the braiding in the general case. Our methods settle several further problems: Galindo’s question on the uniqueness of unitary tensor structures, Kirillov’s conjecture on the positivity of a Hermitian form on the braided tensor category of modules of an affine Lie algebra introduced by Beilinson, Feigin and Mazur, the quantum group structure on the Zhu algebra sought by Frenkel and Zhu, and the Kazhdan–Lusztig– Finkelberg equivalence for all Lie types and all positive integer levels without passing through the negative shifted levels, as raised by Huang. We also compare our braided tensor structure with that of Huang and Lepowsky.",
   "docinfo": {},
   "title_source": "text",
   "title_verified": true,
@@ -99,7 +99,7 @@
   },
   {
    "level": 1,
-   "title": "\u03a9-involution and C*-structure",
+   "title": "Ω-involution and C*-structure",
    "page": 86,
    "source": "inferred",
    "number": "11"
@@ -141,7 +141,7 @@
   },
   {
    "level": 1,
-   "title": "Constructing integral wdf; solution to Galindo\u2019s problem",
+   "title": "Constructing integral wdf; solution to Galindo’s problem",
    "page": 117,
    "source": "inferred",
    "number": "17"
@@ -155,21 +155,21 @@
   },
   {
    "level": 1,
-   "title": "Quantum group Uq(g) at roots of unity, \u2217-involution, classical limit",
+   "title": "Quantum group Uq(g) at roots of unity, ∗-involution, classical limit",
    "page": 121,
    "source": "inferred",
    "number": "19"
   },
   {
    "level": 1,
-   "title": "Fusion categories C(g, q, \u2113) and unitary ribbon wqh via integral wdf",
+   "title": "Fusion categories C(g, q, ℓ) and unitary ribbon wqh via integral wdf",
    "page": 129,
    "source": "inferred",
    "number": "20"
   },
   {
    "level": 1,
-   "title": "Kazhdan-Lusztig-Finkelberg theorem for \u00d5_\u2113, unitarity of Kirillov inner product",
+   "title": "Kazhdan-Lusztig-Finkelberg theorem for Õ_ℓ, unitarity of Kirillov inner product",
    "page": 131,
    "source": "inferred",
    "number": "21"
@@ -197,7 +197,7 @@
   },
   {
    "level": 1,
-   "title": "Kazhdan-Wenzl theory and equivalence of ribbon slN,q,\u2113-categories",
+   "title": "Kazhdan-Wenzl theory and equivalence of ribbon slN,q,ℓ-categories",
    "page": 149,
    "source": "inferred",
    "number": "25"
@@ -211,7 +211,7 @@
   },
   {
    "level": 1,
-   "title": "Coboundary categories and Deligne\u2019s theorem",
+   "title": "Coboundary categories and Deligne’s theorem",
    "page": 166,
    "source": "inferred",
    "number": "27"
@@ -239,21 +239,21 @@
   },
   {
    "level": 1,
-   "title": "Wenzl\u2019s unitary structure of C(g, q, \u2113), square root of the quantum Casimir",
+   "title": "Wenzl’s unitary structure of C(g, q, ℓ), square root of the quantum Casimir",
    "page": 187,
    "source": "inferred",
    "number": "31"
   },
   {
    "level": 1,
-   "title": "Compatible unitary coboundary weak Hopf algebras Uq(g) \u2192 AW (g, q, \u2113)",
+   "title": "Compatible unitary coboundary weak Hopf algebras Uq(g) → AW (g, q, ℓ)",
    "page": 194,
    "source": "inferred",
    "number": "32"
   },
   {
    "level": 1,
-   "title": "From AW(g, q, \u2113) to a compatible unitary coboundary wqh structure on A(V_g^k)",
+   "title": "From AW(g, q, ℓ) to a compatible unitary coboundary wqh structure on A(V_g^k)",
    "page": 204,
    "source": "inferred",
    "number": "33"
@@ -416,7 +416,7 @@
   {
    "id": "sec-010-11-involution-and-c-structure",
    "number": "11",
-   "title": "\u03a9-involution and C*-structure",
+   "title": "Ω-involution and C*-structure",
    "level": 1,
    "page_start": 86,
    "page_end": 91,
@@ -476,7 +476,7 @@
   {
    "id": "sec-016-17-constructing-integral-wdf-solution-to-galindo-s",
    "number": "17",
-   "title": "Constructing integral wdf; solution to Galindo\u2019s problem",
+   "title": "Constructing integral wdf; solution to Galindo’s problem",
    "level": 1,
    "page_start": 117,
    "page_end": 119,
@@ -496,7 +496,7 @@
   {
    "id": "sec-018-19-quantum-group-uq-g-at-roots-of-unity-involution",
    "number": "19",
-   "title": "Quantum group Uq(g) at roots of unity, \u2217-involution, classical limit",
+   "title": "Quantum group Uq(g) at roots of unity, ∗-involution, classical limit",
    "level": 1,
    "page_start": 121,
    "page_end": 129,
@@ -506,7 +506,7 @@
   {
    "id": "sec-019-20-fusion-categories-c-g-q-and-unitary-ribbon-wqh",
    "number": "20",
-   "title": "Fusion categories C(g, q, \u2113) and unitary ribbon wqh via integral wdf",
+   "title": "Fusion categories C(g, q, ℓ) and unitary ribbon wqh via integral wdf",
    "level": 1,
    "page_start": 129,
    "page_end": 131,
@@ -516,7 +516,7 @@
   {
    "id": "sec-020-21-kazhdan-lusztig-finkelberg-theorem-for-unitarit",
    "number": "21",
-   "title": "Kazhdan-Lusztig-Finkelberg theorem for \u00d5_\u2113, unitarity of Kirillov inner product",
+   "title": "Kazhdan-Lusztig-Finkelberg theorem for Õ_ℓ, unitarity of Kirillov inner product",
    "level": 1,
    "page_start": 131,
    "page_end": 133,
@@ -556,7 +556,7 @@
   {
    "id": "sec-024-25-kazhdan-wenzl-theory-and-equivalence-of-ribbon",
    "number": "25",
-   "title": "Kazhdan-Wenzl theory and equivalence of ribbon slN,q,\u2113-categories",
+   "title": "Kazhdan-Wenzl theory and equivalence of ribbon slN,q,ℓ-categories",
    "level": 1,
    "page_start": 149,
    "page_end": 163,
@@ -576,7 +576,7 @@
   {
    "id": "sec-026-27-coboundary-categories-and-deligne-s-theorem",
    "number": "27",
-   "title": "Coboundary categories and Deligne\u2019s theorem",
+   "title": "Coboundary categories and Deligne’s theorem",
    "level": 1,
    "page_start": 166,
    "page_end": 173,
@@ -616,7 +616,7 @@
   {
    "id": "sec-030-31-wenzl-s-unitary-structure-of-c-g-q-square-root",
    "number": "31",
-   "title": "Wenzl\u2019s unitary structure of C(g, q, \u2113), square root of the quantum Casimir",
+   "title": "Wenzl’s unitary structure of C(g, q, ℓ), square root of the quantum Casimir",
    "level": 1,
    "page_start": 187,
    "page_end": 194,
@@ -626,7 +626,7 @@
   {
    "id": "sec-031-32-compatible-unitary-coboundary-weak-hopf-algebra",
    "number": "32",
-   "title": "Compatible unitary coboundary weak Hopf algebras Uq(g) \u2192 AW (g, q, \u2113)",
+   "title": "Compatible unitary coboundary weak Hopf algebras Uq(g) → AW (g, q, ℓ)",
    "level": 1,
    "page_start": 194,
    "page_end": 204,
@@ -636,7 +636,7 @@
   {
    "id": "sec-032-33-from-aw-g-q-to-a-compatible-unitary-coboundary",
    "number": "33",
-   "title": "From AW(g, q, \u2113) to a compatible unitary coboundary wqh structure on A(V_g^k)",
+   "title": "From AW(g, q, ℓ) to a compatible unitary coboundary wqh structure on A(V_g^k)",
    "level": 1,
    "page_start": 204,
    "page_end": 214,

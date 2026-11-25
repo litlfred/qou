@@ -1,52 +1,50 @@
 #!/usr/bin/env bash
 # build-site — build qou's published site into $SITE_DIR (default _site).
 #
-# This is the folio's `build_command` for the platform's reusable
-# `folio-staging.yml` (called from .github/workflows/build.yml), and the
-# build step of scripts/publish-main-local.sh, which agents run after a merge
-# to main when GitHub Actions is not enabled (owner, 2026-11-23).
+# qou is a platform LAYER (owner ruling 2026-11-24, "1 qou is platform later"),
+# set up as the dth-hrh folio is, so its site is built by the platform's own
+# route: cat-harness-tools' build-instance-site.ts, the same command
+# stage-local.ts and the reusable folio-site-publish.yml run. It reads the
+# recipe in index.config.json (`site.build`), whose steps are package scripts:
 #
-# Three parts:
-#   1. The folio site: folio-assistant-core's build-folio-site.ts.
-#   2. The 80-dps observational accuracy scorecard QA gate + standalone HTML
-#      render (`scripts/generate-accuracy-scorecard.py --check --qa-report
-#      --html-out $SITE/accuracy/index.html`), railed at `/accuracy/`.
-#   3. The Lean library render, the folio's `lean` visualiser declared in
-#      qou.json: folio-assistant-sci's lean-docs-build.sh (doc-gen4, restores
-#      the warm lake cache first) and lean-render.ts (stages it at <site>/lean/
-#      with the harness navbar). Skill: folio-assistant-sci `lean-html-docs`.
+#   site:document  (source) the "Documents" landing and one interactive page per
+#                  paper at en/<slug>/ (folio-assistant-core build-document-site.ts)
+#   site:landing   (source) CONTRIBUTING, LICENSE and the source on the landing
+#   Jekyll + the platform chrome, the left navbar (rail) on every page
+#   site:export    the LaTeX PDF and the Word file per paper, en/<slug>/export/
+#   site:accuracy  /accuracy/   site:beans /beans/   site:qa /qa/
+#   site:lean      /lean/ (the declared Lean slot; stored render until Verso)
+#   site:papers    /papers/<slug>/ -> en/<slug>/
+#   site:repo-files  /contributing/, /LICENSE.txt
+#   then the platform's link check, which refuses a site with a dead link.
 #
-# The Lean part needs `lake` on PATH and a warm cache. When `lake` is absent it
-# is SKIPPED and says so: the site still builds, without lean/. Set
-# QOU_LEAN_DOCS=0 to skip it on purpose, =1 to make a missing lake an error.
+# The steps themselves are scripts/site-step.sh. The layers are mounted at the
+# repository root from index.lock.json; when they are absent this mounts them
+# (.github/mount-from-lock.sh). It builds and checks; it never publishes —
+# scripts/publish-main-local.sh does that.
+#
+# Environment: SITE_DIR (default _site), SITE_WORK (default build/site-work:
+# Jekyll source, gems, logs), QOU_PDF_DIR (prebuilt <slug>.pdf files; default
+# build/site-pdf, built on demand), QOU_LEAN_RENDERER (store|verso).
 set -euo pipefail
 ROOT=$(git rev-parse --show-toplevel)
 cd "$ROOT"
 SITE=${SITE_DIR:-_site}
-PLAT=${PLATFORM_DIR:-folio-assistant}
-LEAN=${QOU_LEAN_DOCS:-auto}
+WORK=${SITE_WORK:-$ROOT/build/site-work}
 
-[ -d "$PLAT/folio-assistant-core" ] || { echo "build-site: platform not found at $PLAT (run scripts/setup-folio-assistant.sh)" >&2; exit 2; }
-
-echo "== build-site: folio site -> $SITE"
-bun run "$PLAT/folio-assistant-core/scripts/build-folio-site.ts" --out "$SITE"
-
-echo "== build-site: accuracy scorecard QA gate & HTML -> $SITE/accuracy"
-python3 -c "import mpmath" >/dev/null 2>&1 || python3 -m pip install --quiet mpmath
-python3 scripts/generate-accuracy-scorecard.py --check --qa-report --html-out "$SITE/accuracy/index.html"
-
-if [ "$LEAN" = 0 ]; then
-  echo "== build-site: Lean render skipped (QOU_LEAN_DOCS=0)"
-elif ! command -v lake >/dev/null 2>&1; then
-  if [ "$LEAN" = 1 ]; then echo "build-site: QOU_LEAN_DOCS=1 but lake is not on PATH" >&2; exit 3; fi
-  echo "== build-site: Lean render SKIPPED: lake is not on PATH, so $SITE has no lean/. Set up Lean (scripts/setup-lean-toolchain.sh) and re-run to include it."
-else
-  echo "== build-site: Lean render -> $SITE/lean"
-  bash "$PLAT/folio-assistant-sci/adapters/paper/lean/lean-docs-build.sh" \
-    --lake-root folio/quantum-observable-universe/lean --lib QOU --platform "$PLAT" --restore
-  bun run "$PLAT/folio-assistant-sci/adapters/paper/lean/lean-render.ts" \
-    --docs folio/quantum-observable-universe/lean/.lake/build/doc \
-    --site "$SITE" --route lean --modules QOU,UGB,Fred2005 --home-label qou \
-    --platform "$PLAT"
+if [ ! -f cat-harness-tools/scripts/build-instance-site.ts ]; then
+  echo "== build-site: mounting the platform layers from index.lock.json"
+  bash .github/mount-from-lock.sh --root "$ROOT"
 fi
+[ -d node_modules ] || bun install
+# One platform: folio-assistant/ names the root mounts (scripts/lib/platform-root.sh).
+. scripts/lib/platform-root.sh && qou_platform_shim "$ROOT"
+
+rm -rf "$WORK/_site"
+bun run cat-harness-tools/scripts/build-instance-site.ts --root . --instance qou \
+  --out "$WORK" --no-mount "$@"
+
+rm -rf "$SITE"
+mkdir -p "$(dirname "$SITE")"
+mv "$WORK/_site" "$SITE"
 echo "== build-site: done ($SITE)"

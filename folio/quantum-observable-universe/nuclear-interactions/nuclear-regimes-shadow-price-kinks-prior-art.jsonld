@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-nuclear-regimes-shadow-price-kinks-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:nuclear-regimes-shadow-price-kinks-prior-art",
+  "kind": "remark",
+  "title": "Prior art for toric chamber flips, magic-shell shadow-price kinks, and finite-nucleon phase walls",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes",
+    "papers/quantum-observable-universe/blocks/prop-nuclear-chamber-groebner-basis"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes",
+  "cites": [
+    "references/bokut2001",
+    "references/kangleeleeoh2002",
+    "references/graver1975",
+    "references/billera-gelfand-sturmfels1990",
+    "references/conti-traverso1991",
+    "references/sturmfels-thomas1997",
+    "references/mayer1949",
+    "references/haxel-jensen-suess1949",
+    "references/perdew-parr-levy-balduz1982",
+    "references/verstichel-vanaggelen2009",
+    "references/zauner-verstraete2016",
+    "references/viro2001",
+    "references/lee-yang1952"
+  ],
+  "tags": [
+    "nuclear-binding",
+    "magic-numbers",
+    "shadow-price",
+    "groebner-fan",
+    "prior-art"
+  ],
+  "text": "nuclear-regimes-shadow-price-kinks-prior-art.md",
+  "provenance": "authored"
+}

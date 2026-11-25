@@ -20,6 +20,18 @@
     "library/arxiv-math-9906120v3/sections/sec-005"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Discrete orthogonal polynomial ensembles and the Plancherel measure — We consider discrete orthogonal polynomial ensembles which are discrete analogues of the orthogonal polynomial ensembles in\n\n**Discrete orthogonal polynomial ensembles and the Plancherel measure**\n\n*By Kurt Johansson*\n\n38 pp, 7 sections.\n\n**Abstract.** We consider discrete orthogonal polynomial ensembles which are discrete analogues of the orthogonal polynomial ensembles in random matrix theory. These ensembles occur in certain problems in combinatorial probability and can be thought of as probability measures on partitions. The Meixner ensemble is related to a two-dimensional directed growth model, and the Charlier ensemble is related to the lengths of weakly increasing subsequences in random words. The Krawtchouk ensemble occurs in connection with zig-zag paths in random domino tilings of the Aztec diamond, and also in a certain simpliﬁed directed ﬁrst-passage percolation model. We use the Charlier ensemble to investigate the asymptotics of weakly increasing subsequences in random words and to prove a conjecture of Tracy and Widom.\n\n**Outline.** Front matter; Abstract; 1 Introduction and results; 2 The Plancherel measure as a limit of the Mei; 3 The Plancherel measure as a limit of the Cha; 4 Random words and the Charlier ensemble; 5 Applications of the Krawtchouk ensemble",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",

@@ -25,6 +25,18 @@
     "library/arxiv-1409.4073v1/sections/sec-010"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION — We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of\n\n**SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION**\n\n*FABIO TONINI*\n\n35 pp, 12 sections.\n\n**Abstract.** We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of stacks. They generalize the homogeneous sheaﬁﬁcation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers and of Cox rings and homogeneous sheaﬁﬁcation functors. Moreover, using this theory, we prove a non-neutral form of Tannaka’s reconstruction, extending the classical correspondence between torsors and strong monoidal functors.\n\n**Outline.** Front matter; Introduction; Notation; Acknowledgements; 1 Preliminaries on sheaves and fibered categor; 2 Sheafification functors.; 2.1 Sheafifying R-linear functors.; 2.2 Sheafifying R-linear monoidal functors.; 3 Yoneda embeddings.; 4 Group schemes and representations.; 5 Tannaka reconstruction for stacks with the r; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

@@ -7,12 +7,12 @@ qou-l7pj); before it they were `pdf:` fields inline in `references.ts`.
 Public-release policy (owner ruling 2026-11-24): third-party copyrighted `.pdf`
 binaries are removed from `library/`, keeping only works authored/co-authored by
 Frederick Leitner (Leitner, Leitner–Pawloski, Foth–Leitner) while preserving
-100% of extracted `structure.json`, `summary.json`, `sections/*.md`, `ocr/`, and
+100% of extracted `structure.json`, the KG node `manifest.jsonld` (which carries the summary), `sections/*.md`, `ocr/`, and
 `candidates.json` in `library/<doc-id>/`. Accordingly, a `library.pdf` path
 `library/<doc-id>/<file>.pdf` resolves cleanly when EITHER:
   1. the `.pdf` binary exists on disk (or in `HEAD` inside a sparse checkout), OR
   2. `library/<doc-id>/` holds processed text/metadata (`sections/`, `ocr/`, or
-     `summary.json`) and, if `structure.json` records `source.file`, it matches
+     a `manifest.jsonld` KG node) and, if `structure.json` records `source.file`, it matches
      `<file>.pdf`.
 
 Exit 0 clean, 1 on any dangling path or mis-stamped arXiv directory.
@@ -79,7 +79,7 @@ def classify_pdf_fields() -> tuple[list[str], list[str], list[str]]:
             has_derived = (
                 (doc_dir / "sections").is_dir()
                 or (doc_dir / "ocr").is_dir()
-                or (doc_dir / "summary.json").is_file()
+                or (doc_dir / "manifest.jsonld").is_file()
             )
             if not has_derived:
                 dangling.append(p)
@@ -99,7 +99,7 @@ def classify_pdf_fields() -> tuple[list[str], list[str], list[str]]:
                 dangling.append(p)
                 continue
             has_derived = (
-                f"library/{doc_id}/summary.json" in tracked
+                f"library/{doc_id}/manifest.jsonld" in tracked
                 or any(tp.startswith(f"library/{doc_id}/sections/") or tp.startswith(f"library/{doc_id}/ocr/")
                        for tp in tracked)
             )

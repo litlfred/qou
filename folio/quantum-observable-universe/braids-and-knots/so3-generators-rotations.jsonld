@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-so3-generators-rotations",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:so3-generators-rotations",
+  "kind": "remark",
+  "title": "The $\\mathrm{SO}(3)$ generators as rotations",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-so3-generators"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-so3-generators",
+  "tags": [
+    "so3",
+    "rotation-group"
+  ],
+  "text": "so3-generators-rotations.md",
+  "provenance": "authored"
+}

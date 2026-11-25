@@ -23,6 +23,18 @@
     "library/arxiv-0905.0228v4/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials.\n\n**A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS**\n\n*JOHANN CIGLER AND JIANG ZENG*\n\n19 pp, 10 sections.\n\n**Abstract.** Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials. In this paper we consider a new family of q-Hermite polynomials and prove several curious properties about these polynomials. One striking property is the connection with q-Fibonacci and q-Lucas polynomials. The latter relation yields a generalization of the Touchard-Riordan formula.\n\n**Outline.** Front matter; 1 Introduction; 2 The q-Hermite polynomials Hn(x,s|q); 3 The rescaled discrete q-Hermite polynomials ; 4 Connection with q-Fibonacci polynomials and ; 5 Appendix; 5.1 Some well-known facts; 5.2 A second proof of Proposition 14; Acknowledgement; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

@@ -23,6 +23,18 @@
     "library/arxiv-2008.09788v2/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY — This paper surveys results related to well-known works of B. Plotkin and V.\n\n**NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY**\n\n*ALEXEI KANEL-BELOV, ALEXEI CHILIKOV, ILYA IVANOV-POGODAEV, SERGEY MALEV*\n\n31 pp, 10 sections.\n\n**Abstract.** This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geometry. We start from a brief review of the paper and motivations. The ﬁrst sections deal with model theory. In Section 2.1 we describe the geometric equivalence, the elementary equiv- alence, and the isotypicity of algebras. We look at these notions from the positions of universal algebraic geometry and make emphasis on the cases of the ﬁrst order rigidity. In this setting Plotkin’s problem on the structure of automorphisms of (auto)endomorphisms of free objects, and auto-equivalence of categories is pretty natural and important. Section 2.2 is dedicated to particular cases of Plotkin’s problem. Section 2.3 is devoted to Plotkin’s problem for automorphisms of the group of polynomial symplectomorphisms.\n\n**Outline.** Front matter; 1 Introduction; 2 Model-theoretical aspects; 2.1 Algebraic geometry over algebraic systems; 2.2 Plotkin's problem: automorphisms of endomo; 2.3 On the independence of the B-KK isomorphis; 3 Algorithmic aspects of algebraic geometry; 3.1 Finite Gröbner basis algebras with unsolva; 3.2 On the algorithmic undecidability of the e; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -29,7 +29,7 @@
     "tower-inclusion",
     "hodge-lift"
   ],
-  "leanRef": "qou:QOU.Machinery.HeckeGeneral.tauAssignment_tower_natural",
+  "leanRef": "qou:HeckeTemperleyLieb.HeckeTauAssignmentTower.tauAssignment_tower_natural",
   "text": "tau-assignment-tower-square.md",
   "provenance": "authored"
 }

@@ -31,6 +31,18 @@
     "library/arxiv-2601.05136v2/sections/sec-016"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N.\n\n**State integrals for the quantized SL 2 ( C ) Chern-Simons invariant**\n\n*Calvin McPhail-Snyder*\n\n19 pp, 18 sections.\n\n**Abstract.** Previous work of the author and N. Reshetikhin deﬁnes an invariant Zψ N(K, ρ, µ) of a knot K, a representation ρ: π1(S3 \\ K) →SL2(C), and a logarithm µ of a meridian eigenvalue of ρ. It can be interpreted as a geometric twist of the Kashaev invariant or as a quantization of the SL2(C) Chern-Simons invariant and is deﬁned via a discrete state-sum involving quantum dilogarithms. In this paper we show how to express Zψ N(K, ρ, µ) as a sum over contour integrals in a space parametrizing hyperbolic struc- tures on the knot complement. Such state integral presentations are an important step in determining the asymptotics of quantum invariants as predicted by the Volume Conjecture. We discuss this perspective and the remaining obstacles to establishing exponential growth of Zψ N.\n\n**Outline.** Front matter; Introduction; Background and motivation; Our results; Cyclic and principal type invariants; Preliminaries; Diagrams and colorings; Gauge transformations and nondegeneracy; Segment equations; State integrals for the quantized Chern-Simons; Quantum dilogarithms; The action and state sums; State integrals; Formal asymptotics; Classical dilogarithms; The classical action; Asymptotics; Barriers to moving the contour",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

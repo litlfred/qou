@@ -35,6 +35,18 @@
     "library/arxiv-2208.13692v1/sections/sec-020"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "BRING’S CURVE: OLD AND NEW — Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties.\n\n**BRING’S CURVE: OLD AND NEW**\n\n*H. W. BRADEN AND LINDEN DISNEY-HOGG*\n\n38 pp, 21 sections.\n\n**Abstract.** Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Sz¨ ego kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.\n\n**Outline.** 1 Introduction; 2 Defining Equations and Elementary Properties; 2.1 Basic Properties; 2.2 The Period Matrix; 2.3 The Automorphism Group; 3 Geometric Points; 3.1 Weierstrass Points; 3.2 Vertices and Face-Centres; 4 Quotients by Subgroups; 4.1 Genera of Quotients; 4.2 Relations between Quotients; 4.3 Quotients by a 4- and 2,2-cycle; 4.4 Quotients by a 3-cycle; 4.5 Quotients by a transposition; 4.6 Summarising; 5 Theta Characteristics; 5.1 Abel-Jacobi and the Riemann Constant Vecto; 5.2 Tritangent Planes and Odd Characteristics\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.12: Deﬁne the matrices M, MS by\n- Theorem 2.14: TheA5 subgroup of Aut(B) can be realised as a group of collineations\n- Theorem 3.4: If X is a Riemann surface of genus g >2 with g3−g\n- Theorem 5.5: KQ =AQ(∆S), and as such ∆S is a theta characteristic.\n- Theorem 5.9: The orbit decomposition of even theta characteristics on Bring’s curve is\n- Theorem 5.11: The theta characteristic ∆ (deﬁned in Example 5.3) is the unique invariant",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

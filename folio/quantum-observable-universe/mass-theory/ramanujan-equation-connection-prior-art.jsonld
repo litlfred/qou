@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ramanujan-equation-connection-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ramanujan-equation-connection-prior-art",
+  "kind": "remark",
+  "title": "Prior art: connection formulae for the Ramanujan $q$-difference equation",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-qdifference-kernel-prolongation-symbol",
+  "cites": [
+    "references/morita2012"
+  ],
+  "tags": [
+    "q-difference",
+    "q-borel",
+    "connection-formula",
+    "q-airy",
+    "ramanujan-function",
+    "prior-art"
+  ],
+  "text": "ramanujan-equation-connection-prior-art.md",
+  "provenance": "authored"
+}

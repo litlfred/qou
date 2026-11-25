@@ -21,6 +21,21 @@
     "library/hyperbolicandneumann/sections/sec-006"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Second copy of Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — see library/arxiv-2304.12545v1/, which is the same document.\n\n**Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann** — Stavros Garoufalidis and Don Zagier.\n\n**This is a duplicate copy.** The same document is held at `library/arxiv-2304.12545v1/`, which carries the arXiv identifier and should be preferred. Both were ingested because the doc-id derivation is per-file and the two files have different names; nothing detects that their *contents* are the same.\n\nKept rather than deleted so nothing that already cites this path breaks. See the arXiv copy for the summary.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "hyperbolicandneumann",

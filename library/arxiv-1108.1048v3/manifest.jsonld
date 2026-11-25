@@ -23,6 +23,18 @@
     "library/arxiv-1108.1048v3/sections/sec-008"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their\n\n**CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS**\n\n*OF FINITE CLASSICAL TYPE*\n\n45 pp, 10 sections.\n\n**Abstract.** We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their cyclotomic quotients Rλ for ﬁnite classical types using a crystal basis theoretic approach. More precisely, for each element v of the crystal B(∞) (resp. B(λ)), we ﬁrst construct certain modules ∆(a; k) labeled by the adapted string a of v. We then prove that the head of the induced module Ind \u0000∆(a; 1)⊠· · ·⊠∆(a; n) \u0001 is irreducible and that every irreducible R-module (resp. Rλ-module) can be realized as the irreducible head of one of the induced modules Ind(∆(a; 1) ⊠· · · ⊠∆(a; n)). Moreover, we show that our construction is compatible with the crystal structure on B(∞) (resp. B(λ)).\n\n**Outline.** Front matter; Introduction; 1.1 Crystals; 1 Crystals and Khovanov-Lauda-Rouquier Algebra; 1.2 Khovanov-Lauda-Rouquier algebras; 1.3 Construction of irreducible R-modules; 2 Description of Nk(v) for Finite Type Via Ada; 3 Explicit Construction of Irreducible Modules; 4 Proof of Theorem ??; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

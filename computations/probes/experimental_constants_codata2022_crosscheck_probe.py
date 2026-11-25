@@ -44,13 +44,14 @@ import experimental_constants as _ec  # noqa: E402
 def _locate_codata_values_json() -> _Path:
     repo = _Path(__file__).resolve().parents[2]
     candidates = [
-        repo / "library" / "codata-2022" / "values.json",
-        _Path("/Users/litlfred/space_cats/qou/library/codata-2022/values.json"),
+        # folio-assistant-sci's copy: qou's was dropped 2026-11-24 as byte-identical.
+        repo / "folio-assistant-sci" / "library" / "codata-2022" / "values.json",
+        repo / "folio-assistant" / "folio-assistant-sci" / "library" / "codata-2022" / "values.json",
     ]
     for c in candidates:
         if c.is_file():
             return c
-    raise FileNotFoundError("library/codata-2022/values.json not found")
+    raise FileNotFoundError("folio-assistant-sci/library/codata-2022/values.json not found: mount the platform layers")
 
 
 def main() -> int:

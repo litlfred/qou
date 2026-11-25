@@ -50,6 +50,18 @@
     "library/arxiv-quant-ph-0606114v3/sections/sec-035"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation — We review the q-deformed spin network approach to Topological Quantum Field Theory and apply these methods\n\n**q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation**\n\n*Polynomials and Anyonic Topological*\n\n88 pp, 37 sections.\n\n**Abstract.** We review the q-deformed spin network approach to Topological Quantum Field Theory and apply these methods to produce unitary representations of the braid groups that are dense in the unitary groups. Our methods are rooted in the bracket state sum model for the Jones polynomial. We give our results for a large class of representations based on values for the bracket polynomial that are roots of unity. We make a separate and self-contained study of the quan- tum universal Fibonacci model in this framework. We apply our results to give quantum algorithms for the computation of the colored Jones polynomi- als for knots and links, and the Witten-Reshetikhin-Turaev invariant of three manifolds.\n\n**Outline.** Front matter; Abstract; 0 Introduction; 1 Knots and Braids; Braid Generators; Hopf Link; Figure Eight Knot; Trefoil Knot; CL(b); 2 Quantum Mechanics and Quantum Computation; 2.1 What is a Quantum Computer?; 2.2 Universal Gates; 3 SU(2) Representations of the Artin Braid Gro; 4 The Bracket Polynomial and the Jones Polynom; or; 4.1 Quantum Computation of the Jones Polynomia; The Hadamard Test; 5 Quantum Topology, Cobordism Categories, Temp\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: If g = a + bu and h = c + dv are pure unit quaternions,then, without loss of generality, the braid relation ghg = hgh is true if and only if h = a + bv, and φg(v) = φh−1(u).\n- Theorem 2: In the Temperley-Lieb theory we obtain unitary (in fact real orthogonal) recoupling transformations when the bracket variable A has the form A = eiπ/2r for r a positive integer.\n- Lemma: eaiebjeci = cos(b)ei(a+c) +sin(b)ei(a−c)j. Hence any element of SU(2) can be written in the form eaiebjeci. for appropriate choices of angles a, b, c.\n- Lemma: For the bracket evaluation at the root of unity A = eiπ/2r the factor f(a, b, c) = q√∆a∆b∆c q Θ(a, b, c) is real, and can be taken to be a positive real number for (a, b, c)",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-quant-ph-0606114v3",

@@ -1,0 +1,1 @@
+(3) It should also be clear to the reader that since crossings can be exchanged for twists, in the case of braided belts - which we shall be discussing exclusively from this point onwards, we may go a step further and entirely eliminate the crossings from a 3-braid.

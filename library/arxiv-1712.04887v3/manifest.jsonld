@@ -41,6 +41,18 @@
     "library/arxiv-1712.04887v3/sections/sec-026"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn =\n\n**BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE**\n\n*UNITS, AND NAHM’S CONJECTURE*\n\n43 pp, 28 sections.\n\n**Abstract.** Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F(e2πi/n), well-deﬁned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identiﬁcation of the Bloch group of F with the K-group K3(F) gives (up to an unidentiﬁed invertible scalar) a formula for a certain abstract Chern class from K3(F). The units we deﬁne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm’s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Bloch groups and associated units; 1.2 Algebraic K-groups and associated units; 1.4 Motivation from quantum topology; 1.5 Plan of the paper; 2 The maps Pz and Rz; 2.4 Compatibilities; 2.5 The 5-term relation; 2.6 An eigenspace computation; 3 Chern Classes for algebraic K-theory; 3.1 Definitions; 3.2 The relation between étale cohomology and ; 3.4 Upgrading from S-units to units; 3.5 Proof of Theorem 1.5; 4 Reduction to finite fields; 4.1 Local Chern class maps; 4.2 The Bloch group of Fq",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

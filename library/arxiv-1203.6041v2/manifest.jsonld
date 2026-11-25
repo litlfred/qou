@@ -37,6 +37,18 @@
     "library/arxiv-1203.6041v2/sections/sec-022"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD — 24 sections: Front matter; S and D-wave phase shifts in isosp; I Introduction\n\n**S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD**\n\n*S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD*\n\n33 pp, 24 sections.\n\n**Outline.** Front matter; S and D-wave phase shifts in isospin-2 scatter; I Introduction; II Operator construction; A Single-hadron operators; B Multi-hadron operators; III Distillation and correlator construction; IV Optimised pion operators; V Pion mass and dispersion relation; VI Effects of finite temporal extent; A Finite-T effects for correlators at rest; B Finite-T effects for correlators in-flight; VII Finite-volume spectrum; A Example of =[0,0,1], = A1; B Volume dependence of spectra; VIII Phase-shifts from finite-volume spectra; A A toy model of scattering; B Lattice QCD data\n\n**Extracted claims (proposals, not verified).**\n- Proposition: Direct access to the matrix elements related to decays is missing in the Euclidean formulations of lattice QCD.\n- Proposition: The price to be paid is that the relevant symmetry group in the lattice calculation is signiﬁcantly reduced.\n- Proposition: Other studies of ππ I = 2 scattering in lattice QCD ([23–25]) have largely limited themselves to the threshold behavior of the scat- tering amplitude in S-wave, as expressed by\n- Proposition: In order to demonstrate the formalism, we will brieﬂy break away from analysis of lattice QCD obtained ﬁnite- volume spectra to consider a simple toy-model of ππ scat- tering in\n- Proposition: The problem to be solved in lattice QCD is actually the inverse of that just described - we start with the ﬁnite-volume spectrum determined through analysis of correlation\n- Proposition: We do not present this trivial result here, but we will return to this “global ﬁtting” method in the next section when we consider the ﬁnite-volume spectrum obtained from lattice",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-1203.6041v2",

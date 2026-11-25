@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
@@ -38,7 +38,7 @@
     "neutron-star",
     "polygraphs"
   ],
-  "leanRef": "qou:QOU.MathlibInfra.ConfinementLayerTower.neutron_star_electron_capture_threshold",
+  "leanRef": "qou:ToricConicOpt.ConfinementLayerTower.neutron_star_electron_capture_threshold",
   "text": "five-layer-confinement-tower-rg.md",
   "provenance": "authored"
 }

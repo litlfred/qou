@@ -27,6 +27,18 @@
     "library/arxiv-0905.0488v5/sections/sec-012"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES — Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp.\n\n**TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES**\n\n*AMNON YEKUTIELI*\n\n50 pp, 14 sections.\n\n**Abstract.** Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp. Pois- son) deformation of the structure sheaf OX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization operation from twisted Poisson deformations to twisted associative deformations, which is canonical and bijective on gauge equivalence classes. This result extends work of Kontsevich, and our own earlier work, on deformation quantization of algebraic varieties.\n\n**Outline.** Front matter; 0 Introduction; 1 Background on Crossed Groupoids and Stacks; 2 Deformations of Sheaves of Rings; 3 DG Lie Algebras and Deformations of Affine V; 4 Twisted Objects in a Stack of Crossed Groupo; 5 Combinatorial Descent Data; 6 Geometric Descent Data and Decomposition; 7 Total Trivialization of Twisted Deformations; 8 Lie Descent Data; 9 From Lie Descent to Geometric Descent; 10 Cosimplicial Formality; 11 Twisted Quantization; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {

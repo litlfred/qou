@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -27,7 +27,7 @@
     "shape-parameter",
     "law-of-sines"
   ],
-  "leanRef": "qou:QOU.MathlibExt.IdealTetrahedron.volume_rotate",
+  "leanRef": "qou:MathlibExt.Core.IdealTetrahedron.volume_rotate",
   "text": "ideal-tetrahedron-relabelling-invariance.md",
   "provenance": "authored"
 }

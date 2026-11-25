@@ -1,8 +1,8 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/",
+      "@base": "https://litlfred.github.io/qou/v0/",
       "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
@@ -31,7 +31,7 @@
     "chirality-factor",
     "combinatorics"
   ],
-  "leanRef": "qou:QOU.Archimedean.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
+  "leanRef": "qou:QOU.MassTheory.Archimedean.TypeBCrystal.PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero",
   "text": "type-b-folded-crystal-combinatorics.md",
   "provenance": "authored"
 }

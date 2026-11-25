@@ -22,6 +22,18 @@
     "library/arxiv-2509.20302v1/sections/sec-007"
   ],
   "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Universality in the resurgence of generalized Tracy-Widom distributions — We analyze determinants associated with Bessel kernels and generic symbol functions, which govern a class of ob- servables\n\n**Universality in the resurgence of generalized Tracy-Widom distributions**\n\n*Zoltan Bajnoka, Bercel Boldisa,b, Dennis le Plata*\n\n7 pp, 9 sections.\n\n**Abstract.** We analyze determinants associated with Bessel kernels and generic symbol functions, which govern a class of ob- servables across all values of the ’t Hooft coupling in supersymmetric gauge theories. Previous approaches, based on integro-differential equations, have provided systematic strong-coupling expansions for the logarithms of these determinants, expressed through the moments of the symbol. The resulting asymptotic series, once completed with non-perturbative terms, allowed the leading resurgence relations to be tested. In this Letter we focus directly on the determinants themselves, and we uncover a strikingly simple non-perturbative structure: all trans-series correc- tions share a universal form, while the moments transform in a direct and intuitive way. This simplicity points to an underlying organizing principle for the non-perturbative dynamics of gauge theory observables.\n\n**Outline.** Front matter; 2 Observables; 1 Introduction; 3 Trans-series expansion; 3.1 Resurgence relations between ${\\cal D}^{\\{; 3.2 Generic relations; 3.3 Example; 4 Conclusions; 5 Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {

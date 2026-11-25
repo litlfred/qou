@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-square-series-multisummability-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:square-series-multisummability-prior-art",
+  "kind": "remark",
+  "title": "Prior art: the square of a single-slope $q$-series needs two levels of summation",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-qdifference-kernel-prolongation-symbol",
+  "cites": [
+    "references/divizio-ramis-sauloy-zhang"
+  ],
+  "tags": [
+    "q-borel",
+    "multisummability",
+    "newton-polygon",
+    "slope",
+    "tensor-square",
+    "prior-art"
+  ],
+  "text": "square-series-multisummability-prior-art.md",
+  "provenance": "authored"
+}

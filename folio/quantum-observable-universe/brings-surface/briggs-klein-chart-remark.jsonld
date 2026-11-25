@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-briggs-klein-chart-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:briggs-klein-chart-remark",
+  "kind": "remark",
+  "title": "The $C_5$ action in the Briggs--Klein chart",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-briggs-klein-chart"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-briggs-klein-chart",
+  "text": "briggs-klein-chart-remark.md",
+  "provenance": "authored"
+}
