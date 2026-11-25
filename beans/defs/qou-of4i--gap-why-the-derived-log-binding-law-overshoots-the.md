@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T11:23:57Z
-updated_at: 2026-11-25T16:25:41Z
+updated_at: 2026-11-25T16:29:38Z
 parent: qou-s028
 ---
 
@@ -29,3 +29,11 @@ Branch claude/deuteron-overshoot-loci-2026-11-25, head f1c5d61dbbf57475899d185cd
 Done: probe computations/probes/deuteron_overshoot_loci/ (RESULTS.md §0-5); Lean QOU/Nuclear/UniversalScaleMinimax.lean + BondScaleUniversality.lean (lean-direct exit 0, standard axioms); owner card 4 'A ruled tower' applied (f1c5d61db); precision gates NEW 0.
 Branch is 68 commits behind main: the merge manager should merge main before /prepare-merge. Possible conflict surface: binding-log-free-energy.witness.json and probe-d witnesses if main touched them.
 Open: (1) owner decision whether the four other log-law probes with their own order-zero E0 should switch (listed in RESULTS §5); (2) the deuteron on the gg-ruled word is unbound (mu_pn > 1), owned by qou-brng. Do NOT close this bean (Rule 13a: the deuteron derivation is open).
+
+## OWNER DECISION (framed, not taken): do the four other log-law probes move to the ruled tower E0?
+DECISION: card 4 ('A ruled tower') moved the log producer and both probe-d probes. Four more probes compute their own order-zero E0 = m_e/(q0(q0-1)) = 4.185981 MeV: forced_link_normalisation_bond_counting_probe, cyclic_triple_under_log_law_probe, normalised_law_residual_shape_probe, surface_exponent_is_dimension_probe (all computations/probes/). They take only M_E_MEV from the producer, so the ruling's named scope does not reach them. The question is whether it should.
+FACTS: none of the four writes a witness (no WitnessBuilder, no json dump); they print only. Shape and exponent results (residual shape, surface exponent P) are ratios, so the scale cancels. One quoted number does move. The 'required factor 3.0075 against 3 strands per nucleon' (normalised_law_residual_shape, surface_exponent, quoted in docs/audits/2026-09-04-normalised-law-residual-shape.md and qbeta_strand_multiplicity_probe.py) is (max B/A)/eps with eps = E0*ln[2]_q. Under the tower E0 it becomes 2.9780 (= 3.0075/1.0099145), i.e. from +0.25% above 3 to -0.73% below it.
+OPTION 1, switch all four to qbeta_e0.tower_summed_scaled. Means: one E0 across every log-law script. Cost: 4 one-line edits, no witnesses, minutes. Risk: printed MeV values move +0.99%; the 3.0075 near-match becomes 2.978, and the 2026-09-04 audit text then quotes an order-zero figure. Reversible. Commits to: the tower factor (ruled, not derived, qou-y3bm) being used everywhere on the binding surface.
+OPTION 2, leave them, labelled. Means: add a comment in each saying it is order-zero by design or by history. Cost: 4 comment lines. Risk: two E0 forms stay live on the binding surface, which is the inconsistency card 4 just closed for the producer. Commits to nothing.
+DEFAULT (no answer): nothing changes; the four keep order-zero; no witness is affected.
+RECOMMENDATION (my judgement): option 1, since no witness depends on them and one scale on the binding surface is what card 4 asked for. Record the 3.0075 -> 2.978 move next to the audit so the 'factor 3' near-match is not quoted on the old scale.
