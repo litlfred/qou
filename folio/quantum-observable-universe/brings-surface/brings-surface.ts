@@ -215,6 +215,8 @@ export default chapter({
         "torus-knot-generators",
         "torus-knot-generators-table-data",
         "photon",
+        "photon-augmentation-jet",
+        "photon-response-determines-q",
         "cohomological-embedding",
         "cohomological-embedding-table1-data",
         "cohomological-embedding-table2-data",
