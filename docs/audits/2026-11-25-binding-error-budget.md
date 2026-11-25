@@ -77,12 +77,35 @@ Coulomb is neither subtracted nor reachable in the n = 6 braid image.
 | ⁴He 3.26× low (B_sym) | 2026-11-21 dashboard | superseded interface letters, A−1 chain |
 | A ≥ 5 −69 % (Q-CLT) | `ACCURACY.md` Table 3.2b | 1D symbolic proxy, not the trace pipeline |
 
-**Critical-distance flag (judgement, not a finding).** The K_A plaquette rows are the only light-nucleus
-binding numbers within a few percent, and they are read out in a different energy chart (E_osc) from
-every trace-pipeline row (E₀). A factor-of-ten choice of chart with no ruling to select it is a hidden
-degree of freedom in the sense of AGENTS.md §"NO FITTING": the ²H row of that table is the `#9221`
-baseline, and whether E_osc was chosen because it lands ²H has not been checked here. Until it is, those
-rows should not be read as evidence that the binding is understood.
+**E_osc provenance, checked 2026-11-25 (closes open entry 3).** The ²H +1.81 % row comes from
+`computations/probes/w4_colour_reconn_stokes_aomega/` (PR #9221, merged 2026-11-24). Its pre-registration
+(`PREREGISTRATION.md` line 61) lists **both** charts, E₀ and E_osc, as readouts, and line 69 promises
+"no post-hoc rescaling or model selection". The witness reports 6 models × 4 readouts (E₀, E_osc, m_e,
+and a Bloch–Horowitz order-2 variant in E₀). Deuteron binding across the full grid [read from the witness]:
+
+| model (H₀ × bond) | ²H in E₀ chart (MeV) | ²H in E_osc chart (MeV) |
+|---|---:|---:|
+| G1 × V1 chain Fierz | 0.405 | 4.090 |
+| G1 × V2 all-pairs Fierz | 0.405 | 4.090 |
+| G1 × **V3 chain γγ bond** | **0.000142** | **0.00143** |
+| G2 × V1 chain Fierz | 0.224 | **2.265** |
+| G2 × V2 all-pairs Fierz | 0.224 | **2.265** |
+| G2 × **V3 chain γγ bond** | **0.000081** | **0.00082** |
+
+Two findings follow, both measured from the committed witness:
+
+1. **The +1.81 % is one cell picked from 24.** The PR summary and `ACCURACY.md` Table 3.2a quote
+   G2 × V2 in the E_osc chart, the cell closest to AME. In the E₀ chart, the one every trace-pipeline
+   row uses, the same model gives 0.224 MeV (−89.9 %). The probe ran clean, but the **headline** selects
+   a chart and a model against the target. By AGENTS.md §"NO FITTING" ("selection against the target",
+   "a more accurate fitted route is worth LESS") it should not be read as a derived few-percent binding.
+2. **On the ruled γγ bond, the plaquette model agrees with the trace pipeline.** The V3 rows, which use
+   the γγ bond, give ²H **0.08–1.4 keV** in either chart. That is the same keV scale as rows 1 and 3 of
+   §1. So the plaquette's good numbers come from the Fierz bonds V1/V2, which are not γγ-selected, read
+   in the E_osc chart. They do not come from a mechanism that survives the 2026-11-15 γγ ruling.
+
+The E_osc chart itself is "pending W6 scale resolution" in the PR's own words, so it is not ruled.
+The ⁴He +3.65 % (`gap1b_4he_tetrahedral_k4_flux_ring`, "M3a") builds on the same E_osc baseline.
 
 ## 4. Consequences
 
@@ -102,8 +125,8 @@ rows should not be read as evidence that the binding is understood.
    Decides rows 3 and 6. Heavy: four-strand words, reading 3 per level.
 2. **All-pairs γγ sign, proved.** Row 4 is measured at q₀ only. A Lean extension of
    `LightNucleiGGChainSign` to transported non-neighbour bonds would make it scope (b). Moderate.
-3. **E_osc chart provenance.** Whether `#9221` selected E_osc against ²H. Cheap (read the PR), not done
-   for budget reasons. If it was, Table 3.2a of `ACCURACY.md` carries a fit.
+3. ~~**E_osc chart provenance.**~~ Checked, §3. The headline cell was selected from a pre-registered
+   6 × 4 grid. With the γγ bond the plaquette model gives keV, like the trace pipeline.
 4. **Full-tower trace for binding.** Row 10 at trace level. Heavy.
 5. **⁶Li, ⁷Li on the γγ word.** No γγ number exists. The chain theorem says the production-block chain
    unbinds for every A ≥ 2, so only the sign is known. Heavy (A ≥ 5 traces).
@@ -129,8 +152,8 @@ and this would change what a reader of the paper's Accuracy dashboard takes as t
   compares it with the trace pipeline and finds a factor 350 between them.
 
 **Default (no answer):** nothing changes; this audit records the discrepancy.
-**Recommendation (judgement):** Option 2, then Option 1 — it is cheap and it tells us whether the only
-good-looking binding numbers are a fit.
+**Recommendation (judgement):** Option 1. Option 2's check is done (§3): the headline is one cell
+chosen from 24, and the γγ-bond rows of the same model give keV. The note should say both.
 
 ## 7. Provenance of [rm] numbers
 
