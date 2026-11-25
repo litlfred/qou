@@ -706,7 +706,7 @@ theorem gramMatrixD_det_eq_zero (q : ℝ) : (gramMatrixD q).det = 0 := by
 theorem gramMatrixD_not_posDef (q : ℝ) : ¬ Matrix.PosDef (gramMatrixD q) := by
   intro hpos
   have hv := gramMatrixD_mulVec_radical q
-  have hcon := hpos.2 (gramRadicalD q) (gramRadicalD_ne_zero q)
+  have hcon := hpos.dotProduct_mulVec_pos (gramRadicalD_ne_zero q)
   rw [hv] at hcon
   simp at hcon
 
