@@ -1,5 +1,6 @@
 import QOU.InformationTheory.CocenterTraceFactor
 import Mathlib.Algebra.Algebra.Bilinear
+import Mathlib.Tactic.NoncommRing
 
 /-!
 # QOU.Information.OuterDerivationResidue — the residue is an OUTER derivation
