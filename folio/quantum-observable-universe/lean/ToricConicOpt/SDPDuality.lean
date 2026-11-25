@@ -6,6 +6,7 @@ import Mathlib.Analysis.Matrix.Spectrum
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Tactic.Linarith
+import Mathlib.Analysis.Matrix.PosDef
 
 open BigOperators Matrix Finset
 
@@ -43,19 +44,8 @@ private lemma trace_diagonal_mul' [DecidableEq (Fin n)]
 /-- Diagonal entries of a PSD matrix are nonneg: `Mᵢᵢ ≥ 0`. -/
 private lemma psd_diag_nonneg
     (M : Matrix (Fin n) (Fin n) ℝ) (hM : M.PosSemidef) (i : Fin n) :
-    0 ≤ M i i := by
-  have h := hM.2 (fun j => if j = i then 1 else 0)
-  simp only [star_trivial, dotProduct, mulVec] at h
-  have key : ∀ x : Fin n, (if x = i then (1 : ℝ) else 0) *
-      ∑ y : Fin n, M x y * (if y = i then 1 else 0) =
-      if x = i then M i i else 0 := by
-    intro x
-    by_cases hx : x = i
-    · subst hx; simp [Finset.sum_ite_eq']
-    · simp [hx]
-  simp_rw [key] at h
-  simp [Finset.sum_ite_eq'] at h
-  exact h
+    0 ≤ M i i :=
+  hM.diag_nonneg
 
 /-- **`tr(SX) ≥ 0` for PSD S and X.**
     Proof: spectral decomposition `S = U diag(λ) U*` with `λᵢ ≥ 0`,
