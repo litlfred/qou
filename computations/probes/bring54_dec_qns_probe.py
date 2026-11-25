@@ -97,21 +97,38 @@ PH = I - Pg - Pc                                # harmonic
 check("E1a P, P_H, P_c are exact idempotents and P = P_H + P_c",
       (P * P - P).is_zero_matrix and (PH * PH - PH).is_zero_matrix
       and (Pc * Pc - Pc).is_zero_matrix and (P - PH - Pc).is_zero_matrix)
-check("E1b dim div-free = 31, harmonic = 8, coexact = 23",
-      (P.rank(), PH.rank(), Pc.rank()) == (31, 8, 23),
-      f"ranks {P.rank()}, {PH.rank()}, {Pc.rank()}")
+from fractions import Fraction
+
+
+def rank_q(Mx):
+    R = [[Fraction(int(sympy.Rational(x).p), int(sympy.Rational(x).q)) for x in Mx.row(i)] for i in range(Mx.rows)]
+    rows, cols, r = len(R), len(R[0]), 0
+    for c in range(cols):
+        p = next((i for i in range(r, rows) if R[i][c] != 0), None)
+        if p is None:
+            continue
+        R[r], R[p] = R[p], R[r]
+        for i in range(rows):
+            if i != r and R[i][c] != 0:
+                f = R[i][c] / R[r][c]
+                R[i] = [a - f * b for a, b in zip(R[i], R[r])]
+        r += 1
+    return r
+
+
+ranks = (rank_q(P), rank_q(PH), rank_q(Pc))
+check("E1b dim div-free = 31, harmonic = 8, coexact = 23", ranks == (31, 8, 23), f"ranks {ranks}")
 
 # ---------------- E2 linear spectrum ----------------
 L1 = d0 * d0.T + d1.T * d1
 check("E2a on ker d0^T, Delta_1 = d1^T d1 (L1*P == d1^T d1 * P)",
       (L1 * P - d1.T * d1 * P).is_zero_matrix)
 lam = sympy.symbols("lam")
-cpc = (d1.T * d1).charpoly(lam).as_expr()
-fl = sympy.factor_list(cpc)
-expected = sympy.expand(lam**37 * (lam - 4)**5 * (lam - 6)**5 * (lam - 10) * (lam**2 - 10*lam + 20)**6)
-check("E2b charpoly(d1^T d1) = lam^37 (lam-4)^5 (lam-6)^5 (lam-10) (lam^2-10lam+20)^6",
-      sympy.expand(cpc - expected) == 0,
-      "nonzero spectrum = 23 coexact decay rates / nu; zero eigenspace (37) = 29 gradients + 8 harmonic")
+cp2 = L2.charpoly(lam).as_expr()
+expected = sympy.expand(lam * (lam - 4)**5 * (lam - 6)**5 * (lam - 10) * (lam**2 - 10*lam + 20)**6)
+check("E2b charpoly(d1 d1^T) = lam (lam-4)^5 (lam-6)^5 (lam-10) (lam^2-10lam+20)^6; d1^T d1 has the same nonzero spectrum (rank 23)",
+      sympy.expand(cp2 - expected) == 0 and rank_q(d1.T * d1) == 23,
+      "nonzero spectrum = the 23 coexact decay rates / nu")
 slow = 5 - sympy.sqrt(5)
 
 # ---------------- J: quarter turn from the vertex rotation ----------------
@@ -142,7 +159,7 @@ def K_of(v):
 samples = [sympy.Matrix([((7 * e + 3 * k) % 11) - 5 for e in range(E)]) for k in range(3)]
 check("E3b K(v) is skew for 3 integer samples", all((K_of(v) + K_of(v).T).is_zero_matrix for v in samples))
 
-Hbasis = PH.columnspace()
+Hbasis = L1.nullspace()
 check("E4 harmonic fields are exact steady states of the nonlinear model: d1 h = 0, K(h) h = 0, Delta_1 h = 0",
       len(Hbasis) == 8 and all((d1 * h).is_zero_matrix and (K_of(h) * h).is_zero_matrix
                                 and (L1 * h).is_zero_matrix for h in Hbasis))
@@ -248,7 +265,7 @@ inits = {
     "harmonic": v_h,
     "mixed": [v_c[i] + v_h[i] for i in range(E)],
 }
-T, dt = mpf(40), mpf(1) / 50
+T, dt = mpf(20), mpf(1) / 40
 steps = int(T / dt)
 results = {}
 for amp in (mpf(1), mpf(20)):
@@ -261,6 +278,8 @@ for amp in (mpf(1), mpf(20)):
         for k in range(steps):
             v = rk4(v, dt)
             ens.append(enstrophy(v))
+            if k % 200 == 0:
+                print(f"  amp {int(amp)} {name}: step {k}/{steps}", flush=True)
         integ = dt / 3 * (ens[0] + ens[-1] + 4 * mp.fsum(ens[1:-1:2]) + 2 * mp.fsum(ens[2:-1:2]))
         ET, EHT = energy(v), energy(matvec(PHm, v))
         resid = ET - E0 + nu * integ
