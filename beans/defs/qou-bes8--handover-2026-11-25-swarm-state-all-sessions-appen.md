@@ -49,3 +49,13 @@ OPEN: owner decision on the 4 other order-zero log-law probes (framed on qou-of4
 - next: routes qou-mqfl, qou-0lqx, qou-xg15, qou-zwz6, qou-7k15, qou-wm01; then qou-sscx.
 - blockers: owner to rule whether sections/ and candidates.json are derived KG (public) or full text (private). The 20 PDFs on public main wait for the coordinator's go.
 - route: Lean via lean-direct -DautoImplicit=false; exact or mpmath only; PDFs to qou-private.
+
+## Photon research child — session_01EucfRopy82qV7K5FpozNB9 (2026-11-25)
+- **Role:** research child, research swarm front (photon / Hecke / Bring). Coordinator session_01EucfRmMzrEARLFNgZfhwsQ; merge manager session_01EucfRm2khmNLbMgiuTA6UZ.
+- **Done:** PRs #9415, #9427, #9430, #9431, all merged. Owner ruling 2026-11-25 'Term-by-term, same scope as now' recorded; the Borromean photon weights are derived (neutral_selects_corpus).
+- **In flight:** generic L(5)=6 (qou-80x0); the inaudible radical for H_4/H_5 (qou-wt0l).
+- **Next:** see the HANDOVER entries in qou-80x0 and qou-wt0l.
+- **Blockers:** .jsonld nodes for 8 photon blocks were never generated (the light platform emits the wrong @context); details in qou-amon. No Lean model of H_n(q) for n>=4.
+- **Resume cold:** read qou-80x0, qou-wt0l, qou-amon and audit docs/audits/2026-11-25-photon-jet-and-hearing-the-shape.md §12–§15.
+
+
