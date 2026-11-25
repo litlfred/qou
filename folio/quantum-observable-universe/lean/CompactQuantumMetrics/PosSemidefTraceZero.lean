@@ -1,5 +1,6 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Analysis.Matrix.Spectrum
+import Mathlib.Analysis.Matrix.PosDef
 import Mathlib.Tactic
 import MathlibExt.PosSemidefDiagZero
 import CompactQuantumMetrics.FrobeniusInnerProduct
@@ -52,14 +53,8 @@ variable {n : ℕ}
 theorem Matrix.PosSemidef.diag_nonneg
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef) (i : Fin n) :
     0 ≤ C i i := by
-  -- C_ii = e_iᵀ · C · e_i ≥ 0 by PSD applied to canonical basis vector.
-  have h_psd_ei := hC.2 (Pi.single i (1 : ℝ))
-  have h_compute : dotProduct (star (Pi.single i (1 : ℝ)))
-      (C.mulVec (Pi.single i (1 : ℝ))) = C i i := by
-    simp [dotProduct, Matrix.mulVec, Pi.single_apply,
-          Finset.sum_ite_eq', star_trivial, mul_ite, mul_one,
-          mul_zero, Finset.mem_univ]
-  rwa [h_compute] at h_psd_ei
+  -- Mathlib's `Matrix.PosSemidef.diag_nonneg` (the PSD form is now Finsupp-quantified).
+  exact _root_.Matrix.PosSemidef.diag_nonneg hC
 
 /-- **Cone self-polarity for PSD matrices** (real case).  For
     PSD matrices `A, B : Matrix (Fin n) (Fin n) ℝ`,
