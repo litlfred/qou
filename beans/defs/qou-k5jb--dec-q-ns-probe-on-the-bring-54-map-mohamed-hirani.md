@@ -1,11 +1,11 @@
 ---
 # qou-k5jb
 title: DEC q-NS probe on the Bring {5,4} map (Mohamed-Hirani-Samtaney scheme)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T15:52:42Z
-updated_at: 2026-11-25T16:11:55Z
+updated_at: 2026-11-25T16:14:18Z
 parent: qou-qrrb
 ---
 
