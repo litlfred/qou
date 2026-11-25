@@ -309,7 +309,7 @@ theorem braid_rel : (σ 0 * σ 1 * σ 0 : BraidGroup 2) = σ 1 * σ 0 * σ 1 := 
     exact ⟨0, by decide, rfl⟩
   have h1 := PresentedGroup.one_of_mem (rels := braidRelators 2) hmem
   have h2 : (σ 0 * σ 1 * σ 0 : BraidGroup 2) * (σ 1 * σ 0 * σ 1)⁻¹ = 1 := by
-    simpa [σ, map_mul, map_inv] using h1
+    exact h1
   exact mul_inv_eq_one.mp h2
 
 theorem eval_append (u v : Word) : eval (u ++ v) = eval u * eval v := by
@@ -392,9 +392,10 @@ theorem burauGen_relators :
   · have hi : i = 0 := by ext; have := i.isLt; simp at h ⊢; omega
     subst hi
     simp only [map_mul, map_inv, FreeGroup.lift_apply_of, mul_inv_eq_one]
+    apply Subtype.ext
+    simp only [burauGen, Matrix.SpecialLinearGroup.coe_mul, Matrix.SpecialLinearGroup.coe_mk]
     ext k l
-    fin_cases k <;> fin_cases l <;>
-      simp [burauGen, Matrix.SpecialLinearGroup.coe_mul, Matrix.mul_apply, Fin.sum_univ_two]
+    fin_cases k <;> fin_cases l <;> simp [Matrix.mul_apply, Fin.sum_univ_two] <;> rfl
 
 /-- The representation `B₃ → SL(2, ℤ)`. -/
 def burauNeg : BraidGroup 2 →* Matrix.SpecialLinearGroup (Fin 2) ℤ :=
@@ -409,10 +410,11 @@ theorem burauNeg_borromean :
       Matrix (Fin 2) (Fin 2) ℤ) = !![13, 8; 8, 5] := by
   rw [eval_six]
   simp only [eval_a, eval_b', map_mul, map_inv, burauNeg_σ]
+  simp only [burauGen, Matrix.SpecialLinearGroup.coe_mul, Matrix.SpecialLinearGroup.coe_inv,
+    Matrix.SpecialLinearGroup.coe_mk]
   ext k l
   fin_cases k <;> fin_cases l <;>
-    simp [burauGen, Matrix.SpecialLinearGroup.coe_mul, Matrix.SpecialLinearGroup.coe_inv,
-      Matrix.mul_apply, Fin.sum_univ_two, Matrix.adjugate_fin_two]
+    simp [Matrix.mul_apply, Fin.sum_univ_two, Matrix.adjugate_fin_two] <;> rfl
 
 /-- **`β_Bor` is not the identity of `B₃`.** -/
 theorem eval_borromean_ne_one : eval [a, b', a, b', a, b'] ≠ 1 := by
@@ -772,7 +774,7 @@ theorem burauNeg_delta : burauNeg delta = S⁻¹ := by
   ext i j
   fin_cases i <;> fin_cases j <;>
     simp [burauGen, S, Matrix.SpecialLinearGroup.coe_mul, Matrix.SpecialLinearGroup.coe_inv,
-      Matrix.mul_apply, Fin.sum_univ_two, Matrix.adjugate_fin_two]
+      Matrix.mul_apply, Fin.sum_univ_two, Matrix.adjugate_fin_two] <;> rfl
 
 /-- **`burauNeg : B₃ → SL(2, ℤ)` is surjective.** -/
 theorem burauNeg_surjective : Function.Surjective burauNeg := by
@@ -787,7 +789,8 @@ theorem burauNeg_delta_four : burauNeg (delta ^ 4) = 1 := by
   have : S ^ 4 = 1 := by
     ext i j
     fin_cases i <;> fin_cases j <;>
-      simp [S, pow_succ, Matrix.SpecialLinearGroup.coe_mul, Matrix.mul_apply, Fin.sum_univ_two]
+      simp [S, pow_succ, Matrix.SpecialLinearGroup.coe_mul, Matrix.mul_apply, Fin.sum_univ_two] <;>
+      rfl
   rw [this, inv_one]
 
 /-- `Δ⁴` has writhe 12. -/
