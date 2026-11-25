@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-25T11:30:12Z
+updated_at: 2026-11-25T16:22:14Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/probes/probe-d-dressing-is-proton-net.witness.json` was self-stale. Re-running the current producer `computations/probes/probe_d_dressing_is_proton_net.py` (exit 0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold producers that fail their own assertion). Main still carries the old passing witness.
@@ -69,3 +69,6 @@ Choosing among these by residual would be selection against the target; not done
 
 
 2026-11-25 SOURCE OF THE +27.4 %: the input, not the law. (1) Scope correction: mu_pn = z_D + d_pn comes from the single-crossing interface letter that the 2026-11-15 owner ruling (gamma-gamma covers bond letters) supersedes, so +27.36 % is a record, not a prediction (corrected in #9421, ff62e233cf8). (2) Pre-registered probe computations/probes/gg_deuteron_bond (prereg a06ae62c2b2): 6 strands, nucleons V^3/V^6, bonds V(s)^k. Only V^3 at either junction passes reading 3, with ratio 0.9985, giving B = 0.0063 MeV, -99.7 % vs AME. V and V^2 bonds would give 5.2-6.0 MeV but fail reading 3. So on the ruled bond the deuteron is essentially unbound in this cell; the +27 % came from the non-gg letter. p = n in this cell (flavour-blind). Open.
+
+
+2026-11-25T16:2xZ: owner 'go' on card 1 (A). Selected deuteron in the gamma-gamma cell: V^3 x V^3, bond V(2)^3, B = 0.0063 MeV (-99.7 %) (#9426, 963c58bc0b4). Deep error-budget analysis launched as interactive child session_01EucfRntKGFoPCof8huHo3z. Siblings Phase B / intervals / E0 had stopped on the 5-hour usage limit at ~11:50Z; resumed.
