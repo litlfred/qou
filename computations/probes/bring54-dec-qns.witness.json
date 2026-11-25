@@ -1,0 +1,182 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-25T16:30:41.460522+00:00",
+  "commitSha": "f1d0296eeebb53bd0a492616c32976dc630aa88d",
+  "assertions": [
+    {
+      "name": "E1a P, P_H, P_c are exact idempotents and P = P_H + P_c",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "E1b dim div-free = 31, harmonic = 8, coexact = 23 -- ranks (31, 8, 23)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "E2a on ker d0^T, Delta_1 = d1^T d1 (L1*P == d1^T d1 * P)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "E2b charpoly(d1 d1^T) = lam (lam-4)^5 (lam-6)^5 (lam-10) (lam^2-10lam+20)^6; d1^T d1 has the same nonzero spectrum (rank 23) -- nonzero spectrum = the 23 coexact decay rates / nu",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "E3a J is skew-symmetric and nonzero",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "E3b K(v) is skew for 3 integer samples",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "E4 harmonic fields are exact steady states of the nonlinear model: d1 h = 0, K(h) h = 0, Delta_1 h = 0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "E5 energy identity dE/dt = -nu |d1 v|^2 holds exactly (3 samples)",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "N1 pure harmonic data is stationary (amp 1 and 20): E_T = E_0",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "N2 pure coexact data decays at amp 1, at least as fast as exp(-2 nu (5-sqrt5) T) up to the nonlinear transfer -- E_T/E_0 = 0.00340189, linear bound exp(-2 nu (5-sqrt5) T) = 0.00418143",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "N3 energy-identity residual converges at ~4th order (dt -> dt/2 shrinks it by > 8x; RK4 and Simpson are O(dt^4)) -- mixed amp20: residual -0.000263 at dt, 1.472e-6 at dt/2, ratio 178.7",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    },
+    {
+      "name": "N4 measured: the nonlinear term moves energy into/out of the harmonic modes in the mixed amp-20 run -- harmonic energy 20.2631119389953 -> 17.3429935123696 (change -2.92011842662566); amp-1 change -0.000907066724571705",
+      "computed": "true",
+      "expected": "true",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "bring54-dec-qns",
+  "scriptFile": "bring54_dec_qns_probe.py",
+  "scriptHash": "c68a3bd6ff73",
+  "scriptCommitSha": "f1d0296eeebb53bd0a492616c32976dc630aa88d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "248f1a54d4f699f2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring54_dec_qns_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring54_dec_qns_probe.py"
+  },
+  "description": "Discrete incompressible Navier-Stokes model on the exact Bring {5,4} cochain complex (unit Hodge stars, Lamb-form nonlinearity built from the vertex rotation, Leray projection). Exact: 31-dim divergence-free space = 8 harmonic + 23 coexact; linear decay rates nu*{4^5,6^5,10,(5-sqrt5)^6,(5+sqrt5)^6}; harmonic fields are exact steady states of the full nonlinear model; energy identity dE/dt = -nu*enstrophy. Numerics (mpmath dps 40, RK4) measure nonlinear energy transfer into the harmonic modes. A model computation: it says nothing about 3D regularity. nu = hbar_q/2 at the proton q0 is the corpus's posited value (bean qou-0nqs).",
+  "data": {
+    "nu": "0.0495408580221292539195885587595",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "linear_rates_over_nu": "4^5, 6^5, 10^1, (5-sqrt5)^6, (5+sqrt5)^6; harmonic 0^8",
+    "slowest_coexact_rate": "nu*(5-sqrt5) = 0.13692756390949947716",
+    "runs": {
+      "coexact_amp1": {
+        "E0": "0.5",
+        "E_T": "0.00170094288488125",
+        "E_harm_0": "1.15925630238464e-83",
+        "E_harm_T": "0.00140226883287375",
+        "enstrophy_0": "7.39628202221718",
+        "enstrophy_T": "0.00167393356531453",
+        "energy_identity_residual": "5.929e-10",
+        "harmonic_energy_change": "0.00140226883287375"
+      },
+      "harmonic_amp1": {
+        "E0": "0.5",
+        "E_T": "0.5",
+        "E_harm_0": "0.5",
+        "E_harm_T": "0.5",
+        "enstrophy_0": "9.1414590494902e-82",
+        "enstrophy_T": "9.1414590494902e-82",
+        "energy_identity_residual": "9.0575e-82",
+        "harmonic_energy_change": "0.0"
+      },
+      "mixed_amp1": {
+        "E0": "0.5",
+        "E_T": "0.0499542421520691",
+        "E_harm_0": "0.0506577798474882",
+        "E_harm_T": "0.0497507131229165",
+        "enstrophy_0": "6.64692356947436",
+        "enstrophy_T": "0.0012979608931228",
+        "energy_identity_residual": "5.3113e-10",
+        "harmonic_energy_change": "-0.000907066724571705"
+      },
+      "coexact_amp20": {
+        "E0": "200.0",
+        "E_T": "3.32393406164414",
+        "E_harm_0": "3.74473013958563e-81",
+        "E_harm_T": "3.30562983534477",
+        "enstrophy_0": "2958.51280888687",
+        "enstrophy_T": "0.141223417511033",
+        "energy_identity_residual": "-1.33e-5",
+        "harmonic_energy_change": "3.30562983534477"
+      },
+      "harmonic_amp20": {
+        "E0": "200.0",
+        "E_T": "200.0",
+        "E_harm_0": "200.0",
+        "E_harm_T": "200.0",
+        "enstrophy_0": "3.50512638939646e-79",
+        "enstrophy_T": "5.25186048988038e-78",
+        "energy_identity_residual": "-2.9387e-39",
+        "harmonic_energy_change": "-5.87747175411144e-39"
+      },
+      "mixed_amp20": {
+        "E0": "200.0",
+        "E_T": "17.3616425665809",
+        "E_harm_0": "20.2631119389953",
+        "E_harm_T": "17.3429935123696",
+        "enstrophy_0": "2658.76942778974",
+        "enstrophy_T": "0.131502554711751",
+        "energy_identity_residual": "-0.00026304",
+        "harmonic_energy_change": "-2.92011842662566",
+        "energy_identity_residual_half_dt": "1.4723e-6"
+      }
+    },
+    "T": "20.0",
+    "dt": "0.025"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "nu = (1 - 1/q0)/2 at qou_substrate.constants.Q_50_DIGIT_STR (proton pin)"
+}
