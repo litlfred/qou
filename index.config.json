@@ -156,7 +156,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "574d89c254ac5de51285e4500a3ce30695e35d6c",
+          "ref": "5593bb6d56fa149ffed4e7f94364ce9afa2beb45",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -174,9 +174,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-24",
-              "ref": "856f1e9f909fca0a39b24617d757a3de7f46ca4f",
-              "evidence": "litlfred 2026-11-24, owner rulings answering the four site questions: \"1 qou is platform later\" (qou becomes a standard platform layer, set up as the dth-hrh folio is). Refs are those qou's platform pin 42bd8d6 (.folio-assistant-pin) already locks, except cat-harness-tools at main 856f1e9, which carries cat-harness-tools#2510 (the `qa` declaration qou.json now uses)."
+              "on": "2026-11-25",
+              "ref": "5593bb6d56fa149ffed4e7f94364ce9afa2beb45",
+              "evidence": "litlfred 2026-11-25, card answer \"Merge + re-pin\": merge cat-harness-tools#2515, folio-assistant-sci#222 and folio-assistant-core#874, then re-pin qou#9396 to their merge commits; the owner consents to those refs. cat-harness-tools 5593bb6 is the merge commit of #2515."
             }
           }
         }
