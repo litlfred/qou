@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-22T10:25:37.925069+00:00",
-  "commitSha": "13c193918485ad332fd3ce6d98f7c7599af4326e",
+  "computedAt": "2026-11-25T02:29:13.830109+00:00",
+  "commitSha": "7b44a20192afdfa7103d8ba37530e440390ca159",
   "assertions": [
     {
       "name": "C5_y_two_row_formula_and_three_row_zero",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 10,
   "computation": "single-level-binding-gg",
   "scriptFile": "single_level_binding_gg_probe.py",
-  "scriptHash": "f3fc4fec581d",
-  "scriptCommitSha": "13c193918485ad332fd3ce6d98f7c7599af4326e",
+  "scriptHash": "615de40dd0a0",
+  "scriptCommitSha": "67c4891b4a971621cfacf190ed0dc533668d2a4a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "1.9.3",
-    "pyhecke_native_build": "515e4065be9006d2"
+    "pyhecke_native_build": "248f1a54d4f699f2"
   },
   "invocation": {
     "argv": [
@@ -98,8 +98,8 @@
     "reproduce": "python3 -u computations/probes/single_level_binding_gg/single_level_binding_gg_probe.py"
   },
   "q0Anchor": "proton",
-  "q0AnchorReason": "q0 = qou_substrate.constants.q_at(80) (proton pin), passed to the kernel as a decimal string",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "q0 = qou_substrate.constants.q_at(80) (proton pin), passed to the kernel as a decimal string",
   "description": "PROBE (issue #8983): corpus single-level binding Binding = m_e Σ_{λ⊢3A} y_λ χ^λ Δ_λ, convention D, proton pin, on the PR #7741 γγ candidate words (nucleon V^m, m in {3,6}; bond V^k, k in {1,2,3}, at straddling vertices; chain; both bond orders). Candidate words, not ruled words; AME only as a comparison column; does not decide owner decision qou-8274.",
   "preregistration": "computations/probes/single_level_binding_gg/PREREGISTRATION.md",
   "results": {
