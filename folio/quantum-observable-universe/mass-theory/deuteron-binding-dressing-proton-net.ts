@@ -13,6 +13,7 @@ export default proposition({
     "prop:neutron-qvalue-symbolic",
   ],
   authorNotes: [
+    { kind: "status", date: "2026-11-25", body: "**Magnitude match withdrawn (owner ruling 2026-11-25, bean `qou-xj4p`).** The +0.29 % agreement (earlier quoted as +0.12 %) held only for the superseded grouped confinement word under the excised Markov convention C; on the ruled inputs the dressed raw difference misses by −75.2 %. The raw trace difference carries the per-nucleon self-trace `tr_free`. The corpus binding law `E_0·log(tr_free/tr_atom)` (`computations/binding_log_free_energy.py`) places the deuteron +27.4 % above AME2020. The exact identities stand. Record: `docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md`, section 2026-11-25." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The identities are exact and formalized in `QOU.Mass.DeuteronBindingDressing`." },
     {
       kind: "status",
