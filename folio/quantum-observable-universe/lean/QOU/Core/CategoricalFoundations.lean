@@ -742,7 +742,7 @@ def QuantumUniverse.toTwisted {R : Type*} [CommRing R]
     fibreFunctor := QU.fibreFunctor
     frobenius_nakayama_twisted := fun f => by
       change QU.frobHopf.leftTrace f = QU.frobHopf.rightTrace (𝟙 QU.frobHopf.obj ≫ f)
-      rw [CategoryTheory.Category.id_comp]
+      erw [CategoryTheory.Category.id_comp]
       exact QU.frobenius_symmetric f
     unitEndEquiv := QU.unitEndEquiv
     blocks := QU.blocks
