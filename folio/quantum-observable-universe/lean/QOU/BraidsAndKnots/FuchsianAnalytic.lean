@@ -174,7 +174,7 @@ theorem gauge_series {M H : ℕ → R} {r : ℝ} (hbM : BoundedOn M r) (hbH : Bo
   rw [natCast_mul_eq_smul (R := R) n (H n), smul_smul, mul_comm]
 
 /-- `exp(log t · A)`, i.e. `t^A` for `t > 0`. -/
-noncomputable def tpow (A : R) (t : ℝ) : R := NormedSpace.exp ℝ (Real.log t • A)
+noncomputable def tpow (A : R) (t : ℝ) : R := NormedSpace.exp (Real.log t • A)
 
 theorem hasDerivAt_tpow (A : R) {t : ℝ} (ht : 0 < t) :
     HasDerivAt (tpow A) (t⁻¹ • (A * tpow A t)) t :=
@@ -244,6 +244,7 @@ theorem kz_hasDerivAt (A B : R) (H : ℕ → R) (h0 : H 0 = 1) (hH : IsFormalGau
   have h := hasDerivAt_solution (boundedOn_kzM0 A B) (boundedOn_kz_solution A B H h0 hH) hH
     ht0 ht1
   convert h using 1
+  · simp [kzM0]
   rw [series_kzM0 A B (by rw [abs_of_pos ht0]; exact ht1), ← smul_mul_assoc]
   congr 1
   have h1 : (1 - t) ≠ 0 := by linarith
