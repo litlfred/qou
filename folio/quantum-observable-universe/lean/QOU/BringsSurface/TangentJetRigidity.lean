@@ -163,6 +163,6 @@ end CharZero
 (for a stabiliser: `g ↦ g'(0)`, injective by Step 1) is cyclic. -/
 theorem isCyclic_of_injective_derivative {G R : Type*} [Group G] [Finite G]
     [CommRing R] [IsDomain R] (d : G →* R) (hd : Function.Injective d) : IsCyclic G :=
-  isCyclic_of_subgroup_isDomain d hd
+  isCyclic_of_injective_ringHom d hd
 
 end QOU.RiemannSurface.TangentJetRigidity
