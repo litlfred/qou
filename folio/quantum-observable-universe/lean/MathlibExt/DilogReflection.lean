@@ -200,7 +200,7 @@ theorem hasDerivAt_log_mul_log_one_sub {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
     have hinner : HasDerivAt (fun x : ℝ => 1 - x) (-1) x := by
       simpa using (hasDerivAt_id x).const_sub 1
     have hc := (Real.hasDerivAt_log h1xne).comp x hinner
-    simpa [mul_comm] using hc
+    convert hc using 1 <;> first | rfl | ring
   have hmul := hlogx.mul hlog1x
   have hval : x⁻¹ * Real.log (1 - x) + Real.log x * -(1 - x)⁻¹
       = Real.log (1 - x) / x - Real.log x / (1 - x) := by

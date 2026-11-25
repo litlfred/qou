@@ -466,7 +466,7 @@ theorem flat_transport_eq {ω : E → E →L[ℝ] A} {ω' : E → E →L[ℝ] E 
     have := (hasFDerivAt_radialTransport hD hfl
       (fun s hs => seg_mem_of_starConvex hstar (hγD t ht) hs)).comp_hasDerivWithinAt t (hγd t ht)
     simpa only [ContinuousLinearMap.comp_apply, ContinuousLinearMap.flip_apply,
-      ContinuousLinearMap.mul_apply'] using this
+      ContinuousLinearMap.mul_apply', Function.comp_def] using this
   have hV : ∀ t ∈ Icc (0:ℝ) 1, HasDerivWithinAt (fun s => U s * radialTransport ω c (γ 0))
       (ω (γ t) (γ' t) * (U t * radialTransport ω c (γ 0))) (Icc 0 1) t := fun t ht => by
     simpa only [mul_assoc] using (hU.2 t ht).mul_const (radialTransport ω c (γ 0))
