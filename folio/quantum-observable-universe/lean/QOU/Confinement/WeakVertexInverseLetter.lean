@@ -60,7 +60,7 @@ theorem weakVertex_inverse_letter (hq : q ≠ 0) (hq2 : q + q⁻¹ ≠ 0) (h1 : 
   -- on the right line of σ (= left line of σ⁻¹) both act as σ
   have hR : W' * rightLine q σ = W * rightLine q σ := by
     have a := weakVertex_mul_leftLine hqi hq2' ht
-    rw [leftLine_mirror h1 hq, flip_flip] at a
+    rw [leftLine_mirror h1 hq, Helicity.flip_flip] at a
     rw [a, weakVertex_mul_rightLine hq hq2 hs]
   -- on the left line of σ (= right line of σ⁻¹) both act as σ⁻¹
   have hL : W' * leftLine q σ = W * leftLine q σ := by
