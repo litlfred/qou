@@ -1,0 +1,72 @@
+{
+ "c_precision_step_measured_in_old_tree": "-1.35e-20",
+ "computation": "probe-d-delta-tr-attribution",
+ "engine": "mpmath",
+ "scriptFile": "delta_tr_attribution.py",
+ "commitSha": "ea057313d87d2807b254b5e59fc34e3e5639bf69",
+ "bean": "qou-xj4p",
+ "auditOnly": true,
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "note": "q0Anchor is the chi^lambda evaluation point; step 0 deliberately evaluates y_lambda at the retired muon pin to reconstruct the 2026-07-04 layer straddle.",
+ "compute_dps": 70,
+ "old_witness_Delta_tr": "0.59516889262234348652",
+ "live_tr_m_atom_zn_Delta_tr": "0.14704667798040846910949472902",
+ "path": [
+  {
+   "step": "0 old: C, y@muon_retired, grouped",
+   "Delta_tr": "0.595168892622343486508909960122",
+   "contribution": "0",
+   "share_of_total_move": "0"
+  },
+  {
+   "step": "1 (b) y pin muon_retired -> proton",
+   "Delta_tr": "0.595168891206957346259699959759",
+   "contribution": "-1.415386140249210000363457e-9",
+   "share_of_total_move": "3.15848242734e-9"
+  },
+  {
+   "step": "2 (a) convention C -> D",
+   "Delta_tr": "0.55654466040443821190477222413",
+   "contribution": "-0.03862423080251913435492774",
+   "share_of_total_move": "0.0861912878686"
+  },
+  {
+   "step": "3 word ruling grouped -> borromean",
+   "Delta_tr": "0.14704667798040846910949472902",
+   "contribution": "-0.4094979824240297427952775",
+   "share_of_total_move": "0.913808708973"
+  }
+ ],
+ "log_shares": {
+  "1 (b) y pin muon_retired -> proton": "1.70097522271e-9",
+  "2 (a) convention C -> D": "0.0479922961556",
+  "3 word ruling grouped -> borromean": "0.952007702143"
+ },
+ "pin_table_grouped_word": {
+  "muon_retired": {
+   "C": "0.59516889262234348650891",
+   "D": "0.5565446594826804243728735"
+  },
+  "muon_codata2018": {
+   "C": "0.5951688926219948727577012",
+   "D": "0.5565446594829074560745674"
+  },
+  "muon_codata2022": {
+   "C": "0.5951688926317828516267337",
+   "D": "0.556544659476533119161729"
+  },
+  "proton": {
+   "C": "0.5951688912069573462597",
+   "D": "0.5565446604044382119047722"
+  }
+ },
+ "convention_step_at_muon_retired": "-0.03862423313966306213603644",
+ "word_ruling_step_under_convention_C": "-0.496426348281146734412366",
+ "checks": {
+  "step0_reproduces_committed_witness_1e-19": true,
+  "step0_minus_witness_matches_measured_c_step": true,
+  "step4_equals_live_tr_m_atom_zn": true
+ },
+ "allPassed": true
+}
