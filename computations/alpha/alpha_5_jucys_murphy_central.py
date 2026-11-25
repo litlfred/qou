@@ -38,6 +38,7 @@ nothing re-read this file.  Do not quote a literal here.)
 Computes for A ∈ {2, 3, 4} and tests atom-independence.
 """
 from __future__ import annotations
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 
 # Path bridge (subdirectory refactor — Phase 5, 2026-06-02).
 # Keeps flat-namespace imports (`from witness_base import …`)
@@ -360,7 +361,7 @@ def main() -> int:
         for c in contribs_q0[:3]:
             print(
                 f"    λ = {tuple(c['shape'])}, f^λ = {c['f_lambda']}, "
-                f"contribution = {c['contribution']:+.4e}"
+                f"contribution = {mpmath.nstr(c['contribution'], 5)}"
             )
 
         results[A] = {
@@ -381,9 +382,9 @@ def main() -> int:
     rel_spread_n = spread_n / abs(median_n) if median_n != 0 else mp.inf
     print(f"  α_5(2)/[6]!, α_5(3)/[9]!, α_5(4)/[12]! at q_0:")
     for A in [2, 3, 4]:
-        print(f"    A={A}: {results[A]['alpha_5_normalized_q0']:+.6e}")
-    print(f"  Range: {spread_n:.4e}, median: {median_n:.4e}")
-    print(f"  Relative spread: {rel_spread_n:.6f} ({rel_spread_n*100:.2f}%)")
+        print(f"    A={A}: {mpmath.nstr(results[A]['alpha_5_normalized_q0'], 7)}")
+    print(f"  Range: {mpmath.nstr(spread_n, 5)}, median: {mpmath.nstr(median_n, 5)}")
+    print(f"  Relative spread: {mpmath.nstr(rel_spread_n, 10)} ({mpmath.nstr(rel_spread_n*100, 6)}%)")
 
     # Also test on raw (no normalization)
     print()
@@ -393,9 +394,9 @@ def main() -> int:
     median_r = sorted(vals_q0_raw)[len(vals_q0_raw) // 2]
     rel_spread_r = spread_r / abs(median_r) if median_r != 0 else mp.inf
     for A in [2, 3, 4]:
-        print(f"    A={A}: {results[A]['alpha_5_raw_q0']:+.6e}")
-    print(f"  Range: {spread_r:.4e}, median: {median_r:.4e}")
-    print(f"  Relative spread: {rel_spread_r:.6f}")
+        print(f"    A={A}: {mpmath.nstr(results[A]['alpha_5_raw_q0'], 7)}")
+    print(f"  Range: {mpmath.nstr(spread_r, 5)}, median: {mpmath.nstr(median_r, 5)}")
+    print(f"  Relative spread: {mpmath.nstr(rel_spread_r, 10)}")
 
     # This probe is *designed to refute* the naive JM-central closed
     # form for α_5.  We assert that the relative spread EXCEEDS a
@@ -437,11 +438,11 @@ def main() -> int:
     sweep = q_sweep_atom_independence()
     sweep_summary = []
     for entry in sweep:
-        print(f"\n  {entry['q_label']} (q = {entry['q_val']:.6f}):")
+        print(f"\n  {entry['q_label']} (q = {mpmath.nstr(entry['q_val'], 10)}):")
         for A, raw, naive, partial in entry["rows"]:
-            print(f"    A={A}: partial-norm c_5 ≈ {partial:+.6e}")
+            print(f"    A={A}: partial-norm c_5 ≈ {mpmath.nstr(partial, 7)}")
         rs = entry["rel_spread_partial"]
-        print(f"    Relative spread (partial-norm): {rs*100:.2f}%")
+        print(f"    Relative spread (partial-norm): {mpmath.nstr(rs*100, 6)}%")
         sweep_summary.append({
             "q_label": entry["q_label"],
             "q_val": entry["q_val"],
@@ -450,7 +451,7 @@ def main() -> int:
 
     best = min(sweep_summary, key=lambda e: e["rel_spread_partial"])
     print(f"\n  Best atom-independence at: {best['q_label']} "
-          f"(rel spread = {best['rel_spread_partial']*100:.2f}%)")
+          f"(rel spread = {mpmath.nstr(best['rel_spread_partial']*100, 6)}%)")
 
     wb.add_data("q_sweep", _ser_deep(sweep_summary))
     # Also a refutation assertion: even the BEST q in (1, φ) is

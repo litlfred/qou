@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:05:22.190783+00:00",
-  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:07:18.273845+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "the_H3_Gram_matrix_is_ENTRYWISE_NONNEGATIVE",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 747,
+  "durationMs": 689,
   "computation": "qbeta-frobenius-gram-h3",
   "scriptFile": "qbeta_frobenius_gram_h3_probe.py",
-  "scriptHash": "74a25893bea3",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "fd845d2b162d",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [

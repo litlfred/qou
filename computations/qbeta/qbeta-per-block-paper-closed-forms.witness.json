@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:31:57.818024+00:00",
-  "commitSha": "74887971c02cd91f58e6fa5f360c19502b2a2e63",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:07:24.303293+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "paper_and_clean_forms_agree",
@@ -14,7 +14,7 @@
     },
     {
       "name": "sum_y_lambda_chi_lambda_diff_matches_tau_M",
-      "computed": "0.01594309549473549365874180063522721205845385681377250818520833353183956",
+      "computed": "0.01594309549473549365874180063522721205845385681377144004050738878031696",
       "expected": 0,
       "passed": false,
       "tolerance": "1e-07",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 95,
+  "durationMs": 87,
   "computation": "qbeta-per-block-paper-closed-forms",
   "scriptFile": "qbeta_per_block_paper_closed_forms.py",
-  "scriptHash": "4685b71b4c6f",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "470227a5ff00",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -68,10 +68,10 @@
     },
     "y_lambda_at_q_0": {
       "(3)": "0.50540422650393080318755870324047227566035119774981",
-      "(2,1)": "0.2472978867480345984062206483797638621698244011251",
+      "(2,1)": "0.24729788674803459840622064837976386216982440112509",
       "(1,1,1)": "0.0"
     },
-    "tau_M_diff_at_q_0": "-0.1580160254947354798312959456493735549320271600364287581852083335318396",
+    "tau_M_diff_at_q_0": "-0.158016025494735479831295945649373554932027160036427690040507388780317",
     "taylor_coefficients_per_block_ε_order": {
       "(3)": [
         "0",

@@ -179,7 +179,10 @@ def main() -> int:
                 "t_prefix_sec": fmt(t_slow),
                 "speedup": fmt(speedup),
                 "t_mpmath_reference_sec": fmt(t_ref),
+                # float64-intentional: `fast` is the float64 fast path under benchmark; rel and
+                # agree MEASURE its gap (the subtraction is mpmath: `ref` is mpf).
                 "rel_diff_vs_mpmath": fmt(rel),
+                # float64-intentional: same measured gap, fast vs pre-fix path.
                 "rel_diff_fixed_vs_prefix": fmt(agree),
                 "within_1e-14": bool(ok),
             })

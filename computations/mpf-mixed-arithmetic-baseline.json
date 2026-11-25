@@ -1,15 +1,16 @@
 {
-  "_comment": "Baseline for mpf_mixed_arithmetic_audit.py. The gate is now BLOCKING: --strict fails above this number, and the surface is fully verdicted, so a new row is a new regression. NEVER raise it. Drained 28 -> 3 under bean qou-65qv. The residual 3 are all in qbeta_habiro_taylor_investigation.py and are BLOCKED, not unexamined: the float() fix there is correct and written, but re-running that producer regenerates its witness from convention C to convention D, which belongs to bean qou-cds1.",
-  "candidates": 3,
+  "_comment": "Baseline for mpf_mixed_arithmetic_audit.py. The gate is now BLOCKING: --strict fails above this number, and the surface is fully verdicted, so a new row is a new regression. NEVER raise it. Drained 28 -> 3 under bean qou-65qv, then 3 -> 0 on 2026-11-25. The residual 3 are all in qbeta_habiro_taylor_investigation.py and are BLOCKED, not unexamined: the float() fix there is correct and written, but re-running that producer regenerates its witness from convention C to convention D, which belongs to bean qou-cds1.",
+  "candidates": 0,
   "blocking": true,
-  "set_at": "2026-08-19",
+  "set_at": "2026-11-25",
   "history": [
     {"candidates": 28, "note": "as landed by qou-gqt5 in #5264"},
     {"candidates": 25, "note": "detector: int()/round() clear taint; format-spec sink is display"},
     {"candidates": 19, "note": "4 rows marked float64-intentional"},
     {"candidates": 16, "note": "detector: bare .trace()/.sum() no longer imply numpy"},
     {"candidates": 14, "note": "detector: mpf(str(<=17-digit float literal)) round-trips"},
-    {"candidates": 3,  "note": "6 producers fixed at source; 5 more rows marked"}
+    {"candidates": 3,  "note": "6 producers fixed at source; 5 more rows marked"},
+    {"candidates": 0,  "note": "2026-11-25: chi_numpy_dtype_fix_benchmark x2 marked (measured f64 gap); d_density_derivation stale -> float annotations + float(inf) fixed; single_level_binding_gg np.diag over dtype=object mpf array removed (false positive)"}
   ],
   "fixed_at_source": [
     "qbeta_hoefsmit_chi_cross_anchor_stability_probe.py — 49-digit float literal; delta_q wrong from the 9th significant digit",

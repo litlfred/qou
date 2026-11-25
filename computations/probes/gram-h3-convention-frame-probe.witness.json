@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy(exact over Q(q,z))",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:26:01.642829+00:00",
-  "commitSha": "f7652e4964e134b4d36b72101d062c92f1876a35",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-24T18:02:30.407314+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "det_at_z_D_is_identically_zero",
@@ -44,8 +44,8 @@
   "durationMs": 0,
   "computation": "gram-h3-convention-frame-probe",
   "scriptFile": "gram_h3_convention_frame_probe.py",
-  "scriptHash": "7fd1674c9516",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "04a3d99e0d66",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -181,7 +181,7 @@
   "convention_D_closed_form_note": "every D-frame entry is a rational function of q with denominator a power of (q²+1) — the u = √q parametrisation the Lean file is built on is not needed under D, which also removes the Real.sqrt that forces that file onto ℝ (AGENTS.md §7c)",
   "context": {
     "block": "prop:gram-matrix-h3-symbolic",
-    "lean": "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
+    "lean": "folio/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean",
     "bean": "qou-bm4i",
     "scope": "(b) structural exclusion per AGENTS.md — the invariant is the exact determinant factorisation in check4, not a probe"
   },

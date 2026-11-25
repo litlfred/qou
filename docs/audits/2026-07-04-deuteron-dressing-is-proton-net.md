@@ -281,3 +281,18 @@ bar-conjugate, dominant blocks $[4,2]/[5,1]/[3,2,1]$ — but they do not pin the
 10 free directions; that requires cross-A (per PR #3266's cross-A
 discriminator). **Not a closure ansatz** (Δ_λ gate); a structural map of the
 terms and their exact constraints.
+
+## 2026-11-25 — the binding match is withdrawn (owner ruling, bean `qou-xj4p`)
+
+The +0.29 % agreement of `B_D = E₀·net(p)·Δtr` with AME2020 reported above does not survive the current inputs. The exact attribution (`computations/probes/probe_d_dressing_is_proton_net/attribution/RESULTS.md`) reproduces the 2026-07-04 value to 20 digits. It shows that the hit holds in exactly one configuration: the superseded grouped confinement word (replaced by the 2026-09-05 word ruling) under the excised Markov convention C (replaced by convention D on 2026-08-09). Either ruling alone removes it.
+
+| configuration | Δtr | `B_D` vs AME |
+|---|---|---|
+| C, grouped word (2026-07-04 run) | 0.595168891 | +0.287 % |
+| D, grouped word | 0.556544660 | −6.22 % |
+| C, alternating word | 0.098742543 | −83.36 % |
+| D, alternating word (ruled inputs) | 0.147046678 | −75.22 % |
+
+The 2026-07-04 run also took `y_λ` at the retired muon pin while evaluating `χ^λ` at the proton pin, a layer straddle; it contributes 1.4e-9 to Δtr.
+
+Owner decision (2026-11-25): keep the exact ℚ(q) identities as the probe's content (`Δ(net) = −h·net(p)`, `|Δ(net)| = h·net(p)`, `Q_β = E₀·h·net(p)`), record the binding match as a negative, and remove the `binding_candidate_subpercent` assertion. The probe's witness now carries `binding_candidate_status.verdict = "negative"`. Under the anti-fit rule, the earlier hit was never evidence for those inputs.

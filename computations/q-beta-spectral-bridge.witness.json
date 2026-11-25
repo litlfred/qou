@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T12:25:04.073751+00:00",
-  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-24T18:07:00.529966+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "bridge_residual_within_O_h_squared",
@@ -23,8 +23,8 @@
   "durationMs": 5,
   "computation": "q-beta-spectral-bridge",
   "scriptFile": "q_beta_spectral_bridge_witness.py",
-  "scriptHash": "39347fcf8c7f",
-  "scriptCommitSha": "e746346775a4636861cd54bb936cae54adb7f800",
+  "scriptHash": "f5c947939052",
+  "scriptCommitSha": "39baf7e222b8442c11d08c3743b6dc89aab420a7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,14 +32,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [
@@ -47,8 +47,8 @@
     ],
     "reproduce": "python3 -u computations/q_beta_spectral_bridge_witness.py"
   },
-  "description": "Numerical witness for the leading-order bridge identity Form A / Form B = 1/z + (z-1) h / (2 z) + O(h²) of prop:q-beta-spectral-bridge. Form A is the NF-counit |Δ(net)| = |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) via the Markov-traced volume identity in prop:beta-decay-transfer-matrix. Both forms map onto MeV via the same E_0 = m_e / (q (q-1)) derived from CAL-1 + CAL-2 only; Form B carries an additional 1/z Markov-Jones normalization (NOT a calibration knob). The residual |predicted - actual| is bounded by h² (the Taylor O(h²) remainder).",
-  "contentBlock": "prop:q-beta-spectral-bridge",
+  "description": "Numerical witness for the leading-order bridge identity Form A / Form B = 1/z + (z-1) h / (2 z) + O(h²) of conj:q-beta-spectral-bridge. Form A is the NF-counit |Δ(net)| = |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) via the Markov-traced volume identity in prop:beta-decay-transfer-matrix. Both forms map onto MeV via the same E_0 = m_e / (q (q-1)) derived from CAL-1 + CAL-2 only; Form B carries an additional 1/z Markov-Jones normalization (NOT a calibration knob). The residual |predicted - actual| is bounded by h² (the Taylor O(h²) remainder).",
+  "contentBlock": "conj:q-beta-spectral-bridge",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.51099895069"

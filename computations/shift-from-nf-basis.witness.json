@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T09:19:53.205452+00:00",
-  "commitSha": "2f5868a2c69c25eb0fece57bdd8123c2a09382eb",
+  "computedAt": "2026-11-24T18:07:31.525741+00:00",
+  "commitSha": "5c84911450ce9a1f2f4f5d1a58329b06ecdc9bf8",
   "assertions": [
     {
       "name": "shift_proton_h3_finite",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 21,
   "computation": "shift-from-nf-basis",
   "scriptFile": "shift_from_nf_basis.py",
-  "scriptHash": "f7cb5afc4a58",
-  "scriptCommitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
+  "scriptHash": "a8629a1293ef",
+  "scriptCommitSha": "4db77890a72ec5ffaddefafa437fc483b33bc5b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,14 +48,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "f78d45e8bc0b9ef6"
   },
   "invocation": {
     "argv": [

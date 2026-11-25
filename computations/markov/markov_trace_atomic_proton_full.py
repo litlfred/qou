@@ -37,6 +37,7 @@ the categorical anchor for prop:atomic-mass-gb-nf.
 Output: markov-trace-atomic-proton-full.witness.json
 """
 from __future__ import annotations
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 
 
 # Path bridge (subdirectory refactor — Phase 4, 2026-06-02).
@@ -186,7 +187,7 @@ def main() -> int:
     mp_me = mp.mpf(M_P_MEV_VALIDATION) / mp.mpf(M_E_MEV)
     rho_p = mp_me / val_at_q0
     print(f"\n  Categorical mass dimensional bridge:")
-    print(f"    m_p / m_e (CODATA) = {mp_me:.6f}")
+    print(f"    m_p / m_e (CODATA) = {mpmath.nstr(mp_me, 10)}")
     print(f"    ρ_p^CODATA = (m_p/m_e) / |tr_M(σ_1^7σ_2^4)| = "
           f"{mp.nstr(rho_p, 10)}")
 
@@ -243,7 +244,7 @@ def main() -> int:
         "rho_p_codata": fmt(rho_p),
         "cross_check": ("none — the only available reference was a frozen "
                         "convention-C decimal (1.6334); see bean qou-pdfx"),
-        "ratio_to_historical_convention_c_decimal": f"{ratio_to_charfast:.6f}",
+        "ratio_to_historical_convention_c_decimal": f"{mpmath.nstr(ratio_to_charfast, 7)}",
     }
     # A LIVE structural check replacing the retired convention-C comparison
     # (bean qou-pdfx). Under convention C this trace carried half-integer
