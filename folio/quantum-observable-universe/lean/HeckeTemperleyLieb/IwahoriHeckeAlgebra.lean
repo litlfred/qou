@@ -129,7 +129,8 @@ variable {R q M}
 theorem T_quadratic (i : B) :
     (T R q M i - algebraMap R (HeckeAlgebra R q M) q) * (T R q M i + 1) = 0 := by
   have h := RingQuot.mkAlgHom_rel R (Rel.quadratic (R := R) (q := q) (M := M) i)
-  simpa [T, map_mul, map_sub, map_add, map_one, AlgHom.commutes] using h
+  simp only [map_mul, map_sub, map_add, map_one, AlgHom.commutes, map_zero] at h
+  exact h
 
 /-- **The braid relation holds.** The alternating product of `M i j` factors starting
 with `T_i` equals the alternating product of `M j i` factors starting with `T_j`. -/
@@ -231,7 +232,7 @@ theorem hom_ext {A : Type w} [Ring A] [Algebra R A]
       = ψ.comp (RingQuot.mkAlgHom R (Rel R q M)) := by
     apply FreeAlgebra.hom_ext
     funext i
-    simpa [T] using h i
+    exact h i
   apply AlgHom.ext
   intro x
   obtain ⟨y, rfl⟩ := RingQuot.mkAlgHom_surjective R (Rel R q M) x
