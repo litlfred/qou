@@ -174,7 +174,6 @@ lemma triple_sum_zero (ρ : Equiv.Perm (Fin n) →* R) {z : Fin n → k} (hz : F
   have h3 : X + X + X = 0 := by
     have e1 := sum_cyc (fun a b d => coef z u v a b d • (ρ (swap a b) * ρ (swap b d)))
     have e2 := sum_cyc (fun a b d => coef z u v b d a • (ρ (swap b d) * ρ (swap d a)))
-    simp only at e1 e2
     have E1 : ∑ a, ∑ b, ∑ d, coef z u v b d a • (ρ (swap b d) * ρ (swap d a)) = X := e1.symm
     have E2 : ∑ a, ∑ b, ∑ d, coef z u v d a b • (ρ (swap d a) * ρ (swap a b)) = X :=
       e2.symm.trans e1.symm
