@@ -146,7 +146,7 @@ theorem scalar_of_cube_scalar (M : Matrix (Fin 2) (Fin 2) K) (hdet : M.det = 1)
     rw [h] at e
     rw [add_smul, e]
     abel
-  rw [MulAction.mul_smul, ← key, smul_smul, inv_mul_cancel₀ hne, one_smul]
+  rw [mul_smul, ← key, smul_smul, inv_mul_cancel₀ hne, one_smul]
 
 theorem det_smul_one (μ : K) : (μ • (1 : Matrix (Fin 2) (Fin 2) K)).det = μ ^ 2 := by
   rw [Matrix.det_smul, Matrix.det_one, mul_one, Fintype.card_fin]
@@ -312,7 +312,7 @@ theorem commute_of_sq_eq_pm_cube {A B : Matrix (Fin 2) (Fin 2) ℝ}
   by_cases hs : ∃ μ : ℝ, A ^ 2 = μ • (1 : Matrix (Fin 2) (Fin 2) ℝ)
   · obtain ⟨μ, hμ⟩ := hs
     have hB3 : B ^ 3 = (ε * μ) • (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
-      rw [MulAction.mul_smul, ← hμ, hε, smul_smul, hεε, one_smul]
+      rw [mul_smul, ← hμ, hε, smul_smul, hεε, one_smul]
     obtain ⟨ν, rfl⟩ := scalar_of_cube_scalar B dB (trace_sq_ne_one hB dB) _ hB3
     rw [Matrix.mul_smul, Matrix.smul_mul, mul_one, one_mul]
   · push_neg at hs

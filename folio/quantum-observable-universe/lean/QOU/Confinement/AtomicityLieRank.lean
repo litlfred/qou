@@ -474,11 +474,11 @@ theorem sl2_subalgebra_rank_le_one {K : Type*} [Field K] [Infinite K] (h2 : (2 :
     set X : sl (Fin 2) K := ι (Z : H) with hXdef
     have hX : X ≠ 0 := by
       rw [hXdef]; intro h
-      exact hZ (Subtype.ext (hιinj (h.trans (LieHom.map_zero ι).symm)))
+      exact hZ (Subtype.ext (hιinj (h.trans (map_zero ι).symm)))
     have hrange : LinearMap.range ι.toLinearMap ≤ LinearMap.ker (ad K (sl (Fin 2) K) X) := by
       rintro _ ⟨w, rfl⟩
       rw [LinearMap.mem_ker, LieAlgebra.ad_apply, hXdef, LieHom.coe_toLinearMap,
-        ← LieHom.map_lie, hZc w, LieHom.map_zero]
+        ← LieHom.map_lie, hZc w, map_zero]
     calc Module.finrank K H
         = Module.finrank K (LinearMap.range ι.toLinearMap) :=
           (LinearMap.finrank_range_of_inj hιinj).symm
