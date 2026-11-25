@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:31:00Z
+updated_at: 2026-11-25T16:32:07Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -66,3 +66,6 @@ OPEN: owner decision on the 4 other order-zero log-law probes (framed on qou-of4
 - Next: qou-gd5s (regularity route for nu_q), qou-lke8, qou-hr80, qou-dvfy, qou-9lxj, qou-tgq7, qou-jv2n (Lean paper statement + content blocks).
 - Blockers: owner ruling on qou-0nqs wording; qou-hr80 waits on #9430 (BringRegularMap).
 - Route: olean cache restore per AGENTS.md Step 0, then lean -DautoImplicit=false -s 65536.
+
+## Handover — binding error budget (session_01EucfRntKGFoPCof8huHo3z, 2026-11-25T16:32Z)
+Bean qou-rf43 (in-progress). Draft PR #9436, branch claude/binding-error-budget-2026-11-25, head 281e13fb9. Audit docs/audits/2026-11-25-binding-error-budget.md: on the ruled inputs the light nuclei bind by keV. Ranked contributions: bond word (~350x on 2H), missing positive b3 (qou-brng), nucleon-block sign flip, topology; scale, pin, convention, functional and numerics about 1%. Owner decision §6 pending (ACCURACY.md K_A rows use E_osc = 10.09 E0). Next: check how #9221 chose E_osc (open entry 3).
