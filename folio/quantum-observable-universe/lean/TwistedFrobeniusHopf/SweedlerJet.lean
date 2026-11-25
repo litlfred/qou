@@ -46,8 +46,11 @@ inductive SweedlerRel : FreeAlgebra k SweedlerGen → FreeAlgebra k SweedlerGen 
   | anti : SweedlerRel (FreeAlgebra.ι k .x * FreeAlgebra.ι k .g)
       (-(FreeAlgebra.ι k .g * FreeAlgebra.ι k .x))
 
-/-- Sweedler's algebra `H₄ = k⟨g, x⟩ / (g² - 1, x², x g + g x)`. -/
-def Sweedler : Type _ := RingQuot (SweedlerRel k)
+/-- Sweedler's algebra `H₄ = k⟨g, x⟩ / (g² - 1, x², x g + g x)`.
+
+Port note (Lean v4.35): an `abbrev`, not a `def`; with a `def` synonym instance search no
+longer unifies the `Algebra.toModule` path with the `Ring` instance path. -/
+abbrev Sweedler : Type _ := RingQuot (SweedlerRel k)
 
 noncomputable instance : Ring (Sweedler k) := RingQuot.instRing _
 noncomputable instance : Algebra k (Sweedler k) := RingQuot.instAlgebra _
