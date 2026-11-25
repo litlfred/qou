@@ -848,6 +848,8 @@ user's last message, not the most recently mentioned file.
    for independent research / triage that does not block the
    foreground task.
 
+   **Research fronts are interactive child sessions, not background agents (owner directive 2026-11-25, STRICT).** A background `Agent` cannot be steered by the owner. Any research / derivation / open-question front that may need the owner's input is launched as an interactive child session (`mcp__claude-code-remote__create_session`) that the owner can see, talk to, and that asks the owner at forks. Background agents are only for mechanical work with one right answer. When unsure, launch interactive. Procedure: [`dispatch-agent.md` §0a](.claude/skills/local/dispatch-agent.md).
+
 5. **Work the queue while idle.** When you are waiting on a
    long-running script, a background agent, a Lean build, or a CI
    run, pull the next pending todo and work on it. Never just sleep
