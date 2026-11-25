@@ -140,7 +140,7 @@ structure FilteredData (G : Type u) [DecidableEq G] (k : Type v) [CommRing k]
   /-- Strictly lighter words are smaller. -/
   lt_of_wsum_lt : ∀ x y : List G, wsum wt x < wsum wt y → ord.lt x y
   /-- **Strong filtration**: every monomial of `π(a, b)` is lighter than `a b`. -/
-  π_wt : ∀ a b, blk b < blk a → ∀ p ∈ (π a b).support,
+  π_wt : ∀ a b, blk b < blk a → ∀ p ∈ (π a b).coeff.support,
     wsum wt (FreeMonoid.toList p) < wt a + wt b
   /-- Associativity of each block product. -/
   assoc : ∀ a b c, blk a = blk b → blk b = blk c →
@@ -234,11 +234,11 @@ end FilteredData
 
 /-- Every monomial of `X` has weight `< n`. -/
 def WtLt (wt : G → ℕ) (n : ℕ) (X : MA G k) : Prop :=
-  ∀ p ∈ X.support, wsum wt (FreeMonoid.toList p) < n
+  ∀ p ∈ X.coeff.support, wsum wt (FreeMonoid.toList p) < n
 
 /-- Every monomial of `X` has weight `≤ n`. -/
 def WtLe (wt : G → ℕ) (n : ℕ) (X : MA G k) : Prop :=
-  ∀ p ∈ X.support, wsum wt (FreeMonoid.toList p) ≤ n
+  ∀ p ∈ X.coeff.support, wsum wt (FreeMonoid.toList p) ≤ n
 
 section Wt
 
@@ -255,15 +255,15 @@ theorem WtLt.add {n : ℕ} {X Y : MA G k} (hX : WtLt wt n X) (hY : WtLt wt n Y) 
     WtLt wt n (X + Y) := by
   classical
   intro p hp
-  rcases Finset.mem_union.mp (Finsupp.support_add hp) with h | h
+  rcases Finset.mem_union.mp (Finsupp.support_add (by simpa only [MonoidAlgebra.coeff_add] using hp)) with h | h
   · exact hX p h
   · exact hY p h
 
 theorem WtLt.smul {n : ℕ} (c : k) {X : MA G k} (hX : WtLt wt n X) : WtLt wt n (c • X) :=
-  fun p hp => hX p (Finsupp.support_smul hp)
+  fun p hp => hX p (Finsupp.support_smul (by simpa only [MonoidAlgebra.coeff_smul] using hp))
 
 theorem WtLt.neg {n : ℕ} {X : MA G k} (hX : WtLt wt n X) : WtLt wt n (-X) := by
-  intro p hp; rw [Finsupp.support_neg] at hp; exact hX p hp
+  intro p hp; rw [MonoidAlgebra.coeff_neg, Finsupp.support_neg] at hp; exact hX p hp
 
 theorem WtLt.sub {n : ℕ} {X Y : MA G k} (hX : WtLt wt n X) (hY : WtLt wt n Y) :
     WtLt wt n (X - Y) := by
@@ -279,7 +279,7 @@ theorem WtLt.sum {n : ℕ} {κ : Type*} (s : Finset κ) (X : κ → MA G k)
     exact (h i (Finset.mem_insert_self _ _)).add (ih (fun j hj => h j (Finset.mem_insert_of_mem hj)))
 
 theorem WtLt.termSum {n : ℕ} (X : MA G k) (Φ : List G → MA G k)
-    (h : ∀ p ∈ X.support, WtLt wt n (Φ (FreeMonoid.toList p))) : WtLt wt n (termSum X Φ) :=
+    (h : ∀ p ∈ X.coeff.support, WtLt wt n (Φ (FreeMonoid.toList p))) : WtLt wt n (termSum X Φ) :=
   WtLt.sum _ _ (fun p hp => (h p hp).smul _)
 
 theorem wsum_toList_mul (p q : FreeMonoid G) :
@@ -290,14 +290,14 @@ theorem WtLt.mul {n m : ℕ} {X Y : MA G k} (hX : WtLt wt n X) (hY : WtLe wt m Y
     WtLt wt (n + m) (X * Y) := by
   classical
   intro p hp
-  obtain ⟨x, hx, y, hy, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_mul X Y hp)
+  obtain ⟨x, hx, y, hy, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_coeff_mul_subset X Y hp)
   rw [wsum_toList_mul]; have := hX x hx; have := hY y hy; omega
 
 theorem WtLt.mul' {n m : ℕ} {X Y : MA G k} (hX : WtLe wt n X) (hY : WtLt wt m Y) :
     WtLt wt (n + m) (X * Y) := by
   classical
   intro p hp
-  obtain ⟨x, hx, y, hy, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_mul X Y hp)
+  obtain ⟨x, hx, y, hy, rfl⟩ := Finset.mem_mul.mp (MonoidAlgebra.support_coeff_mul_subset X Y hp)
   rw [wsum_toList_mul]; have := hX x hx; have := hY y hy; omega
 
 theorem wtLe_ofW (w : List G) : WtLe wt (wsum wt w) (ofW w : MA G k) := by
@@ -409,7 +409,7 @@ theorem comm_word {v : Monomial G} (x : G) (w : List G) : ∀ a b : List G,
 /-- **The commutator lemma**: `x X − X x − D_x X` lies in the span below `v` when
     every monomial of `X`, with `x`, is lighter than `v`. -/
 theorem comm_elt {v : Monomial G} (x : G) {X : MA G k}
-    (hX : ∀ p ∈ X.support, F.wt x + wsum F.wt (FreeMonoid.toList p) < wsum F.wt v) :
+    (hX : ∀ p ∈ X.coeff.support, F.wt x + wsum F.wt (FreeMonoid.toList p) < wsum F.wt v) :
     JM ord F.quad.sys v (ofW [x] * X - X * ofW [x] - F.deriv x X) := by
   rw [deriv, ← termSum_left, ← termSum_right, termSum_sub, termSum_sub]
   refine JM.sum _ _ (fun p hp => JM.smul _ ?_)
@@ -518,7 +518,7 @@ theorem br_one_right (z : A) : M.br z 1 = 0 := by
 
 /-- `q` of a term-sum is a linear image of `q` when it is so term by term. -/
 theorem q_termSum (L : A →ₗ[k] A) (X : MA G k) (Φ : List G → MA G k)
-    (h : ∀ p ∈ X.support, M.q (Φ (FreeMonoid.toList p)) = L (M.q (ofW (FreeMonoid.toList p)))) :
+    (h : ∀ p ∈ X.coeff.support, M.q (Φ (FreeMonoid.toList p)) = L (M.q (ofW (FreeMonoid.toList p)))) :
     M.q (termSum X Φ) = L (M.q X) := by
   conv_rhs => rw [← termSum_ofW X]
   simp only [termSum, map_sum, map_smul]

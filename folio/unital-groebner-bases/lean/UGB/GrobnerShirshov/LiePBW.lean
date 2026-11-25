@@ -67,13 +67,16 @@ theorem br_skew (x y : G) : L.br y x = -L.br x y := by
 theorem br_self (x : G) : L.br x x = 0 := by
   simp only [br, L.alt, zero_smul, Finset.sum_const_zero]
 
-theorem br_support {x y : G} {w : FreeMonoid G} (hw : w ∈ (L.br x y).support) :
+theorem br_support {x y : G} {w : FreeMonoid G} (hw : w ∈ (L.br x y).coeff.support) :
     (FreeMonoid.toList w).length = 1 := by
   classical
   unfold br at hw
+  rw [MonoidAlgebra.coeff_sum] at hw
   obtain ⟨e, -, he⟩ := Finset.mem_biUnion.mp (Finsupp.support_finset_sum hw)
+  rw [MonoidAlgebra.coeff_smul] at he
   have he' := Finsupp.support_smul he
   unfold ofW at he'
+  rw [MonoidAlgebra.coeff_single] at he'
   have := Finsupp.support_single_subset he'
   rw [Finset.mem_singleton] at this
   rw [this, FreeMonoid.toList_ofList]; rfl

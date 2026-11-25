@@ -44,8 +44,8 @@ variable {k : Type v} [Field k]
 theorem toMA_two {m₁ m₂ : Monomial SU2Gen} (c₁ c₂ : k) (h : m₁ ≠ m₂) :
     toMA (two m₁ c₁ m₂ c₂ : AlgElement SU2Gen k) = c₁ • ofW m₁ + c₂ • ofW m₂ := by
   refine toMA_ext fun m => ?_
-  rw [toMA_apply, Finsupp.add_apply, Finsupp.smul_apply, Finsupp.smul_apply, ofW_apply,
-    ofW_apply]
+  rw [toMA_apply, MonoidAlgebra.coeff_add, MonoidAlgebra.coeff_smul, MonoidAlgebra.coeff_smul,
+    Finsupp.add_apply, Finsupp.smul_apply, Finsupp.smul_apply, ofW_apply, ofW_apply]
   simp only [two, @eq_comm _ m₁ m, @eq_comm _ m₂ m]
   by_cases e1 : m = m₁
   · subst e1; simp [h]
@@ -59,7 +59,9 @@ theorem toMA_four {m₁ m₂ m₃ m₄ : Monomial SU2Gen} (c₁ c₂ c₃ c₄ :
     toMA (four m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄ : AlgElement SU2Gen k) =
       c₁ • ofW m₁ + c₂ • ofW m₂ + c₃ • ofW m₃ + c₄ • ofW m₄ := by
   refine toMA_ext fun m => ?_
-  rw [toMA_apply, Finsupp.add_apply, Finsupp.add_apply, Finsupp.add_apply,
+  rw [toMA_apply, MonoidAlgebra.coeff_add, MonoidAlgebra.coeff_add, MonoidAlgebra.coeff_add,
+    MonoidAlgebra.coeff_smul, MonoidAlgebra.coeff_smul, MonoidAlgebra.coeff_smul,
+    MonoidAlgebra.coeff_smul, Finsupp.add_apply, Finsupp.add_apply, Finsupp.add_apply,
     Finsupp.smul_apply, Finsupp.smul_apply, Finsupp.smul_apply, Finsupp.smul_apply,
     ofW_apply, ofW_apply, ofW_apply, ofW_apply]
   simp only [four, @eq_comm _ m₁ m, @eq_comm _ m₂ m, @eq_comm _ m₃ m, @eq_comm _ m₄ m]

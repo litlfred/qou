@@ -302,14 +302,14 @@ theorem mem_heckeRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
   · exact Or.inl ⟨i, hi.symm⟩
   · by_cases hc : j.val = i.val + 1
     · simp only [hc] at hj
-      exact Or.inr (Or.inl ⟨i, j, hc, (Option.some.injEq _ _ ▸ hj).symm⟩)
+      exact Or.inr (Or.inl ⟨i, j, hc, (Option.some.inj hj).symm⟩)
     · simp only [if_neg hc] at hj
-      exact Option.noConfusion hj
+      cases hj
   · by_cases hc : i.val > j.val + 1
     · simp only [if_pos hc] at hj
-      exact Or.inr (Or.inr ⟨i, j, hc, (Option.some.injEq _ _ ▸ hj).symm⟩)
+      exact Or.inr (Or.inr ⟨i, j, hc, (Option.some.inj hj).symm⟩)
     · simp only [if_neg hc] at hj
-      exact Option.noConfusion hj
+      cases hj
 
 /-- Every rule of `heckeRewritingSystem` is one of the three families, and its
     leading monomial is the explicit word listed here. -/
