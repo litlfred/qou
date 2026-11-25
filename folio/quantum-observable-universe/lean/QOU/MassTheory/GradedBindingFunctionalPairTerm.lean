@@ -291,7 +291,7 @@ theorem logJet_one : logJet (1 : Jet2 K) = 0 := by
 the product is cancelled exactly by `−(b + b')²/2`. -/
 theorem logJet_mul [NeZero (2 : K)] {f g : Jet2 K} (hf : f.IsUnital) (hg : g.IsUnital) :
     logJet (f * g) = logJet f + logJet g := by
-  unfold IsUnital at hf hg
+  unfold Jet2.IsUnital at hf hg
   ext
   · simp
   · simp [hf, hg, add_comm]
