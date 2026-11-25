@@ -106,8 +106,10 @@ theorem gbDepth_eq_corner (μ : YoungDiagram) (h : μ.cells.Nonempty) :
   · obtain ⟨c, hc⟩ := h
     have hmem : ((0 : ℕ), (0 : ℕ)) ∈ μ.cells :=
       μ.up_left_mem (Nat.zero_le _) (Nat.zero_le _) hc
-    simpa [TwoFiltrationBridge.hookLength] using
-      Finset.le_sup (f := fun c => TwoFiltrationBridge.hookLength μ c) hmem
+    have hle := Finset.le_sup (f := fun c => TwoFiltrationBridge.hookLength μ c) hmem
+    simp only [TwoFiltrationBridge.hookLength] at hle
+    unfold gbDepth TwoFiltrationBridge.hookLength
+    omega
 
 /-- **The grading is blind to the interior.** Two diagrams sharing a first row
 and a first column have the same GB-depth however differently they are shaped
@@ -135,11 +137,11 @@ theorem four_le_card_of_mem_one_one (μ : YoungDiagram) (h : (1, 1) ∈ μ) :
 
 section H3
 
-private theorem colLen_ofRowLens {w : List ℕ} (hw : List.Sorted (· ≥ ·) w)
+private theorem colLen_ofRowLens {w : List ℕ} (hw : w.SortedGE)
     (hpos : ∀ x ∈ w, 0 < x) : (ofRowLens w hw).colLen 0 = w.length := by
   rw [← length_rowLens, rowLens_ofRowLens_eq_self hpos]
 
-private theorem rowLen_ofRowLens {w : List ℕ} (hw : List.Sorted (· ≥ ·) w)
+private theorem rowLen_ofRowLens {w : List ℕ} (hw : w.SortedGE)
     (hpos : ∀ x ∈ w, 0 < x) (h : 0 < w.length) :
     (ofRowLens w hw).rowLen 0 = w[0]'h := by
   have hl : (0 : ℕ) < (ofRowLens w hw).rowLens.length := by
@@ -148,7 +150,7 @@ private theorem rowLen_ofRowLens {w : List ℕ} (hw : List.Sorted (· ≥ ·) w)
   rw [← this]
   simp [rowLens_ofRowLens_eq_self hpos]
 
-private theorem cells_ne {w : List ℕ} (hw : List.Sorted (· ≥ ·) w)
+private theorem cells_ne {w : List ℕ} (hw : w.SortedGE)
     (hpos : ∀ x ∈ w, 0 < x) (h : 0 < w.length) :
     (ofRowLens w hw).cells.Nonempty := by
   refine ⟨(0, 0), ?_⟩
