@@ -177,7 +177,6 @@ theorem coeffAt_mul_add {P Q : QuantumTorus A} {m n : ℤ}
   have key : (Multiplicative.ofAdd (m + n) : Ldeg)
       = Multiplicative.ofAdd m * Multiplicative.ofAdd n := by rw [ofAdd_add]
   rw [coeffAt, key, coeff_mul]
-  simp only [sum_def]
   -- Outer sum: only `a₁ = ofAdd m` survives.
   have outerVanish : ∀ b : Ldeg, P.toFinsupp b ≠ 0 → b ≠ Multiplicative.ofAdd m →
       (Q.toFinsupp.sum fun a₂ b₂ =>
@@ -190,7 +189,7 @@ theorem coeffAt_mul_add {P Q : QuantumTorus A} {m n : ℤ}
       intro h; apply hbne; apply Multiplicative.toAdd.injective
       rw [toAdd_ofAdd]; exact h
     have hblt : Multiplicative.toAdd b < m := lt_of_le_of_ne hble hbne'
-    refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finsupp.sum_zero
+    refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finset.sum_const_zero
     intro a₂ ha₂
     have ha2le : Multiplicative.toAdd a₂ ≤ n :=
       toAdd_le_of_mem_support hQ (by exact ha₂)
@@ -204,7 +203,7 @@ theorem coeffAt_mul_add {P Q : QuantumTorus A} {m n : ℤ}
         if Multiplicative.ofAdd m * a₂ = Multiplicative.ofAdd m * Multiplicative.ofAdd n
         then (0 : A) * Multiplicative.ofAdd m • b₂ else 0) = 0 := by
     intro _
-    refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finsupp.sum_zero
+    refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finset.sum_const_zero
     intro a₂ _; simp
   rw [Finsupp.sum_eq_single (Multiplicative.ofAdd m) outerVanish outerZero]
   -- Inner sum: only `a₂ = ofAdd n` survives.
@@ -231,11 +230,10 @@ theorem coeffAt_mul_eq_zero_of_lt {P Q : QuantumTorus A} {m n k : ℤ}
     (hP : topDeg P ≤ (m : WithBot ℤ)) (hQ : topDeg Q ≤ (n : WithBot ℤ))
     (hk : m + n < k) : coeffAt (P * Q) k = 0 := by
   rw [coeffAt, coeff_mul]
-  simp only [sum_def]
-  refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finsupp.sum_zero
+  refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finset.sum_const_zero
   intro a₁ ha₁
   have h1le : Multiplicative.toAdd a₁ ≤ m := toAdd_le_of_mem_support hP (by exact ha₁)
-  refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finsupp.sum_zero
+  refine (Finsupp.sum_congr (g2 := fun _ _ => 0) ?_).trans Finset.sum_const_zero
   intro a₂ ha₂
   have h2le : Multiplicative.toAdd a₂ ≤ n := toAdd_le_of_mem_support hQ (by exact ha₂)
   rw [if_neg]
