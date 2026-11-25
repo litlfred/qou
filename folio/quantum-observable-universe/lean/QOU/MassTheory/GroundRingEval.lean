@@ -78,14 +78,14 @@ open LaurentPolynomial
     `R_q = ℤ[q, q⁻¹] = AddMonoidAlgebra ℤ ℤ`, so a ring map to `ℝ` is exactly a
     monoid map `Multiplicative ℤ →* ℝ`, i.e. a choice of unit. -/
 noncomputable def evalAt (q0 : ℝˣ) : QOU.GroundRing.R_q →+* ℝ :=
-  (AddMonoidAlgebra.lift ℤ ℤ ℝ ((Units.coeHom ℝ).comp (zpowersHom ℝˣ q0))).toRingHom
+  (AddMonoidAlgebra.lift ℤ ℝ ℤ ((Units.coeHom ℝ).comp (zpowersHom ℝˣ q0))).toRingHom
 
 /-- `ι` substitutes `q₀` for the indeterminate: `T n ↦ q₀ ^ n`.
 
     Without this the definition above would be untethered in exactly the way
     this bean is about — *some* ring hom, with no reason to call it `q ↦ q₀`. -/
 theorem evalAt_T (q0 : ℝˣ) (n : ℤ) : evalAt q0 (T n) = (q0 : ℝ) ^ n := by
-  show (AddMonoidAlgebra.lift ℤ ℤ ℝ ((Units.coeHom ℝ).comp (zpowersHom ℝˣ q0)))
+  show (AddMonoidAlgebra.lift ℤ ℝ ℤ ((Units.coeHom ℝ).comp (zpowersHom ℝˣ q0)))
         (AddMonoidAlgebra.single n (1 : ℤ)) = (q0 : ℝ) ^ n
   rw [AddMonoidAlgebra.lift_single]
   simp
@@ -194,7 +194,9 @@ theorem dq_witness_realisable :
     simp only [Units.val_mk0] at h
     rw [h] at h2
     norm_num at h2
-  refine ⟨constRealisation PUnit (Units.mk0 (2 : ℝ) (by norm_num)) (by norm_num) hroot, ?_⟩
+  have h1 : (1 : ℝ) ≤ ((Units.mk0 (2 : ℝ) (by norm_num) : ℝˣ) : ℝ) := by
+    rw [Units.val_mk0]; norm_num
+  refine ⟨constRealisation PUnit (Units.mk0 (2 : ℝ) (by norm_num)) h1 hroot, ?_⟩
   intro p
   rw [constRealisation_field]
   simp
