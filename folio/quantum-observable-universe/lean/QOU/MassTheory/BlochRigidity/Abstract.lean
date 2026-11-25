@@ -242,7 +242,7 @@ theorem first_identityS (hΦ : ∀ z, z ≠ 0 → z ≠ 1 → S.mem z (fun w => 
     have := (hasDerivAt_const y (1 - x)).div ((hasDerivAt_const y (1 : ℂ)).sub (hasDerivAt_id y))
       h1y
     convert this using 1
-    simp
+    all_goals first | rfl | simp
   have d4 : HasDerivAt (fun y => y / x * ((1 - x) / (1 - y)))
       ((1 - x) / (x * (1 - y) ^ 2)) y := by
     convert d1.mul d5 using 1
@@ -320,10 +320,10 @@ theorem mixed_identityS (hΦ : ∀ z, z ≠ 0 → z ≠ 1 → S.mem z (fun w => 
   have mω : ∀ z, z ≠ 0 → z ≠ 1 → S.mem z ω := fun z h0 h1 => S.mem_dz (hΦ z h0 h1)
   have g1 : HasDerivAt (fun x => y / x) (-y / x ^ 2) x := by
     convert (hasDerivAt_const x y).div (hasDerivAt_id x) hx0 using 1
-    simp
+    all_goals first | rfl | simp
   have g5 : HasDerivAt (fun x => (1 - x) / (1 - y)) (-1 / (1 - y)) x := by
     convert ((hasDerivAt_const x (1 : ℂ)).sub (hasDerivAt_id x)).div_const (1 - y) using 1
-    simp
+    all_goals first | rfl | ring
   have g4 : HasDerivAt (fun x => y / x * ((1 - x) / (1 - y))) (-y / (x ^ 2 * (1 - y))) x := by
     convert g1.mul g5 using 1
     field_simp
@@ -431,7 +431,7 @@ theorem omegaS_one_sub (hΦ : ∀ z, z ≠ 0 → z ≠ 1 → S.mem z (fun w => (
     rw [hone w h0 h1]; ring
   have ha : AnalyticAt ℂ (fun w : ℂ => 1 - w) z := by fun_prop
   have hd : HasDerivAt (fun w : ℂ => 1 - w) (-1) z := by
-    simpa using (hasDerivAt_const z (1 : ℂ)).sub (hasDerivAt_id z)
+    simpa using (hasDerivAt_id z).const_sub (1 : ℂ)
   have := omegaS_comp_of_eventuallyEq (g := fun w => 1 - w) ha (hΦ _ h0 h1) (hΦ _ hz0 hz1) hev
   rw [hd.deriv] at this
   push_cast at this

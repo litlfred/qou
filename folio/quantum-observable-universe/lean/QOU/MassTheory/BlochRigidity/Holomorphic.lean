@@ -62,7 +62,7 @@ theorem omega_one_sub (hφ : ContDiffOn ℝ (⊤ : ℕ∞) φ {0, 1}ᶜ)
     obtain ⟨h0, h1⟩ := mem_U'.1 hw
     rw [hone w h0 h1]; ring
   have hd : HasDerivAt (fun w : ℂ => 1 - w) (-1) z := by
-    simpa using (hasDerivAt_const z (1 : ℂ)).sub (hasDerivAt_id z)
+    simpa using (hasDerivAt_id z).const_sub (1 : ℂ)
   have := omega_comp_of_eventuallyEq (f := fun w => 1 - w) (differentiableAt_of_U hφ h0 h1)
     (differentiableAt_of_U hφ hz0 hz1) hd hev
   push_cast at this
