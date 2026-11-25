@@ -61,11 +61,17 @@ open Real Finset
 
 namespace Polynomial
 
+/- Port note (Lean v4.35 / Mathlib 56a0058): Mathlib now ships declarations named
+`mahlerMeasure_X_sub_C`, `mahlerMeasure_eq_leadingCoeff_mul_prod_roots`,
+`norm_coeff_le_choose_mul_mahlerMeasure`, `mahlerMeasure_le_sum_norm_coeff` and
+`Multiset.norm_prod`. The local versions below keep their statements and proofs and carry a
+prime to avoid the name clash. -/
+
 /-- **The Mahler measure of a linear factor:** `M(X − a) = max(1, ‖a‖)`.
 
 This is Jensen's formula for a single root.  Mathlib supplies the analytic content
 (`circleAverage_log_norm_sub_const_eq_posLog`) but does not connect it to `mahlerMeasure`. -/
-theorem mahlerMeasure_X_sub_C (a : ℂ) :
+theorem mahlerMeasure_X_sub_C' (a : ℂ) :
     (X - C a : ℂ[X]).mahlerMeasure = max 1 ‖a‖ := by
   have hne : (X - C a : ℂ[X]) ≠ 0 := X_sub_C_ne_zero a
   have hpos : (0 : ℝ) < max 1 ‖a‖ := lt_of_lt_of_le one_pos (le_max_left _ _)
@@ -84,21 +90,21 @@ theorem mahlerMeasure_X_sub_C (a : ℂ) :
 /-- **The Jensen form of the Mahler measure:** `M(P) = ‖lead P‖ · ∏ max(1, ‖root‖)`, the
 product running over the roots of `P` with multiplicity.
 
-Assembly rather than analysis, exactly as predicted: `mahlerMeasure_X_sub_C` for a single
+Assembly rather than analysis, exactly as predicted: `mahlerMeasure_X_sub_C'` for a single
 factor, Mathlib's `prod_mahlerMeasure_eq_mahlerMeasure_prod` for the product, and the
 factorization `C (lead P) * ∏ (X − aᵢ) = P` which holds over `ℂ` because it is algebraically
 closed.
 
 No `P ≠ 0` hypothesis is needed: at `P = 0` the left side is `0` by definition and the right
 side is `‖0‖ * 1 = 0`, since `(0 : ℂ[X]).roots` is the empty multiset. -/
-theorem mahlerMeasure_eq_leadingCoeff_mul_prod_roots (p : ℂ[X]) :
+theorem mahlerMeasure_eq_leadingCoeff_mul_prod_roots' (p : ℂ[X]) :
     p.mahlerMeasure = ‖p.leadingCoeff‖ * (p.roots.map (fun a => max 1 ‖a‖)).prod := by
   have hroots : Multiset.card p.roots = p.natDegree :=
-    splits_iff_card_roots.mp (IsAlgClosed.splits_codomain p)
+    splits_iff_card_roots.mp (IsAlgClosed.splits p)
   have hmap : (p.roots.map (fun a => (X - C a : ℂ[X]))).map (fun q => q.mahlerMeasure)
       = p.roots.map (fun a => max 1 ‖a‖) := by
     rw [Multiset.map_map]
-    exact Multiset.map_congr rfl (fun a _ => mahlerMeasure_X_sub_C a)
+    exact Multiset.map_congr rfl (fun a _ => mahlerMeasure_X_sub_C' a)
   conv_lhs => rw [← C_leadingCoeff_mul_prod_multiset_X_sub_C hroots]
   rw [mahlerMeasure_mul, mahlerMeasure_const, prod_mahlerMeasure_eq_mahlerMeasure_prod, hmap]
 
@@ -112,7 +118,7 @@ theorem mahlerMeasure_C_mul_X_sub_C {q a : ℂ} (hq : q ≠ 0) :
   have hfac : (C q * X - C a : ℂ[X]) = C q * (X - C (a / q)) := by
     rw [mul_sub, ← C_mul, mul_div_cancel₀ _ hq]
   have hqn : (0 : ℝ) < ‖q‖ := norm_pos_iff.mpr hq
-  rw [hfac, mahlerMeasure_mul, mahlerMeasure_const, mahlerMeasure_X_sub_C, norm_div,
+  rw [hfac, mahlerMeasure_mul, mahlerMeasure_const, mahlerMeasure_X_sub_C', norm_div,
     mul_max_of_nonneg _ _ (le_of_lt hqn), mul_one, mul_div_cancel₀ _ (ne_of_gt hqn)]
 
 /-! ### From the Jensen form to coefficient heights, by Vieta
@@ -121,7 +127,7 @@ The reverse of the bound in the next section: this one goes *up* from `M(p)` to 
 coefficients, and it is the direction Gelfond applies to each factor. -/
 
 /-- The norm of a multiset product is the product of the norms. -/
-theorem _root_.Multiset.norm_prod {α : Type*} [NormedField α] (t : Multiset α) :
+theorem _root_.Multiset.norm_prod' {α : Type*} [NormedField α] (t : Multiset α) :
     ‖t.prod‖ = (t.map (fun a => ‖a‖)).prod := by
   simpa using (t.prod_hom (normHom : α →*₀ ℝ)).symm
 
@@ -144,7 +150,7 @@ theorem _root_.Multiset.norm_esymm_le (s : Multiset ℂ) (j : ℕ) :
     intro t ht
     obtain ⟨hts, -⟩ := Multiset.mem_powersetCard.mp ht
     have h1 : ‖t.prod‖ ≤ (t.map f).prod := by
-      rw [Multiset.norm_prod]
+      rw [Multiset.norm_prod']
       exact Multiset.prod_map_le_prod_map₀ _ _ (fun i _ => norm_nonneg i)
         (fun i _ => le_max_right _ _)
     have hnn : (0 : ℝ) ≤ (t.map f).prod :=
@@ -175,13 +181,13 @@ theorem _root_.Multiset.norm_esymm_le (s : Multiset ℂ) (j : ℕ) :
 Vieta writes `coeff k p` as `lead p` times an elementary symmetric function of the roots; the
 Jensen form writes `M(p)` as `‖lead p‖` times `∏ max(1,‖root‖)`.  The two share the factor
 `‖lead p‖`, so what is left is exactly `Multiset.norm_esymm_le`. -/
-theorem norm_coeff_le_choose_mul_mahlerMeasure {p : ℂ[X]} {k : ℕ} (hk : k ≤ p.natDegree) :
+theorem norm_coeff_le_choose_mul_mahlerMeasure' {p : ℂ[X]} {k : ℕ} (hk : k ≤ p.natDegree) :
     ‖p.coeff k‖ ≤ (p.natDegree.choose (p.natDegree - k) : ℝ) * p.mahlerMeasure := by
   have hroots : Multiset.card p.roots = p.natDegree :=
-    splits_iff_card_roots.mp (IsAlgClosed.splits_codomain p)
+    splits_iff_card_roots.mp (IsAlgClosed.splits p)
   have hes := Multiset.norm_esymm_le p.roots (p.natDegree - k)
   rw [hroots] at hes
-  rw [coeff_eq_esymm_roots_of_card hroots hk, mahlerMeasure_eq_leadingCoeff_mul_prod_roots,
+  rw [coeff_eq_esymm_roots_of_card hroots hk, mahlerMeasure_eq_leadingCoeff_mul_prod_roots',
     norm_mul, norm_mul, norm_pow, norm_neg, norm_one, one_pow, mul_one]
   calc ‖p.leadingCoeff‖ * ‖p.roots.esymm (p.natDegree - k)‖
       ≤ ‖p.leadingCoeff‖ * ((p.natDegree.choose (p.natDegree - k) : ℝ)
@@ -199,7 +205,7 @@ No hypothesis on `k`: above the degree the coefficient is zero and the bound is 
 theorem norm_coeff_le_two_pow_mul_mahlerMeasure (p : ℂ[X]) (k : ℕ) :
     ‖p.coeff k‖ ≤ 2 ^ p.natDegree * p.mahlerMeasure := by
   rcases le_or_gt k p.natDegree with hk | hk
-  · refine le_trans (norm_coeff_le_choose_mul_mahlerMeasure hk) ?_
+  · refine le_trans (norm_coeff_le_choose_mul_mahlerMeasure' hk) ?_
     refine mul_le_mul_of_nonneg_right ?_ (mahlerMeasure_nonneg p)
     exact_mod_cast Nat.choose_le_two_pow p.natDegree (p.natDegree - k)
   · rw [coeff_eq_zero_of_natDegree_lt hk, norm_zero]
@@ -258,7 +264,7 @@ theorem mahlerMeasure_le_max_one_sum_norm_coeff (p : ℂ[X]) :
     _ = max 1 S := Real.exp_log hmax
 
 /-- When the coefficient sum is itself at least one, the `max` drops away. -/
-theorem mahlerMeasure_le_sum_norm_coeff {p : ℂ[X]}
+theorem mahlerMeasure_le_sum_norm_coeff' {p : ℂ[X]}
     (h : 1 ≤ ∑ i ∈ range (p.natDegree + 1), ‖p.coeff i‖) :
     p.mahlerMeasure ≤ ∑ i ∈ range (p.natDegree + 1), ‖p.coeff i‖ :=
   le_trans (mahlerMeasure_le_max_one_sum_norm_coeff p) (max_le h le_rfl)
@@ -293,7 +299,7 @@ theorem mahlerMeasure_le_sum_int {q : ℤ[X]} (hq : q ≠ 0) :
     (q.map (Int.castRingHom ℂ)).mahlerMeasure
       ≤ ∑ i ∈ range ((q.map (Int.castRingHom ℂ)).natDegree + 1),
         ‖(q.map (Int.castRingHom ℂ)).coeff i‖ :=
-  mahlerMeasure_le_sum_norm_coeff (one_le_sum_norm_coeff_map_int hq)
+  mahlerMeasure_le_sum_norm_coeff' (one_le_sum_norm_coeff_map_int hq)
 
 /-! ### Next
 
