@@ -176,4 +176,24 @@ into the paper; that literature is not yet in `library/`.
 
 ## Verification
 
-See PR #9428 for the lean-direct result on the Lean file.
+- Lean: `lean -DautoImplicit=false -s 65536 QOU/BringsSurface/TraceCochainObstructions.lean`
+  against the restored olean cache, exit 0. `#print axioms` on all six exported
+  theorems lists only `propext`, `Classical.choice`, `Quot.sound`; no `sorryAx`.
+- Probe: 11/11 checks; `scripts/precision-gates.sh --changed`: all blocking
+  gates green.
+- Library: the 11 cited papers are ingested (`library/arxiv-1006.3501v5`,
+  `arxiv-1503.06237v2`, `arxiv-cond-mat-0404617v2`, `arxiv-0712.2456v4`,
+  `arxiv-1101.2451v2`, `arxiv-1508.01166v2`, `arxiv-2302.02540v3`,
+  `arxiv-2406.18369v2`, `arxiv-0704.1313v1`, `arxiv-1409.0902v1`,
+  `arxiv-2010.12819v2`). `library-ingest-fidelity-probe.py`: recall 100 % for
+  ten, 92.3 % for cond-mat/0404617. The claims quoted in items 1, 6 and 7 were
+  checked against the ingested text (Turaev–Virelizier assume spherical fusion;
+  Bredberg et al. start from the flat Rindler metric; HaPPY tiles by pentagons,
+  four per vertex).
+
+## Beans
+
+Epic `qou-qrrb`; tasks `qou-k5jb` (DEC probe), `qou-b7fc` (antisymmetrised
+trace, open), `qou-0nqs` (ν_q derivation, open), `qou-r43g` (surface-code
+literature), `qou-fzdu` (licence decision), `qou-r4ky` (scope remark, needs
+owner approval).
