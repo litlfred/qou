@@ -1,10 +1,11 @@
 ---
 # qou-2k68
 title: 'GAP: BraidBoostInertialEquivalence cannot be derived until inertial mass has an independent definition'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-11-25T00:38:04Z
-updated_at: 2026-11-25T00:38:04Z
+updated_at: 2026-11-25T01:13:10Z
 parent: qou-s028
 ---
 
@@ -21,3 +22,9 @@ CANDIDATE ROUTE (untested): define inertial mass as the kinetic coefficient of t
 - The route also needs a map from the clock rate w to the velocity v.
 
 Status: OPEN. Needs an owner choice of definition for inertial mass (chat, 2026-11-25).
+
+
+## 2026-11-25T01:13:10Z — owner chose options 1 + 2 ('try'); route 1 result
+Probe computations/probes/braid_boost_inertial_clock/ (PR #9402, d32f457aaa5): exact computation in H2(q) and H3(q), 9 braids, pre-registered P1-P3, all hold. m_clock = 2 hbar_q^2 tr_reg is not the holonomy mass m. The ratio is braid-dependent (8 distinct rational functions), never identically 1, and changes sign; at proton q0 it runs -8.5e-4 .. 1.4e-2. m_clock(1) = 0 while m(1) = 2^c.
+Scope (a) for this definition. Scope (b) for any hbar^2 x (finite trace) definition, invariant = order of vanishing at q = 1 (same obstruction as E0WeightAllWords).
+STILL OPEN: option 2 (an explicit boost action on braids); a compensating 1/hbar^2 from the w -> v map. Next step: formalize-first scaffold for option 2.
