@@ -364,7 +364,8 @@ def main() -> int:
     # C2: χ_(2,1)(V³) closed form
     cf = -(Q ** 4 - Q ** 2 + 1) * (Q ** 8 - 2 * Q ** 6 - 2 * Q ** 2 + 1) / Q ** 6
     c2k = chi_kernel((2, 1), V(0) * 3)
-    c2p = mp.fsum(np.diag(apply_word(identity(2), (2, 1), V(0) * 3)))
+    M_v3 = apply_word(identity(2), (2, 1), V(0) * 3)   # dtype=object, mpf entries
+    c2p = mp.fsum(M_v3[i, i] for i in range(2))
     check("C2_chi21_V3_closed_form", abs(c2k - cf) < mp.mpf("1e-60") and abs(c2p - cf) < mp.mpf("1e-60"),
           f"kernel {mp.nstr(c2k, 25)}, mpmath {mp.nstr(c2p, 25)}, closed form {mp.nstr(cf, 25)}")
 
