@@ -65,7 +65,7 @@ def genLe (a b : ℕ × ℕ) : Prop := a.1 ≤ b.1 ∧ a.2 ≤ b.2
     single fundamental object `V`, the simple objects `Sym^k V` are indexed by
     `k ∈ ℕ` and the tensor-generation (divisibility) order is `≤` on `ℕ`, which
     is total: the jet tower is a **chain**. -/
-theorem rankOne_generation_isTotal : IsTotal ℕ (· ≤ ·) :=
+theorem rankOne_generation_isTotal : Std.Total (α := ℕ) (· ≤ ·) :=
   ⟨fun a b => Nat.le_total a b⟩
 
 /-- **The two rank-two fundamental weights are incomparable.** In the free rank-2
@@ -80,7 +80,7 @@ theorem rankTwo_fundamental_incomparable :
     `ℕ²` (divisibility in the free commutative monoid on two generators) fails
     totality, witnessed by the incomparable fundamental pair — so the free rank-2
     jet tower is **not a chain**. -/
-theorem rankTwo_generation_not_isTotal : ¬ IsTotal (ℕ × ℕ) genLe := by
+theorem rankTwo_generation_not_isTotal : ¬ Std.Total (α := ℕ × ℕ) genLe := by
   intro h
   rcases h.total (1, 0) (0, 1) with h1 | h1 <;>
     · obtain ⟨ha, hb⟩ := h1; omega
@@ -91,7 +91,7 @@ theorem rankTwo_generation_not_isTotal : ¬ IsTotal (ℕ × ℕ) genLe := by
     order-theoretic form of the atomicity (rank-one) premise: it admits rank-one
     and excludes the free rank-two model. -/
 theorem atomicity_is_jet_tower_totality :
-    IsTotal ℕ (· ≤ ·) ∧ ¬ IsTotal (ℕ × ℕ) genLe :=
+    Std.Total (α := ℕ) (· ≤ ·) ∧ ¬ Std.Total (α := ℕ × ℕ) genLe :=
   ⟨rankOne_generation_isTotal, rankTwo_generation_not_isTotal⟩
 
 /-- **Jet-tower chain axiom**, isolated as a class carrying the atomicity content:
@@ -101,7 +101,7 @@ theorem atomicity_is_jet_tower_totality :
 class JetTowerChain (W : Type*) (r : W → W → Prop) : Prop where
   /-- The tensor-generation order on the simples is total — the jet tower is a
       chain. -/
-  isChain : IsTotal W r
+  isChain : Std.Total (α := W) r
 
 /-- The rank-one tower satisfies the chain axiom. -/
 instance : JetTowerChain ℕ (· ≤ ·) := ⟨rankOne_generation_isTotal⟩
@@ -154,7 +154,7 @@ theorem fundamentalWeight_incomparable [DecidableEq S] {s t : S} (hst : s ≠ t)
     fundamental object. This is the derivation direction for free models:
     *chain axiom ⟹ rank-one*. -/
 theorem freeGen_total_forces_subsingleton [DecidableEq S]
-    (h : IsTotal (S → ℕ) piGenLe) : Subsingleton S := by
+    (h : Std.Total (α := S → ℕ) piGenLe) : Subsingleton S := by
   refine ⟨fun s t => ?_⟩
   by_contra hst
   rcases h.total (fundamentalWeight s) (fundamentalWeight t) with h1 | h1
@@ -165,7 +165,7 @@ theorem freeGen_total_forces_subsingleton [DecidableEq S]
     (`Subsingleton S`), the free tensor-generation order on `S → ℕ` is total — the
     converse direction. -/
 theorem subsingleton_forces_freeGen_total (h : Subsingleton S) :
-    IsTotal (S → ℕ) piGenLe := by
+    Std.Total (α := S → ℕ) piGenLe := by
   refine ⟨fun f g => ?_⟩
   rcases isEmpty_or_nonempty S with hemp | hne
   · exact Or.inl fun s => (hemp.false s).elim
@@ -179,14 +179,14 @@ theorem subsingleton_forces_freeGen_total (h : Subsingleton S) :
     fundamental object (`Subsingleton S`, rank ≤ 1). The sharp order-theoretic form
     of atomicity for free models: *chain ⟺ rank-one*. -/
 theorem freeGen_total_iff_subsingleton [DecidableEq S] :
-    IsTotal (S → ℕ) piGenLe ↔ Subsingleton S :=
+    Std.Total (α := S → ℕ) piGenLe ↔ Subsingleton S :=
   ⟨freeGen_total_forces_subsingleton, subsingleton_forces_freeGen_total⟩
 
 /-- **Corollary — every free rank ≥ 2 model is excluded.** `Fin 2` (two
     fundamental objects) is not a subsingleton, so the free tensor-generation order
     on `Fin 2 → ℕ` is not total. Generalises `rankTwo_generation_not_isTotal` from
     `ℕ²` to the free model on any `Fin r`, `r ≥ 2` (and any non-subsingleton `S`). -/
-theorem freeRankTwo_not_isTotal : ¬ IsTotal (Fin 2 → ℕ) piGenLe := by
+theorem freeRankTwo_not_isTotal : ¬ Std.Total (α := Fin 2 → ℕ) piGenLe := by
   intro h
   have hsub : Subsingleton (Fin 2) := freeGen_total_forces_subsingleton h
   exact absurd (Subsingleton.elim (0 : Fin 2) 1) (by decide)
@@ -247,7 +247,7 @@ class TensorGenerationFree (W : Type*) [Preorder W] (S : Type*) [DecidableEq S] 
     the latter being the jet-tower ordering axiom the route seeks to establish. No
     instance of the bridge is fabricated; the implication itself is proved. -/
 theorem rankOne_of_chain_of_bridge [B : TensorGenerationFree W S]
-    (htot : IsTotal W (· ≤ ·)) : Subsingleton S := by
+    (htot : Std.Total (α := W) (· ≤ ·)) : Subsingleton S := by
   refine ⟨fun s t => ?_⟩
   by_contra hst
   rcases htot.total (B.simple s) (B.simple t) with h | h

@@ -90,7 +90,7 @@ def genLe {S : Type*} (f g : S → ℕ) : Prop := ∀ s, f s ≤ g s
     landed `subsingleton_forces_freeGen_total` (PR #4285), so the chain step is genuinely
     closed inside this file (not merely assumed). -/
 theorem singleGenerator_forces_genTotal {S : Type*} (h : Subsingleton S) :
-    IsTotal (S → ℕ) genLe := by
+    Std.Total (α := S → ℕ) genLe := by
   refine ⟨fun f g => ?_⟩
   rcases isEmpty_or_nonempty S with hemp | hne
   · exact Or.inl fun s => (hemp.false s).elim
@@ -137,9 +137,9 @@ class RankOneImpliesSingleGenerator (R L : Type*) [CommRing R] [Nontrivial R] [L
     `QOU.Atomicity.subsingleton_forces_freeGen_total`, or locally by
     `singleGenerator_forces_genTotal` above.) -/
 theorem singleGenerator_gives_chain {S : Type*}
-    (subsingleton_forces_total : Subsingleton S → IsTotal (S → ℕ) genLe)
+    (subsingleton_forces_total : Subsingleton S → Std.Total (α := S → ℕ) genLe)
     (hgen : Subsingleton S) :
-    IsTotal (S → ℕ) genLe :=
+    Std.Total (α := S → ℕ) genLe :=
   subsingleton_forces_total hgen
 
 /-- **Full composition (PROVED, modulo the one open class): rank-1 ⟹ jet-tower chain.**
@@ -155,9 +155,9 @@ theorem singleGenerator_gives_chain {S : Type*}
 theorem rankOne_gives_jetTowerChain {R L : Type*} [CommRing R] [Nontrivial R] [LieRing L]
     [LieAlgebra R L] [Module.Finite R L] [Module.Free R L] {S : Type*}
     [C : RankOneImpliesSingleGenerator R L S]
-    (subsingleton_forces_total : Subsingleton S → IsTotal (S → ℕ) genLe)
+    (subsingleton_forces_total : Subsingleton S → Std.Total (α := S → ℕ) genLe)
     (hrank : LieAlgebra.rank R L ≤ 1) :
-    IsTotal (S → ℕ) genLe :=
+    Std.Total (α := S → ℕ) genLe :=
   subsingleton_forces_total (C.single_generator_of_rankOne hrank)
 
 /-- **Fully self-contained variant.** Same composition, but the subsingleton⟹total step is
@@ -169,7 +169,7 @@ theorem rankOne_gives_jetTowerChain' {R L : Type*} [CommRing R] [Nontrivial R] [
     [LieAlgebra R L] [Module.Finite R L] [Module.Free R L] {S : Type*}
     [C : RankOneImpliesSingleGenerator R L S]
     (hrank : LieAlgebra.rank R L ≤ 1) :
-    IsTotal (S → ℕ) genLe :=
+    Std.Total (α := S → ℕ) genLe :=
   singleGenerator_forces_genTotal (C.single_generator_of_rankOne hrank)
 
 /-! ## The jet-tower chain axiom is a CONCLUSION, not a fourth premise
@@ -221,7 +221,7 @@ class TannakianRankOneSingleGenerator (S : Type*) (hRankOne : Prop) : Prop where
 theorem tannaka_rankOne_gives_jetTowerChain {S : Type*} {hRankOne : Prop}
     [T : TannakianRankOneSingleGenerator S hRankOne]
     (hrank : hRankOne) :
-    IsTotal (S → ℕ) genLe :=
+    Std.Total (α := S → ℕ) genLe :=
   singleGenerator_forces_genTotal (T.single_generator_of_tannaka_rankOne hrank)
 
 end QOU.Atomicity.RankOneToSingleObject
