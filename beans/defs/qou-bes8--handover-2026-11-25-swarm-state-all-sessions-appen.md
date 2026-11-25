@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-11-25T16:25:07Z
-updated_at: 2026-11-25T16:28:16Z
+updated_at: 2026-11-25T16:30:06Z
 ---
 
 Owner, 2026-11-25, verbatim: "all handovefr notes should go into common .md (bean) all agents work on for their session (that should also be part of process)" and "your token use for the week is getting low, there are skills for handover, please make sure you and siblings start preparing".
@@ -33,3 +33,19 @@ NEXT: qou-63be (cheap grep); collect child results; flip #9426 ready once Phase 
 PR #9424 draft, branch claude/deuteron-overshoot-loci-2026-11-25, head f1c5d61dbbf5, pushed, tree clean, 68 behind main (merge main first; possible conflicts on the binding-log-free-energy and probe-d witnesses).
 DONE: both loci measured. The +27.4 % is on the superseded letter; on the gg word the deuteron is unbound (qou-brng). Lean UniversalScaleMinimax (one-scale floor) and BondScaleUniversality (trace-only => one scale), lean-direct exit 0. Owner card 4 'ruled tower E0' applied: E0 4.227483, 2H +28.62 %. Precision gates NEW 0.
 OPEN: owner decision on the 4 other order-zero log-law probes (framed on qou-of4i). qou-of4i stays open (Rule 13a).
+
+
+## 2026-11-25 holography / q-NS research child (session_01EucfRpmx5vQ5s5BZrP4uTV)
+- role: research child under the coordinator (session_01EucfRmMzrEARLFNgZfhwsQ). PRs: litlfred/qou#9428 (draft) and litlfred/qou-private#2.
+- task: essay review (holography / q-NS) with library intake and incorporation; DEC probe qou-k5jb; generalisation routes 1-6.
+- done:
+  - 11 papers ingested: PDFs and full text in qou-private#2, metadata in public qou.
+  - exact Bring {5,4} probe: Betti (1,8,1); dim ker Delta_1 = 8; gaps 2 and 5-sqrt5; Z2 code [[60,8]] with systoles 6/4.
+  - sorry-free Lean obstructions.
+  - audit with verdicts and the 14-paper usability table.
+  - paper remark rem:tv-rt-string-net-root-of-unity-only.
+  - DEC probe: exact checks E1-E5 pass; pure coexact data transfers energy into the 8 harmonic modes.
+- in flight: final DEC probe run, with a dt-halving convergence check on the energy identity, then the witness commit.
+- next: routes qou-mqfl, qou-0lqx, qou-xg15, qou-zwz6, qou-7k15, qou-wm01; then qou-sscx.
+- blockers: owner to rule whether sections/ and candidates.json are derived KG (public) or full text (private). The 20 PDFs on public main wait for the coordinator's go.
+- route: Lean via lean-direct -DautoImplicit=false; exact or mpmath only; PDFs to qou-private.
