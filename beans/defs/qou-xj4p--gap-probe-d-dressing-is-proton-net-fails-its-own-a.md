@@ -1,11 +1,11 @@
 ---
 # qou-xj4p
 title: 'GAP: probe_d_dressing_is_proton_net fails its own assertion after refresh'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-24T20:49:37Z
-updated_at: 2026-11-25T10:34:31Z
+updated_at: 2026-11-25T10:49:09Z
 ---
 
 Found by the 2026-11-24 paper-compute refresh (PR #9395, branch `claude/compute-refresh-2026-11-24`, main `dd5f163edbd`). `computations/probes/probe-d-dressing-is-proton-net.witness.json` was self-stale. Re-running the current producer `computations/probes/probe_d_dressing_is_proton_net.py` (exit 0) writes `allPassed: false`. The refreshed witness was **NOT committed** (owner decision 2026-11-24, "D2 commit all 42": hold producers that fail their own assertion). Main still carries the old passing witness.
@@ -41,3 +41,7 @@ Script + RESULTS: computations/probes/probe_d_dressing_is_proton_net/attribution
 
 
 PR #9416 (draft): https://github.com/litlfred/qou/pull/9416. Owner decision options: (1) WITHDRAW the probe's conclusion (mark the probe as a recorded negative, assertion stays false, refresh the witness). Cost: one witness refresh plus a note in the audit doc docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md. Risk: none numeric, since nothing is wired. (2) RE-SCOPE: keep the exact ℚ(q) identities (Δ(net) = −h·net(p), Q_β = E₀·h·net(p)) as the probe's content, and drop only binding_candidate_subpercent. That would change the assertion, which needs the owner. (3) Default/no-op: main keeps the stale passing witness, which still claims a 0.29% hit produced by excised inputs. Recommendation (judgement): 1 plus 2, i.e. keep the identities and record the binding match as a negative.
+
+
+## 2026-11-25T10:49:08Z — DONE. Owner ruling '1+2 together' (2026-11-25) implemented in PR #9417 (merged)
+Attribution merged in #9416: the unattributed ~7% is the Markov convention C -> D change (exact, path-dependent split). Probe: binding_candidate_subpercent assertion removed, binding recorded as NEGATIVE (-75.22% on the ruled inputs), exact Q(q) identities kept, witness refreshed, audit doc updated.
