@@ -49,6 +49,7 @@ Strategy:
      explicit σ_iσ_{i+1}σ_i = σ_{i+1}σ_iσ_{i+1}, then retry.
 """
 from __future__ import annotations
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 
 # Path bridge (subdirectory refactor — Phase 4, 2026-06-02).
 # Keeps flat-namespace imports (`from witness_base import …`)
@@ -420,7 +421,7 @@ if __name__ == "__main__":
 
     print("=" * 80)
     print("CANONICAL MARKOV TRACE — prop:categorical-mass-markov table")
-    print(f"q₀ = {q0_num:.6f}, z = {z_num:.6f}, h = {h_num:.6f}")
+    print(f"q₀ = {mpmath.nstr(q0_num, 10)}, z = {mpmath.nstr(z_num, 10)}, h = {mpmath.nstr(h_num, 10)}")
     print("=" * 80)
 
     # Prop table

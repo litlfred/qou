@@ -122,6 +122,7 @@ Notes
   `t_zero_alt_sym_magnitude`), so B/A simplifies algebraically.
 """
 from __future__ import annotations
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 
 import sys as _sys
 from pathlib import Path as _Path
@@ -392,9 +393,9 @@ def main() -> int:
 
     # Pretty print summary
     print(f"q_0 = {Q0:.10f}")
-    print(f"E_0 = {E_0_MEV:.6f} MeV")
+    print(f"E_0 = {mpmath.nstr(E_0_MEV, 10)} MeV")
     print(f"w_sym = {W_SYM:.6e},  w_std = {W_STD:.6e},  w_alt = {W_ALT:.6e}")
-    print(f"fitted c_S = {witness['fit']['fitted_c_S']:.6e}")
+    print(f"fitted c_S = {mpmath.nstr(witness['fit']['fitted_c_S'], 7)}")
     print()
     print(f"  {'nucleus':>8} {'A':>3} {'B/A_pred':>10} "
           f"{'B/A_AME':>10} {'Δ (MeV)':>10} {'Δ %':>8}")
@@ -402,10 +403,10 @@ def main() -> int:
     for r in witness["nuclei"]:
         print(
             f"  {r['nucleus']:>8} {r['A']:>3d} "
-            f"{r['B_over_A_predicted_MeV']:>10.4f} "
+            f"{mpmath.nstr(r['B_over_A_predicted_MeV'], 8):>10} "
             f"{r['B_over_A_AME2020_MeV']:>10.4f} "
-            f"{r['residual_MeV']:>10.4f} "
-            f"{r['residual_pct']:>7.2f}%"
+            f"{mpmath.nstr(r['residual_MeV'], 8):>10} "
+            f"{mpmath.nstr(r['residual_pct'], 6):>7}%"
         )
     print()
     print(f"Wrote witness: {out.relative_to(HERE.parent.parent)}")

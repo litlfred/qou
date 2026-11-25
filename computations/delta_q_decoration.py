@@ -22,6 +22,7 @@ Reference content blocks:
   rem:bound-state-frobenius-self-dual-channel
   conj:e-hartree-categorical-derivation
 """
+import mpmath  # display-only: mpmath.nstr in f-strings (mpf has no float __format__ on mpmath 1.3.0)
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
 import sys
@@ -173,7 +174,7 @@ print("=" * 70)
 alpha_def, alpha_via, identity_match = alpha_em_from_delta_q()
 delta_T29 = force_carrier_q_dim(2, 9)
 delta_T35 = force_carrier_q_dim(3, 10)
-print(f"\n  α_EM (definition)        = {alpha_def:.12e}")
+print(f"\n  α_EM (definition)        = {mpmath.nstr(alpha_def, 13)}")
 print(f"  α_EM (via δ_q ratio)     = {alpha_via:.12e}")
 print(f"  δ_q(T_{{2,9}}) = q^9 - q^-9   = {delta_T29:.10f}")
 print(f"  δ_q(T_{{3,5}}) ≈ q^10 - q^-10 = {delta_T35:.10f}")
